@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FDS.AI ( Fault Detection System With AI)
 
-## Getting Started
+Fault detection is an automated process that monitors systems and applications to identify abnormalities, errors, or potential failures before they impact your operations. Our system uses advanced algorithms to analyze data patterns and trigger alerts when issues are detected.
 
-First, run the development server:
+### How it Works ?
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The system continuously monitors your infrastructure, collecting metrics and logs. Using machine learning models and predefined rules, it analyzes this data in real-time to detect anomalies and potential faults. When an issue is detected, notifications are sent to configured channels immediately.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### What is AI-Powered Fault Detection?
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+AI-powered fault detection is an advanced technology that uses artificial intelligence and machine learning algorithms to automatically identify, diagnose, and predict equipment failures, system anomalies, and operational issues before they cause significant damage or downtime.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+In the Indian industrial landscape, where manufacturing, power generation, and infrastructure development are rapidly growing, fault detection systems play a crucial role in maintaining operational efficiency and reducing costly breakdowns.
 
-## Learn More
+### Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+1. Nextjs `(Turbopack/ v.16/ App router )`
+2. Tailwindcss `(v.4)`
+3. Lucide React
+4. react icons
+5. Framer Motion
+6. Nodejs `(v.22)`
+7. AWS `(Cloud Deployment) / For AI Model`
+8. AWS Amplify `(For Serverless Deployment )`
+9. AWS Bedrock `(For LLM's)`
+10. AWS Lambda `(For Serveless Fucntion)`
+11. AWS Route53 ( `For Domain`)
+12. Amazon CloudWatch `(For monitoring logs and history)`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Contributions Guildline
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+If you want to contribute to project then please refer to `CONTRIBUTION.md` or to Documentation of ours by going to our website in `/docs`
 
-## Deploy on Vercel
+For More detailed Documentation refer to : [`fds-project-docs`](https://fdsai.cloudkinshuk.in/docs/repo-setup)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Maintainer : [`Kinshuk-Jain-Website`](https://cloudkinshuk.in)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Thank You !
