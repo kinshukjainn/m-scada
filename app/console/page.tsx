@@ -26,7 +26,7 @@ export default function Page() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 How it works
               </h3>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-800">
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
                   <span>
@@ -56,7 +56,7 @@ export default function Page() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Key Benefits
               </h3>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-800">
                 <li className="flex items-start">
                   <span className="mr-2 text-green-600">✓</span>
                   <span>Full customization and control</span>
@@ -107,7 +107,7 @@ export default function Page() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 How it works
               </h3>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-800">
                 <li className="flex items-start">
                   <span className="mr-2">•</span>
                   <span>
@@ -140,7 +140,7 @@ export default function Page() {
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 Key Benefits
               </h3>
-              <ul className="space-y-2 text-gray-700">
+              <ul className="space-y-2 text-gray-800">
                 <li className="flex items-start">
                   <span className="mr-2 text-green-600">✓</span>
                   <span>No manual configuration required</span>
@@ -208,10 +208,10 @@ export default function Page() {
                   <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
                     Setup Time
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     Minutes
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     Hours
                   </td>
                 </tr>
@@ -219,10 +219,10 @@ export default function Page() {
                   <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
                     Customization
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     Limited
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     Unlimited
                   </td>
                 </tr>
@@ -230,10 +230,10 @@ export default function Page() {
                   <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
                     Maintenance
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     Minimal
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     High
                   </td>
                 </tr>
@@ -244,7 +244,7 @@ export default function Page() {
                   <td className="border border-gray-200 px-6 py-4 text-green-600">
                     ✓
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     Optional
                   </td>
                 </tr>
@@ -252,10 +252,10 @@ export default function Page() {
                   <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
                     Learning Curve
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     None
                   </td>
-                  <td className="border border-gray-200 px-6 py-4 text-gray-700">
+                  <td className="border border-gray-200 px-6 py-4 text-gray-800">
                     Moderate
                   </td>
                 </tr>

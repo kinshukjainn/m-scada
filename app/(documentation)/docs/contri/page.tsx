@@ -189,7 +189,7 @@ export default function ContributingDocs() {
                   key={item.step}
                   className="flex flex-col sm:flex-row gap-3 sm:gap-4"
                 >
-                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 border border-gray-300 text-gray-700 flex items-center justify-center font-bold text-sm">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-gray-100 border border-gray-300 text-gray-800 flex items-center justify-center font-bold text-sm">
                     {item.step}
                   </div>
                   <div className="min-w-0">

@@ -48,7 +48,7 @@ export default function AboutPage() {
             <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 tracking-tight">
               {projectInfo.title}
             </h2>
-            <p className="text-lg text-slate-600 leading-relaxed">
+            <p className="text-lg text-gray-800 leading-relaxed">
               {projectInfo.description}
             </p>
           </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
                       className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0"
                       strokeWidth={2.5}
                     />
-                    <span className="text-sm font-medium text-slate-700 leading-snug">
+                    <span className="text-sm font-medium text-gray-800 leading-snug">
                       {highlight}
                     </span>
                   </li>

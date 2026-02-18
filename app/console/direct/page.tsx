@@ -37,7 +37,7 @@ export default function ConsoleComingSoonPage() {
 
         {/* Feature Highlights Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-md mx-auto mb-10">
-          <div className="flex items-center gap-3 text-sm text-gray-700">
+          <div className="flex items-center gap-3 text-sm text-gray-800">
             <svg
               className="w-5 h-5 text-green-500 flex-shrink-0"
               fill="none"
@@ -53,7 +53,7 @@ export default function ConsoleComingSoonPage() {
             </svg>
             Intelligent Auto-Scaling
           </div>
-          <div className="flex items-center gap-3 text-sm text-gray-700">
+          <div className="flex items-center gap-3 text-sm text-gray-800">
             <svg
               className="w-5 h-5 text-green-500 flex-shrink-0"
               fill="none"
@@ -69,7 +69,7 @@ export default function ConsoleComingSoonPage() {
             </svg>
             Real-Time Analytics
           </div>
-          <div className="flex items-center gap-3 text-sm text-gray-700">
+          <div className="flex items-center gap-3 text-sm text-gray-800">
             <svg
               className="w-5 h-5 text-green-500 flex-shrink-0"
               fill="none"
@@ -85,7 +85,7 @@ export default function ConsoleComingSoonPage() {
             </svg>
             One-Click Deployments
           </div>
-          <div className="flex items-center gap-3 text-sm text-gray-700">
+          <div className="flex items-center gap-3 text-sm text-gray-800">
             <svg
               className="w-5 h-5 text-green-500 flex-shrink-0"
               fill="none"
@@ -105,7 +105,7 @@ export default function ConsoleComingSoonPage() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-6 py-2 bg-white border border-gray-300 text-gray-700 font-medium cursor-pointer rounded hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
+          <button className="px-6 py-2 bg-white border border-gray-300 text-gray-800 font-medium cursor-pointer rounded hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
             Go Back
           </button>
 

@@ -160,7 +160,7 @@ export default function IntroductionPage() {
           </Link>
           <Link
             href="/docs/project-info"
-            className="inline-flex items-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 bg-white border border-gray-200 hover:border-gray-300 px-4 py-2 rounded-lg transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-medium text-gray-800 hover:text-gray-900 bg-white border border-gray-200 hover:border-gray-300 px-4 py-2 rounded-lg transition-colors"
           >
             Project Info
             <ArrowRight className="w-4 h-4" />

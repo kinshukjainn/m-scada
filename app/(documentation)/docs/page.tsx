@@ -121,7 +121,7 @@ export default function DocsLandingPage() {
             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4 flex items-center gap-2">
               <TerminalSquare className="w-4 h-4" /> Core Frameworks
             </h3>
-            <ul className="space-y-3 text-sm text-gray-700">
+            <ul className="space-y-3 text-sm text-gray-800">
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-gray-400"></div>
                 <strong>Next.js 16</strong> (App Router)
@@ -142,7 +142,7 @@ export default function DocsLandingPage() {
             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4 flex items-center gap-2">
               <CloudCog className="w-4 h-4" /> Infrastructure (AWS)
             </h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-700">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-800">
               <li className="flex items-center gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-orange-400"></div>
                 <strong>Amplify:</strong> Serverless deployment
@@ -182,7 +182,7 @@ export default function DocsLandingPage() {
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <Link
               href="/docs/repo-setup"
-              className="inline-flex items-center justify-center gap-2 text-sm font-medium text-gray-700 hover:text-gray-900 bg-white border border-gray-300 hover:border-gray-400 px-5 py-2.5 rounded-lg transition-all"
+              className="inline-flex items-center justify-center gap-2 text-sm font-medium text-gray-800 hover:text-gray-900 bg-white border border-gray-300 hover:border-gray-400 px-5 py-2.5 rounded-lg transition-all"
             >
               <Github className="w-4 h-4" />
               Repository Setup

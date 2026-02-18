@@ -91,7 +91,7 @@ export default function AIIndustrialHome() {
                 Power Grids.
               </span>
             </h1>
-            <p className="text-lg text-slate-600 max-w-2xl leading-relaxed mb-0 font-medium">
+            <p className="text-lg text-gray-800 max-w-2xl leading-relaxed mb-0 font-medium">
               High-fidelity fault detection utilizing machine learning to secure
               critical infrastructure across the industrial sector. Eliminate
               unplanned downtime with millisecond precision.
@@ -144,7 +144,7 @@ export default function AIIndustrialHome() {
             <h2 className="text-3xl font-bold text-slate-900 tracking-tight mb-4">
               Core Framework Architecture
             </h2>
-            <p className="text-slate-600 max-w-2xl text-lg">
+            <p className="text-gray-800 max-w-2xl text-lg">
               A distributed, edge-first architecture designed for
               high-availability environments including steel manufacturing, rail
               networks, and heavy power distribution.
@@ -184,7 +184,7 @@ export default function AIIndustrialHome() {
                 <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
+                <p className="text-sm text-gray-800 leading-relaxed">
                   {feature.desc}
                 </p>
               </div>
@@ -220,7 +220,7 @@ export default function AIIndustrialHome() {
                   <th className="px-6 py-4 text-right">Action Protocol</th>
                 </tr>
               </thead>
-              <tbody className="text-[13px] text-slate-700">
+              <tbody className="text-[13px] text-gray-800">
                 {[
                   {
                     type: "SYMMETRICAL_LLL",
@@ -253,7 +253,7 @@ export default function AIIndustrialHome() {
                     </td>
                     <td className="px-6 py-4">{row.load}</td>
                     <td className="px-6 py-4">
-                      <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-100 border border-slate-200 text-[11px] font-bold text-slate-700">
+                      <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-100 border border-slate-200 text-[11px] font-bold text-gray-800">
                         <span
                           className={`w-1.5 h-1.5 rounded ${row.riskColor}`}
                         />
@@ -322,7 +322,7 @@ export default function AIIndustrialHome() {
                       <h4 className="font-bold text-slate-900 text-base mb-1">
                         {item.step}
                       </h4>
-                      <p className="text-sm text-slate-600 leading-relaxed">
+                      <p className="text-sm text-gray-800 leading-relaxed">
                         {item.desc}
                       </p>
                     </div>

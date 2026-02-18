@@ -36,7 +36,7 @@ export default function IssuesPage() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-6 py-2 bg-white border border-gray-300 text-gray-700 font-medium cursor-pointer rounded hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
+          <button className="px-6 py-2 bg-white border border-gray-300 text-gray-800 font-medium cursor-pointer rounded hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
             Go Back
           </button>
 

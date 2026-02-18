@@ -107,14 +107,14 @@ export default function FaultDetectionDocs() {
             What is AI-Powered Fault Detection?
           </h2>
 
-          <p className="text-gray-700 leading-relaxed mb-4">
+          <p className="text-gray-800 leading-relaxed mb-4">
             AI-powered fault detection is an advanced technology that uses
             artificial intelligence and machine learning algorithms to
             automatically identify, diagnose, and predict equipment failures,
             system anomalies, and operational issues before they cause
             significant damage or downtime.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-8">
+          <p className="text-gray-800 leading-relaxed mb-8">
             In the Indian industrial landscape, where manufacturing, power
             generation, and infrastructure development are rapidly growing,
             fault detection systems play a crucial role in maintaining
@@ -127,28 +127,28 @@ export default function FaultDetectionDocs() {
           <ul className="space-y-3 mb-8">
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-700">
+              <span className="text-gray-800">
                 <strong>Sensors & IoT Devices:</strong> Collect real-time data
                 from equipment and systems.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-700">
+              <span className="text-gray-800">
                 <strong>Machine Learning Models:</strong> Analyze patterns and
                 detect anomalies.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-700">
+              <span className="text-gray-800">
                 <strong>Predictive Analytics:</strong> Forecast potential
                 failures before they occur.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-700">
+              <span className="text-gray-800">
                 <strong>Alert Systems:</strong> Notify operators immediately
                 when issues are detected.
               </span>
@@ -188,7 +188,7 @@ export default function FaultDetectionDocs() {
             How Fault Detection Works
           </h2>
 
-          <p className="text-gray-700 leading-relaxed mb-8">
+          <p className="text-gray-800 leading-relaxed mb-8">
             The fault detection process involves multiple stages, from data
             collection to actionable insights. Here is a detailed breakdown of
             the workflow:
@@ -291,7 +291,7 @@ export default function FaultDetectionDocs() {
             <AlertCircle className="w-6 h-6 text-gray-400" />
             Types of Faults Detected
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="text-gray-800 leading-relaxed mb-6">
             AI-powered systems can detect various types of faults across
             different industrial applications:
           </p>
@@ -491,7 +491,7 @@ export default function FaultDetectionDocs() {
             <Activity className="w-6 h-6 text-gray-400" />
             Applications in India
           </h2>
-          <p className="text-gray-700 leading-relaxed mb-8">
+          <p className="text-gray-800 leading-relaxed mb-8">
             Industry-specific implementations and use cases:
           </p>
 
@@ -550,7 +550,7 @@ export default function FaultDetectionDocs() {
                   {app.uses.map((use, i) => (
                     <li
                       key={i}
-                      className="text-sm text-gray-700 flex items-start gap-2"
+                      className="text-sm text-gray-800 flex items-start gap-2"
                     >
                       <span className="text-blue-500 mt-0.5">•</span>
                       <span>{use}</span>

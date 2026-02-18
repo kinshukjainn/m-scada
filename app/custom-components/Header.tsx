@@ -18,7 +18,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
         {/* Logo */}
         <Link href="/" className="flex-shrink-0">
-          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 font-mono hover:text-gray-700 transition-colors">
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900 font-mono hover:text-gray-800 transition-colors">
             FDS<span className="text-blue-700">.ai</span>
             <span className="animate-pulse text-black font-bold">{"_"}</span>
           </h1>
@@ -79,24 +79,24 @@ export default function Header() {
         <div className="flex items-center gap-2 sm:gap-3">
           {/* GitHub Link with Sliding Text */}
           <a
-            href="https://github.com/yourusername/your-repo"
+            href="https://github.com/kinshukjainn/fds-college"
             target="_blank"
             rel="noopener noreferrer"
             onMouseEnter={() => setIsGithubHovered(true)}
             onMouseLeave={() => setIsGithubHovered(false)}
             className="hidden sm:flex items-center gap-2 px-6 py-2 rounded border border-gray-300 bg-white hover:bg-blue-100 transition-all overflow-hidden group"
           >
-            <Github className="w-4 h-4 text-gray-700 flex-shrink-0" />
+            <Github className="w-4 h-4 text-gray-800 flex-shrink-0" />
             <div className="relative h-5 overflow-hidden">
               <span
-                className={`block text-sm font-medium text-gray-700 transition-transform duration-300 ${
+                className={`block text-sm font-medium text-gray-800 transition-transform duration-300 ${
                   isGithubHovered ? "-translate-y-5" : "translate-y-0"
                 }`}
               >
                 Open source
               </span>
               <span
-                className={`block text-sm font-medium text-gray-700 absolute top-5 left-0 transition-transform duration-300 ${
+                className={`block text-sm font-medium text-gray-800 absolute top-5 left-0 transition-transform duration-300 ${
                   isGithubHovered ? "-translate-y-5" : "translate-y-0"
                 }`}
               >
@@ -107,13 +107,13 @@ export default function Header() {
 
           {/* GitHub Icon Only (Mobile) */}
           <a
-            href="https://github.com/yourusername/your-repo"
+            href="https://github.com/kinshukjainn/fds-college"
             target="_blank"
             rel="noopener noreferrer"
             className="sm:hidden p-2 rounded border border-gray-300 bg-white hover:bg-gray-50 transition-all"
             aria-label="GitHub"
           >
-            <Github className="w-4 h-4 text-gray-700" />
+            <Github className="w-4 h-4 text-gray-800" />
           </a>
 
           {/* Feedback Button */}
