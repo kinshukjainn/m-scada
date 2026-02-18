@@ -23,7 +23,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-slate-50  text-slate-900 selection:bg-blue-100 selection:text-blue-900">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
         {/* Header Section */}
         <div className="mb-16">

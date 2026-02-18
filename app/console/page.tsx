@@ -17,7 +17,7 @@ export default function Page() {
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 Manual Console
               </h2>
-              <p className="text-gray-600">
+              <p className="text-gray-800">
                 You have full control and flexibility
               </p>
             </div>
@@ -76,11 +76,11 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="mb-8 p-4 bg-gray-50 rounded-lg">
+            <div className="mb-8 p-4 bg-gray-100  border border-gray-400 rounded-lg">
               <h4 className="font-semibold text-gray-900 mb-2">
                 Full Customization
               </h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-800">
                 Build your perfect Console with complete control over every
                 metric and visualization.
               </p>
@@ -88,7 +88,7 @@ export default function Page() {
 
             <Link
               href="/console/manual"
-              className="block w-full bg-blue-800 text-white text-center py-2 px-4 rounded-md font-normal hover:bg-blue-900 transition-colors"
+              className="block w-full bg-blue-300  text-black w-max  text-center py-2 px-4  font-semibold  hover:bg-blue-300 transition-colors"
             >
               Manual Console
             </Link>
@@ -100,7 +100,7 @@ export default function Page() {
               <h2 className="text-2xl font-bold text-gray-900 mb-2">
                 Automated Console
               </h2>
-              <p className="text-gray-600">Let the system handle everything</p>
+              <p className="text-gray-800">Let the system handle everything</p>
             </div>
 
             <div className="mb-6">
@@ -160,11 +160,11 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="mb-8 p-4 bg-gray-50 rounded-lg">
+            <div className="mb-8 p-4 bg-gray-100 rounded-lg border border-gray-400">
               <h4 className="font-semibold text-gray-900 mb-2">
                 Smart Analytics
               </h4>
-              <p className="text-sm text-gray-600">
+              <p className="text-sm text-gray-800">
                 Automatically tracks metrics and generates actionable insights
                 tailored to your business.
               </p>
@@ -172,7 +172,7 @@ export default function Page() {
 
             <Link
               href="/console/direct"
-              className="block w-full bg-blue-800 text-white text-center py-2 px-4 rounded-md font-normal hover:bg-blue-900 transition-colors"
+              className="block w-full bg-blue-300 text-black text-center py-2 px-4  font-semibold w-max hover:bg-blue-300 transition-colors"
             >
               Automated Console
             </Link>
@@ -184,7 +184,7 @@ export default function Page() {
           <h2 className="text-2xl font-bold text-gray-900 mb-6 text-center">
             Quick Comparison
           </h2>
-          <p className="text-gray-600 text-center mb-8">
+          <p className="text-gray-800 text-center mb-8">
             See which approach works best for your needs
           </p>
 

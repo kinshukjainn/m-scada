@@ -28,7 +28,7 @@ export default function Consoleheader() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => router.push("/console")}
-                className="text-gray-600 hover:text-gray-900 transition-colors text-sm sm:text-base font-medium"
+                className="text-gray-800 hover:text-gray-900  px-2 py-1 rounded cursor-pointer transition-colors text-sm hover:font-bold  hover:underline sm:text-base font-medium"
               >
                 Console
               </button>
@@ -45,7 +45,7 @@ export default function Consoleheader() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-              <h1 className="text-xl sm:text-2xl font-semibold text-gray-900">
+              <h1 className="text-lg sm:text-lg font-medium underline text-gray-900">
                 Manual
               </h1>
             </div>
@@ -56,7 +56,7 @@ export default function Consoleheader() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => router.push("/console")}
-                className="text-gray-600 hover:text-gray-900 transition-colors text-sm sm:text-base font-medium"
+                className="text-gray-800 hover:text-gray-900 transition-colors text-sm sm:text-base font-medium"
               >
                 Console
               </button>

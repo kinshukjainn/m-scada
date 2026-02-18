@@ -14,6 +14,7 @@ import {
   ChevronRight,
   TerminalSquare,
 } from "lucide-react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 // --- 3D Background Component (Three.js) ---
 function ParticleGrid() {
@@ -56,7 +57,8 @@ function ParticleGrid() {
 
 export default function AIIndustrialHome() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-white text-slate-900  selection:bg-blue-100 selection:text-blue-900">
+      {/* Hero Section */}
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-60 mask-image:linear-gradient(to_bottom,white,transparent)">
@@ -65,24 +67,29 @@ export default function AIIndustrialHome() {
           </Canvas>
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+        {/* Added grid layout here for side-by-side alignment */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Column: Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-semibold uppercase tracking-widest mb-8">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-emerald-50 border border-emerald-200 text-emerald-700 text-[11px] font-semibold uppercase tracking-widest mb-8">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded h-2 w-2 bg-emerald-500"></span>
               </span>
               System Status: Operational
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.05]">
               Predictive Intelligence <br className="hidden md:block" />
-              for <span className="text-blue-700">Industrial Grids.</span>
+              for{" "}
+              <span className="text-[#ff9100] font-mono font-bold">
+                Power Grids.
+              </span>
             </h1>
             <p className="text-lg text-slate-600 max-w-2xl leading-relaxed mb-0 font-medium">
               High-fidelity fault detection utilizing machine learning to secure
@@ -90,9 +97,23 @@ export default function AIIndustrialHome() {
               unplanned downtime with millisecond precision.
             </p>
           </motion.div>
+
+          {/* Right Column: WebM Video */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="relative   overflow-hidden "
+          >
+            {" "}
+            <DotLottieReact
+              src="https://lottie.host/9b77713f-3189-4954-819e-7bdbd5e2c0ba/y5YQD6b3qw.lottie"
+              loop
+              autoplay
+            />
+          </motion.div>
         </div>
       </section>
-
       {/* Metrics Section - Cloudflare Boxed Style */}
       <section className="bg-slate-50 border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -234,7 +255,7 @@ export default function AIIndustrialHome() {
                     <td className="px-6 py-4">
                       <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-slate-100 border border-slate-200 text-[11px] font-bold text-slate-700">
                         <span
-                          className={`w-1.5 h-1.5 rounded-full ${row.riskColor}`}
+                          className={`w-1.5 h-1.5 rounded ${row.riskColor}`}
                         />
                         {row.risk}
                       </span>
@@ -291,7 +312,7 @@ export default function AIIndustrialHome() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-5 items-start relative z-10">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full border-2 border-slate-200 bg-white flex items-center justify-center text-slate-500 mt-1 shadow-sm">
+                    <div className="flex-shrink-0 w-8 h-8 rounded border-2 border-slate-200 bg-white flex items-center justify-center text-slate-500 mt-1 shadow-sm">
                       {item.icon}
                     </div>
                     <div>
@@ -321,9 +342,9 @@ export default function AIIndustrialHome() {
                   </span>
                 </div>
                 <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-slate-700"></div>
+                  <div className="w-2.5 h-2.5 rounded bg-slate-700"></div>
+                  <div className="w-2.5 h-2.5 rounded bg-slate-700"></div>
+                  <div className="w-2.5 h-2.5 rounded bg-slate-700"></div>
                 </div>
               </div>
 
@@ -355,7 +376,7 @@ export default function AIIndustrialHome() {
                       <span>Stream Processing</span>
                       <span>84%</span>
                     </div>
-                    <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
+                    <div className="h-1.5 w-full bg-slate-800 rounded overflow-hidden">
                       <motion.div
                         initial={{ width: "0%" }}
                         whileInView={{ width: "84%" }}

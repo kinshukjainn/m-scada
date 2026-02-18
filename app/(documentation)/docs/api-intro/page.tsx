@@ -1,7 +1,7 @@
 export default function page() {
   return (
     <>
-      <h1>ai model info for docs</h1>
+      <h2>introduction to api</h2>
     </>
   );
 }

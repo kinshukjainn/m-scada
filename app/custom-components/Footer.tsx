@@ -13,7 +13,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-slate-200 font-sans selection:bg-blue-100 selection:text-blue-900">
+    <footer className="bg-white border-t border-slate-200  selection:bg-blue-100 selection:text-blue-900">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mb-12">
           {/* Brand & Status Column */}
@@ -30,8 +30,8 @@ export default function Footer() {
             {/* System Status Indicator */}
             <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md bg-slate-50 border border-slate-200">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded h-2 w-2 bg-emerald-500"></span>
               </span>
               <span className="text-[11px] font-mono font-semibold text-slate-600 uppercase tracking-wider">
                 All Systems Normal
