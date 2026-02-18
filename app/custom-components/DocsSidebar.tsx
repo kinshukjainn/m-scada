@@ -59,6 +59,11 @@ const navItems: NavItem[] = [
     icon: <SiMeta className="w-4 h-4" />,
   },
   {
+    title: "Bedrock Model",
+    href: "/docs/about-model",
+    icon: <SiMeta className="w-4 h-4" />,
+  },
+  {
     title: "Response and Request of model",
     href: "/docs/rar",
     icon: <VscJson className="w-4 h-4" />,
@@ -70,7 +75,7 @@ const navItems: NavItem[] = [
   },
   {
     title: "What is an API",
-    href: "/docs/api",
+    href: "/docs/api-intro",
     icon: <TbApi className="w-4 h-4" />,
   },
   {
