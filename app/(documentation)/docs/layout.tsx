@@ -2,8 +2,8 @@ import DocsSidebar from "@/app/custom-components/DocsSidebar";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Documentation | FDS.ai",
-  description: "Documentation of FDS.ai",
+  title: "Working of Scada",
+  description: " Explaination of working of scada tool",
 };
 
 export default function BlogLayout({
