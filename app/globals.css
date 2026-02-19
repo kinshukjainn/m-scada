@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 body {
-  font-family: var(--font-work-sans), sans-serif; /* Use the Google Sans font */
+  font-family: var(--font-arimo), sans-serif; /* Use the Google Arimo font */
   background-color: #f9f9f9; /* Light background color */
 }
 

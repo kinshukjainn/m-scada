@@ -4,6 +4,7 @@ import React, { useRef, useMemo } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   Activity,
   ShieldCheck,
@@ -14,7 +15,6 @@ import {
   ChevronRight,
   TerminalSquare,
 } from "lucide-react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 // --- 3D Background Component (Three.js) ---
 function ParticleGrid() {
@@ -59,7 +59,6 @@ export default function AIIndustrialHome() {
   return (
     <div className="min-h-screen bg-white text-slate-900  selection:bg-blue-100 selection:text-blue-900">
       {/* Hero Section */}
-      {/* Hero Section */}
       <section className="relative pt-32 pb-24 overflow-hidden border-b border-slate-200">
         <div className="absolute inset-0 z-0 pointer-events-none opacity-60 mask-image:linear-gradient(to_bottom,white,transparent)">
           <Canvas camera={{ position: [0, 0, 40], fov: 60 }}>
@@ -67,7 +66,7 @@ export default function AIIndustrialHome() {
           </Canvas>
         </div>
 
-        {/* Added grid layout here for side-by-side alignment */}
+        {/* Grid layout for side-by-side alignment */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Text Content */}
           <motion.div
@@ -87,7 +86,7 @@ export default function AIIndustrialHome() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 mb-6 leading-[1.05]">
               Predictive Intelligence <br className="hidden md:block" />
               for{" "}
-              <span className="text-[#ff9100] font-mono font-bold">
+              <span className="text-green-500 font-mono font-bold">
                 Power Grids.
               </span>
             </h1>
@@ -98,22 +97,52 @@ export default function AIIndustrialHome() {
             </p>
           </motion.div>
 
-          {/* Right Column: WebM Video */}
+          {/* Right Column: Next.js Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="relative   overflow-hidden "
+            className="relative w-full flex justify-center items-center"
           >
-            {" "}
-            <DotLottieReact
-              src="https://lottie.host/9b77713f-3189-4954-819e-7bdbd5e2c0ba/y5YQD6b3qw.lottie"
-              loop
-              autoplay
+            <Image
+              src="/addconsole.png"
+              alt="Predictive Intelligence Dashboard"
+              width={1200} // Base width for aspect ratio
+              height={800} // Base height for aspect ratio
+              className="w-full h-auto max-w-full object-contain rounded-xl drop-shadow-xl"
+              priority // Prioritize loading since it's above the fold
             />
           </motion.div>
         </div>
       </section>
+
+      {/* Console Preview Section */}
+      <section className="py-16 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="w-full"
+          >
+            <h2 className="text-2xl  md:text-3xl font-bold tracking-tight text-slate-900 mb-8 text-center">
+              Console Preview
+            </h2>
+            <div className="w-full overflow-hidden">
+              <Image
+                src="/console.png"
+                alt="Console Dashboard Preview"
+                width={1920}
+                height={1080}
+                className="w-full h-auto block object-contain"
+                priority
+              />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Metrics Section - Cloudflare Boxed Style */}
       <section className="bg-slate-50 border-b border-slate-200">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
@@ -125,7 +154,7 @@ export default function AIIndustrialHome() {
               { label: "False Positives", val: "0.02%" },
             ].map((stat, i) => (
               <div key={i} className="p-8 flex flex-col gap-2">
-                <span className="text-3xl font-bold text-slate-900 font-mono tracking-tight">
+                <span className="text-3xl font-bold text-slate-900 code-body tracking-tight">
                   {stat.val}
                 </span>
                 <span className="text-[11px] font-bold text-slate-500 uppercase tracking-widest">

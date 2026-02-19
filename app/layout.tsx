@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import {
   Geist,
   Roboto,
+  Arimo,
   DM_Mono,
   Work_Sans,
   Geist_Mono,
@@ -27,6 +28,13 @@ const roboto = Roboto({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const arimo = Arimo({
+  subsets: ["latin"],
+  variable: "--font-arimo",
+  weight: ["400", "500", "600", "700"], // choose what you need
+  display: "swap",
 });
 
 const dmMono = DM_Mono({
@@ -64,7 +72,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         // 👇 Add inter.variable to your class string
-        className={`${geistSans.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${arimo.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
         <Header />
         {children}

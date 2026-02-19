@@ -35,7 +35,7 @@ export default function DocsLandingPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Card 1 */}
           <Link
-            href="/docs/faultdetection"
+            href="/docs/project-info"
             className="group p-6 rounded-xl border border-gray-200 bg-white hover:border-blue-300 hover:shadow-sm transition-all"
           >
             <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-4 border border-blue-100 group-hover:bg-blue-100 transition-colors">
@@ -54,7 +54,7 @@ export default function DocsLandingPage() {
 
           {/* Card 2 */}
           <Link
-            href="/docs/project-info"
+            href="/docs/rar"
             className="group p-6 rounded-xl border border-gray-200 bg-white hover:border-blue-300 hover:shadow-sm transition-all"
           >
             <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center mb-4 border border-indigo-100 group-hover:bg-indigo-100 transition-colors">
@@ -72,7 +72,7 @@ export default function DocsLandingPage() {
 
           {/* Card 3 */}
           <Link
-            href="/docs/api-intro"
+            href="/docs/about-model"
             className="group p-6 rounded-xl border border-gray-200 bg-white hover:border-blue-300 hover:shadow-sm transition-all"
           >
             <div className="w-10 h-10 rounded-lg bg-purple-50 flex items-center justify-center mb-4 border border-purple-100 group-hover:bg-purple-100 transition-colors">
@@ -90,7 +90,7 @@ export default function DocsLandingPage() {
 
           {/* Card 4 */}
           <Link
-            href="/docs/amazon-services"
+            href="/docs/aws-services"
             className="group p-6 rounded-xl border border-gray-200 bg-white hover:border-blue-300 hover:shadow-sm transition-all"
           >
             <div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center mb-4 border border-orange-100 group-hover:bg-orange-100 transition-colors">
@@ -181,14 +181,14 @@ export default function DocsLandingPage() {
 
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <Link
-              href="/docs/repo-setup"
+              href="/docs/setup"
               className="inline-flex items-center justify-center gap-2 text-sm font-medium text-gray-800 hover:text-gray-900 bg-white border border-gray-300 hover:border-gray-400 px-5 py-2.5 rounded-lg transition-all"
             >
               <Github className="w-4 h-4" />
               Repository Setup
             </Link>
             <Link
-              href="/docs/faultdetection"
+              href="/docs/introduction"
               className="inline-flex items-center justify-center gap-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 px-5 py-2.5 rounded-lg transition-all"
             >
               <BookOpen className="w-4 h-4" />
