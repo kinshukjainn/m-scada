@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Introduction to API",
-  description: "A very breif introduction to api's",
+  title: "About the Model | FDS AI",
+  description: "A very breif introduction to Ai Model used in FDS AI",
 };
 
 export default function BlogLayout({

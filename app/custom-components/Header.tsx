@@ -118,7 +118,7 @@ export default function Header() {
 
           {/* Feedback Button */}
           <a
-            href="https://feedbacks.cloudkinshuk.in"
+            href="https://fdb.cloudkinshuk.in"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded bg-black text-white hover:bg-gray-800 transition-all text-sm font-medium"

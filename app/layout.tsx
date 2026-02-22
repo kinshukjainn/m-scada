@@ -69,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-google-analytics-opt-out="">
       <body
         // 👇 Add inter.variable to your class string
         className={`${geistSans.variable} ${arimo.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
