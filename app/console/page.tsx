@@ -23,7 +23,7 @@ export default function Page() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-normal text-gray-900 mb-3">
                 How it works
               </h3>
               <ul className="space-y-2 text-gray-800">
@@ -53,7 +53,7 @@ export default function Page() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-normal text-gray-900 mb-3">
                 Key Benefits
               </h3>
               <ul className="space-y-2 text-gray-800">
@@ -77,7 +77,7 @@ export default function Page() {
             </div>
 
             <div className="mb-8 p-4 bg-gray-100  border border-gray-400 rounded-lg">
-              <h4 className="font-semibold text-gray-900 mb-2">
+              <h4 className="font-normal text-gray-900 mb-2">
                 Full Customization
               </h4>
               <p className="text-sm text-gray-800">
@@ -88,7 +88,7 @@ export default function Page() {
 
             <Link
               href="/console/manual"
-              className="block w-full bg-blue-300  text-black w-max  text-center py-2 px-4  font-semibold  hover:bg-blue-300 transition-colors"
+              className="block w-full bg-black rounded-lg text-white w-max  text-center py-2 px-4  font-normal   transition-colors"
             >
               Manual Console
             </Link>
@@ -104,7 +104,7 @@ export default function Page() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-normal text-gray-900 mb-3">
                 How it works
               </h3>
               <ul className="space-y-2 text-gray-800">
@@ -137,7 +137,7 @@ export default function Page() {
             </div>
 
             <div className="mb-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-normal text-gray-900 mb-3">
                 Key Benefits
               </h3>
               <ul className="space-y-2 text-gray-800">
@@ -161,7 +161,7 @@ export default function Page() {
             </div>
 
             <div className="mb-8 p-4 bg-gray-100 rounded-lg border border-gray-400">
-              <h4 className="font-semibold text-gray-900 mb-2">
+              <h4 className="font-normal text-gray-900 mb-2">
                 Smart Analytics
               </h4>
               <p className="text-sm text-gray-800">
@@ -172,7 +172,7 @@ export default function Page() {
 
             <Link
               href="/console/direct"
-              className="block w-full bg-blue-300 text-black text-center py-2 px-4  font-semibold w-max hover:bg-blue-300 transition-colors"
+              className="block w-full bg-black rounded-lg text-white  text-center py-2 px-4  font-normal w-max  transition-colors"
             >
               Automated Console
             </Link>
@@ -192,20 +192,20 @@ export default function Page() {
             <table className="w-full border-collapse border border-gray-200 rounded-lg">
               <thead>
                 <tr className="bg-gray-50">
-                  <th className="border border-gray-200 px-6 py-3 text-left font-semibold text-gray-900">
+                  <th className="border border-gray-200 px-6 py-3 text-left font-normal text-gray-900">
                     Feature
                   </th>
-                  <th className="border border-gray-200 px-6 py-3 text-left font-semibold text-gray-900">
+                  <th className="border border-gray-200 px-6 py-3 text-left font-normal text-gray-900">
                     Automated
                   </th>
-                  <th className="border border-gray-200 px-6 py-3 text-left font-semibold text-gray-900">
+                  <th className="border border-gray-200 px-6 py-3 text-left font-normal text-gray-900">
                     Manual
                   </th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
+                  <td className="border border-gray-200 px-6 py-4 font-normal text-gray-900">
                     Setup Time
                   </td>
                   <td className="border border-gray-200 px-6 py-4 text-gray-800">
@@ -216,7 +216,7 @@ export default function Page() {
                   </td>
                 </tr>
                 <tr className="bg-gray-50">
-                  <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
+                  <td className="border border-gray-200 px-6 py-4 font-normal text-gray-900">
                     Customization
                   </td>
                   <td className="border border-gray-200 px-6 py-4 text-gray-800">
@@ -227,7 +227,7 @@ export default function Page() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
+                  <td className="border border-gray-200 px-6 py-4 font-normal text-gray-900">
                     Maintenance
                   </td>
                   <td className="border border-gray-200 px-6 py-4 text-gray-800">
@@ -238,7 +238,7 @@ export default function Page() {
                   </td>
                 </tr>
                 <tr className="bg-gray-50">
-                  <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
+                  <td className="border border-gray-200 px-6 py-4 font-normal text-gray-900">
                     AI Insights
                   </td>
                   <td className="border border-gray-200 px-6 py-4 text-green-600">
@@ -249,7 +249,7 @@ export default function Page() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-gray-200 px-6 py-4 font-medium text-gray-900">
+                  <td className="border border-gray-200 px-6 py-4 font-normal text-gray-900">
                     Learning Curve
                   </td>
                   <td className="border border-gray-200 px-6 py-4 text-gray-800">

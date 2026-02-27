@@ -33,7 +33,7 @@ export default function Footer() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="text-[11px] font-mono font-semibold text-gray-800 uppercase tracking-wider">
+              <span className="text-[11px] font-mono font-normal text-gray-800 uppercase tracking-wider">
                 All Systems Normal
               </span>
             </div>
@@ -48,7 +48,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/console"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-medium transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
                 >
                   <TerminalSquare
                     size={16}
@@ -60,7 +60,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about-info"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-medium transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
                 >
                   <Info
                     size={16}
@@ -83,7 +83,7 @@ export default function Footer() {
                   href="https://cloudkinshuk.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-medium transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
                 >
                   <Globe
                     size={16}
@@ -97,7 +97,7 @@ export default function Footer() {
                   href="https://github.com/kinshukjainn/fds-college" // REPLACE WITH YOUR REPO
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-medium transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
                 >
                   <Github
                     size={16}
@@ -109,7 +109,7 @@ export default function Footer() {
               <li>
                 <a
                   href="https://feedbacks.cloudkinshuk.in" // REPLACE WITH YOUR FEEDBACK LINK/MAIL
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-medium transition-colors group"
+                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
                 >
                   <MessageSquare
                     size={16}

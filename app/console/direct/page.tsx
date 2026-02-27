@@ -24,7 +24,7 @@ export default function ConsoleComingSoonPage() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-3xl font-semibold text-gray-900 mb-4 tracking-tight">
+        <h1 className="text-3xl font-normal text-gray-900 mb-4 tracking-tight">
           Automated Console
         </h1>
 
@@ -105,14 +105,14 @@ export default function ConsoleComingSoonPage() {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button className="px-6 py-2 bg-white border border-gray-300 text-gray-800 font-medium cursor-pointer rounded hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
+          <button className="px-6 py-2 bg-white border border-gray-300 text-gray-800 font-normal cursor-pointer rounded hover:bg-gray-50 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-200">
             Go Back
           </button>
 
           {/* Docs Link */}
           <a
             href="/docs"
-            className="px-6 py-2 bg-[#f38020] text-white font-medium rounded hover:bg-[#d9731c] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f38020] text-center"
+            className="px-6 py-2 bg-[#f38020] text-white font-normal rounded hover:bg-[#d9731c] transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#f38020] text-center"
           >
             Read Documentation
           </a>
@@ -120,7 +120,7 @@ export default function ConsoleComingSoonPage() {
       </div>
 
       {/* System Status Indicator */}
-      <div className="mt-12 text-sm text-gray-500 flex items-center gap-2">
+      <div className="mt-12 text-sm text-gray-100 flex items-center gap-2">
         <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
         Core APIs operational
       </div>

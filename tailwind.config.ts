@@ -15,6 +15,7 @@ const config: Config = {
         inter: ["var(--font-inter)", "sans-serif"],
         dmmono: ["var(--font-dm-mono)", "monospace"],
         arimo: ["var(--font-arimo)", "sans-serif"],
+        ptSans: ["var(--font-pt-sans)", "sans-serif"],
       },
     },
   },

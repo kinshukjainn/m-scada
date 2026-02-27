@@ -18,7 +18,7 @@ export default function BlogLayout({
       <DocsSidebar />
 
       {/* Main content area scrolls independently */}
-      <main className="flex-1 overflow-y-auto bg-white">
+      <main className="flex-1 overflow-y-auto bg-[#121212] text-[#e0e0e0] selection:bg-[#8cb4ff]/30 selection:text-white">
         <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
           {children}
         </div>

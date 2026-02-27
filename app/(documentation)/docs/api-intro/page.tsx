@@ -11,7 +11,7 @@ export default function APIIntroductionDocs() {
         <article className="prose prose-gray max-w-none min-w-0 break-words">
           {/* Page Header */}
           <div className="mb-8 sm:mb-10">
-            <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-normal text-gray-900 mb-4 tracking-tight">
               Introduction to APIs
             </h1>
             <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
@@ -27,7 +27,7 @@ export default function APIIntroductionDocs() {
 
           {/* Section 1: The Definition */}
           <section className="mb-12 sm:mb-14 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
               1. What is an API?
             </h2>
             <p className="text-gray-800 mb-4">
@@ -44,7 +44,7 @@ export default function APIIntroductionDocs() {
             </p>
 
             <div className="bg-blue-50 border border-blue-100 rounded-lg p-5 mt-6">
-              <h4 className="font-semibold text-blue-900 mb-2">
+              <h4 className="font-normal text-blue-900 mb-2">
                 The Restaurant Analogy
               </h4>
               <p className="text-sm text-blue-800 leading-relaxed">
@@ -60,7 +60,7 @@ export default function APIIntroductionDocs() {
 
           {/* Section 2: The Core Reason (Why was it introduced?) */}
           <section className="mb-12 sm:mb-14 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
               2. The Origin: Why Were APIs Created?
             </h2>
             <p className="text-gray-800 mb-4">
@@ -70,7 +70,7 @@ export default function APIIntroductionDocs() {
               &quot;monoliths&quot;).
             </p>
 
-            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">
+            <h3 className="text-lg font-normal text-gray-900 mt-6 mb-3">
               The Problem: Shared Databases are Dangerous
             </h3>
             <p className="text-gray-800 mb-4">
@@ -99,7 +99,7 @@ export default function APIIntroductionDocs() {
               </li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">
+            <h3 className="text-lg font-normal text-gray-900 mt-6 mb-3">
               The Solution: The &quot;Contract&quot;
             </h3>
             <p className="text-gray-800 mb-4">
@@ -123,7 +123,7 @@ export default function APIIntroductionDocs() {
 
           {/* Section 3: How it Works (Under the Hood) */}
           <section className="mb-12 sm:mb-14 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
               3. How It Actually Works
             </h2>
             <p className="text-gray-800 mb-6">
@@ -146,7 +146,7 @@ Host: api.weather.com
 Authorization: Bearer <Your_Key>`}</code>
                   </pre>
                 </div>
-                <div className="p-4 text-xs text-gray-400 border-t border-gray-700 bg-[#22272e]">
+                <div className="p-4 text-xs text-gray-200 border-t border-gray-700 bg-[#22272e]">
                   The client asks the server for information (GET) about the
                   weather in London, providing a secret key to prove they are
                   allowed to ask.
@@ -168,7 +168,7 @@ Authorization: Bearer <Your_Key>`}</code>
 }`}</code>
                   </pre>
                 </div>
-                <div className="p-4 text-xs text-gray-400 border-t border-gray-700 bg-[#22272e]">
+                <div className="p-4 text-xs text-gray-200 border-t border-gray-700 bg-[#22272e]">
                   The API retrieves the data from the hidden backend database,
                   packages it neatly into JSON, and hands it back to the client.
                 </div>
@@ -186,7 +186,7 @@ Authorization: Bearer <Your_Key>`}</code>
 
         {/* Right Sidebar (Table of Contents) */}
         <aside className="hidden lg:block sticky top-24 h-fit min-w-0">
-          <div className="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-4 truncate">
+          <div className="text-xs font-normal text-gray-900 uppercase tracking-wider mb-4 truncate">
             On this page
           </div>
           <nav className="flex flex-col gap-3 text-sm text-gray-800">

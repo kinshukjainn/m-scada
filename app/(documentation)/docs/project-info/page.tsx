@@ -78,19 +78,20 @@ export default function FaultDetectionDocs() {
   ];
 
   return (
-    <div className="min-h-screen bg-white text-gray-900 selection:bg-blue-100  pb-16">
+    <div className="min-h-screen bg-[#121212] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white pb-16">
       {/* ─── Header ─── */}
-      <header className="border-b border-gray-200 bg-white/95 backdrop-blur z-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <header className="border-b border-[#333] bg-[#1b1b1b]/95 backdrop-blur z-50  top-0">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-blue-50 border border-blue-100">
-              <Brain className="w-8 h-8 text-blue-600" />
+            <div className="p-3 rounded-md bg-[#2d2d2d] border border-[#444]">
+              <Brain className="w-8 h-8 text-[#8cb4ff]" />
             </div>
             <div>
-              <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-2">
-                AI-Powered Fault Detection Systems
+              <h1 className="text-3xl sm:text-4xl font-normal tracking-tight text-white mb-2">
+                AI-Powered Fault Detection{" "}
+                <span className="text-[#8cb4ff]">_</span>
               </h1>
-              <p className="text-base text-gray-800">
+              <p className="text-sm sm:text-base text-gray-200 font-normal tracking-wide">
                 A comprehensive guide for the Indian industrial context
               </p>
             </div>
@@ -102,76 +103,80 @@ export default function FaultDetectionDocs() {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Overview Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-gray-900">
-            <Brain className="w-6 h-6 text-gray-400" />
+          <h2 className="text-2xl font-normal mb-6 flex items-center gap-3 text-white border-b border-[#333] pb-2">
+            <Brain className="w-6 h-6 text-[#8cb4ff]" />
             What is AI-Powered Fault Detection?
           </h2>
 
-          <p className="text-gray-800 leading-relaxed mb-4">
+          <p className="text-gray-200 font-normal leading-relaxed mb-4 text-[16px]">
             AI-powered fault detection is an advanced technology that uses
             artificial intelligence and machine learning algorithms to
             automatically identify, diagnose, and predict equipment failures,
             system anomalies, and operational issues before they cause
             significant damage or downtime.
           </p>
-          <p className="text-gray-800 leading-relaxed mb-8">
+          <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
             In the Indian industrial landscape, where manufacturing, power
             generation, and infrastructure development are rapidly growing,
             fault detection systems play a crucial role in maintaining
             operational efficiency and reducing costly breakdowns.
           </p>
 
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">
+          <h3 className="text-lg font-normal text-white mb-4 mt-8">
             Key Components
           </h3>
-          <ul className="space-y-3 mb-8">
+          <ul className="space-y-4 mb-10">
             <li className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-800">
-                <strong>Sensors & IoT Devices:</strong> Collect real-time data
-                from equipment and systems.
+              <CheckCircle className="w-5 h-5 text-[#8cb4ff] mt-0.5 flex-shrink-0" />
+              <span className="text-gray-300 font-normal">
+                <strong className="text-white font-normal">
+                  Sensors & IoT Devices:
+                </strong>{" "}
+                Collect real-time data from equipment and systems.
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-800">
-                <strong>Machine Learning Models:</strong> Analyze patterns and
-                detect anomalies.
+              <CheckCircle className="w-5 h-5 text-[#8cb4ff] mt-0.5 flex-shrink-0" />
+              <span className="text-gray-300 font-normal">
+                <strong className="text-white font-normal">
+                  Machine Learning Models:
+                </strong>{" "}
+                Analyze patterns and detect anomalies.
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-800">
-                <strong>Predictive Analytics:</strong> Forecast potential
-                failures before they occur.
+              <CheckCircle className="w-5 h-5 text-[#8cb4ff] mt-0.5 flex-shrink-0" />
+              <span className="text-gray-300 font-normal">
+                <strong className="text-white font-normal">
+                  Predictive Analytics:
+                </strong>{" "}
+                Forecast potential failures before they occur.
               </span>
             </li>
             <li className="flex items-start gap-3">
-              <CheckCircle className="w-5 h-5 text-green-600 mt-0.5 flex-shrink-0" />
-              <span className="text-gray-800">
-                <strong>Alert Systems:</strong> Notify operators immediately
-                when issues are detected.
+              <CheckCircle className="w-5 h-5 text-[#8cb4ff] mt-0.5 flex-shrink-0" />
+              <span className="text-gray-300 font-normal">
+                <strong className="text-white font-normal">
+                  Alert Systems:
+                </strong>{" "}
+                Notify operators immediately when issues are detected.
               </span>
             </li>
           </ul>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-5 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-              <Zap className="w-6 h-6 text-amber-500" />
-              <h4 className="font-semibold text-gray-900">
-                Real-Time Monitoring
-              </h4>
-              <p className="text-sm text-gray-800 leading-relaxed">
+            <div className="p-6 rounded-md border border-[#333] bg-[#1b1b1b] flex flex-col gap-3 hover:border-[#444] transition-colors">
+              <Zap className="w-6 h-6 text-amber-400" />
+              <h4 className="font-normal text-white">Real-Time Monitoring</h4>
+              <p className="text-sm text-gray-200 font-normal leading-relaxed">
                 Continuous surveillance of equipment health with instant alerts
                 for any deviations from normal operating conditions.
               </p>
             </div>
-            <div className="p-5 rounded-xl border border-gray-200 bg-gray-50 flex flex-col gap-2">
-              <Shield className="w-6 h-6 text-blue-500" />
-              <h4 className="font-semibold text-gray-900">
-                Preventive Maintenance
-              </h4>
-              <p className="text-sm text-gray-800 leading-relaxed">
+            <div className="p-6 rounded-md border border-[#333] bg-[#1b1b1b] flex flex-col gap-3 hover:border-[#444] transition-colors">
+              <Shield className="w-6 h-6 text-[#8cb4ff]" />
+              <h4 className="font-normal text-white">Preventive Maintenance</h4>
+              <p className="text-sm text-gray-200 font-normal leading-relaxed">
                 Schedule maintenance based on actual equipment condition rather
                 than fixed time intervals, reducing unnecessary downtime.
               </p>
@@ -179,22 +184,22 @@ export default function FaultDetectionDocs() {
           </div>
         </section>
 
-        <hr className="my-12 border-gray-200" />
+        <hr className="my-12 border-[#333]" />
 
         {/* How It Works Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-gray-900">
-            <Activity className="w-6 h-6 text-gray-400" />
+          <h2 className="text-2xl font-normal mb-6 flex items-center gap-3 text-white border-b border-[#333] pb-2">
+            <Activity className="w-6 h-6 text-[#8cb4ff]" />
             How Fault Detection Works
           </h2>
 
-          <p className="text-gray-800 leading-relaxed mb-8">
+          <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
             The fault detection process involves multiple stages, from data
             collection to actionable insights. Here is a detailed breakdown of
             the workflow:
           </p>
 
-          <div className="space-y-6 mt-8">
+          <div className="space-y-6 mt-10">
             {[
               {
                 num: 1,
@@ -229,25 +234,28 @@ export default function FaultDetectionDocs() {
                 desc: "Alerts are sent to maintenance teams via SMS, email, or dashboards.",
               },
             ].map((step) => (
-              <div key={step.num} className="flex gap-4">
-                <div className="flex flex-col items-center mt-1">
-                  <span className="flex items-center justify-center w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-semibold text-sm border border-blue-200">
+              <div key={step.num} className="flex gap-5">
+                <div className="flex flex-col items-center mt-0.5">
+                  <span className="flex items-center justify-center w-8 h-8 rounded-sm bg-[#2d2d2d] text-[#8cb4ff] font-mono text-sm border border-[#444]">
                     {step.num}
                   </span>
                   {step.num !== 6 && (
-                    <div className="w-px h-full bg-gray-200 my-2"></div>
+                    <div className="w-px h-full bg-[#444] my-2"></div>
                   )}
                 </div>
-                <div className="pb-6">
-                  <h3 className="font-semibold text-gray-900 text-lg mb-1">
+                <div className="pb-8">
+                  <h3 className="font-normal text-white text-lg mb-1">
                     {step.title}
                   </h3>
-                  <p className="text-gray-800 leading-relaxed text-sm mb-2">
+                  <p className="text-gray-200 font-normal leading-relaxed text-sm mb-3">
                     {step.desc}
                   </p>
                   {step.example && (
-                    <div className="bg-gray-50 border border-gray-200 rounded-md p-3 text-sm text-gray-800">
-                      <strong>Example:</strong> {step.example}
+                    <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-3 text-sm text-gray-300 font-normal border-l-2 border-l-[#8cb4ff]">
+                      <strong className="text-white font-normal">
+                        Example:
+                      </strong>{" "}
+                      {step.example}
                     </div>
                   )}
                 </div>
@@ -255,26 +263,26 @@ export default function FaultDetectionDocs() {
             ))}
           </div>
 
-          <div className="mt-10 p-6 border border-gray-200 rounded-xl bg-gray-50">
-            <h3 className="font-semibold text-gray-900 mb-4">
+          <div className="mt-8 p-8 border border-[#333] rounded-md bg-[#1b1b1b]">
+            <h3 className="font-normal text-white mb-5 text-lg border-b border-[#333] pb-3">
               Detection Techniques
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div>
-                <h4 className="font-medium text-gray-900 mb-1">
+                <h4 className="font-normal text-[#8cb4ff] mb-2">
                   Supervised Learning
                 </h4>
-                <p className="text-sm text-gray-800 leading-relaxed">
+                <p className="text-sm text-gray-200 font-normal leading-relaxed">
                   Uses labeled historical data where faults are already
                   identified. Best when you have a good dataset of past
                   failures.
                 </p>
               </div>
               <div>
-                <h4 className="font-medium text-gray-900 mb-1">
+                <h4 className="font-normal text-[#8cb4ff] mb-2">
                   Unsupervised Learning
                 </h4>
-                <p className="text-sm text-gray-800 leading-relaxed">
+                <p className="text-sm text-gray-200 font-normal leading-relaxed">
                   Detects anomalies without prior fault labels. Ideal for
                   identifying unknown or rare fault patterns.
                 </p>
@@ -283,64 +291,64 @@ export default function FaultDetectionDocs() {
           </div>
         </section>
 
-        <hr className="my-12 border-gray-200" />
+        <hr className="my-12 border-[#333]" />
 
         {/* Types of Faults Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-2 text-gray-900">
-            <AlertCircle className="w-6 h-6 text-gray-400" />
+          <h2 className="text-2xl font-normal mb-6 flex items-center gap-3 text-white border-b border-[#333] pb-2">
+            <AlertCircle className="w-6 h-6 text-[#8cb4ff]" />
             Types of Faults Detected
           </h2>
-          <p className="text-gray-800 leading-relaxed mb-6">
+          <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
             AI-powered systems can detect various types of faults across
             different industrial applications:
           </p>
 
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">
+          <h3 className="text-lg font-normal text-white mb-4 mt-8">
             Fault Summary Table
           </h3>
-          <div className="mb-10 overflow-x-auto border border-gray-200 rounded-lg shadow-sm">
+          <div className="mb-12 overflow-x-auto border border-[#333] rounded-md shadow-sm bg-[#1b1b1b]">
             <table className="w-full text-left text-sm whitespace-nowrap">
-              <thead className="bg-gray-50 text-gray-900">
+              <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                 <tr>
-                  <th className="px-4 py-3 font-semibold border-b border-gray-200">
+                  <th className="px-5 py-4 font-normal border-b border-[#444]">
                     Fault Type
                   </th>
-                  <th className="px-4 py-3 font-semibold border-b border-gray-200">
+                  <th className="px-5 py-4 font-normal border-b border-[#444]">
                     Phases
                   </th>
-                  <th className="px-4 py-3 font-semibold border-b border-gray-200">
+                  <th className="px-5 py-4 font-normal border-b border-[#444]">
                     Ground?
                   </th>
-                  <th className="px-4 py-3 font-semibold border-b border-gray-200">
+                  <th className="px-5 py-4 font-normal border-b border-[#444]">
                     Common?
                   </th>
-                  <th className="px-4 py-3 font-semibold border-b border-gray-200">
+                  <th className="px-5 py-4 font-normal border-b border-[#444]">
                     Severity
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-[#333]">
                 {faultData.map((row, index) => (
                   <tr
                     key={index}
-                    className="hover:bg-gray-50/50 transition-colors"
+                    className="hover:bg-[#2d2d2d] transition-colors text-gray-300 font-normal"
                   >
-                    <td className="px-4 py-3 font-medium text-gray-900">
+                    <td className="px-5 py-4 font-mono font-normal text-white">
                       {row.type}
                     </td>
-                    <td className="px-4 py-3 text-gray-800">{row.phases}</td>
-                    <td className="px-4 py-3 text-gray-800">{row.ground}</td>
-                    <td className="px-4 py-3 text-gray-800">{row.common}</td>
-                    <td className="px-4 py-3 text-gray-800">
+                    <td className="px-5 py-4">{row.phases}</td>
+                    <td className="px-5 py-4">{row.ground}</td>
+                    <td className="px-5 py-4">{row.common}</td>
+                    <td className="px-5 py-4">
                       <span
-                        className={`inline-flex px-2 py-1 rounded-md text-xs font-medium 
+                        className={`inline-flex px-2.5 py-1 rounded-sm text-xs font-mono 
                         ${
                           row.severity.includes("High")
-                            ? "bg-red-100 text-red-700"
+                            ? "bg-red-500/20 text-red-400 border border-red-500/30"
                             : row.severity.includes("Medium")
-                              ? "bg-amber-100 text-amber-700"
-                              : "bg-blue-100 text-blue-700"
+                              ? "bg-amber-500/20 text-amber-400 border border-amber-500/30"
+                              : "bg-[#8cb4ff]/20 text-[#8cb4ff] border border-[#8cb4ff]/30"
                         }`}
                       >
                         {row.severity}
@@ -352,47 +360,47 @@ export default function FaultDetectionDocs() {
             </table>
           </div>
 
-          <h3 className="text-lg font-semibold text-gray-900 mb-3 mt-12">
+          <h3 className="text-lg font-normal text-white mb-4">
             Fault Severity Comparison
           </h3>
-          <div className="mb-10 overflow-x-auto border border-gray-200 rounded-lg shadow-sm">
+          <div className="mb-10 overflow-x-auto border border-[#333] rounded-md shadow-sm bg-[#1b1b1b]">
             <table className="w-full text-left text-sm whitespace-nowrap">
-              <thead className="bg-gray-50 text-gray-900">
+              <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                 <tr>
-                  <th className="px-4 py-3 font-semibold border-b border-gray-200">
+                  <th className="px-5 py-4 font-normal border-b border-[#444]">
                     Fault Type
                   </th>
-                  <th className="px-4 py-3 font-semibold border-b border-gray-200">
+                  <th className="px-5 py-4 font-normal border-b border-[#444]">
                     Severity
                   </th>
-                  <th className="px-4 py-3 font-semibold border-b border-gray-200">
+                  <th className="px-5 py-4 font-normal border-b border-[#444]">
                     Notes
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-[#333]">
                 {severityData.map((row, index) => (
                   <tr
                     key={index}
-                    className="hover:bg-gray-50/50 transition-colors"
+                    className="hover:bg-[#2d2d2d] transition-colors text-gray-300 font-normal"
                   >
-                    <td className="px-4 py-3 font-medium text-gray-900">
+                    <td className="px-5 py-4 font-mono font-normal text-white">
                       {row.type}
                     </td>
-                    <td className="px-4 py-3 text-gray-800">
+                    <td className="px-5 py-4">
                       <span
-                        className={`inline-flex px-2 py-1 rounded-md text-xs font-medium 
+                        className={`inline-flex px-2.5 py-1 rounded-sm text-xs font-mono 
                         ${
                           row.severity.includes("high") ||
                           row.severity.includes("High")
-                            ? "bg-red-100 text-red-700"
-                            : "bg-amber-100 text-amber-700"
+                            ? "bg-red-500/20 text-red-400 border border-red-500/30"
+                            : "bg-amber-500/20 text-amber-400 border border-amber-500/30"
                         }`}
                       >
                         {row.severity}
                       </span>
                     </td>
-                    <td className="px-4 py-3 text-gray-800">{row.notes}</td>
+                    <td className="px-5 py-4">{row.notes}</td>
                   </tr>
                 ))}
               </tbody>
@@ -400,16 +408,16 @@ export default function FaultDetectionDocs() {
           </div>
         </section>
 
-        <hr className="my-12 border-gray-200" />
+        <hr className="my-12 border-[#333]" />
 
         {/* Benefits Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-gray-900">
-            <TrendingUp className="w-6 h-6 text-gray-400" />
+          <h2 className="text-2xl font-normal mb-8 flex items-center gap-3 text-white border-b border-[#333] pb-2">
+            <TrendingUp className="w-6 h-6 text-[#8cb4ff]" />
             Benefits & ROI
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12">
             {[
               {
                 icon: IndianRupee,
@@ -440,19 +448,19 @@ export default function FaultDetectionDocs() {
               return (
                 <div
                   key={index}
-                  className="p-5 border border-gray-200 rounded-xl bg-white flex items-start gap-4 transition-shadow hover:shadow-md"
+                  className="p-6 border border-[#333] rounded-md bg-[#1b1b1b] flex items-start gap-4 transition-colors hover:border-[#444]"
                 >
-                  <div className="p-2 rounded-lg bg-blue-50 text-blue-600 border border-blue-100">
+                  <div className="p-2.5 rounded-sm bg-[#2d2d2d] text-[#8cb4ff] border border-[#444]">
                     <Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">
+                    <h3 className="font-normal text-white mb-1.5">
                       {benefit.title}
                     </h3>
-                    <p className="text-sm text-gray-800 leading-relaxed mb-1">
+                    <p className="text-sm text-gray-200 font-normal leading-relaxed mb-2">
                       {benefit.desc}
                     </p>
-                    <p className="text-xs text-gray-500 italic">
+                    <p className="text-xs text-[#8cb4ff] font-mono opacity-80">
                       {benefit.example}
                     </p>
                   </div>
@@ -461,11 +469,11 @@ export default function FaultDetectionDocs() {
             })}
           </div>
 
-          <div className="p-6 bg-gray-50 border border-gray-200 rounded-xl">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">
+          <div className="p-8 bg-[#1b1b1b] border border-[#333] rounded-md">
+            <h3 className="text-xs font-mono font-normal uppercase tracking-widest text-gray-200 mb-6">
               ROI Example (Medium Manufacturing Facility)
             </h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { label: "Implementation Cost", value: "₹40-60 L" },
                 { label: "Annual Savings", value: "₹80-120 L" },
@@ -473,8 +481,10 @@ export default function FaultDetectionDocs() {
                 { label: "3-Year ROI", value: "300-400%" },
               ].map((item, i) => (
                 <div key={i}>
-                  <p className="text-xs text-gray-500 mb-1">{item.label}</p>
-                  <p className="text-xl font-semibold text-gray-900">
+                  <p className="text-[11px] font-mono text-gray-100 mb-1.5 uppercase">
+                    {item.label}
+                  </p>
+                  <p className="text-2xl font-normal text-white tracking-tight">
                     {item.value}
                   </p>
                 </div>
@@ -483,15 +493,15 @@ export default function FaultDetectionDocs() {
           </div>
         </section>
 
-        <hr className="my-12 border-gray-200" />
+        <hr className="my-12 border-[#333]" />
 
         {/* Applications Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-gray-900">
-            <Activity className="w-6 h-6 text-gray-400" />
+          <h2 className="text-2xl font-normal mb-6 flex items-center gap-3 text-white border-b border-[#333] pb-2">
+            <Activity className="w-6 h-6 text-[#8cb4ff]" />
             Applications in India
           </h2>
-          <p className="text-gray-800 leading-relaxed mb-8">
+          <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
             Industry-specific implementations and use cases:
           </p>
 
@@ -540,19 +550,23 @@ export default function FaultDetectionDocs() {
             ].map((app, index) => (
               <div
                 key={index}
-                className="p-6 border border-gray-200 rounded-xl bg-gray-50"
+                className="p-6 border border-[#333] rounded-md bg-[#1b1b1b]"
               >
-                <h3 className="font-semibold text-gray-900 text-lg mb-2">
+                <h3 className="font-normal text-white text-lg mb-2">
                   {app.title}
                 </h3>
-                <p className="text-sm text-gray-800 mb-4">{app.desc}</p>
-                <ul className="space-y-2">
+                <p className="text-sm text-gray-200 font-normal mb-5">
+                  {app.desc}
+                </p>
+                <ul className="space-y-2.5">
                   {app.uses.map((use, i) => (
                     <li
                       key={i}
-                      className="text-sm text-gray-800 flex items-start gap-2"
+                      className="text-sm text-gray-300 font-normal flex items-start gap-3"
                     >
-                      <span className="text-blue-500 mt-0.5">•</span>
+                      <span className="text-[#8cb4ff] mt-0.5 opacity-70">
+                        ▹
+                      </span>
                       <span>{use}</span>
                     </li>
                   ))}
@@ -562,16 +576,16 @@ export default function FaultDetectionDocs() {
           </div>
         </section>
 
-        <hr className="my-12 border-gray-200" />
+        <hr className="my-12 border-[#333]" />
 
         {/* Implementation Section */}
         <section className="mb-16">
-          <h2 className="text-2xl font-bold mb-6 flex items-center gap-2 text-gray-900">
-            <Shield className="w-6 h-6 text-gray-400" />
+          <h2 className="text-2xl font-normal mb-8 flex items-center gap-3 text-white border-b border-[#333] pb-2">
+            <Shield className="w-6 h-6 text-[#8cb4ff]" />
             Implementation Guide
           </h2>
 
-          <div className="space-y-10">
+          <div className="space-y-12">
             {[
               {
                 phase: "Phase 1: Assessment",
@@ -613,22 +627,26 @@ export default function FaultDetectionDocs() {
                 ],
               },
             ].map((section, index) => (
-              <div key={index} className="flex gap-4">
-                <div className="w-1.5 h-auto bg-blue-100 rounded-full flex-shrink-0"></div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3">
+              <div key={index} className="flex gap-6">
+                <div className="w-1.5 h-auto bg-[#444] rounded-full flex-shrink-0 relative overflow-hidden">
+                  <div className="absolute top-0 w-full h-8 bg-[#8cb4ff]"></div>
+                </div>
+                <div className="w-full">
+                  <h3 className="text-lg font-normal text-white mb-4">
                     {section.phase}
                   </h3>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {section.items.map((item, i) => (
                       <div
                         key={i}
-                        className="p-4 border border-gray-200 rounded-lg bg-white"
+                        className="p-5 border border-[#333] rounded-md bg-[#1b1b1b]"
                       >
-                        <h4 className="font-semibold text-gray-900 mb-1">
+                        <h4 className="font-normal text-white mb-1.5">
                           {item.title}
                         </h4>
-                        <p className="text-sm text-gray-800">{item.desc}</p>
+                        <p className="text-sm text-gray-200 font-normal leading-relaxed">
+                          {item.desc}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -637,12 +655,12 @@ export default function FaultDetectionDocs() {
             ))}
           </div>
 
-          <div className="mt-12 rounded-xl p-6 bg-amber-50 border border-amber-200">
-            <h3 className="font-semibold text-amber-900 mb-4 flex items-center gap-2">
-              <AlertCircle className="w-5 h-5" />
+          <div className="mt-16 rounded-md p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-amber-500 border border-[#333]">
+            <h3 className="font-normal text-white mb-5 flex items-center gap-3 text-lg">
+              <AlertCircle className="w-5 h-5 text-amber-500" />
               Common Challenges
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {[
                 {
                   title: "Power Supply",
@@ -661,13 +679,13 @@ export default function FaultDetectionDocs() {
                   desc: "Partner with solution providers for upskilling.",
                 },
               ].map((challenge, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <span className="text-amber-500 mt-0.5">•</span>
+                <div key={i} className="flex items-start gap-3">
+                  <span className="text-amber-500 mt-0.5 opacity-70">▹</span>
                   <div>
-                    <h4 className="font-medium text-amber-900 text-sm">
+                    <h4 className="font-normal text-gray-200 text-sm mb-1">
                       {challenge.title}
                     </h4>
-                    <p className="text-sm text-amber-700/80">
+                    <p className="text-sm text-gray-200 font-normal">
                       {challenge.desc}
                     </p>
                   </div>
@@ -679,9 +697,9 @@ export default function FaultDetectionDocs() {
       </main>
 
       {/* ─── Footer ─── */}
-      <footer className="border-t border-gray-200 mt-12 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm text-gray-500">
-          <p className="font-medium text-gray-900 mb-1">
+      <footer className="border-t border-[#333] mt-16 bg-[#1b1b1b]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm font-normal text-gray-200">
+          <p className="font-normal text-gray-200 mb-2">
             AI-Powered Fault Detection Systems Documentation
           </p>
           <p>

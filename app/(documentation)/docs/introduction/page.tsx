@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Activity,
   BrainCircuit,
@@ -11,162 +13,214 @@ import Link from "next/link";
 
 export default function IntroductionPage() {
   return (
-    <article className="max-w-4xl pb-12">
-      {/* ─── Page Header ─── */}
-      <header className="mb-10 block">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 tracking-tight mb-4">
-          Introduction to FDS.AI
-        </h1>
-        <p className="text-lg text-gray-800 leading-relaxed max-w-3xl">
-          Welcome to the Fault Detection System With AI (FDS.AI). FDS is an
-          automated process that monitors systems and applications to identify
-          abnormalities, errors, or potential failures before they impact
-          operations.
-        </p>
-      </header>
-
-      <hr className="my-8 border-gray-200" />
-
-      {/* ─── Core Concepts Grid ─── */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        {/* Card 1 */}
-        <div className="p-6 rounded-xl border border-gray-200 bg-white shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center mb-4 border border-blue-100">
-            <Activity className="w-5 h-5 text-blue-600" />
-          </div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-2">
-            How it Works
-          </h2>
-          <p className="text-sm text-gray-800 leading-relaxed">
-            The system continuously monitors your infrastructure, collecting
-            metrics and logs. Using machine learning models and predefined
-            rules, it analyzes this data in real-time to detect anomalies. When
-            an issue is detected, notifications are sent to configured channels
-            immediately.
+    /* Full-screen dark wrapper to guarantee the theme applies properly */
+    <div className="min-h-screen bg-[#121212] flex justify-center selection:bg-[#8cb4ff]/30 selection:text-white">
+      <article className="max-w-[1000px] w-full px-6 py-16  text-[#e0e0e0]">
+        {/* ─── Page Header ─── */}
+        <header className="mb-12 block">
+          <h1 className="text-4xl sm:text-5xl font-normal text-white tracking-tight mb-6">
+            Introduction to FDS.AI <span className="text-[#8cb4ff]">_</span>
+          </h1>
+          <p className="text-lg text-gray-200 font-normal leading-relaxed max-w-3xl tracking-wide">
+            Welcome to the Fault Detection System With AI (FDS.AI). FDS is an
+            automated process that monitors systems and applications to identify
+            abnormalities, errors, or potential failures before they impact
+            operations.
           </p>
-        </div>
+        </header>
 
-        {/* Card 2 */}
-        <div className="p-6 rounded-xl border border-gray-200 bg-white shadow-sm">
-          <div className="w-10 h-10 rounded-lg bg-indigo-50 flex items-center justify-center mb-4 border border-indigo-100">
-            <BrainCircuit className="w-5 h-5 text-indigo-600" />
+        <hr className="my-10 border-[#333]" />
+
+        {/* ─── Core Concepts Grid ─── */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+          {/* Card 1 */}
+          <div className="p-8 rounded-md border border-[#333] bg-[#1b1b1b] shadow-sm hover:border-[#444] transition-colors">
+            <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-6 text-[#8cb4ff]">
+              <Activity className="w-5 h-5" />
+            </div>
+            <h2 className="text-xl font-normal text-white mb-3 tracking-tight">
+              How it Works
+            </h2>
+            <p className="text-sm text-gray-200 leading-relaxed font-normal">
+              The system continuously monitors your infrastructure, collecting
+              metrics and logs. Using machine learning models and predefined
+              rules, it analyzes this data in real-time to detect anomalies.
+              When an issue is detected, notifications are sent to configured
+              channels immediately.
+            </p>
           </div>
-          <h2 className="text-lg font-semibold text-gray-900 mb-2">
-            AI-Powered Detection
+
+          {/* Card 2 */}
+          <div className="p-8 rounded-md border border-[#333] bg-[#1b1b1b] shadow-sm hover:border-[#444] transition-colors">
+            <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-6 text-[#8cb4ff]">
+              <BrainCircuit className="w-5 h-5" />
+            </div>
+            <h2 className="text-xl font-normal text-white mb-3 tracking-tight">
+              AI-Powered Detection
+            </h2>
+            <p className="text-sm text-gray-200 leading-relaxed font-normal">
+              Utilizes advanced artificial intelligence and ML algorithms to
+              automatically identify, diagnose, and predict equipment failures
+              and system anomalies before they cause significant damage or
+              costly downtime.
+            </p>
+          </div>
+        </section>
+
+        {/* ─── Industry Context ─── */}
+        <section className="mb-12 pt-4">
+          <h2 className="text-2xl font-normal text-white mb-6 flex items-center gap-3">
+            <Factory className="w-6 h-6 text-[#8cb4ff]" />
+            The Indian Industrial Landscape
           </h2>
-          <p className="text-sm text-gray-800 leading-relaxed">
-            Utilizes advanced artificial intelligence and ML algorithms to
-            automatically identify, diagnose, and predict equipment failures and
-            system anomalies before they cause significant damage or costly
-            downtime.
+          <p className="text-gray-200 font-normal leading-relaxed mb-4 text-lg max-w-4xl">
+            In the Indian industrial sector—where manufacturing, power
+            generation, and infrastructure development are experiencing rapid,
+            unprecedented growth—fault detection systems play a crucial role.
+            FDS.AI is designed to maintain high operational efficiency and
+            heavily reduce costly breakdowns across these expanding sectors.
           </p>
-        </div>
-      </section>
+        </section>
 
-      {/* ─── Industry Context ─── */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-          <Factory className="w-6 h-6 text-gray-400" />
-          The Indian Industrial Landscape
-        </h2>
-        <p className="text-gray-800 leading-relaxed mb-4">
-          In the Indian industrial sector—where manufacturing, power generation,
-          and infrastructure development are experiencing rapid, unprecedented
-          growth—fault detection systems play a crucial role. FDS.AI is designed
-          to maintain high operational efficiency and heavily reduce costly
-          breakdowns across these expanding sectors.
-        </p>
-      </section>
+        <hr className="my-10 border-[#333]" />
 
-      <hr className="my-8 border-gray-200" />
+        {/* ─── Tech Stack ─── */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-normal text-white mb-6">
+            Architecture & Tech Stack
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1b1b1b] border border-[#333] rounded-md shadow-sm">
+            {/* Stack Column 1 */}
+            <div>
+              <h3 className="text-xs font-mono font-normal uppercase tracking-widest text-gray-100 mb-5 flex items-center gap-2">
+                <TerminalSquare className="w-4 h-4 text-[#8cb4ff]" /> Core &
+                Frontend
+              </h3>
+              <ul className="space-y-4 text-sm text-gray-300 font-normal">
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    Next.js 16
+                  </strong>{" "}
+                  <span className="text-gray-100">(Turbopack)</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    Node.js
+                  </strong>{" "}
+                  <span className="text-gray-100">(v22)</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    Tailwind CSS
+                  </strong>{" "}
+                  <span className="text-gray-100">(v4)</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444]"></div>
+                  Shadcn UI
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444]"></div>
+                  Lucide & React Icons
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444]"></div>
+                  Framer Motion
+                </li>
+              </ul>
+            </div>
 
-      {/* ─── Tech Stack ─── */}
-      <section className="mb-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-6">
-          Architecture & Tech Stack
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {/* Stack Column 1 */}
-          <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 flex items-center gap-2">
-              <TerminalSquare className="w-4 h-4" /> Core & Frontend
-            </h3>
-            <ul className="space-y-2 text-sm text-gray-800">
-              <li>
-                <strong>Next.js 16</strong> (App Router / Turbopack)
-              </li>
-              <li>
-                <strong>Node.js</strong> (v22)
-              </li>
-              <li>
-                <strong>Tailwind CSS</strong> (v4)
-              </li>
-              <li>
-                <strong>Shadcn UI</strong>
-              </li>
-              <li>Lucide React & React Icons</li>
-              <li>Framer Motion</li>
-            </ul>
+            {/* Stack Column 2 */}
+            <div className="sm:col-span-2">
+              <h3 className="text-xs font-mono font-normal uppercase tracking-widest text-gray-100 mb-5 flex items-center gap-2">
+                <CloudCog className="w-4 h-4 text-[#8cb4ff]" /> Amazon Web
+                Services (AWS)
+              </h3>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 text-sm text-gray-300 font-normal">
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    AWS Amplify:
+                  </strong>{" "}
+                  Serverless deploy
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    Amazon Bedrock:
+                  </strong>{" "}
+                  LLM integration
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    AWS Lambda:
+                  </strong>{" "}
+                  Serverless functions
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    Amazon CloudWatch:
+                  </strong>{" "}
+                  Logs
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    Amazon Route53:
+                  </strong>{" "}
+                  Domains
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
+                    AWS Cloud:
+                  </strong>{" "}
+                  Architecture
+                </li>
+              </ul>
+            </div>
           </div>
+        </section>
 
-          {/* Stack Column 2 */}
-          <div className="sm:col-span-2">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-3 flex items-center gap-2">
-              <CloudCog className="w-4 h-4" /> Amazon Web Services (AWS)
-            </h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-800">
-              <li>
-                <strong>AWS Amplify:</strong> Serverless deployment
-              </li>
-              <li>
-                <strong>Amazon Bedrock:</strong> LLM integration
-              </li>
-              <li>
-                <strong>AWS Lambda:</strong> Serverless functions
-              </li>
-              <li>
-                <strong>Amazon CloudWatch:</strong> Monitoring & logs
-              </li>
-              <li>
-                <strong>Amazon Route53:</strong> Domain management
-              </li>
-              <li>
-                <strong>AWS Cloud:</strong> General deployment
-              </li>
-            </ul>
+        <hr className="my-10 border-[#333]" />
+
+        {/* ─── Footer / Next Steps ─── */}
+        <section className="bg-[#1b1b1b] rounded-md p-8 border border-[#333] shadow-sm">
+          <h2 className="text-xl font-normal text-white mb-3">
+            Getting Started & Contributions
+          </h2>
+          <p className="text-sm text-gray-200 font-normal leading-relaxed mb-8 max-w-2xl">
+            Want to contribute to the project? Please refer to our contribution
+            guidelines or dive deeper into the technical architecture.
+            Maintained by{" "}
+            <strong className="text-white font-normal">
+              Kinshuk-Jain-Website
+            </strong>
+            .
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <Link
+              href="/docs/repo-setup"
+              className="inline-flex items-center justify-center gap-2 text-sm font-normal text-white bg-transparent border border-[#444] hover:bg-[#333] hover:border-white px-6 py-2.5 rounded-full transition-all"
+            >
+              <Cpu className="w-4 h-4" />
+              Contribution Guide
+            </Link>
+            <Link
+              href="/docs/project-info"
+              className="inline-flex items-center justify-center gap-2 text-sm font-normal text-[#121212] bg-white hover:bg-gray-200 border border-transparent px-6 py-2.5 rounded-full transition-all"
+            >
+              Project Info
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
-        </div>
-      </section>
-
-      <hr className="my-8 border-gray-200" />
-
-      {/* ─── Footer / Next Steps ─── */}
-      <section className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-        <h2 className="text-lg font-semibold text-gray-900 mb-2">
-          Getting Started & Contributions
-        </h2>
-        <p className="text-sm text-gray-800 mb-4 leading-relaxed">
-          Want to contribute to the project? Please refer to our contribution
-          guidelines or dive deeper into the technical architecture. Maintained
-          by <strong>Kinshuk-Jain-Website</strong>.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            href="/docs/repo-setup"
-            className="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 bg-white border border-gray-200 hover:border-blue-300 px-4 py-2 rounded-lg transition-colors"
-          >
-            <Cpu className="w-4 h-4" />
-            Contribution Guide
-          </Link>
-          <Link
-            href="/docs/project-info"
-            className="inline-flex items-center gap-2 text-sm font-medium text-gray-800 hover:text-gray-900 bg-white border border-gray-200 hover:border-gray-300 px-4 py-2 rounded-lg transition-colors"
-          >
-            Project Info
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </section>
-    </article>
+        </section>
+      </article>
+    </div>
   );
 }

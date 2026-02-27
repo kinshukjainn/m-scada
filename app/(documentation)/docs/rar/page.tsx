@@ -1,18 +1,21 @@
+"use client";
+
 import React from "react";
 
 export default function RequestFlowDocs() {
   return (
-    <div className="min-h-screen bg-white text-gray-800  selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0] font-sans selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-8 lg:gap-12 min-w-0">
+      <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
-        <article className="prose prose-gray max-w-none min-w-0 break-words">
+        <article className="max-w-none min-w-0 break-words">
           {/* Page Header */}
-          <div className="mb-8 sm:mb-10">
-            <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4 tracking-tight">
-              End-to-End Request Flow & Llama 3.2 Response Design
+          <div className="mb-12 border-b border-[#333] pb-8">
+            <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-6 tracking-tight">
+              End-to-End Request Flow & Llama 3.2 Response{" "}
+              <span className="text-[#8cb4ff]">_</span>
             </h1>
-            <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
+            <p className="text-lg text-gray-200 font-normal leading-relaxed max-w-3xl m-0 tracking-wide">
               Understanding the lifecycle of an AI prompt—from the moment a user
               clicks &quot;send&quot; in the browser to the exact JSON structure
               returned by Meta&apos;s Llama 3.2 models running on AWS
@@ -20,66 +23,59 @@ export default function RequestFlowDocs() {
             </p>
           </div>
 
-          <hr className="border-gray-200 my-8" />
-
           {/* Section 1: The Request Lifecycle */}
-          <section className="mb-12 sm:mb-14 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+          <section className="mb-16 min-w-0" id="end-to-end-flow">
+            <h2 className="text-2xl font-semibold text-white mb-6 border-b border-[#333] pb-2">
               1. The End-to-End Architecture Flow
             </h2>
-            <p className="text-gray-800 mb-6">
+            <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
               When a user interacts with the AI, the payload travels through
               several distinct layers of infrastructure before a response is
               rendered on screen. Here is the exact lifecycle of that request.
             </p>
 
-            <div className="space-y-6 mt-8">
+            <div className="space-y-8 mt-10">
               {[
                 {
                   step: 1,
-                  color: "blue",
                   title: "Frontend (Next.js / React)",
                   desc: "The user types a prompt. The React client packages this data into a JSON payload and makes an HTTP POST request to your backend API route.",
                 },
                 {
                   step: 2,
-                  color: "blue",
                   title: "Backend (Next.js API Route)",
                   desc: "The server receives the request, validates user authentication, applies rate limiting, and securely forwards the payload to the AWS environment.",
                 },
                 {
                   step: 3,
-                  color: "orange",
                   title: "AWS Lambda",
                   desc: "Lambda spins up an isolated execution environment, parses the prompt, and uses the AWS SDK to formulate a strictly typed request to the Amazon Bedrock API.",
                 },
                 {
                   step: 4,
-                  color: "purple",
                   title: "Amazon Bedrock & Meta Llama 3.2",
                   desc: "Bedrock securely routes the prompt to the requested model. The neural network processes the tokens and Bedrock packages the output into a JSON format.",
                 },
                 {
                   step: 5,
-                  color: "green",
                   title: "The Return Journey",
                   desc: "The API returns the JSON to Lambda. Lambda executes any necessary post-processing and sends an HTTP 200 response back to the Backend, updating the UI.",
                 },
               ].map((item) => (
-                <div
-                  key={item.step}
-                  className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-                >
-                  <div
-                    className={`flex-shrink-0 w-8 h-8 rounded-full bg-${item.color}-100 text-${item.color}-700 flex items-center justify-center font-bold text-sm`}
-                  >
-                    {item.step}
+                <div key={item.step} className="flex gap-5">
+                  <div className="flex flex-col items-center mt-0.5">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-sm bg-[#2d2d2d] text-[#8cb4ff] font-mono text-sm border border-[#444]">
+                      {item.step}
+                    </span>
+                    {item.step !== 5 && (
+                      <div className="w-px h-full bg-[#333] my-2"></div>
+                    )}
                   </div>
-                  <div className="min-w-0">
-                    <h4 className="font-semibold text-gray-900 text-base sm:text-lg m-0">
+                  <div className="pb-4 min-w-0">
+                    <h3 className="font-semibold text-white text-lg mb-1">
                       {item.title}
-                    </h4>
-                    <p className="text-gray-800 mt-1 sm:mt-2 text-sm leading-relaxed">
+                    </h3>
+                    <p className="text-gray-200 font-normal leading-relaxed text-sm m-0">
                       {item.desc}
                     </p>
                   </div>
@@ -88,35 +84,45 @@ export default function RequestFlowDocs() {
             </div>
           </section>
 
+          <hr className="my-12 border-[#333]" />
+
           {/* Section 2: Llama 3.2 Response Design */}
-          <section className="mb-12 sm:mb-14 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+          <section className="mb-16 min-w-0" id="response-design">
+            <h2 className="text-2xl font-semibold text-white mb-6 border-b border-[#333] pb-2">
               2. Meta Llama 3.2 Response Design
             </h2>
-            <p className="text-gray-800 mb-4">
+            <p className="text-gray-200 font-normal leading-relaxed mb-6 text-[16px]">
               When communicating with Llama 3.2 on AWS, the architecture relies
-              on the Bedrock <strong>Converse API</strong>. This API
-              standardizes interactions so that text and multimodal models all
-              return a predictable, uniform JSON structure.
+              on the Bedrock{" "}
+              <strong className="text-white font-semibold">Converse API</strong>
+              . This API standardizes interactions so that text and multimodal
+              models all return a predictable, uniform JSON structure.
             </p>
 
-            <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-4">
+            <h3 className="text-lg font-semibold text-white mt-8 mb-4">
               Detailed JSON Response Example
             </h3>
-            <p className="text-gray-800 text-sm mb-4">
+            <p className="text-gray-200 font-normal text-[15px] mb-6">
               Below is an exact example of how Llama 3.2 formats its response
               when asked to describe an image and answer a question.
             </p>
 
-            <div className="bg-[#1c2128] rounded-lg overflow-hidden shadow-sm mb-6 w-full min-w-0">
-              <div className="bg-[#2d333b] px-4 py-2 text-xs text-gray-400 font-mono border-b border-gray-700 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                <span>Response Payload (JSON)</span>
-                <span className="truncate">
+            <div className="bg-[#1b1b1b] rounded-md overflow-hidden border border-[#333] shadow-sm mb-8 w-full min-w-0">
+              <div className="bg-[#2d2d2d] px-4 py-2.5 text-xs text-gray-200 font-mono border-b border-[#444] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="flex items-center gap-2">
+                  <div className="flex gap-1.5 mr-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#444]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#444]"></div>
+                    <div className="w-2.5 h-2.5 rounded-full bg-[#444]"></div>
+                  </div>
+                  <span>Response Payload (JSON)</span>
+                </div>
+                <span className="truncate text-[#8cb4ff]">
                   meta.llama3-2-90b-instruct-v1:0
                 </span>
               </div>
               <div className="overflow-x-auto w-full">
-                <pre className="p-4 text-xs sm:text-sm text-gray-300 font-mono inline-block min-w-full">
+                <pre className="p-5 text-xs sm:text-sm text-gray-300 font-mono inline-block min-w-full leading-relaxed">
                   <code>{`{
   "output": {
     "message": {
@@ -142,72 +148,102 @@ export default function RequestFlowDocs() {
               </div>
             </div>
 
-            <h3 className="text-lg font-semibold text-gray-900 mt-8 mb-3">
+            <h3 className="text-lg font-semibold text-white mt-10 mb-4">
               Breaking Down the Design
             </h3>
-            <ul className="list-disc list-inside text-gray-800 space-y-3 ml-1 sm:ml-2">
-              <li className="pl-2">
-                <strong>
-                  The <code>output.message</code> object:
-                </strong>{" "}
-                Llama 3.2 is fine-tuned for conversational instruction. It
-                explicitly tags its response with the{" "}
-                <code>&quot;role&quot;: &quot;assistant&quot;</code>.
-              </li>
-              <li className="pl-2">
-                <strong>
-                  The <code>stopReason</code> flag:
-                </strong>{" "}
-                A value of <code>end_turn</code> means the model successfully
-                finished its thought.
-              </li>
-              <li className="pl-2">
-                <strong>
-                  The <code>usage</code> block:
-                </strong>{" "}
-                Llama 3.2 provides exact token counts, essential for
-                cost-monitoring and rate-limiting.
-              </li>
-            </ul>
+            <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm">
+              <ul className="space-y-5 text-gray-200 font-normal text-[15px] m-0">
+                <li className="flex items-start gap-3">
+                  <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
+                  <span>
+                    <strong className="text-white font-semibold">
+                      The{" "}
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                        output.message
+                      </code>{" "}
+                      object:
+                    </strong>{" "}
+                    Llama 3.2 is fine-tuned for conversational instruction. It
+                    explicitly tags its response with the{" "}
+                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                      &quot;role&quot;: &quot;assistant&quot;
+                    </code>
+                    .
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
+                  <span>
+                    <strong className="text-white font-semibold">
+                      The{" "}
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                        stopReason
+                      </code>{" "}
+                      flag:
+                    </strong>{" "}
+                    A value of{" "}
+                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                      end_turn
+                    </code>{" "}
+                    means the model successfully finished its thought.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
+                  <span>
+                    <strong className="text-white font-semibold">
+                      The{" "}
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                        usage
+                      </code>{" "}
+                      block:
+                    </strong>{" "}
+                    Llama 3.2 provides exact token counts, essential for
+                    cost-monitoring and rate-limiting.
+                  </span>
+                </li>
+              </ul>
+            </div>
           </section>
         </article>
 
         {/* Right Sidebar (Table of Contents) */}
-        <aside className="hidden lg:block sticky top-24 h-fit min-w-0">
-          <div className="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-4 truncate">
+        <aside className="hidden lg:block sticky top-24 h-fit min-w-0 border-l border-[#333] pl-6 py-2">
+          <div className="text-xs font-mono font-semibold text-gray-100 uppercase tracking-widest mb-5 truncate">
             On this page
           </div>
-          <nav className="flex flex-col gap-3 text-sm text-gray-800">
+          <nav className="flex flex-col gap-3.5 text-sm text-gray-200 font-normal">
             <a
-              href="#"
-              className="hover:text-[#f38020] transition-colors truncate"
+              href="#end-to-end-flow"
+              className="hover:text-[#8cb4ff] transition-colors truncate"
             >
               1. The End-to-End Flow
             </a>
-            <div className="flex flex-col gap-2 pl-4 border-l border-gray-200">
+            <div className="flex flex-col gap-3 pl-4 border-l-2 border-[#333]">
               <a
-                href="#"
-                className="hover:text-[#f38020] transition-colors truncate"
+                href="#end-to-end-flow"
+                className="text-gray-100 hover:text-[#8cb4ff] transition-colors truncate"
               >
                 Frontend & Backend
               </a>
               <a
-                href="#"
-                className="hover:text-[#f38020] transition-colors truncate"
+                href="#end-to-end-flow"
+                className="text-gray-100 hover:text-[#8cb4ff] transition-colors truncate"
               >
                 AWS Infrastructure
               </a>
             </div>
+
             <a
-              href="#"
-              className="hover:text-[#f38020] transition-colors mt-2 truncate"
+              href="#response-design"
+              className="hover:text-[#8cb4ff] transition-colors mt-2 truncate"
             >
-              2. Llama 3.2 Response Design
+              2. Llama 3.2 Response
             </a>
-            <div className="flex flex-col gap-2 pl-4 border-l border-gray-200">
+            <div className="flex flex-col gap-3 pl-4 border-l-2 border-[#333]">
               <a
-                href="#"
-                className="hover:text-[#f38020] transition-colors truncate"
+                href="#response-design"
+                className="text-gray-100 hover:text-[#8cb4ff] transition-colors truncate"
               >
                 JSON Example
               </a>

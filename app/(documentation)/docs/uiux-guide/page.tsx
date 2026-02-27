@@ -11,7 +11,7 @@ export default function GlobalUIUXDocs() {
         <article className="prose prose-gray max-w-none min-w-0 break-words">
           {/* Page Header */}
           <div className="mb-8 sm:mb-10">
-            <h1 className="text-3xl sm:text-4xl font-semibold text-gray-900 mb-4 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl font-normal text-gray-900 mb-4 tracking-tight">
               Global UI/UX Architecture
             </h1>
             <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
@@ -26,7 +26,7 @@ export default function GlobalUIUXDocs() {
 
           {/* Section 1: Global Philosophy */}
           <section className="mb-12 sm:mb-14 min-w-0" id="global-philosophy">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
               1. The &quot;Jakob&apos;s Law&quot; Mandate
             </h2>
             <p className="text-gray-800 mb-4">
@@ -38,7 +38,7 @@ export default function GlobalUIUXDocs() {
             </p>
 
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-5 mt-6 mb-6">
-              <h4 className="font-semibold text-gray-900 mb-2">
+              <h4 className="font-normal text-gray-900 mb-2">
                 Familiarity over Novelty
               </h4>
               <p className="text-sm text-gray-800 leading-relaxed">
@@ -56,7 +56,7 @@ export default function GlobalUIUXDocs() {
 
           {/* Section 2: The Console Experience */}
           <section className="mb-12 sm:mb-14 min-w-0" id="console-experience">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
               2. The Console: Managing High Data Density
             </h2>
             <p className="text-gray-800 mb-6">
@@ -65,7 +65,7 @@ export default function GlobalUIUXDocs() {
               and execution. We achieve this through two core principles.
             </p>
 
-            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">
+            <h3 className="text-lg font-normal text-gray-900 mt-6 mb-3">
               Maximizing the Data-to-Ink Ratio
             </h3>
             <p className="text-gray-800 mb-4">
@@ -89,7 +89,7 @@ export default function GlobalUIUXDocs() {
               </li>
             </ul>
 
-            <h3 className="text-lg font-semibold text-gray-900 mt-6 mb-3">
+            <h3 className="text-lg font-normal text-gray-900 mt-6 mb-3">
               Fitts&apos;s Law for Actionable States
             </h3>
             <p className="text-gray-800 mb-4">
@@ -110,7 +110,7 @@ export default function GlobalUIUXDocs() {
 
           {/* Section 3: Semantic Color System */}
           <section className="mb-12 sm:mb-14 min-w-0" id="color-system">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
               3. The Semantic Color Matrix
             </h2>
             <p className="text-gray-800 mb-6">
@@ -126,10 +126,10 @@ export default function GlobalUIUXDocs() {
               <div className="border border-gray-200 rounded-lg p-4 flex items-start gap-4">
                 <div className="w-8 h-8 rounded bg-[#f38020] flex-shrink-0 shadow-sm"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
+                  <h4 className="font-normal text-gray-900 text-sm">
                     Primary Action (Orange)
                   </h4>
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-gray-100 mt-1">
                     Used exclusively for primary progression elements (Deploy,
                     Submit, Next). Creates an instant visual anchor.
                   </p>
@@ -140,10 +140,10 @@ export default function GlobalUIUXDocs() {
               <div className="border border-gray-200 rounded-lg p-4 flex items-start gap-4">
                 <div className="w-8 h-8 rounded bg-green-500 flex-shrink-0 shadow-sm"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
+                  <h4 className="font-normal text-gray-900 text-sm">
                     Success State (Green)
                   </h4>
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-gray-100 mt-1">
                     Reserved for completed deployments, healthy API responses,
                     and &quot;System Operational&quot; indicators.
                   </p>
@@ -154,10 +154,10 @@ export default function GlobalUIUXDocs() {
               <div className="border border-gray-200 rounded-lg p-4 flex items-start gap-4">
                 <div className="w-8 h-8 rounded bg-yellow-500 flex-shrink-0 shadow-sm"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
+                  <h4 className="font-normal text-gray-900 text-sm">
                     Warning State (Yellow)
                   </h4>
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-gray-100 mt-1">
                     Signals rate limits approaching, billing thresholds, or
                     non-fatal configuration errors.
                   </p>
@@ -168,10 +168,10 @@ export default function GlobalUIUXDocs() {
               <div className="border border-gray-200 rounded-lg p-4 flex items-start gap-4">
                 <div className="w-8 h-8 rounded bg-red-600 flex-shrink-0 shadow-sm"></div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 text-sm">
+                  <h4 className="font-normal text-gray-900 text-sm">
                     Destructive (Red)
                   </h4>
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-gray-100 mt-1">
                     Requires conscious cognitive friction. Used for data
                     deletion, cache purging, or overriding defaults.
                   </p>
@@ -182,7 +182,7 @@ export default function GlobalUIUXDocs() {
 
           {/* Section 4: Motion & Interactions */}
           <section className="mb-12 sm:mb-14 min-w-0" id="motion">
-            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
               4. Motion: Preventing Change Blindness
             </h2>
             <p className="text-gray-800 mb-4">
@@ -205,7 +205,7 @@ export default function GlobalUIUXDocs() {
 
         {/* Right Sidebar (Table of Contents) */}
         <aside className="hidden lg:block sticky top-24 h-fit min-w-0">
-          <div className="text-xs font-semibold text-gray-900 uppercase tracking-wider mb-4 truncate">
+          <div className="text-xs font-normal text-gray-900 uppercase tracking-wider mb-4 truncate">
             On this page
           </div>
           <nav className="flex flex-col gap-3 text-sm text-gray-800">

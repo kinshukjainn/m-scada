@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   Geist,
+  PT_Sans,
   Roboto,
   Arimo,
   DM_Mono,
@@ -50,6 +51,15 @@ const workSans = Work_Sans({
   variable: "--font-work-sans",
   display: "swap",
 });
+
+const ptSans = PT_Sans({
+  subsets: ["latin"],
+  weight: ["400", "700"], // specify required weights
+  style: ["normal", "italic"], // optional
+  variable: "--font-pt-sans",
+  display: "swap",
+});
+
 // 👇 Configure Inter
 export const inter = Inter({
   subsets: ["latin"],
@@ -72,7 +82,7 @@ export default function RootLayout({
     <html lang="en" data-google-analytics-opt-out="">
       <body
         // 👇 Add inter.variable to your class string
-        className={`${geistSans.variable} ${arimo.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${ptSans.variable} ${arimo.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
         <Header />
         {children}
