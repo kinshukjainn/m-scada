@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Meta Ai | FDS AI",
-  description: "Detailed Description about the Meta Ai Model used in FDS AI",
+  title: "Open AI OSS Model 120B Model||FDS ",
+  description: "A Breif info about Open AI OSS Model with 120 billion model",
 };
 
 export default function BlogLayout({

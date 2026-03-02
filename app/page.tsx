@@ -104,7 +104,7 @@ export default function AIIndustrialHome() {
               alt="Predictive Intelligence Dashboard"
               width={1200}
               height={800}
-              className="w-full h-auto max-w-full object-contain rounded-xl drop-shadow-2xl border border-[#333]"
+              className="w-full h-auto max-w-full object-contain "
               priority
             />
           </motion.div>
@@ -124,7 +124,7 @@ export default function AIIndustrialHome() {
             <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-white mb-8 text-center">
               Console Preview <span className="text-[#8cb4ff]">_</span>
             </h2>
-            <div className="w-full overflow-hidden border border-[#333] rounded-xl bg-[#1b1b1b] p-2">
+            <div className="w-full overflow-hidden   p-2">
               <Image
                 src="/console.png"
                 alt="Console Dashboard Preview"

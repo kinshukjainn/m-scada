@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase";
 import ReactMarkdown from "react-markdown";
 import {
   Filter,
@@ -14,6 +13,7 @@ import {
   Search,
   ExternalLink,
   Tag,
+  AlertCircle,
 } from "lucide-react";
 
 type Feedback = {
@@ -38,6 +38,7 @@ interface MarkdownComponentProps {
 export default function FeedbacksList() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [filterCategory, setFilterCategory] = useState<
     "all" | "blogs" | "project" | "portfolio"
@@ -52,15 +53,31 @@ export default function FeedbacksList() {
 
   const fetchFeedbacks = async () => {
     setIsLoading(true);
+    setErrorMsg(null); // Reset error state on new fetch
+
     try {
-      const { data, error } = await supabase
-        .from("feedback")
-        .select("*")
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      setFeedbacks(data || []);
-    } catch (error) {
-      console.error("Error fetching feedbacks:", error);
+      // Fetch from OUR API Route, completely bypassing ISP blocks on Supabase
+      const response = await fetch("/api/fdb");
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result.error || "Failed to fetch data from the server.",
+        );
+      }
+
+      setFeedbacks(result || []);
+    } catch (err: unknown) {
+      // Safely check if the error is a standard Error object with a message
+      const message =
+        err instanceof Error
+          ? err.message
+          : typeof err === "string"
+            ? err
+            : "Unknown error occurred.";
+
+      console.error("Catch Block Error:", message);
+      setErrorMsg(message);
     } finally {
       setIsLoading(false);
     }
@@ -88,7 +105,7 @@ export default function FeedbacksList() {
   });
 
   return (
-    <div className="min-h-screen bg-[#1b1b1b] text-[#e0e0e0]  selection:bg-[#4d85ff44]">
+    <div className="min-h-screen bg-[#1b1b1b] text-[#e0e0e0] selection:bg-[#4d85ff44]">
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-50 bg-[#1b1b1b]/95 backdrop-blur border-b border-[#3c3c3c] px-4 py-3">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-4">
@@ -121,8 +138,8 @@ export default function FeedbacksList() {
         {/* Sidebar Filters */}
         <aside className="w-full lg:w-64 shrink-0 space-y-6">
           <section>
-            <div className="p-1 bg-[#252525] mt-2 mb-2  rounded-full border-2 border-[#313131]">
-              <h3 className="text-md font-semibold ml-4  text-gray-100  flex items-center gap-2">
+            <div className="p-1 bg-[#252525] mt-2 mb-2 rounded-full border-2 border-[#313131]">
+              <h3 className="text-md font-semibold ml-4 text-gray-100 flex items-center gap-2">
                 <Filter size={14} /> Filters
               </h3>
             </div>
@@ -177,7 +194,7 @@ export default function FeedbacksList() {
                 ? "All Activity"
                 : `${filterCategory} Feedbacks`}
             </h2>
-            {!isLoading && (
+            {!isLoading && !errorMsg && (
               <span className="text-md font-mono bg-green-600 px-2 py-1 rounded-xl border border-[#3c3c3c]">
                 {filteredFeedbacks.length} items
               </span>
@@ -185,17 +202,35 @@ export default function FeedbacksList() {
           </div>
 
           <div className="space-y-10">
+            {/* Display Error Message if fetch fails */}
+            {errorMsg && (
+              <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-4 flex items-start gap-3 text-red-400">
+                <AlertCircle className="shrink-0 mt-0.5" size={18} />
+                <div>
+                  <h3 className="font-bold text-red-500">
+                    Failed to fetch data
+                  </h3>
+                  <p className="text-sm mt-1">{errorMsg}</p>
+                  <p className="text-xs mt-2 opacity-80">
+                    Check your NEXT_PUBLIC environment variables and ensure Row
+                    Level Security (RLS) allows read access.
+                  </p>
+                </div>
+              </div>
+            )}
+
             {isLoading ? (
               <div className="py-20 flex flex-col items-center gap-4 text-gray-500">
                 <Loader2 className="animate-spin" size={32} />
                 <p className="animate-pulse">Loading archive...</p>
               </div>
-            ) : filteredFeedbacks.length === 0 ? (
+            ) : !errorMsg && filteredFeedbacks.length === 0 ? (
               <div className="py-20 text-center border-2 border-dashed border-[#3c3c3c] rounded-xl">
                 <SearchX className="mx-auto text-gray-600 mb-4" size={48} />
                 <p className="text-gray-400">No matching entries found.</p>
               </div>
             ) : (
+              !errorMsg &&
               filteredFeedbacks.map((fb) => (
                 <article key={fb.id} className="group relative">
                   <div className="flex flex-col md:flex-row md:items-start gap-4">
@@ -281,7 +316,10 @@ export default function FeedbacksList() {
 
                         {fb.github_id && (
                           <a
-                            href={`https://github.com/${fb.github_id.replace("@", "")}`}
+                            href={`https://github.com/${fb.github_id.replace(
+                              "@",
+                              "",
+                            )}`}
                             target="_blank"
                             rel="noreferrer"
                             className="flex items-center gap-1.5 text-gray-500 hover:text-[#4d85ff] transition-colors"

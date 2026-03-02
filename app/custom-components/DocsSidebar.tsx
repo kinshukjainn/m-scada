@@ -64,8 +64,8 @@ const navItems: NavItem[] = [
     icon: <TbApi className="w-4 h-4" />,
   },
   {
-    title: "Meta AI",
-    href: "/docs/meta-ai",
+    title: "Open AI Model",
+    href: "/docs/open-ai-oss-model",
     icon: <SiMeta className="w-4 h-4" />,
   },
   {

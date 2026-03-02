@@ -1,40 +1,40 @@
+"use client";
+
 import React from "react";
 
 export default function APIIntroductionDocs() {
   return (
-    <div className="min-h-screen bg-white text-gray-800 selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden">
-      {/* Top Navigation Bar Simulation */}
-
+    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0] selection:bg-[#f38020]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-8 lg:gap-12 min-w-0">
+      <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
-        <article className="prose prose-gray max-w-none min-w-0 break-words">
+        <article className="max-w-none min-w-0 break-words">
           {/* Page Header */}
-          <div className="mb-8 sm:mb-10">
-            <h1 className="text-3xl sm:text-4xl font-normal text-gray-900 mb-4 tracking-tight">
-              Introduction to APIs
+          <div className="mb-12 border-b border-[#333] pb-8">
+            <h1 className="text-4xl sm:text-5xl font-semibold text-white mb-6 tracking-tight">
+              Introduction to APIs <span className="text-[#f38020]">_</span>
             </h1>
-            <p className="text-base sm:text-lg text-gray-800 leading-relaxed">
+            <p className="text-lg text-gray-200 font-normal leading-relaxed max-w-3xl tracking-wide m-0">
               If you are new to software development, the term{" "}
-              <strong>API (Application Programming Interface)</strong> is
-              everywhere. This guide demystifies what APIs are, the core
+              <strong className="text-white font-semibold">
+                API (Application Programming Interface)
+              </strong>{" "}
+              is everywhere. This guide demystifies what APIs are, the core
               historical reason they had to be invented, and exactly how they
               work in plain English.
             </p>
           </div>
 
-          <hr className="border-gray-200 my-8" />
-
           {/* Section 1: The Definition */}
-          <section className="mb-12 sm:mb-14 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+          <section className="mb-16 min-w-0" id="definition">
+            <h2 className="text-2xl font-semibold text-white mb-6 border-b border-[#333] pb-2">
               1. What is an API?
             </h2>
-            <p className="text-gray-800 mb-4">
+            <p className="text-gray-200 font-normal leading-relaxed mb-4 text-[16px]">
               An API is a software intermediary that allows two different
               applications to talk to each other.
             </p>
-            <p className="text-gray-800 mb-6">
+            <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
               When you use an app on your phone to check the weather, that app
               doesn&apos;t have its own weather satellites or thermometers.
               Instead, it sends a message over the internet to a central weather
@@ -43,110 +43,140 @@ export default function APIIntroductionDocs() {
               back the data is the API.
             </p>
 
-            <div className="bg-blue-50 border border-blue-100 rounded-lg p-5 mt-6">
-              <h4 className="font-normal text-blue-900 mb-2">
+            <div className="rounded-md p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-[#f38020] border border-[#333]">
+              <h4 className="font-semibold text-white mb-3 text-lg">
                 The Restaurant Analogy
               </h4>
-              <p className="text-sm text-blue-800 leading-relaxed">
+              <p className="text-sm text-gray-200 font-normal leading-relaxed m-0">
                 Imagine you are sitting at a table in a restaurant with a menu.
                 The kitchen (the system containing the food/data) is in the
                 back. You cannot simply walk into the kitchen and cook your own
                 meal. You need a messenger to take your order to the kitchen and
                 bring your food back to your table.{" "}
-                <strong>The waiter is the API.</strong>
+                <strong className="text-white font-semibold">
+                  The waiter is the API.
+                </strong>
               </p>
             </div>
           </section>
 
           {/* Section 2: The Core Reason (Why was it introduced?) */}
-          <section className="mb-12 sm:mb-14 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+          <section className="mb-16 min-w-0" id="origin">
+            <h2 className="text-2xl font-semibold text-white mb-6 border-b border-[#333] pb-2">
               2. The Origin: Why Were APIs Created?
             </h2>
-            <p className="text-gray-800 mb-4">
+            <p className="text-gray-200 font-normal leading-relaxed mb-6 text-[16px]">
               To truly understand APIs, you have to understand the nightmare
               that existed before them. In the early days of computing, software
               programs were built as massive, closed-off blocks (called
               &quot;monoliths&quot;).
             </p>
 
-            <h3 className="text-lg font-normal text-gray-900 mt-6 mb-3">
+            <h3 className="text-lg font-semibold text-white mb-4 mt-8 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-sm bg-[#f38020]"></span>
               The Problem: Shared Databases are Dangerous
             </h3>
-            <p className="text-gray-800 mb-4">
+            <p className="text-gray-200 font-normal leading-relaxed mb-6 text-[16px]">
               Imagine two companies: an Airline and a Travel Agency. The Travel
               Agency needs to know if a flight has open seats. Originally, the
               only way to do this was for the Airline to give the Travel Agency
               direct, raw access to their internal database.
             </p>
-            <p className="text-gray-800 mb-6">
+
+            <p className="text-gray-200 font-normal leading-relaxed mb-4 text-[16px]">
               This was disastrous for three reasons:
             </p>
-            <ul className="list-disc list-inside text-gray-800 space-y-2 ml-1 sm:ml-2 mb-6">
-              <li className="pl-2">
-                <strong>Security:</strong> The Travel Agency could accidentally
-                (or maliciously) delete other flight records.
+
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <span>
+                  <strong className="text-white font-semibold">
+                    Security:
+                  </strong>{" "}
+                  The Travel Agency could accidentally (or maliciously) delete
+                  other flight records.
+                </span>
               </li>
-              <li className="pl-2">
-                <strong>Fragility:</strong> If the Airline updated their
-                database structure, the Travel Agency&apos;s software would
-                instantly crash.
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <span>
+                  <strong className="text-white font-semibold">
+                    Fragility:
+                  </strong>{" "}
+                  If the Airline updated their database structure, the Travel
+                  Agency&apos;s software would instantly crash.
+                </span>
               </li>
-              <li className="pl-2">
-                <strong>Language Barriers:</strong> If the Airline wrote their
-                software in Java, and the Travel Agency used Python, they
-                couldn&apos;t easily communicate.
+              <li className="flex items-start gap-3">
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <span>
+                  <strong className="text-white font-semibold">
+                    Language Barriers:
+                  </strong>{" "}
+                  If the Airline wrote their software in Java, and the Travel
+                  Agency used Python, they couldn&apos;t easily communicate.
+                </span>
               </li>
             </ul>
 
-            <h3 className="text-lg font-normal text-gray-900 mt-6 mb-3">
+            <h3 className="text-lg font-semibold text-white mb-4 mt-8 flex items-center gap-3">
+              <span className="w-2 h-2 rounded-sm bg-[#f38020]"></span>
               The Solution: The &quot;Contract&quot;
             </h3>
-            <p className="text-gray-800 mb-4">
+            <p className="text-gray-200 font-normal leading-relaxed mb-4 text-[16px]">
               APIs were introduced to act as a strict, secure{" "}
-              <strong>contract</strong> between systems.
+              <strong className="text-white font-semibold">contract</strong>{" "}
+              between systems.
             </p>
-            <p className="text-gray-800">
+            <p className="text-gray-200 font-normal leading-relaxed mb-4 text-[16px]">
               Instead of giving direct database access, the Airline creates an
               API. The API contract states:{" "}
-              <em>
+              <em className="text-gray-400">
                 &quot;If you send me a Flight Number in a specific format, I
                 will reply with the number of available seats. You cannot touch
                 my database directly, and you don&apos;t need to know how my
                 database works.&quot;
               </em>
+            </p>
+            <p className="text-gray-200 font-normal leading-relaxed text-[16px]">
               Because of this abstraction, the Airline can completely rebuild
               their entire backend, and as long as they don&apos;t change the
               API contract, the Travel Agency will never notice.
             </p>
           </section>
 
+          <hr className="my-12 border-[#333]" />
+
           {/* Section 3: How it Works (Under the Hood) */}
-          <section className="mb-12 sm:mb-14 min-w-0">
-            <h2 className="text-xl sm:text-2xl font-normal text-gray-900 mb-4 border-l-4 border-[#f38020] pl-4">
+          <section className="mb-16 min-w-0" id="how-it-works">
+            <h2 className="text-2xl font-semibold text-white mb-6 border-b border-[#333] pb-2">
               3. How It Actually Works
             </h2>
-            <p className="text-gray-800 mb-6">
+            <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
               Modern web APIs communicate using the internet&apos;s standard
               language (HTTP) and format their data in a lightweight text
               structure called{" "}
-              <strong>JSON (JavaScript Object Notation)</strong>.
+              <strong className="text-white font-semibold">
+                JSON (JavaScript Object Notation)
+              </strong>
+              .
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* The Request */}
-              <div className="bg-[#1c2128] rounded-lg overflow-hidden shadow-sm w-full min-w-0">
-                <div className="bg-[#2d333b] px-4 py-2 text-xs text-green-400 font-mono border-b border-gray-700">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-md overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
+                <div className="bg-[#2d2d2d] px-4 py-3 text-[11px] text-[#f38020] uppercase tracking-widest font-mono border-b border-[#444] font-semibold">
                   Step 1: The Request (Client to API)
                 </div>
                 <div className="overflow-x-auto w-full">
-                  <pre className="p-4 text-xs sm:text-sm text-gray-300 font-mono inline-block min-w-full">
+                  <pre className="p-5 text-xs sm:text-sm text-gray-300 font-mono inline-block min-w-full m-0">
                     <code>{`GET /api/weather?city=London
 Host: api.weather.com
 Authorization: Bearer <Your_Key>`}</code>
                   </pre>
                 </div>
-                <div className="p-4 text-xs text-gray-200 border-t border-gray-700 bg-[#22272e]">
+                <div className="p-5 text-sm text-gray-400 border-t border-[#333] bg-[#161616] mt-auto">
                   The client asks the server for information (GET) about the
                   weather in London, providing a secret key to prove they are
                   allowed to ask.
@@ -154,12 +184,12 @@ Authorization: Bearer <Your_Key>`}</code>
               </div>
 
               {/* The Response */}
-              <div className="bg-[#1c2128] rounded-lg overflow-hidden shadow-sm w-full min-w-0">
-                <div className="bg-[#2d333b] px-4 py-2 text-xs text-blue-400 font-mono border-b border-gray-700">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-md overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
+                <div className="bg-[#2d2d2d] px-4 py-3 text-[11px] text-[#8cb4ff] uppercase tracking-widest font-mono border-b border-[#444] font-semibold">
                   Step 2: The Response (API to Client)
                 </div>
                 <div className="overflow-x-auto w-full">
-                  <pre className="p-4 text-xs sm:text-sm text-gray-300 font-mono inline-block min-w-full">
+                  <pre className="p-5 text-xs sm:text-sm text-gray-300 font-mono inline-block min-w-full m-0">
                     <code>{`{
   "city": "London",
   "temperature": 18,
@@ -168,14 +198,14 @@ Authorization: Bearer <Your_Key>`}</code>
 }`}</code>
                   </pre>
                 </div>
-                <div className="p-4 text-xs text-gray-200 border-t border-gray-700 bg-[#22272e]">
+                <div className="p-5 text-sm text-gray-400 border-t border-[#333] bg-[#161616] mt-auto">
                   The API retrieves the data from the hidden backend database,
                   packages it neatly into JSON, and hands it back to the client.
                 </div>
               </div>
             </div>
 
-            <p className="text-gray-800 mt-6">
+            <p className="text-gray-200 font-normal leading-relaxed text-[16px]">
               Because JSON is just plain text structured with brackets and
               quotes, literally any programming language in the world can read
               it. This permanently solved the &quot;language barrier&quot;
@@ -185,55 +215,57 @@ Authorization: Bearer <Your_Key>`}</code>
         </article>
 
         {/* Right Sidebar (Table of Contents) */}
-        <aside className="hidden lg:block sticky top-24 h-fit min-w-0">
-          <div className="text-xs font-normal text-gray-900 uppercase tracking-wider mb-4 truncate">
+        <aside className="hidden lg:block sticky top-24 h-fit min-w-0 border-l border-[#333] pl-6 py-2">
+          <div className="text-xs font-mono font-semibold text-gray-100 uppercase tracking-widest mb-5 truncate">
             On this page
           </div>
-          <nav className="flex flex-col gap-3 text-sm text-gray-800">
+          <nav className="flex flex-col gap-3.5 text-sm text-gray-200 font-normal">
             <a
-              href="#"
+              href="#definition"
               className="hover:text-[#f38020] transition-colors truncate"
             >
               1. What is an API?
             </a>
-            <div className="flex flex-col gap-2 pl-4 border-l border-gray-200">
+            <div className="flex flex-col gap-3 pl-4 border-l-2 border-[#333]">
               <a
-                href="#"
-                className="hover:text-[#f38020] transition-colors truncate"
+                href="#definition"
+                className="text-gray-100 hover:text-[#f38020] transition-colors truncate"
               >
                 The Waiter Analogy
               </a>
             </div>
+
             <a
-              href="#"
+              href="#origin"
               className="hover:text-[#f38020] transition-colors mt-2 truncate"
             >
               2. The Origin Story
             </a>
-            <div className="flex flex-col gap-2 pl-4 border-l border-gray-200">
+            <div className="flex flex-col gap-3 pl-4 border-l-2 border-[#333]">
               <a
-                href="#"
-                className="hover:text-[#f38020] transition-colors truncate"
+                href="#origin"
+                className="text-gray-100 hover:text-[#f38020] transition-colors truncate"
               >
                 The Database Problem
               </a>
               <a
-                href="#"
-                className="hover:text-[#f38020] transition-colors truncate"
+                href="#origin"
+                className="text-gray-100 hover:text-[#f38020] transition-colors truncate"
               >
                 The &quot;Contract&quot; Solution
               </a>
             </div>
+
             <a
-              href="#"
+              href="#how-it-works"
               className="hover:text-[#f38020] transition-colors mt-2 truncate"
             >
               3. How It Works
             </a>
-            <div className="flex flex-col gap-2 pl-4 border-l border-gray-200">
+            <div className="flex flex-col gap-3 pl-4 border-l-2 border-[#333]">
               <a
-                href="#"
-                className="hover:text-[#f38020] transition-colors truncate"
+                href="#how-it-works"
+                className="text-gray-100 hover:text-[#f38020] transition-colors truncate"
               >
                 Requests & JSON Responses
               </a>

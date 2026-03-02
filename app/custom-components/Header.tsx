@@ -20,8 +20,8 @@ export default function Header() {
 
   // MDN Nav Link Styles
   const linkBaseStyle =
-    "flex items-center gap-2 px-3 lg:px-4 py-2 rounded-md transition-all font-normal text-sm lg:text-base border";
-  const linkActiveStyle = "text-[#8cb4ff] bg-[#121212] border-[#333] shadow-sm";
+    "flex items-center gap-2 px-3 lg:px-4 py-2 rounded-full transition-all font-normal text-sm lg:text-base";
+  const linkActiveStyle = "text-[#8cb4ff] bg-[#121212]";
   const linkInactiveStyle =
     "text-gray-300 border-transparent hover:text-white hover:bg-[#333]";
 
@@ -52,6 +52,13 @@ export default function Header() {
             >
               <NotebookPen className="w-4 h-4" />
               <span>Documentation</span>
+            </Link>
+            <Link
+              href="/git-track"
+              className={`${linkBaseStyle} ${isActive("/git-track") ? linkActiveStyle : linkInactiveStyle}`}
+            >
+              <NotebookPen className="w-4 h-4" />
+              <span>Logs</span>
             </Link>
 
             <Link
@@ -127,37 +134,48 @@ export default function Header() {
       </header>
 
       {/* Mobile Navigation (Bottom Bar) */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-[#1b1b1b] border-t border-[#333] shadow-[0_-4px_10px_rgba(0,0,0,0.5)] px-2 py-2 flex items-center justify-around z-50 pb-[env(safe-area-inset-bottom)]">
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-[#1b1b1b]/40 backdrop-blur-xs rounded-t-2xl  px-2 py-2 flex items-center justify-around z-50 pb-[env(safe-area-inset-bottom)]">
         <Link
           href="/about-info"
-          className={`flex flex-col items-center gap-1 px-4 py-1.5 rounded-md transition-all w-full ${
+          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
             isActive("/about-info")
-              ? "text-[#8cb4ff] bg-[#121212] border border-[#333]"
+              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
               : "text-gray-200 hover:text-gray-200 border border-transparent"
           }`}
         >
           <Info className="w-5 h-5" />
           <span className="text-[10px] font-normal tracking-wide">About</span>
         </Link>
+
         <Link
           href="/docs"
-          className={`flex flex-col items-center gap-1 px-4 py-1.5 rounded-md transition-all w-full ${
+          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
             isActive("/docs")
-              ? "text-[#8cb4ff] bg-[#121212] border border-[#333]"
+              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
               : "text-gray-200 hover:text-gray-200 border border-transparent"
           }`}
         >
           <NotebookPen className="w-5 h-5" />
-          <span className="text-[10px] font-normal tracking-wide">
-            Documentation
-          </span>
+          <span className="text-[10px] font-normal tracking-wide">Docs</span>
+        </Link>
+
+        <Link
+          href="/git-track"
+          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
+            isActive("/git-track")
+              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
+              : "text-gray-200 hover:text-gray-200 border border-transparent"
+          }`}
+        >
+          <NotebookPen className="w-5 h-5" />
+          <span className="text-[10px] font-normal tracking-wide">Logs</span>
         </Link>
 
         <Link
           href="/console"
-          className={`flex flex-col items-center gap-1 px-4 py-1.5 rounded-md transition-all w-full ${
+          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
             isActive("/console")
-              ? "text-[#8cb4ff] bg-[#121212] border border-[#333]"
+              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
               : "text-gray-200 hover:text-gray-200 border border-transparent"
           }`}
         >
@@ -167,9 +185,9 @@ export default function Header() {
 
         <Link
           href="/issues"
-          className={`flex flex-col items-center gap-1 px-4 py-1.5 rounded-md transition-all w-full ${
+          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
             isActive("/issues")
-              ? "text-[#8cb4ff] bg-[#121212] border border-[#333]"
+              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
               : "text-gray-200 hover:text-gray-200 border border-transparent"
           }`}
         >
