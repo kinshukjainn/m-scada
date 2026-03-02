@@ -13,27 +13,27 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-slate-200  selection:bg-blue-100 selection:text-blue-900">
+    <footer className="bg-[#141414] rounded-t-2xl">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16 mb-12">
           {/* Brand & Status Column */}
           <div className="col-span-1 md:col-span-1">
-            <div className="flex items-center gap-2 font-bold text-slate-900 text-lg tracking-tight mb-4">
-              <Activity size={20} className="text-blue-700" />
+            <div className="flex items-center gap-2 font-bold text-slate-100 text-lg tracking-tight mb-4">
+              <Activity size={20} className="text-blue-200" />
               <span>Faut Detection System</span>{" "}
               {/* Feel free to change this placeholder name */}
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed mb-6">
+            <p className="text-sm text-slate-100 leading-relaxed mb-6">
               Predictive intelligence and anomaly detection for critical
               industrial infrastructure.
             </p>
             {/* System Status Indicator */}
-            <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-md bg-slate-50 border border-slate-200">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full bg-[#252525] border border-[#4444444]">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded h-2 w-2 bg-emerald-500"></span>
+                <span className="animate-ping absolute inline-flex h-full w-full rounded bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded h-2 w-2 bg-blue-500"></span>
               </span>
-              <span className="text-[11px] font-mono font-normal text-gray-800 uppercase tracking-wider">
+              <span className="text-[11px] font-mono font-semibold text-gray-100 uppercase tracking-wider">
                 All Systems Normal
               </span>
             </div>
@@ -41,18 +41,18 @@ export default function Footer() {
 
           {/* Internal Navigation */}
           <div>
-            <h3 className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest mb-5">
+            <h3 className="text-md  font-bold text-blue-500 uppercase tracking-widest mb-5">
               Platform
             </h3>
             <ul className="space-y-3">
               <li>
                 <Link
                   href="/console"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
+                  className="inline-flex items-center gap-2 text-md text-gray-100 hover:text-blue-200 font-normal transition-colors group"
                 >
                   <TerminalSquare
                     size={16}
-                    className="text-slate-400 group-hover:text-blue-700 transition-colors"
+                    className="text-blue-200 group-hover:text-blue-500 transition-colors"
                   />
                   System Console
                 </Link>
@@ -60,11 +60,11 @@ export default function Footer() {
               <li>
                 <Link
                   href="/about-info"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
+                  className="inline-flex items-center gap-2 text-md text-gray-100 hover:text-blue-200 font-normal transition-colors group"
                 >
                   <Info
                     size={16}
-                    className="text-slate-400 group-hover:text-blue-700 transition-colors"
+                    className="text-blue-200 group-hover:text-blue-500 transition-colors"
                   />
                   About Platform
                 </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
 
           {/* External Links & Resources */}
           <div>
-            <h3 className="text-[11px] font-mono font-bold text-slate-400 uppercase tracking-widest mb-5">
+            <h3 className="text-md  font-bold text-blue-400 uppercase tracking-widest mb-5">
               Resources & Support
             </h3>
             <ul className="space-y-3">
@@ -83,11 +83,11 @@ export default function Footer() {
                   href="https://cloudkinshuk.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
+                  className="inline-flex items-center gap-2 text-md text-gray-100 hover:text-blue-200 font-normal transition-colors group"
                 >
                   <Globe
                     size={16}
-                    className="text-slate-400 group-hover:text-blue-700 transition-colors"
+                    className="text-blue-200 group-hover:text-blue-500 transition-colors"
                   />
                   Developer Portfolio
                 </a>
@@ -97,11 +97,11 @@ export default function Footer() {
                   href="https://github.com/kinshukjainn/fds-college" // REPLACE WITH YOUR REPO
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
+                  className="inline-flex items-center gap-2 text-md text-gray-100 hover:text-blue-200 font-normal transition-colors group"
                 >
                   <Github
                     size={16}
-                    className="text-slate-400 group-hover:text-blue-700 transition-colors"
+                    className="text-blue-200 group-hover:text-blue-500 transition-colors"
                   />
                   Source Code
                 </a>
@@ -109,11 +109,11 @@ export default function Footer() {
               <li>
                 <a
                   href="https://feedbacks.cloudkinshuk.in" // REPLACE WITH YOUR FEEDBACK LINK/MAIL
-                  className="inline-flex items-center gap-2 text-sm text-gray-800 hover:text-blue-700 font-normal transition-colors group"
+                  className="inline-flex items-center gap-2 text-md text-gray-100 hover:text-blue-200 font-normal transition-colors group"
                 >
                   <MessageSquare
                     size={16}
-                    className="text-slate-400 group-hover:text-blue-700 transition-colors"
+                    className="text-blue-200 group-hover:text-blue-500 transition-colors"
                   />
                   Submit Feedback
                 </a>

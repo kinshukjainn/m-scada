@@ -2,8 +2,13 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Info, Terminal, MessageSquare, Github } from "lucide-react";
-import { SiGoogledocs } from "react-icons/si";
+import {
+  Info,
+  Terminal,
+  MessageSquare,
+  Github,
+  NotebookPen,
+} from "lucide-react";
 import { useState } from "react";
 import { IoBugSharp } from "react-icons/io5";
 
@@ -41,6 +46,13 @@ export default function Header() {
               <Info className="w-4 h-4" />
               <span>About</span>
             </Link>
+            <Link
+              href="/docs"
+              className={`${linkBaseStyle} ${isActive("/docs") ? linkActiveStyle : linkInactiveStyle}`}
+            >
+              <NotebookPen className="w-4 h-4" />
+              <span>Documentation</span>
+            </Link>
 
             <Link
               href="/console"
@@ -68,7 +80,7 @@ export default function Header() {
               rel="noopener noreferrer"
               onMouseEnter={() => setIsGithubHovered(true)}
               onMouseLeave={() => setIsGithubHovered(false)}
-              className="hidden sm:flex items-center gap-2 px-5 py-2 rounded-md border border-[#444] bg-[#121212] hover:bg-[#333] transition-all overflow-hidden group"
+              className="hidden sm:flex items-center gap-2 px-5 py-2 rounded-md border border-[#444] bg-black transition-all overflow-hidden group"
             >
               <Github className="w-4 h-4 text-gray-300 flex-shrink-0 group-hover:text-white transition-colors" />
               <div className="relative h-5 overflow-hidden w-[85px]">
@@ -77,10 +89,10 @@ export default function Header() {
                     isGithubHovered ? "-translate-y-5" : "translate-y-0"
                   }`}
                 >
-                  Open source
+                  Open
                 </span>
                 <span
-                  className={`block text-sm font-normal text-[#8cb4ff] absolute top-5 left-0 transition-transform duration-300 ${
+                  className={`block text-sm font-normal text-white absolute top-5 left-0 transition-transform duration-300 ${
                     isGithubHovered ? "-translate-y-5" : "translate-y-0"
                   }`}
                 >
@@ -127,6 +139,19 @@ export default function Header() {
           <Info className="w-5 h-5" />
           <span className="text-[10px] font-normal tracking-wide">About</span>
         </Link>
+        <Link
+          href="/docs"
+          className={`flex flex-col items-center gap-1 px-4 py-1.5 rounded-md transition-all w-full ${
+            isActive("/docs")
+              ? "text-[#8cb4ff] bg-[#121212] border border-[#333]"
+              : "text-gray-200 hover:text-gray-200 border border-transparent"
+          }`}
+        >
+          <NotebookPen className="w-5 h-5" />
+          <span className="text-[10px] font-normal tracking-wide">
+            Documentation
+          </span>
+        </Link>
 
         <Link
           href="/console"
@@ -138,18 +163,6 @@ export default function Header() {
         >
           <Terminal className="w-5 h-5" />
           <span className="text-[10px] font-normal tracking-wide">Console</span>
-        </Link>
-
-        <Link
-          href="/docs"
-          className={`flex flex-col items-center gap-1 px-4 py-1.5 rounded-md transition-all w-full ${
-            isActive("/docs")
-              ? "text-[#8cb4ff] bg-[#121212] border border-[#333]"
-              : "text-gray-200 hover:text-gray-200 border border-transparent"
-          }`}
-        >
-          <SiGoogledocs className="w-5 h-5" />
-          <span className="text-[10px] font-normal tracking-wide">Docs</span>
         </Link>
 
         <Link

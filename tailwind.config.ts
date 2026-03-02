@@ -9,6 +9,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        smoothSpin: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+      },
+      animation: {
+        smoothSpin: "smoothSpin 1.2s ease-in-out infinite",
+      },
       fontFamily: {
         // Add your custom font here
         worksans: ["var(--font-work-sans)", "sans-serif"],

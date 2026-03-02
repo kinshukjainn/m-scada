@@ -176,6 +176,13 @@ export default function DocsLandingPage() {
                 <li className="flex items-center gap-3">
                   <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
+                    Api Gateway
+                  </strong>{" "}
+                  Frontend API Calling and routing
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <strong className="font-normal text-white">
                     Lambda:
                   </strong>{" "}
                   Serverless functions

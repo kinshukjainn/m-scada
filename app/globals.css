@@ -13,6 +13,19 @@ body {
   font-family: var(--font-dm-mono), monospace; /* Use the Google DM Mono font */
 }
 
+@keyframes smoothSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-smoothSpin {
+  animation: smoothSpin 1.2s ease-in-out infinite;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
