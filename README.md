@@ -2,7 +2,7 @@
 
 Fault detection is an automated process that monitors systems and applications to identify abnormalities, errors, or potential failures before they impact your operations. Our system uses advanced algorithms to analyze data patterns and trigger alerts when issues are detected.
 
-### How it Works ?
+## How it Works ?
 
 The system continuously monitors your infrastructure, collecting metrics and logs. Using machine learning models and predefined rules, it analyzes this data in real-time to detect anomalies and potential faults. When an issue is detected, notifications are sent to configured channels immediately.
 
@@ -29,9 +29,11 @@ In the Indian industrial landscape, where manufacturing, power generation, and i
 
 ### Contributions Guildline
 
-If you want to contribute to project then please refer to `CONTRIBUTION.md` or to Documentation of ours by going to our website in `/docs`
+If you want to contribute to project then please refer to `CONTRIBUTION.md` or to Documentation of ours by going to our website in `/docs/contri`
 
-For More detailed Documentation refer to : [`fds-project-docs`](https://fdsai.cloudkinshuk.in/docs/repo-setup)
+For making any contribution related info please refer to : [`fds project contribution`](https://fdsai.cloudkinshuk.in/docs/contri)
+
+For More detailed Documentation refer to : [`fds-project-docs`](https://fdsai.cloudkinshuk.in/docs)
 
 Maintainer : [`Kinshuk-Jain-Website`](https://cloudkinshuk.in)
 
