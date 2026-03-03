@@ -13,7 +13,7 @@ export default function OpenAIDocs() {
           {/* Page Header */}
           <div className="mb-12 border-b border-[#333] pb-8 flex flex-col sm:flex-row items-start gap-6">
             {/* OpenAI SVG Logo */}
-            <div className="w-14 h-14 bg-[#1b1b1b] border border-[#444] rounded-md flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
+            <div className="w-14 h-14 bg-[#1b1b1b] border border-[#444] rounded-2xl flex items-center justify-center flex-shrink-0 mt-1 shadow-sm">
               <SiOpenai className="w-7 h-7 text-[#10a37f]" />
             </div>
             <div>
@@ -40,10 +40,10 @@ export default function OpenAIDocs() {
               the AI space, the term usually refers to{" "}
               <strong>&quot;Open-Weights&quot;</strong> models.
             </p>
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 mb-8 text-sm text-gray-200 leading-relaxed">
+            <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 mb-8 text-sm text-gray-200 leading-relaxed">
               <ul className="space-y-4 m-0 list-none p-0">
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#10a37f] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#10a37f] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-white font-normal">
                       Apache 2.0 License:
@@ -56,7 +56,7 @@ export default function OpenAIDocs() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#10a37f] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#10a37f] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-white font-normal">
                       Data Privacy & Sovereignty:
@@ -82,7 +82,7 @@ export default function OpenAIDocs() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors">
                 <h4 className="font-mono font-normal text-gray-300 mb-4 text-[11px] uppercase tracking-widest border-b border-[#333] pb-3">
                   Technical Specifications
                 </h4>
@@ -122,7 +122,7 @@ export default function OpenAIDocs() {
                 </ul>
               </div>
 
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors">
                 <h4 className="font-mono font-normal text-gray-300 mb-4 text-[11px] uppercase tracking-widest border-b border-[#333] pb-3">
                   Agentic & Reasoning Features
                 </h4>
@@ -168,7 +168,7 @@ export default function OpenAIDocs() {
               inference pricing per <strong>1 million tokens</strong>.
             </p>
 
-            <div className="mt-8 overflow-x-auto border border-[#333] rounded-md shadow-sm bg-[#1b1b1b] mb-3">
+            <div className="mt-8 overflow-x-auto border border-[#333] rounded-2xl shadow-sm bg-[#1b1b1b] mb-3">
               <table className="w-full text-left text-sm whitespace-nowrap">
                 <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                   <tr>

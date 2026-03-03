@@ -34,14 +34,14 @@ export default function LambdaFunctionDocs() {
               container image, and Lambda handles the rest.
             </p>
 
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm">
+            <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm">
               <h3 className="text-lg font-normal text-white mb-4 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-sm bg-[#8cb4ff]"></span>
+                <span className="w-2 h-2 rounded-2xl bg-[#8cb4ff]"></span>
                 Core Benefits
               </h3>
               <ul className="space-y-4 text-gray-200 font-normal text-[15px]">
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#444] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-gray-200 font-normal">
                       No Servers to Manage:
@@ -51,7 +51,7 @@ export default function LambdaFunctionDocs() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#444] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-gray-200 font-normal">
                       Continuous Scaling:
@@ -62,7 +62,7 @@ export default function LambdaFunctionDocs() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#444] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-gray-200 font-normal">
                       Subsecond Metering:
@@ -88,10 +88,10 @@ export default function LambdaFunctionDocs() {
               execute your functions.
             </p>
 
-            <div className="my-8 rounded-md overflow-hidden border border-[#333] bg-[#1b1b1b] p-2"></div>
+            <div className="my-8 rounded-2xl overflow-hidden border border-[#333] bg-[#1b1b1b] p-2"></div>
 
             <div className="space-y-6 mt-8">
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors">
                 <h4 className="font-normal text-white mb-3 text-lg">
                   A. The Execution Environment (Firecracker)
                 </h4>
@@ -107,7 +107,7 @@ export default function LambdaFunctionDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors">
                 <h4 className="font-normal text-white mb-3 text-lg">
                   B. The Lifecycle & Cold Starts
                 </h4>
@@ -127,7 +127,7 @@ export default function LambdaFunctionDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors">
                 <h4 className="font-normal text-white mb-3 text-lg">
                   C. Event-Driven Execution
                 </h4>
@@ -153,7 +153,7 @@ export default function LambdaFunctionDocs() {
               event is processed:
             </p>
 
-            <div className="overflow-x-auto rounded-md border border-[#333] bg-[#121212] shadow-sm">
+            <div className="overflow-x-auto rounded-2xl border border-[#333] bg-[#121212] shadow-sm">
               <table className="min-w-full text-left text-sm">
                 <thead className="bg-[#1b1b1b] border-b border-[#333] text-gray-200 text-[11px] font-mono uppercase tracking-widest">
                   <tr>
@@ -172,7 +172,7 @@ export default function LambdaFunctionDocs() {
                       processing and return a response immediately.
                     </td>
                     <td className="px-6 py-4">
-                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-2 py-1 rounded-sm font-mono text-xs">
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-2 py-1 rounded-2xl font-mono text-xs">
                         API Gateway, ALB, Function URLs
                       </code>
                     </td>
@@ -187,7 +187,7 @@ export default function LambdaFunctionDocs() {
                       and auto-retries on failure.
                     </td>
                     <td className="px-6 py-4">
-                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-2 py-1 rounded-sm font-mono text-xs">
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-2 py-1 rounded-2xl font-mono text-xs">
                         Amazon S3, EventBridge, SNS
                       </code>
                     </td>
@@ -201,7 +201,7 @@ export default function LambdaFunctionDocs() {
                       processes them in batches synchronously.
                     </td>
                     <td className="px-6 py-4">
-                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-2 py-1 rounded-sm font-mono text-xs">
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-2 py-1 rounded-2xl font-mono text-xs">
                         Amazon SQS, DynamoDB, Kinesis
                       </code>
                     </td>

@@ -12,7 +12,7 @@ export default function Page() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-2 gap-8">
           {/* Manual Console */}
-          <div className="border border-white/10 bg-white/[0.02] rounded-lg p-8 hover:shadow-2xl hover:bg-white/[0.04] transition-all">
+          <div className="border border-white/10 bg-white/[0.02] rounded-3xl p-8 hover:shadow-2xl hover:bg-white/[0.04] transition-all">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-white mb-2">
                 Manual Console
@@ -76,7 +76,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="mb-8 p-4 bg-white/5 border border-white/10 rounded-lg">
+            <div className="mb-8 p-4 bg-white/5 border border-white/10 rounded-3xl">
               <h4 className="font-medium text-white mb-2">
                 Full Customization
               </h4>
@@ -88,14 +88,14 @@ export default function Page() {
 
             <Link
               href="/console/manual"
-              className="block w-full bg-white rounded-lg text-black text-center py-2 px-4 font-medium hover:bg-gray-200 transition-colors"
+              className="block w-full bg-white rounded-full text-black text-center py-2 px-4 font-medium hover:bg-gray-200 transition-colors"
             >
               Manual Console
             </Link>
           </div>
 
           {/* Automated Console */}
-          <div className="border border-white/10 bg-white/[0.02] rounded-lg p-8 hover:shadow-2xl hover:bg-white/[0.04] transition-all">
+          <div className="border border-white/10 bg-white/[0.02] rounded-3xl p-8 hover:shadow-2xl hover:bg-white/[0.04] transition-all">
             <div className="mb-6">
               <h2 className="text-2xl font-bold text-white mb-2">
                 Automated Console
@@ -160,7 +160,7 @@ export default function Page() {
               </ul>
             </div>
 
-            <div className="mb-8 p-4 bg-white/5 rounded-lg border border-white/10">
+            <div className="mb-8 p-4 bg-white/5 rounded-3xl border border-white/10">
               <h4 className="font-medium text-white mb-2">Smart Analytics</h4>
               <p className="text-sm text-gray-400">
                 Automatically tracks metrics and generates actionable insights
@@ -170,7 +170,7 @@ export default function Page() {
 
             <Link
               href="/console/direct"
-              className="block w-full bg-[#8cb4ff] hover:bg-[#a6c6ff] rounded-lg text-black text-center py-2 px-4 font-medium transition-colors"
+              className="block w-full bg-[#8cb4ff] hover:bg-[#a6c6ff] rounded-full text-black text-center py-2 px-4 font-medium transition-colors"
             >
               Automated Console
             </Link>
@@ -186,17 +186,17 @@ export default function Page() {
             See which approach works best for your needs
           </p>
 
-          <div className="overflow-x-auto rounded-lg border border-white/10 shadow-lg">
+          <div className="overflow-x-auto rounded-3xl border border-white/10 shadow-lg">
             <table className="w-full border-collapse">
               <thead>
-                <tr className="bg-white/5">
-                  <th className="border-b border-white/10 px-6 py-4 text-left font-medium text-white">
+                <tr className="bg-black">
+                  <th className="border-b border-white/10 px-6 py-4 text-left font-semibold text-blue-400">
                     Feature
                   </th>
-                  <th className="border-b border-l border-white/10 px-6 py-4 text-left font-medium text-white">
+                  <th className="border-b border-l border-white/10 px-6 py-4 text-left font-semibold text-blue-400">
                     Automated
                   </th>
-                  <th className="border-b border-l border-white/10 px-6 py-4 text-left font-medium text-white">
+                  <th className="border-b border-l border-white/10 px-6 py-4 text-left font-semibold text-blue-400">
                     Manual
                   </th>
                 </tr>

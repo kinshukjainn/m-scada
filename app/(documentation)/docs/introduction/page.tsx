@@ -18,7 +18,7 @@ export default function IntroductionPage() {
       <article className="max-w-[1000px] w-full px-6 py-16  text-[#e0e0e0]">
         {/* ─── Page Header ─── */}
         <header className="mb-12 block">
-          <h1 className="text-4xl sm:text-5xl font-normal text-white tracking-tight mb-6">
+          <h1 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-6">
             Introduction to FDS.AI <span className="text-[#8cb4ff]">_</span>
           </h1>
           <p className="text-lg text-gray-200 font-normal leading-relaxed max-w-3xl tracking-wide">
@@ -34,11 +34,11 @@ export default function IntroductionPage() {
         {/* ─── Core Concepts Grid ─── */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* Card 1 */}
-          <div className="p-8 rounded-md border border-[#333] bg-[#1b1b1b] shadow-sm hover:border-[#444] transition-colors">
-            <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-6 text-[#8cb4ff]">
+          <div className="p-8 rounded-2xl border border-[#333] bg-[#1b1b1b] shadow-sm hover:border-blue-500 transition-colors">
+            <div className="w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-6 text-[#8cb4ff]">
               <Activity className="w-5 h-5" />
             </div>
-            <h2 className="text-xl font-normal text-white mb-3 tracking-tight">
+            <h2 className="text-xl font-semibold text-white mb-3 tracking-tight">
               How it Works
             </h2>
             <p className="text-sm text-gray-200 leading-relaxed font-normal">
@@ -51,11 +51,11 @@ export default function IntroductionPage() {
           </div>
 
           {/* Card 2 */}
-          <div className="p-8 rounded-md border border-[#333] bg-[#1b1b1b] shadow-sm hover:border-[#444] transition-colors">
-            <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-6 text-[#8cb4ff]">
+          <div className="p-8 rounded-2xl border border-[#333] bg-[#1b1b1b] shadow-sm hover:border-blue-500 transition-colors">
+            <div className="w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-6 text-[#8cb4ff]">
               <BrainCircuit className="w-5 h-5" />
             </div>
-            <h2 className="text-xl font-normal text-white mb-3 tracking-tight">
+            <h2 className="text-xl font-semibold text-white mb-3 tracking-tight">
               AI-Powered Detection
             </h2>
             <p className="text-sm text-gray-200 leading-relaxed font-normal">
@@ -69,7 +69,7 @@ export default function IntroductionPage() {
 
         {/* ─── Industry Context ─── */}
         <section className="mb-12 pt-4">
-          <h2 className="text-2xl font-normal text-white mb-6 flex items-center gap-3">
+          <h2 className="text-2xl font-semibold text-white mb-6 flex items-center gap-3">
             <Factory className="w-6 h-6 text-[#8cb4ff]" />
             The Indian Industrial Landscape
           </h2>
@@ -86,10 +86,10 @@ export default function IntroductionPage() {
 
         {/* ─── Tech Stack ─── */}
         <section className="mb-12">
-          <h2 className="text-2xl font-normal text-white mb-6">
+          <h2 className="text-2xl font-semibold text-white mb-6">
             Architecture & Tech Stack
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1b1b1b] border border-[#333] rounded-md shadow-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1b1b1b] border border-[#333] rounded-2xl shadow-sm">
             {/* Stack Column 1 */}
             <div>
               <h3 className="text-xs font-mono font-normal uppercase tracking-widest text-gray-100 mb-5 flex items-center gap-2">
@@ -98,36 +98,36 @@ export default function IntroductionPage() {
               </h3>
               <ul className="space-y-4 text-sm text-gray-300 font-normal">
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Next.js 16
                   </strong>{" "}
                   <span className="text-gray-100">(Turbopack)</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Node.js
                   </strong>{" "}
                   <span className="text-gray-100">(v22)</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Tailwind CSS
                   </strong>{" "}
                   <span className="text-gray-100">(v4)</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#444]"></div>
                   Shadcn UI
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#444]"></div>
                   Lucide & React Icons
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#444]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#444]"></div>
                   Framer Motion
                 </li>
               </ul>
@@ -141,42 +141,42 @@ export default function IntroductionPage() {
               </h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 text-sm text-gray-300 font-normal">
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     AWS Amplify:
                   </strong>{" "}
                   Serverless deploy
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Amazon Bedrock:
                   </strong>{" "}
                   LLM integration
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     AWS Lambda:
                   </strong>{" "}
                   Serverless functions
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Amazon CloudWatch:
                   </strong>{" "}
                   Logs
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Amazon Route53:
                   </strong>{" "}
                   Domains
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     AWS Cloud:
                   </strong>{" "}
@@ -190,8 +190,8 @@ export default function IntroductionPage() {
         <hr className="my-10 border-[#333]" />
 
         {/* ─── Footer / Next Steps ─── */}
-        <section className="bg-[#1b1b1b] rounded-md p-8 border border-[#333] shadow-sm">
-          <h2 className="text-xl font-normal text-white mb-3">
+        <section className="bg-[#1b1b1b] rounded-2xl p-8 border border-[#333] shadow-sm">
+          <h2 className="text-xl font-medium text-white mb-3">
             Getting Started & Contributions
           </h2>
           <p className="text-sm text-gray-200 font-normal leading-relaxed mb-8 max-w-2xl">

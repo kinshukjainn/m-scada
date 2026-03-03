@@ -45,12 +45,12 @@ export default function OpenAIDocs() {
             </p>
 
             <h3 className="text-lg font-semibold text-white mb-4 mt-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-sm bg-[#10a37f]"></span>
+              <span className="w-2 h-2 rounded-2xl bg-[#10a37f]"></span>
               Key Architectural Features
             </h3>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#10a37f] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#10a37f] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Mixture-of-Experts (MoE):
@@ -63,7 +63,7 @@ export default function OpenAIDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#10a37f] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#10a37f] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     128K Context Window:
@@ -74,7 +74,7 @@ export default function OpenAIDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#10a37f] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#10a37f] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Adjustable Reasoning:
@@ -100,7 +100,7 @@ export default function OpenAIDocs() {
               profiles on AWS.
             </p>
 
-            <div className="mt-10 overflow-x-auto border border-[#333] rounded-md shadow-sm bg-[#1b1b1b] mb-8">
+            <div className="mt-10 overflow-x-auto border border-[#333] rounded-2xl shadow-sm bg-[#1b1b1b] mb-8">
               <table className="w-full text-left text-sm whitespace-nowrap">
                 <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                   <tr>
@@ -152,7 +152,7 @@ export default function OpenAIDocs() {
             </div>
 
             {/* Parameter Clarification Callout Box */}
-            <div className="rounded-md p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-[#10a37f] border border-[#333]">
+            <div className="rounded-2xl p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-[#10a37f] border border-[#333]">
               <h4 className="font-semibold text-white mb-3 flex items-center gap-3 text-lg">
                 <svg
                   className="w-5 h-5 text-[#10a37f]"

@@ -64,7 +64,7 @@ export default function RequestFlowDocs() {
               ].map((item) => (
                 <div key={item.step} className="flex gap-5">
                   <div className="flex flex-col items-center mt-0.5">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-sm bg-[#2d2d2d] text-[#8cb4ff] font-mono text-sm border border-[#444]">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-2xl bg-[#2d2d2d] text-[#8cb4ff] font-mono text-sm border border-[#444]">
                       {item.step}
                     </span>
                     {item.step !== 5 && (
@@ -107,7 +107,7 @@ export default function RequestFlowDocs() {
               when asked to describe an image and answer a question.
             </p>
 
-            <div className="bg-[#1b1b1b] rounded-md overflow-hidden border border-[#333] shadow-sm mb-8 w-full min-w-0">
+            <div className="bg-[#1b1b1b] rounded-2xl overflow-hidden border border-[#333] shadow-sm mb-8 w-full min-w-0">
               <div className="bg-[#2d2d2d] px-4 py-2.5 text-xs text-gray-200 font-mono border-b border-[#444] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div className="flex items-center gap-2">
                   <div className="flex gap-1.5 mr-2">
@@ -151,21 +151,21 @@ export default function RequestFlowDocs() {
             <h3 className="text-lg font-semibold text-white mt-10 mb-4">
               Breaking Down the Design
             </h3>
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm">
+            <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm">
               <ul className="space-y-5 text-gray-200 font-normal text-[15px] m-0">
                 <li className="flex items-start gap-3">
                   <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                   <span>
                     <strong className="text-white font-semibold">
                       The{" "}
-                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
                         output.message
                       </code>{" "}
                       object:
                     </strong>{" "}
                     Llama 3.2 is fine-tuned for conversational instruction. It
                     explicitly tags its response with the{" "}
-                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
                       &quot;role&quot;: &quot;assistant&quot;
                     </code>
                     .
@@ -176,13 +176,13 @@ export default function RequestFlowDocs() {
                   <span>
                     <strong className="text-white font-semibold">
                       The{" "}
-                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
                         stopReason
                       </code>{" "}
                       flag:
                     </strong>{" "}
                     A value of{" "}
-                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
                       end_turn
                     </code>{" "}
                     means the model successfully finished its thought.
@@ -193,7 +193,7 @@ export default function RequestFlowDocs() {
                   <span>
                     <strong className="text-white font-semibold">
                       The{" "}
-                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                      <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
                         usage
                       </code>{" "}
                       block:

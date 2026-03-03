@@ -26,13 +26,13 @@ export default function ServerlessAIArchitectureDocs() {
 
           {/* Architecture Image */}
           <section className="mb-16 min-w-0">
-            <div className="mb-6 rounded-md overflow-hidden border border-[#333] bg-[#1b1b1b] p-2">
+            <div className="mb-6 rounded-2xl overflow-hidden border border-[#333] bg-[#1b1b1b] p-2">
               <Image
                 src="/flowdiagram.png"
                 alt="AWS Serverless AI Architecture Diagram connecting Amplify, API Gateway, Lambda, and Bedrock"
                 width={1000}
                 height={500}
-                className="w-full h-auto rounded-sm"
+                className="w-full h-auto rounded-2xl"
                 priority
               />
             </div>
@@ -59,10 +59,10 @@ export default function ServerlessAIArchitectureDocs() {
             <div className="space-y-8 relative before:absolute before:inset-0 before:ml-[1.125rem] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-[#444] before:to-transparent">
               {/* Step 1: Amplify */}
               <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="flex items-center justify-center w-9 h-9 rounded-2xl border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   1
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-md border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-2xl border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     AWS Amplify (Frontend)
                   </h4>
@@ -77,10 +77,10 @@ export default function ServerlessAIArchitectureDocs() {
 
               {/* Step 2: API Gateway */}
               <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="flex items-center justify-center w-9 h-9 rounded-2xl border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   2
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-md border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-2xl border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Amazon API Gateway
                   </h4>
@@ -95,10 +95,10 @@ export default function ServerlessAIArchitectureDocs() {
 
               {/* Step 3: Lambda */}
               <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="flex items-center justify-center w-9 h-9 rounded-2xl border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   3
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-md border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-2xl border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     AWS Lambda (Compute)
                   </h4>
@@ -113,10 +113,10 @@ export default function ServerlessAIArchitectureDocs() {
 
               {/* Step 4: Bedrock */}
               <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="flex items-center justify-center w-9 h-9 rounded-2xl border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   4
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-md border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-2xl border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Amazon Bedrock (AI/LLM)
                   </h4>
@@ -144,7 +144,7 @@ export default function ServerlessAIArchitectureDocs() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-md p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] rounded-2xl p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                 <h3 className="text-lg font-semibold text-white mb-3">
                   Zero Infrastructure Management
                 </h3>
@@ -155,7 +155,7 @@ export default function ServerlessAIArchitectureDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-md p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] rounded-2xl p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                 <h3 className="text-lg font-semibold text-white mb-3">
                   Infinite & Instant Scalability
                 </h3>
@@ -166,7 +166,7 @@ export default function ServerlessAIArchitectureDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-md p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] rounded-2xl p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                 <h3 className="text-lg font-semibold text-white mb-3">
                   True Pay-As-You-Go
                 </h3>
@@ -177,7 +177,7 @@ export default function ServerlessAIArchitectureDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-md p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] rounded-2xl p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                 <h3 className="text-lg font-semibold text-white mb-3">
                   Incredible Modularity
                 </h3>

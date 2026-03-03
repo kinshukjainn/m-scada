@@ -55,7 +55,7 @@ export default function AboutPage() {
           </div>
 
           {/* Right Column: Highlights Card */}
-          <div className="lg:col-span-2 bg-[#1b1b1b] border border-[#333] rounded-md shadow-sm overflow-hidden">
+          <div className="lg:col-span-2 bg-[#1b1b1b] border border-[#333] rounded-2xl shadow-sm overflow-hidden">
             <div className="border-b border-[#333] bg-[#2d2d2d] px-6 py-4">
               <h3 className="text-xs font-mono font-normal text-gray-300 uppercase tracking-widest">
                 Key Capabilities

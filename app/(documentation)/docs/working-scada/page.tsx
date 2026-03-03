@@ -35,14 +35,14 @@ export default function ScadaVsModernAppDocs() {
               to control equipment and conditions.
             </p>
 
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm mt-6">
+            <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm mt-6">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-3">
-                <span className="w-2 h-2 rounded-sm bg-[#818cf8]"></span>
+                <span className="w-2 h-2 rounded-2xl bg-[#818cf8]"></span>
                 The 4 Core Components of SCADA:
               </h3>
               <ul className="space-y-4 text-[15px] text-gray-200 m-0 list-none p-0 font-normal">
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#818cf8] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-white font-semibold">
                       1. Sensors & Actuators:
@@ -53,7 +53,7 @@ export default function ScadaVsModernAppDocs() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#818cf8] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-white font-semibold">
                       2. RTUs / PLCs:
@@ -66,7 +66,7 @@ export default function ScadaVsModernAppDocs() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#818cf8] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-white font-semibold">
                       3. Communication Network:
@@ -77,7 +77,7 @@ export default function ScadaVsModernAppDocs() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
+                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#818cf8] mt-2 flex-shrink-0"></div>
                   <span>
                     <strong className="text-white font-semibold">
                       4. Master Terminal Unit (MTU) / HMI:
@@ -106,7 +106,7 @@ export default function ScadaVsModernAppDocs() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-[#1b1b1b] border-l-4 border-l-[#818cf8] border border-[#333] rounded-md p-6 sm:p-8">
+              <div className="bg-[#1b1b1b] border-l-4 border-l-[#818cf8] border border-[#333] rounded-2xl p-6 sm:p-8">
                 <h4 className="font-semibold text-white mb-3 text-lg">
                   Threshold Alarming
                 </h4>
@@ -117,7 +117,7 @@ export default function ScadaVsModernAppDocs() {
                   immediate visual and auditory alarm on the HMI.
                 </p>
               </div>
-              <div className="bg-[#1b1b1b] border-l-4 border-l-[#818cf8] border border-[#333] rounded-md p-6 sm:p-8">
+              <div className="bg-[#1b1b1b] border-l-4 border-l-[#818cf8] border border-[#333] rounded-2xl p-6 sm:p-8">
                 <h4 className="font-semibold text-white mb-3 text-lg">
                   State Mismatches
                 </h4>
@@ -142,9 +142,9 @@ export default function ScadaVsModernAppDocs() {
               fundamental software architecture was designed decades before the
               cloud existed.
             </p>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#818cf8] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Monolithic & On-Premise:
@@ -156,7 +156,7 @@ export default function ScadaVsModernAppDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#818cf8] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Lack of Predictive Intelligence:
@@ -167,7 +167,7 @@ export default function ScadaVsModernAppDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#818cf8] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Proprietary Silos:
@@ -179,7 +179,7 @@ export default function ScadaVsModernAppDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#818cf8] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Security through Isolation:
@@ -204,7 +204,7 @@ export default function ScadaVsModernAppDocs() {
               differences in system design are staggering.
             </p>
 
-            <div className="mt-8 overflow-x-auto border border-[#333] rounded-md shadow-sm bg-[#1b1b1b] mb-3">
+            <div className="mt-8 overflow-x-auto border border-[#333] rounded-2xl shadow-sm bg-[#1b1b1b] mb-3">
               <table className="w-full text-left text-sm whitespace-nowrap">
                 <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                   <tr>

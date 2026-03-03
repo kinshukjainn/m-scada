@@ -118,7 +118,7 @@ export default function ElectricalDiagnosticConsole() {
       <div className="max-w-[1400px] mx-auto space-y-6 lg:space-y-8">
         {/* Header - Elevated Panel */}
         <div className=" p-6 rounded-2xl  flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className=" bg-gray-200 border border-[#252525] p-2 rounded-sm">
+          <div className=" bg-gray-200 border border-[#252525] p-2 rounded-2xl">
             <h1 className="text-xl sm:text-xl font-bold tracking-tight text-gray-900">
               Disclaimer :
             </h1>
@@ -405,7 +405,7 @@ export default function ElectricalDiagnosticConsole() {
                             key={idx}
                             className="flex gap-3 text-sm text-gray-700 items-start"
                           >
-                            <div className="mt-0.5 p-1 bg-indigo-50 text-indigo-600 rounded-md">
+                            <div className="mt-0.5 p-1 bg-indigo-50 text-indigo-600 rounded-2xl">
                               <ChevronRight className="w-3 h-3 shrink-0" />
                             </div>
                             <span className="font-medium">{step}</span>

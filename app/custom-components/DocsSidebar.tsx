@@ -205,7 +205,7 @@ export function DocsSidebar({
         {/* Sidebar Header */}
         <div className="flex h-[60px] flex-shrink-0 items-center justify-between border-b border-white/5 bg-transparent px-5 py-4">
           <div className="flex items-center gap-3">
-            <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
               <BookOpen className="h-4 w-4 text-[#8cb4ff]" />
             </div>
             <h2 className="flex items-center gap-0.5 text-base font-medium tracking-tight text-gray-200">
@@ -235,11 +235,11 @@ export function DocsSidebar({
                 href={item.href}
                 onClick={() => setIsOpen(false)}
                 className={`
-                  group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-300
+                  group flex items-center gap-3 rounded-full px-3 py-2.5 text-sm transition-all duration-300
                   ${
                     isActive
                       ? "bg-white/10 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] ring-1 ring-white/5"
-                      : "text-gray-400 hover:bg-white/5 hover:text-gray-200"
+                      : "text-gray-300 hover:bg-white/5 hover:text-gray-200"
                   }
                 `}
               >
@@ -247,7 +247,7 @@ export function DocsSidebar({
                   className={`flex-shrink-0 transition-colors duration-300 ${
                     isActive
                       ? "text-[#8cb4ff]"
-                      : "text-gray-500 group-hover:text-gray-400"
+                      : "text-gray-300 group-hover:text-gray-200"
                   }`}
                 >
                   {item.icon}

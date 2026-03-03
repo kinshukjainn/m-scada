@@ -40,16 +40,16 @@ export default function ApiGatewayDocs() {
               the exact same infrastructure problems:
             </p>
 
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm mb-6 text-gray-200 font-normal text-[15px]">
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm mb-6 text-gray-200 font-normal text-[15px]">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-normal">Security:</strong>{" "}
                   How do we authenticate users before they hit the database?
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-normal">
                     Traffic Surges:
@@ -59,7 +59,7 @@ export default function ApiGatewayDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-normal">
                     DDoS Attacks:
@@ -69,15 +69,15 @@ export default function ApiGatewayDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-normal">Routing:</strong>{" "}
                   How do we route{" "}
-                  <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                  <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
                     /users
                   </code>{" "}
                   to Server A and{" "}
-                  <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
+                  <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
                     /orders
                   </code>{" "}
                   to Server B reliably?
@@ -105,9 +105,9 @@ export default function ApiGatewayDocs() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
               {/* Feature 1 */}
-              <div className="bg-[#1b1b1b] rounded-md p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
+              <div className="bg-[#1b1b1b] rounded-2xl p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
+                  <div className="w-8 h-8 rounded-2xl bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
                     A
                   </div>
                   <h3 className="text-lg font-normal text-white m-0">
@@ -124,9 +124,9 @@ export default function ApiGatewayDocs() {
               </div>
 
               {/* Feature 2 */}
-              <div className="bg-[#1b1b1b] rounded-md p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
+              <div className="bg-[#1b1b1b] rounded-2xl p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
+                  <div className="w-8 h-8 rounded-2xl bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
                     B
                   </div>
                   <h3 className="text-lg font-normal text-white m-0">
@@ -137,7 +137,7 @@ export default function ApiGatewayDocs() {
                   It protects your backend from getting overwhelmed. Using
                   token-bucket algorithms, it enforces rate limits (e.g., 1,000
                   req/sec). Excess traffic instantly receives a{" "}
-                  <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-xs border border-[#444]">
+                  <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-xs border border-[#444]">
                     429 Too Many Requests
                   </code>{" "}
                   error, saving your database from crashing.
@@ -145,9 +145,9 @@ export default function ApiGatewayDocs() {
               </div>
 
               {/* Feature 3 */}
-              <div className="bg-[#1b1b1b] rounded-md p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
+              <div className="bg-[#1b1b1b] rounded-2xl p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
+                  <div className="w-8 h-8 rounded-2xl bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
                     C
                   </div>
                   <h3 className="text-lg font-normal text-white m-0">
@@ -163,9 +163,9 @@ export default function ApiGatewayDocs() {
               </div>
 
               {/* Feature 4 */}
-              <div className="bg-[#1b1b1b] rounded-md p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
+              <div className="bg-[#1b1b1b] rounded-2xl p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
+                  <div className="w-8 h-8 rounded-2xl bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
                     D
                   </div>
                   <h3 className="text-lg font-normal text-white m-0">
@@ -193,7 +193,7 @@ export default function ApiGatewayDocs() {
               your costs and performance.
             </p>
 
-            <div className="overflow-x-auto rounded-md border border-[#333] bg-[#1b1b1b] shadow-sm">
+            <div className="overflow-x-auto rounded-2xl border border-[#333] bg-[#1b1b1b] shadow-sm">
               <table className="min-w-full text-left text-sm">
                 <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                   <tr>

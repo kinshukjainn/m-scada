@@ -39,7 +39,7 @@ export default function GlobalUIUXDocs() {
               .
             </p>
 
-            <div className="bg-[#1b1b1b] border-l-4 border-l-[#f38020] border border-[#333] rounded-md p-6 sm:p-8">
+            <div className="bg-[#1b1b1b] border-l-4 border-l-[#f38020] border border-[#333] rounded-2xl p-6 sm:p-8">
               <h4 className="font-semibold text-white mb-3 text-lg">
                 Familiarity over Novelty
               </h4>
@@ -71,7 +71,7 @@ export default function GlobalUIUXDocs() {
             </p>
 
             <h3 className="text-lg font-semibold text-white mb-4 mt-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-sm bg-[#f38020]"></span>
+              <span className="w-2 h-2 rounded-2xl bg-[#f38020]"></span>
               Maximizing the Data-to-Ink Ratio
             </h3>
             <p className="text-gray-200 font-normal leading-relaxed mb-4 text-[16px]">
@@ -80,13 +80,13 @@ export default function GlobalUIUXDocs() {
               rather than structural borders or decorations. In our data tables
               and metric cards, you will notice:
             </p>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-md p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#f38020] mt-2 flex-shrink-0"></div>
                 <span>Absence of heavy vertical borders in tables.</span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#f38020] mt-2 flex-shrink-0"></div>
                 <span>
                   Use of subtle background fills (
                   <code className="bg-[#2d2d2d] text-[#e0e0e0] px-1.5 py-0.5 rounded font-mono text-xs">
@@ -97,7 +97,7 @@ export default function GlobalUIUXDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-2xl bg-[#f38020] mt-2 flex-shrink-0"></div>
                 <span>
                   Monospaced fonts (
                   <code className="bg-[#2d2d2d] text-[#e0e0e0] px-1.5 py-0.5 rounded font-mono text-xs">
@@ -110,7 +110,7 @@ export default function GlobalUIUXDocs() {
             </ul>
 
             <h3 className="text-lg font-semibold text-white mb-4 mt-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-sm bg-[#f38020]"></span>
+              <span className="w-2 h-2 rounded-2xl bg-[#f38020]"></span>
               Fitts&apos;s Law for Actionable States
             </h3>
             <p className="text-gray-200 font-normal leading-relaxed mb-4 text-[16px]">
@@ -146,7 +146,7 @@ export default function GlobalUIUXDocs() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Primary Action */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
                 <div className="w-8 h-8 rounded bg-[#f38020] flex-shrink-0 mt-1"></div>
                 <div>
                   <h4 className="font-semibold text-white text-[15px] mb-1.5">
@@ -160,7 +160,7 @@ export default function GlobalUIUXDocs() {
               </div>
 
               {/* Success State */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
                 <div className="w-8 h-8 rounded bg-green-500/90 flex-shrink-0 mt-1"></div>
                 <div>
                   <h4 className="font-semibold text-white text-[15px] mb-1.5">
@@ -174,7 +174,7 @@ export default function GlobalUIUXDocs() {
               </div>
 
               {/* Warning State */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
                 <div className="w-8 h-8 rounded bg-yellow-500/90 flex-shrink-0 mt-1"></div>
                 <div>
                   <h4 className="font-semibold text-white text-[15px] mb-1.5">
@@ -188,7 +188,7 @@ export default function GlobalUIUXDocs() {
               </div>
 
               {/* Destructive State */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-md p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
                 <div className="w-8 h-8 rounded bg-red-600/90 flex-shrink-0 mt-1"></div>
                 <div>
                   <h4 className="font-semibold text-white text-[15px] mb-1.5">

@@ -271,7 +271,7 @@ export default function FeedbacksList() {
                                 className || "",
                               );
                               return !inline ? (
-                                <div className="relative my-6 rounded-md overflow-hidden border border-[#30363d] bg-[#0d1117]">
+                                <div className="relative my-6 rounded-2xl overflow-hidden border border-[#30363d] bg-[#0d1117]">
                                   <div className="flex items-center justify-between px-4 py-2 bg-[#161b22] border-b border-[#30363d] text-xs text-gray-400 font-mono">
                                     <span>{match ? match[1] : "code"}</span>
                                   </div>
