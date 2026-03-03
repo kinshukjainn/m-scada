@@ -33,7 +33,7 @@ export default function AboutPage() {
             <TerminalSquare size={14} className="text-[#8cb4ff]" />
             <span>System Overview / About</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-normal tracking-tight text-white mb-2">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-2">
             Project Genesis <span className="text-[#8cb4ff]">_</span>
           </h1>
         </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
         <section className="mb-24 grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
           {/* Left Column: Description */}
           <div className="lg:col-span-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-[#2d2d2d] border border-[#444] text-gray-200 text-xs font-mono mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#2d2d2d] border border-[#444] text-gray-200 text-xs font-mono mb-6">
               <ShieldAlert size={14} className="text-[#8cb4ff]" />
               Core Mission
             </div>
@@ -90,14 +90,16 @@ export default function AboutPage() {
                 The engineering team driving the infrastructure.
               </p>
             </div>
-            <div className="hidden sm:flex items-center gap-2 text-xs font-mono text-gray-100 uppercase tracking-widest">
-              <Users size={14} />
-              ACTIVE_NODES: 0{teamMembers.length}
+            <div className="hidden sm:flex items-center gap-2 text-xs  text-gray-100  tracking-widest">
+              <div className="bg-blue-700 p-2 rounded-full text-white ">
+                <Users size={14} />
+              </div>
+              Active Members: 0{teamMembers.length}
             </div>
           </div>
 
           {/* MDN-style Grid (Subtle borders, dark mode hover states) */}
-          <div className="bg-[#1b1b1b] border border-[#333] rounded-md overflow-hidden shadow-sm">
+          <div className="bg-[#1b1b1b] border border-[#333] rounded-3xl overflow-hidden shadow-sm">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-[#333]">
               {teamMembers.map((member, index) => {
                 const initials = member.name
@@ -111,8 +113,8 @@ export default function AboutPage() {
                     className="p-8 hover:bg-[#2d2d2d] transition-colors group cursor-default flex flex-col items-center sm:items-start text-center sm:text-left"
                   >
                     {/* Square Avatar */}
-                    <div className="w-14 h-14 bg-[#121212] border border-[#444] rounded-sm flex items-center justify-center mb-5 group-hover:border-[#8cb4ff] transition-colors">
-                      <span className="text-lg font-mono font-normal text-gray-100 group-hover:text-[#8cb4ff] transition-colors">
+                    <div className="w-14 h-14 bg-blue-800  rounded-full flex items-center justify-center mb-5 group-hover:border-[#8cb4ff] transition-colors">
+                      <span className="text-lg  font-bold text-gray-100 group-hover:text-[#8cb4ff] transition-colors">
                         {initials}
                       </span>
                     </div>
@@ -121,7 +123,7 @@ export default function AboutPage() {
                       <h3 className="font-normal text-white text-base mb-1">
                         {member.name}
                       </h3>
-                      <p className="text-[11px] font-mono font-normal text-gray-100 uppercase tracking-wider">
+                      <p className="text-[11px] font-mono font-semibold text-[#ff9100] uppercase tracking-wider">
                         {member.role}
                       </p>
                     </div>

@@ -12,27 +12,33 @@ export default function Consoleheader() {
   const isDirect = pathname === "/console/direct";
 
   return (
-    <header className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6  border-b-2 border-gray-400">
+    <header
+      className={`w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 border-b transition-colors duration-300 ${
+        isConsoleHome
+          ? "bg-[#0a0a0a] border-white/10" // Dark theme for /console
+          : "bg-white border-gray-200" // Light theme for /console/*
+      }`}
+    >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Left side - Logo/Title */}
         <div className="flex items-center gap-3">
-          {/* Console Home */}
+          {/* Console Home (Dark Theme Text) */}
           {isConsoleHome && (
-            <h1 className="text-xl sm:text-2xl font-bold text-gray-900">
+            <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               Principal Console
             </h1>
           )}
 
-          {/* Manual Route with Breadcrumb */}
+          {/* Manual Route with Breadcrumb (Light Theme Text) */}
           {isManual && (
             <div className="flex items-center gap-2">
               <button
                 onClick={() => router.push("/console")}
-                className="text-gray-800 hover:text-gray-900  px-2 py-1 rounded cursor-pointer transition-colors text-sm hover:font-bold  hover:underline sm:text-base font-normal"
+                className="text-gray-600 hover:text-gray-900 px-2 py-1 rounded cursor-pointer transition-colors text-sm hover:font-bold hover:underline sm:text-base font-normal"
               >
                 Console
               </button>
-              <div className="p-1 bg-blue-700 rounded-full">
+              <div className="p-1 bg-[#8cb4ff] rounded-full">
                 <svg
                   className="w-4 h-4 text-white"
                   fill="none"
@@ -48,24 +54,24 @@ export default function Consoleheader() {
                 </svg>
               </div>
 
-              <div className="bg-blue-300 px-5 py-1 rounded-full">
-                <h1 className="text-lg sm:text-lg font-semibold text-gray-900">
+              <div className="bg-[#eff4ff] border border-[#8cb4ff]/30 px-5 py-1 rounded-full shadow-sm">
+                <h1 className="text-sm sm:text-base font-semibold text-gray-900">
                   Manual console
                 </h1>
               </div>
             </div>
           )}
 
-          {/* Direct Route with Breadcrumb */}
+          {/* Direct Route with Breadcrumb (Light Theme Text) */}
           {isDirect && (
             <div className="flex items-center gap-2">
               <button
                 onClick={() => router.push("/console")}
-                className="text-gray-800 hover:text-gray-900  px-2 py-1 rounded cursor-pointer transition-colors text-sm hover:font-bold  hover:underline sm:text-base font-normal"
+                className="text-gray-600 hover:text-gray-900 px-2 py-1 rounded cursor-pointer transition-colors text-sm hover:font-bold hover:underline sm:text-base font-normal"
               >
                 Console
               </button>
-              <div className="p-1 bg-blue-700 rounded-full">
+              <div className="p-1 bg-[#8cb4ff] rounded-full">
                 <svg
                   className="w-4 h-4 text-white"
                   fill="none"
@@ -81,8 +87,8 @@ export default function Consoleheader() {
                 </svg>
               </div>
 
-              <div className="bg-blue-300 px-5 py-1 rounded-full">
-                <h1 className="text-lg sm:text-lg font-semibold text-gray-900">
+              <div className="bg-[#eff4ff] border border-[#8cb4ff]/30 px-5 py-1 rounded-full shadow-sm">
+                <h1 className="text-sm sm:text-base font-semibold text-gray-900">
                   Direct Console
                 </h1>
               </div>

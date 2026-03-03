@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-2 font-bold text-slate-100 text-lg tracking-tight mb-4">
               <Activity size={20} className="text-blue-200" />
-              <span>Faut Detection System</span>{" "}
+              <span>Fds.ai_</span>{" "}
               {/* Feel free to change this placeholder name */}
             </div>
             <p className="text-sm text-slate-100 leading-relaxed mb-6">

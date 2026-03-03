@@ -120,7 +120,7 @@ export function DocsSidebar({
   const [isOpen, setIsOpen] = useState(false);
   const [prevPathname, setPrevPathname] = useState(pathname);
 
-  // React-recommended way to reset state on route change without useEffect
+  // React-recommended way to reset state on route change
   if (pathname !== prevPathname) {
     setIsOpen(false);
     setPrevPathname(pathname);
@@ -135,7 +135,6 @@ export function DocsSidebar({
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
-  // Determine the mobile header title based on the current route
   const mobileHeaderTitle =
     pathname === "/docs"
       ? "Documentation"
@@ -144,94 +143,124 @@ export function DocsSidebar({
 
   return (
     <>
+      {/* Scrollbar Fix embedded directly for this component */}
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          .custom-dark-scrollbar::-webkit-scrollbar {
+            width: 4px;
+          }
+          .custom-dark-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+          }
+          .custom-dark-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+          }
+          .custom-dark-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+          }
+        `,
+        }}
+      />
+
       {/* ─── Mobile Top Header ─── */}
-      <div className="lg:hidden flex items-center justify-between px-4 py-3 border-b border-[#333] bg-[#1b1b1b] flex-shrink-0 z-20">
+      <div className="flex z-40 flex-shrink-0 items-center justify-between border-b border-white/5 bg-[#0a0a0a]/90 px-4 py-3 backdrop-blur-xl lg:hidden">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center">
-            <BookOpen className="w-4 h-4 text-[#8cb4ff]" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+            <BookOpen className="h-4 w-4 text-[#8cb4ff]" />
           </div>
-          <span className="font-normal text-white text-sm tracking-wide">
+          <span className="text-sm font-medium tracking-wide text-gray-200">
             {mobileHeaderTitle}
           </span>
         </div>
         <button
           onClick={() => setIsOpen(true)}
-          className="p-2 -mr-2 text-gray-300 border-white border-2  hover:bg-[#333] hover:text-white rounded-full cursor-pointer transition-colors"
+          className="cursor-pointer rounded-full border border-white/10 bg-white/5 p-2 text-gray-400 transition-all hover:bg-white/10 hover:text-white"
           aria-label="Open documentation menu"
         >
-          <Menu className="w-5 h-5" />
+          <Menu className="h-5 w-5" />
         </button>
       </div>
 
       {/* ─── Mobile Backdrop Overlay ─── */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden transition-opacity"
+          className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm transition-opacity lg:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
 
-      {/* ─── Sidebar (Desktop Fixed & Mobile Drawer) ─── */}
+      {/* ─── Sidebar (Strict Dark Theme) ─── */}
       <aside
         className={`
-          absolute lg:relative top-0 left-0 z-50 h-full w-64 xl:w-[280px] 
-          flex-shrink-0 flex flex-col bg-[#1b1b1b] border-r border-[#333]
-          transform transition-transform duration-300 ease-in-out
-          ${isOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"}
-          lg:translate-x-0 lg:shadow-none
+          absolute left-0 top-0 z-50 flex h-full w-64 flex-shrink-0 
+          flex-col border-r border-white/5 bg-[#0a0a0a]/95 backdrop-blur-xl
+          transition-transform duration-300 ease-in-out xl:w-[280px]
+          ${isOpen ? "translate-x-0 shadow-[20px_0_40px_-10px_rgba(0,0,0,0.8)]" : "-translate-x-full"}
+          lg:relative lg:translate-x-0 lg:shadow-none
           ${className}
         `}
       >
-        {/* Sidebar Header (With Mobile Close Button) */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-[#333] h-[60px] flex-shrink-0 bg-[#1b1b1b]">
+        {/* Sidebar Header */}
+        <div className="flex h-[60px] flex-shrink-0 items-center justify-between border-b border-white/5 bg-transparent px-5 py-4">
           <div className="flex items-center gap-3">
-            <div className="w-7 h-7 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center">
-              <BookOpen className="w-4 h-4 text-[#8cb4ff]" />
+            <div className="flex h-7 w-7 items-center justify-center rounded-lg border border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+              <BookOpen className="h-4 w-4 text-[#8cb4ff]" />
             </div>
-            <h2 className="text-base font-normal text-white tracking-tight truncate flex items-center gap-0.5">
+            <h2 className="flex items-center gap-0.5 text-base font-medium tracking-tight text-gray-200">
               FDS<span className="text-[#8cb4ff]">.ai</span>
-              <span className="font-mono animate-pulse text-[#8cb4ff]">
+              <span className="animate-pulse font-mono text-[#8cb4ff]">
                 _
               </span>{" "}
               Docs
             </h2>
           </div>
 
-          {/* Mobile Close Button */}
           <button
             onClick={() => setIsOpen(false)}
-            className="lg:hidden p-1.5 cursor-pointer text-gray-200 hover:text-white hover:bg-[#333] rounded-md transition-colors"
+            className="cursor-pointer rounded-full p-1.5 text-gray-500 transition-all hover:bg-white/10 hover:text-white lg:hidden"
           >
-            <X className="w-5 h-5" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 
-        {/* Scrollable Navigation Menu */}
-        <nav className="flex flex-col gap-1 px-3 py-4 flex-1 overflow-y-auto">
+        {/* Scrollable Navigation Menu with Custom Dark Scrollbar */}
+        <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4 custom-dark-scrollbar">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setIsOpen(false)} // Ensures menu closes when clicking a link on mobile
+                onClick={() => setIsOpen(false)}
                 className={`
-                  flex items-center gap-3 px-2 py-1 text-sm transition-all  duration-200
+                  group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm transition-all duration-300
                   ${
                     isActive
-                      ? " bg-blue-400/20 text-blue-200 w-max border-l-4 border-blue-500  hover:underline  font-medium  shadow-sm"
-                      : "border-l-4 border-transparent hover:underline text-gray-200 hover:bg-[#2d2d2d] hover:text-gray-200"
+                      ? "bg-white/10 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] ring-1 ring-white/5"
+                      : "text-gray-400 hover:bg-white/5 hover:text-gray-200"
                   }
                 `}
               >
                 <span
-                  className={`flex-shrink-0 ${
-                    isActive ? "text-[#8cb4ff]" : "text-gray-100"
+                  className={`flex-shrink-0 transition-colors duration-300 ${
+                    isActive
+                      ? "text-[#8cb4ff]"
+                      : "text-gray-500 group-hover:text-gray-400"
                   }`}
                 >
                   {item.icon}
                 </span>
-                <span className="truncate">{item.title}</span>
+                <span
+                  className={`truncate ${isActive ? "font-medium" : "font-normal"}`}
+                >
+                  {item.title}
+                </span>
+
+                {isActive && (
+                  <div className="ml-auto h-1.5 w-1.5 rounded-full bg-[#8cb4ff] shadow-[0_0_8px_rgba(140,180,255,0.5)]" />
+                )}
               </Link>
             );
           })}

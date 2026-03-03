@@ -136,7 +136,7 @@ export default function ChangelogTracker() {
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-6">
             <div>
               <h1 className="text-5xl md:text-4xl font-semibold text-white mb-3 tracking-tight">
-                Logs
+                Github Logs
               </h1>
               <p className="text-lg text-gray-300 font-medium">
                 Logs list of changes in project
@@ -147,7 +147,7 @@ export default function ChangelogTracker() {
               href={`https://github.com/${GITHUB_CONFIG.username}/${GITHUB_CONFIG.repository}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#282828] border border-[#444] hover:border-green-500 text-white text-sm font-medium rounded-xl transition-colors w-fit"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-black  border border-green-500 text-white text-sm font-medium rounded-xl transition-colors w-fit"
             >
               <Github className="w-4 h-4" />
               View on GitHub
@@ -179,7 +179,7 @@ export default function ChangelogTracker() {
                 <button
                   onClick={fetchCommits}
                   disabled={loading}
-                  className="inline-flex items-center gap-2 text-black font-semibold  bg-green-500 p-1 rounded-xl cursor-pointer transition-colors disabled:opacity-50"
+                  className="inline-flex items-center gap-2 text-black font-bold  bg-yellow-200 p-2 rounded-full cursor-pointer transition-colors disabled:opacity-50"
                 >
                   <RefreshCw
                     className={`w-4 h-4 ${loading ? "animate-spin" : ""}`}
@@ -195,8 +195,8 @@ export default function ChangelogTracker() {
         <main>
           {loading ? (
             // Loading State (Terminal Output Style)
-            <div className="font-mono text-sm text-gray-200 space-y-2 p-6 bg-[#282828] border border-[#444] rounded-xl">
-              <p className="text-green-500">$ fetching commits...</p>
+            <div className=" text-md text-gray-100 space-y-2 p-6 bg-[#282828] border border-[#444] rounded-2xl">
+              <p className="text-yellow-200">$ fetching commits...</p>
               <p className="animate-pulse">
                 establishing connection to api.github.com...
               </p>
@@ -234,7 +234,7 @@ export default function ChangelogTracker() {
                     <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-2">
                       <div className="flex-1 min-w-0">
                         {/* Commit Title */}
-                        <h3 className="text-lg font-medium text-white break-words leading-snug mb-2 group-hover:text-green-400 transition-colors">
+                        <h3 className="text-lg font-medium text-white break-words leading-snug mb-2  transition-colors">
                           <a
                             href={commit.html_url}
                             target="_blank"
@@ -281,10 +281,10 @@ export default function ChangelogTracker() {
                         href={commit.html_url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex-shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#282828] border border-[#444] hover:border-green-500 text-green-400 hover:text-green-300 font-mono text-sm w-max rounded-xl transition-colors"
+                        className="flex-shrink-0 inline-flex items-center gap-1.5 px-2.5 py-1 text-white font-mono text-sm w-max rounded-xl transition-colors"
                         title="View commit on GitHub"
                       >
-                        <GitCommit className="w-3.5 h-3.5" />
+                        <GitCommit className="w-3.5 h-3.5 text-blue-400" />
                         {shortSha}
                       </a>
                     </div>

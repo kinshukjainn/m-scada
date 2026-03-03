@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { RiGeminiFill } from "react-icons/ri";
+import Image from "next/image";
+
 import {
   Activity,
   Zap,
@@ -303,11 +304,23 @@ export default function ElectricalDiagnosticConsole() {
 
             {!result && !loading && !error && (
               <div className="h-full min-h-[500px] border-2 border-3 border-blue-200 shadow-lg shadow-blue-500 rounded-4xl flex flex-col items-center justify-center text-gray-900 p-4 text-center bg-white">
-                <DotLottieReact
-                  src="https://lottie.host/48cd3af1-d775-4fa7-a1d8-b6fdf0157cdf/mlpvdEM6hU.lottie"
-                  loop
-                  autoplay
-                />
+                <div
+                  style={{
+                    position: "relative",
+                    width: "100%",
+                    height: "150px",
+                  }}
+                >
+                  <Image
+                    className="animate-pulse"
+                    src="/transformer.png"
+                    alt="loader"
+                    fill
+                    style={{ objectFit: "contain" }} // or "cover"
+                    sizes="100vw"
+                    priority
+                  />
+                </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">
                   Awaiting Telemetry
                 </h3>

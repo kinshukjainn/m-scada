@@ -8,6 +8,7 @@ import {
   MessageSquare,
   Github,
   NotebookPen,
+  Boxes,
 } from "lucide-react";
 import { useState } from "react";
 import { IoBugSharp } from "react-icons/io5";
@@ -18,115 +19,118 @@ export default function Header() {
 
   const isActive = (path: string) => pathname === path;
 
-  // MDN Nav Link Styles
+  // Added drop-shadow to text so it pops against white backgrounds behind the glass
   const linkBaseStyle =
-    "flex items-center gap-2 px-3 lg:px-4 py-2 rounded-full transition-all font-normal text-sm lg:text-base";
-  const linkActiveStyle = "text-[#8cb4ff] bg-[#121212]";
-  const linkInactiveStyle =
-    "text-gray-300 border-transparent hover:text-white hover:bg-[#333]";
+    "relative flex items-center gap-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm overflow-hidden group drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]";
+
+  const linkActiveStyle =
+    "text-white bg-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)] ring-1 ring-white/20";
+
+  const linkInactiveStyle = "text-white/80 hover:text-white hover:bg-white/10";
 
   return (
     <>
-      <header className="border-b border-[#333] bg-[#1b1b1b] sticky top-0 z-50">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-          {/* Logo - MDN Style */}
-          <Link href="/" className="flex-shrink-0">
-            <h1 className="text-xl sm:text-2xl font-normal text-white tracking-tight hover:text-gray-200 transition-colors flex items-center gap-0.5">
-              FDS<span className="text-[#8cb4ff]">.ai</span>
-              <span className="animate-pulse text-[#8cb4ff] font-bold">_</span>
-            </h1>
-          </Link>
+      {/* Desktop Header
+        - bg-neutral-900/30: Slightly darker tint ensures white text is readable even over a white page.
+        - backdrop-blur-2xl maintains the beautiful glass effect.
+      */}
+      <header className="sticky top-1 z-[9999] mx-auto w-[calc(100%-2rem)] max-w-[1400px]">
+        <div className="flex items-center justify-between rounded-full bg-neutral-900/30 px-4 py-2 sm:px-6 backdrop-blur-2xl saturate-200 border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] transition-all duration-500">
+          {/* Logo Section */}
+          <div className="flex items-center text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]">
+            <Link href="/" className="flex-shrink-0 group">
+              <h1 className="flex items-center gap-0.5 font-mono text-xl font-bold tracking-tight transition-colors group-hover:text-white/80 sm:text-2xl">
+                FDS<span className="text-[#8cb4ff]">.ai</span>
+                <span className="animate-pulse text-[#8cb4ff] font-bold">
+                  _
+                </span>
+              </h1>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+          <nav className="hidden items-center gap-1 md:flex lg:gap-2">
             <Link
               href="/about-info"
               className={`${linkBaseStyle} ${isActive("/about-info") ? linkActiveStyle : linkInactiveStyle}`}
             >
-              <Info className="w-4 h-4" />
+              <Info className="h-4 w-4 drop-shadow-md" />
               <span>About</span>
             </Link>
             <Link
               href="/docs"
               className={`${linkBaseStyle} ${isActive("/docs") ? linkActiveStyle : linkInactiveStyle}`}
             >
-              <NotebookPen className="w-4 h-4" />
+              <NotebookPen className="h-4 w-4 drop-shadow-md" />
               <span>Documentation</span>
             </Link>
             <Link
               href="/git-track"
               className={`${linkBaseStyle} ${isActive("/git-track") ? linkActiveStyle : linkInactiveStyle}`}
             >
-              <NotebookPen className="w-4 h-4" />
+              <Boxes className="h-4 w-4 drop-shadow-md" />
               <span>Logs</span>
             </Link>
-
             <Link
               href="/console"
               className={`${linkBaseStyle} ${isActive("/console") ? linkActiveStyle : linkInactiveStyle}`}
             >
-              <Terminal className="w-4 h-4" />
+              <Terminal className="h-4 w-4 drop-shadow-md" />
               <span>Console</span>
             </Link>
-
             <Link
               href="/issues"
               className={`${linkBaseStyle} ${isActive("/issues") ? linkActiveStyle : linkInactiveStyle}`}
             >
-              <IoBugSharp className="w-4 h-4" />
+              <IoBugSharp className="h-4 w-4 drop-shadow-md" />
               <span>Issues</span>
             </Link>
           </nav>
 
           {/* Right Side Actions */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            {/* GitHub Link with Sliding Text (Desktop) */}
+          <div className="flex items-center gap-2 sm:gap-3 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+            {/* GitHub Link */}
             <a
               href="https://github.com/kinshukjainn/fds-college"
               target="_blank"
               rel="noopener noreferrer"
               onMouseEnter={() => setIsGithubHovered(true)}
               onMouseLeave={() => setIsGithubHovered(false)}
-              className="hidden sm:flex items-center gap-2 px-5 py-2 rounded-md border border-[#444] bg-black transition-all overflow-hidden group"
+              className="group hidden items-center gap-2 overflow-hidden rounded-full border border-white/20 bg-white/5 px-5 py-2 transition-all hover:bg-white/15 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] sm:flex"
             >
-              <Github className="w-4 h-4 text-gray-300 flex-shrink-0 group-hover:text-white transition-colors" />
-              <div className="relative h-5 overflow-hidden w-[85px]">
+              <Github className="h-4 w-4 flex-shrink-0 transition-colors drop-shadow-md" />
+              <div className="relative h-5 w-[85px] overflow-hidden">
                 <span
-                  className={`block text-sm font-normal text-gray-300 transition-transform duration-300 group-hover:text-white ${
-                    isGithubHovered ? "-translate-y-5" : "translate-y-0"
-                  }`}
+                  className={`block text-sm font-medium transition-transform duration-300 ${isGithubHovered ? "-translate-y-5" : "translate-y-0"}`}
                 >
                   Open
                 </span>
                 <span
-                  className={`block text-sm font-normal text-white absolute top-5 left-0 transition-transform duration-300 ${
-                    isGithubHovered ? "-translate-y-5" : "translate-y-0"
-                  }`}
+                  className={`absolute left-0 top-5 block text-sm font-medium transition-transform duration-300 ${isGithubHovered ? "-translate-y-5" : "translate-y-0"}`}
                 >
                   View repo
                 </span>
               </div>
             </a>
 
-            {/* GitHub Icon Only (Mobile) */}
+            {/* GitHub Mobile */}
             <a
               href="https://github.com/kinshukjainn/fds-college"
               target="_blank"
               rel="noopener noreferrer"
-              className="sm:hidden p-2 rounded-md border border-[#444] bg-[#121212] hover:bg-[#333] transition-all"
-              aria-label="GitHub"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/5 transition-all hover:bg-white/15 sm:hidden"
             >
-              <Github className="w-4 h-4 text-gray-300" />
+              <Github className="h-4 w-4 drop-shadow-md" />
             </a>
 
-            {/* Feedback Button - MDN Highlight Style */}
+            {/* Feedback Button */}
             <a
               href="https://fdb.cloudkinshuk.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-md border border-[#444] hover:border-white text-gray-200 hover:text-white hover:bg-[#333] transition-all text-sm font-normal"
+              className="flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-2 text-sm font-medium transition-all hover:bg-white/15 hover:shadow-[inset_0_1px_1px_rgba(255,255,255,0.2)] sm:px-4"
             >
-              <MessageSquare className="w-4 h-4" />
+              <MessageSquare className="h-4 w-4 drop-shadow-md" />
               <span className="hidden sm:inline">Feedback</span>
             </a>
           </div>
@@ -134,66 +138,35 @@ export default function Header() {
       </header>
 
       {/* Mobile Navigation (Bottom Bar) */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-[#1b1b1b]/40 backdrop-blur-xs rounded-t-2xl  px-2 py-2 flex items-center justify-around z-50 pb-[env(safe-area-inset-bottom)]">
-        <Link
-          href="/about-info"
-          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
-            isActive("/about-info")
-              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
-              : "text-gray-200 hover:text-gray-200 border border-transparent"
-          }`}
-        >
-          <Info className="w-5 h-5" />
-          <span className="text-[10px] font-normal tracking-wide">About</span>
-        </Link>
-
-        <Link
-          href="/docs"
-          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
-            isActive("/docs")
-              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
-              : "text-gray-200 hover:text-gray-200 border border-transparent"
-          }`}
-        >
-          <NotebookPen className="w-5 h-5" />
-          <span className="text-[10px] font-normal tracking-wide">Docs</span>
-        </Link>
-
-        <Link
-          href="/git-track"
-          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
-            isActive("/git-track")
-              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
-              : "text-gray-200 hover:text-gray-200 border border-transparent"
-          }`}
-        >
-          <NotebookPen className="w-5 h-5" />
-          <span className="text-[10px] font-normal tracking-wide">Logs</span>
-        </Link>
-
-        <Link
-          href="/console"
-          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
-            isActive("/console")
-              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
-              : "text-gray-200 hover:text-gray-200 border border-transparent"
-          }`}
-        >
-          <Terminal className="w-5 h-5" />
-          <span className="text-[10px] font-normal tracking-wide">Console</span>
-        </Link>
-
-        <Link
-          href="/issues"
-          className={`flex flex-col items-center gap-1 px-2 py-1 mb-2 rounded-full transition-all w-full ${
-            isActive("/issues")
-              ? "text-[#8cb4ff] bg-[#121212]/20 border border-[#333]"
-              : "text-gray-200 hover:text-gray-200 border border-transparent"
-          }`}
-        >
-          <IoBugSharp className="w-5 h-5" />
-          <span className="text-[10px] font-normal tracking-wide">Issues</span>
-        </Link>
+      <nav className="fixed bottom-6 left-1/2 z-[9999] flex w-[calc(100%-2rem)] -translate-x-1/2 items-center justify-around rounded-[2rem] bg-neutral-900/30 px-2 py-2 backdrop-blur-2xl saturate-200 border border-white/20 shadow-[0_16px_40px_-8px_rgba(0,0,0,0.4)] md:hidden pb-[max(0.5rem,env(safe-area-inset-bottom))] text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.4)]">
+        {[
+          { path: "/about-info", icon: Info, label: "About" },
+          { path: "/docs", icon: NotebookPen, label: "Docs" },
+          { path: "/git-track", icon: Boxes, label: "Logs" },
+          { path: "/console", icon: Terminal, label: "Console" },
+          { path: "/issues", icon: IoBugSharp, label: "Issues" },
+        ].map((item) => {
+          const active = isActive(item.path);
+          const Icon = item.icon;
+          return (
+            <Link
+              key={item.path}
+              href={item.path}
+              className={`flex w-[4.5rem] flex-col items-center gap-1 rounded-2xl px-2 py-2 transition-all duration-300 ${
+                active
+                  ? "bg-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.25)]"
+                  : "opacity-80 hover:bg-white/10 hover:opacity-100"
+              }`}
+            >
+              <Icon
+                className={`h-5 w-5 drop-shadow-md ${active ? "scale-110" : "scale-100"} transition-transform duration-300`}
+              />
+              <span className="text-[10px] font-medium tracking-wide">
+                {item.label}
+              </span>
+            </Link>
+          );
+        })}
       </nav>
     </>
   );
