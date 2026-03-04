@@ -36,7 +36,7 @@ export default function ContributingDocs() {
               upstream repository to avoid merge conflicts.
             </p>
 
-            <div className="mt-8 rounded-2xl p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-amber-500 border border-[#333] shadow-sm">
+            <div className="mt-8 rounded-sm p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-amber-500 border border-[#333] shadow-sm">
               <h4 className="font-semibold text-white mb-3 text-lg">
                 Before you write code:
               </h4>
@@ -61,8 +61,8 @@ export default function ContributingDocs() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Code */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
-                <div className="text-[#8cb4ff] font-mono text-xs font-semibold mb-4 bg-[#8cb4ff]/10 inline-flex w-fit px-2.5 py-1 rounded-2xl border border-[#8cb4ff]/20">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
+                <div className="text-[#8cb4ff] font-mono text-xs font-semibold mb-4 bg-[#8cb4ff]/10 inline-flex w-fit px-2.5 py-1 rounded-sm border border-[#8cb4ff]/20">
                   {"<Code />"}
                 </div>
                 <h4 className="font-semibold text-white mb-2 text-lg">
@@ -76,8 +76,8 @@ export default function ContributingDocs() {
               </div>
 
               {/* Documentation */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
-                <div className="text-emerald-400 font-mono text-xs font-semibold mb-4 bg-emerald-400/10 inline-flex w-fit px-2.5 py-1 rounded-2xl border border-emerald-400/20">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
+                <div className="text-emerald-400 font-mono text-xs font-semibold mb-4 bg-emerald-400/10 inline-flex w-fit px-2.5 py-1 rounded-sm border border-emerald-400/20">
                   {"<Documentation />"}
                 </div>
                 <h4 className="font-semibold text-white mb-2 text-lg">
@@ -90,8 +90,8 @@ export default function ContributingDocs() {
               </div>
 
               {/* Bug Reports */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
-                <div className="text-red-400 font-mono text-xs font-semibold mb-4 bg-red-400/10 inline-flex w-fit px-2.5 py-1 rounded-2xl border border-red-400/20">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
+                <div className="text-red-400 font-mono text-xs font-semibold mb-4 bg-red-400/10 inline-flex w-fit px-2.5 py-1 rounded-sm border border-red-400/20">
                   {"<Bug_Reports />"}
                 </div>
                 <h4 className="font-semibold text-white mb-2 text-lg">
@@ -104,8 +104,8 @@ export default function ContributingDocs() {
               </div>
 
               {/* Feature Requests */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
-                <div className="text-purple-400 font-mono text-xs font-semibold mb-4 bg-purple-400/10 inline-flex w-fit px-2.5 py-1 rounded-2xl border border-purple-400/20">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
+                <div className="text-purple-400 font-mono text-xs font-semibold mb-4 bg-purple-400/10 inline-flex w-fit px-2.5 py-1 rounded-sm border border-purple-400/20">
                   {"<Feature_Requests />"}
                 </div>
                 <h4 className="font-semibold text-white mb-2 text-lg">
@@ -128,9 +128,9 @@ export default function ContributingDocs() {
               When reporting issues on GitHub, please provide as much detail as
               possible. A good issue report includes:
             </p>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm text-gray-400 font-normal text-[15px]">
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-400 font-normal text-[15px]">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Clear Title:
@@ -139,7 +139,7 @@ export default function ContributingDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Description:
@@ -149,7 +149,7 @@ export default function ContributingDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Steps to Reproduce:
@@ -158,7 +158,7 @@ export default function ContributingDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Environment:
@@ -168,7 +168,7 @@ export default function ContributingDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Screenshots or Logs:
@@ -221,7 +221,7 @@ export default function ContributingDocs() {
               ].map((item) => (
                 <div key={item.step} className="flex gap-5">
                   <div className="flex flex-col items-center mt-0.5">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-2xl bg-[#2d2d2d] text-[#8cb4ff] font-mono text-sm border border-[#444]">
+                    <span className="flex items-center justify-center w-8 h-8 rounded-sm bg-[#2d2d2d] text-[#8cb4ff] font-mono text-sm border border-[#444]">
                       {item.step}
                     </span>
                     {item.step !== 6 && (
@@ -250,7 +250,7 @@ export default function ContributingDocs() {
               To maintain code quality and consistency across the project,
               please adhere to these standards:
             </p>
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm">
+            <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm">
               <ul className="space-y-4 text-gray-400 font-normal text-[15px] m-0">
                 <li className="flex items-start gap-3">
                   <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
@@ -313,7 +313,7 @@ export default function ContributingDocs() {
               granting additional responsibilities and merge permissions in the
               repository.
             </p>
-            <div className="bg-[#2d2d2d] border border-[#444] rounded-2xl p-6">
+            <div className="bg-[#2d2d2d] border border-[#444] rounded-sm p-6">
               <p className="text-gray-200 font-normal m-0 leading-relaxed text-[15px]">
                 We appreciate your time and effort in helping improve this
                 project. Thank you for contributing! If you have questions, feel

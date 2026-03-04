@@ -41,9 +41,9 @@ export default function DocsLandingPage() {
             {/* Card 1 */}
             <Link
               href="/docs/project-info"
-              className="group p-6 rounded-2xl border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
+              className="group p-6 rounded-sm border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
             >
-              <div className="w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
+              <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
                 <Activity className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-normal text-white mb-2 flex items-center justify-between">
@@ -60,9 +60,9 @@ export default function DocsLandingPage() {
             {/* Card 2 */}
             <Link
               href="/docs/rar"
-              className="group p-6 rounded-2xl border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
+              className="group p-6 rounded-sm border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
             >
-              <div className="w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
+              <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
                 <Code2 className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-normal text-white mb-2 flex items-center justify-between">
@@ -78,9 +78,9 @@ export default function DocsLandingPage() {
             {/* Card 3 */}
             <Link
               href="/docs/about-model"
-              className="group p-6 rounded-2xl border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
+              className="group p-6 rounded-sm border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
             >
-              <div className="w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
+              <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
                 <Cpu className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-normal text-white mb-2 flex items-center justify-between">
@@ -96,9 +96,9 @@ export default function DocsLandingPage() {
             {/* Card 4 */}
             <Link
               href="/docs/aws-services"
-              className="group p-6 rounded-2xl border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
+              className="group p-6 rounded-sm border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
             >
-              <div className="w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
+              <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
                 <CloudCog className="w-5 h-5" />
               </div>
               <h3 className="text-lg font-normal text-white mb-2 flex items-center justify-between">
@@ -120,7 +120,7 @@ export default function DocsLandingPage() {
           <h2 className="text-2xl font-normal text-white mb-6">
             Architecture & Tech Stack
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1b1b1b] border border-[#333] rounded-2xl shadow-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1b1b1b] border border-[#333] rounded-sm shadow-sm">
             {/* Stack Column 1 */}
             <div>
               <h3 className="text-xs font-mono font-normal uppercase tracking-widest text-gray-100 mb-5 flex items-center gap-2">
@@ -129,21 +129,21 @@ export default function DocsLandingPage() {
               </h3>
               <ul className="space-y-4 text-sm text-gray-300 font-normal">
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Next.js 16
                   </strong>{" "}
                   <span className="text-gray-100">(App Router)</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Node.js
                   </strong>{" "}
                   <span className="text-gray-100">(v22)</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Tailwind CSS
                   </strong>{" "}
@@ -160,35 +160,35 @@ export default function DocsLandingPage() {
               </h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-6 text-sm text-gray-300 font-normal">
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Amplify:
                   </strong>{" "}
                   Serverless deployment
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Bedrock:
                   </strong>{" "}
                   LLM integration
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Api Gateway
                   </strong>{" "}
                   Frontend API Calling and routing
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     Lambda:
                   </strong>{" "}
                   Serverless functions
                 </li>
                 <li className="flex items-center gap-3">
-                  <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff]"></div>
+                  <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff]"></div>
                   <strong className="font-normal text-white">
                     CloudWatch:
                   </strong>{" "}
@@ -202,7 +202,7 @@ export default function DocsLandingPage() {
         <hr className="my-10 border-[#333]" />
 
         {/* ─── Footer / Next Steps ─── */}
-        <section className="bg-[#1b1b1b] rounded-2xl p-8 border border-[#333] shadow-sm">
+        <section className="bg-[#1b1b1b] rounded-sm p-8 border border-[#333] shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div>
               <h2 className="text-xl font-normal text-white mb-3">
@@ -218,14 +218,14 @@ export default function DocsLandingPage() {
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
               <Link
                 href="/docs/setup"
-                className="inline-flex items-center justify-center gap-2 text-sm font-normal text-white bg-transparent border border-[#444] hover:bg-[#333] hover:border-white px-6 py-2.5 rounded-full transition-all"
+                className="inline-flex items-center justify-center gap-2 text-sm font-normal text-white bg-transparent border border-[#444] hover:bg-[#333] hover:border-white px-6 py-2.5 rounded-sm transition-all"
               >
                 <Github className="w-4 h-4" />
                 Repository Setup
               </Link>
               <Link
                 href="/docs/introduction"
-                className="inline-flex items-center justify-center gap-2 text-sm font-normal text-[#121212] bg-white hover:bg-gray-200 border border-transparent px-6 py-2.5 rounded-full transition-all"
+                className="inline-flex items-center justify-center gap-2 text-sm font-normal text-[#121212] bg-white hover:bg-gray-200 border border-transparent px-6 py-2.5 rounded-sm transition-all"
               >
                 <BookOpen className="w-4 h-4" />
                 Start Reading

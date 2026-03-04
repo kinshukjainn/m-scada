@@ -72,7 +72,7 @@ export default function ElectricalGraphs({ data }: ElectricalGraphsProps) {
 
       {/* Calculated Metrics Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+        <div className="bg-gray-50 border border-gray-200 p-4 rounded-sm">
           <p className="text-xs text-gray-500 font-semibold uppercase">
             Voltage Imbalance
           </p>
@@ -82,7 +82,7 @@ export default function ElectricalGraphs({ data }: ElectricalGraphsProps) {
             {calculations.vImbalance.toFixed(2)}%
           </p>
         </div>
-        <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+        <div className="bg-gray-50 border border-gray-200 p-4 rounded-sm">
           <p className="text-xs text-gray-500 font-semibold uppercase">
             Current Imbalance
           </p>
@@ -92,7 +92,7 @@ export default function ElectricalGraphs({ data }: ElectricalGraphsProps) {
             {calculations.iImbalance.toFixed(2)}%
           </p>
         </div>
-        <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+        <div className="bg-gray-50 border border-gray-200 p-4 rounded-sm">
           <p className="text-xs text-gray-500 font-semibold uppercase">
             Power Factor
           </p>
@@ -102,7 +102,7 @@ export default function ElectricalGraphs({ data }: ElectricalGraphsProps) {
             {calculations.pf.toFixed(3)}
           </p>
         </div>
-        <div className="bg-gray-50 border border-gray-200 p-4 rounded-lg">
+        <div className="bg-gray-50 border border-gray-200 p-4 rounded-sm">
           <p className="text-xs text-gray-500 font-semibold uppercase">
             Apparent Power
           </p>
@@ -115,7 +115,7 @@ export default function ElectricalGraphs({ data }: ElectricalGraphsProps) {
       {/* Graphs Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Phase Voltages & Currents */}
-        <div className="border border-gray-200 rounded-xl p-4 bg-white shadow-sm h-[350px]">
+        <div className="border border-gray-200 rounded-sm p-4 bg-white shadow-sm h-[350px]">
           <Plot
             data={[
               {
@@ -160,7 +160,7 @@ export default function ElectricalGraphs({ data }: ElectricalGraphsProps) {
         </div>
 
         {/* Sequence Components */}
-        <div className="border border-gray-200 rounded-xl p-4 bg-white shadow-sm h-[350px]">
+        <div className="border border-gray-200 rounded-sm p-4 bg-white shadow-sm h-[350px]">
           <Plot
             data={[
               {

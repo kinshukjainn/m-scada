@@ -22,9 +22,11 @@ const config: Config = {
         // Add your custom font here
         worksans: ["var(--font-work-sans)", "sans-serif"],
         inter: ["var(--font-inter)", "sans-serif"],
+        roboto: ["var(--font-roboto)", "sans-serif"],
         dmmono: ["var(--font-dm-mono)", "monospace"],
         arimo: ["var(--font-arimo)", "sans-serif"],
         ptSans: ["var(--font-pt-sans)", "sans-serif"],
+        lucide: ["var(--font-lucide)", "sans-serif"],
       },
     },
   },

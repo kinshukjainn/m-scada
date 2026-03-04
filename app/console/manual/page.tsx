@@ -117,8 +117,8 @@ export default function ElectricalDiagnosticConsole() {
     <div className="min-h-screen bg-slate-50 text-gray-900  p-4 sm:p-6 lg:p-8">
       <div className="max-w-[1400px] mx-auto space-y-6 lg:space-y-8">
         {/* Header - Elevated Panel */}
-        <div className=" p-6 rounded-2xl  flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className=" bg-gray-200 border border-[#252525] p-2 rounded-2xl">
+        <div className=" p-6 rounded-sm  flex flex-col sm:flex-row items-start sm:items-center gap-4">
+          <div className=" bg-gray-200 border border-[#252525] p-2 rounded-sm">
             <h1 className="text-xl sm:text-xl font-bold tracking-tight text-gray-900">
               Disclaimer :
             </h1>
@@ -138,11 +138,11 @@ export default function ElectricalDiagnosticConsole() {
           <div className="lg:col-span-4 xl:col-span-3 space-y-6 lg:sticky lg:top-8">
             <form
               onSubmit={handleSubmit}
-              className="space-y-6  p-5 sm:p-6 rounded-2xl "
+              className="space-y-6  p-5 sm:p-6 rounded-sm "
             >
               {/* Voltages */}
               <div>
-                <h3 className="text-xs font-bold uppercase  bg-blue-200 border border-blue-500 p-2 rounded-full text-gray-900 mb-3 flex items-center gap-2  pb-2">
+                <h3 className="text-xs font-bold uppercase  text-gray-900 mb-3 flex items-center gap-2  pb-2">
                   <Zap className="w-3.5 h-3.5" /> Phase Voltages (V)
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-3">
@@ -158,7 +158,7 @@ export default function ElectricalDiagnosticConsole() {
                         name={`voltage${phase}`}
                         value={formData[`voltage${phase}` as keyof FormData]}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
                       />
                     </div>
                   ))}
@@ -167,7 +167,7 @@ export default function ElectricalDiagnosticConsole() {
 
               {/* Currents */}
               <div>
-                <h3 className="text-xs font-bold uppercase  bg-blue-200 border border-blue-500 p-2 rounded-full text-gray-900  mb-3 flex items-center gap-2  pb-2">
+                <h3 className="text-xs font-bold uppercase  text-gray-900  mb-3 flex items-center gap-2  pb-2">
                   <Activity className="w-3.5 h-3.5" /> Phase Currents (A)
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-3">
@@ -183,7 +183,7 @@ export default function ElectricalDiagnosticConsole() {
                         name={`current${phase}`}
                         value={formData[`current${phase}` as keyof FormData]}
                         onChange={handleChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
                       />
                     </div>
                   ))}
@@ -192,7 +192,7 @@ export default function ElectricalDiagnosticConsole() {
 
               {/* Sequence Components */}
               <div>
-                <h3 className="text-xs font-bold uppercase bg-blue-200 border border-blue-500 p-2 rounded-full text-gray-900  mb-3 flex items-center gap-2 pb-2">
+                <h3 className="text-xs font-bold uppercase text-gray-900  mb-3 flex items-center gap-2 pb-2">
                   <ShieldAlert className="w-3.5 h-3.5" /> Sequence Currents (A)
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3 gap-3">
@@ -207,7 +207,7 @@ export default function ElectricalDiagnosticConsole() {
                       name="seqPositive"
                       value={formData.seqPositive}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
                     />
                   </div>
                   <div>
@@ -221,7 +221,7 @@ export default function ElectricalDiagnosticConsole() {
                       name="seqNegative"
                       value={formData.seqNegative}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
                     />
                   </div>
                   <div>
@@ -235,7 +235,7 @@ export default function ElectricalDiagnosticConsole() {
                       name="seqZero"
                       value={formData.seqZero}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
                     />
                   </div>
                 </div>
@@ -243,7 +243,7 @@ export default function ElectricalDiagnosticConsole() {
 
               {/* Power */}
               <div>
-                <h3 className="text-xs font-bold uppercase bg-blue-200 border border-blue-500 p-2 rounded-full text-gray-900  mb-3 flex items-center gap-2 pb-2">
+                <h3 className="text-xs font-bold uppercase text-gray-900  mb-3 flex items-center gap-2 pb-2">
                   <Info className="w-3.5 h-3.5" /> System Power
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3">
@@ -258,7 +258,7 @@ export default function ElectricalDiagnosticConsole() {
                       name="activePower"
                       value={formData.activePower}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
                     />
                   </div>
                   <div>
@@ -272,7 +272,7 @@ export default function ElectricalDiagnosticConsole() {
                       name="reactivePower"
                       value={formData.reactivePower}
                       onChange={handleChange}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-sm text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-shadow bg-slate-50 focus:bg-white"
                     />
                   </div>
                 </div>
@@ -281,7 +281,7 @@ export default function ElectricalDiagnosticConsole() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-indigo-800  text-white font-semibold py-2 px-4 rounded-full transition-all shadow-sm w-max flex items-center cursor-pointer justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+                className="w-full bg-indigo-400  text-black font-semibold py-1 px-2 rounded transition-all w-max  flex items-center cursor-pointer justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed mt-2"
               >
                 {loading ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
@@ -296,7 +296,7 @@ export default function ElectricalDiagnosticConsole() {
           {/* Results Section */}
           <div className="lg:col-span-8 xl:col-span-9">
             {error && (
-              <div className="p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700 flex gap-3 items-start mb-6 shadow-sm">
+              <div className="p-4 bg-red-50 border border-red-200 rounded-sm text-red-700 flex gap-3 items-start mb-6 shadow-sm">
                 <AlertTriangle className="w-5 h-5 shrink-0 mt-0.5" />
                 <p className="text-sm font-medium">{error}</p>
               </div>
@@ -333,7 +333,7 @@ export default function ElectricalDiagnosticConsole() {
             )}
 
             {loading && (
-              <div className="h-full min-h-[500px] border border-gray-100 rounded-3xl flex flex-col items-center justify-center text-gray-500 space-y-5 shadow-sm bg-white">
+              <div className="h-full min-h-[500px] border border-gray-100 rounded-sm flex flex-col items-center justify-center text-gray-500 space-y-5 shadow-sm bg-white">
                 <RiGeminiFill className="w-10 h-10 animate-spin text-indigo-500" />
                 <div className="text-center">
                   <p className="text-base font-semibold text-gray-900">
@@ -349,7 +349,7 @@ export default function ElectricalDiagnosticConsole() {
             {result && !loading && (
               <div className="flex flex-col gap-6 lg:gap-8">
                 {/* AI Result Card */}
-                <div className="border border-gray-200 rounded-2xl shadow-sm overflow-hidden bg-white">
+                <div className="border border-gray-200 rounded-sm shadow-sm overflow-hidden bg-white">
                   <div
                     className={`p-6 sm:p-8 border-b flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 ${getSeverityColor(result.severity)}`}
                   >
@@ -361,7 +361,7 @@ export default function ElectricalDiagnosticConsole() {
                         {result.status}
                       </h2>
                     </div>
-                    <div className="sm:text-right bg-white/50 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/20">
+                    <div className="sm:text-right bg-white/50 backdrop-blur-sm px-4 py-2 rounded-sm border border-white/20">
                       <div className="text-3xl font-black">
                         {result.confidence}%
                       </div>
@@ -377,7 +377,7 @@ export default function ElectricalDiagnosticConsole() {
                         <h4 className="text-[11px] font-bold text-gray-400 uppercase  mb-2">
                           Fault Localization
                         </h4>
-                        <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-lg">
+                        <div className="inline-flex items-center gap-2 bg-gray-50 border border-gray-200 px-3 py-1.5 rounded-sm">
                           <Zap className="w-4 h-4 text-amber-500" />
                           <p className="text-sm text-gray-900 font-semibold">
                             {result.fault_localization}
@@ -390,7 +390,7 @@ export default function ElectricalDiagnosticConsole() {
                       <h4 className="text-[11px] font-bold text-gray-400 uppercase  mb-3">
                         Technical Analysis
                       </h4>
-                      <div className="text-sm text-gray-700 leading-relaxed bg-slate-50 p-5 rounded-xl border border-slate-100 shadow-inner">
+                      <div className="text-sm text-gray-700 leading-relaxed bg-slate-50 p-5 rounded-sm border border-slate-100 shadow-inner">
                         {result.analysis}
                       </div>
                     </div>
@@ -399,13 +399,13 @@ export default function ElectricalDiagnosticConsole() {
                       <h4 className="text-[11px] font-bold text-gray-400 uppercase  mb-4">
                         Diagnostic Reasoning Steps
                       </h4>
-                      <ul className="space-y-3 bg-white border border-gray-100 rounded-xl p-5 shadow-sm">
+                      <ul className="space-y-3 bg-white border border-gray-100 rounded-sm p-5 shadow-sm">
                         {result.diagnostic_reasoning.map((step, idx) => (
                           <li
                             key={idx}
                             className="flex gap-3 text-sm text-gray-700 items-start"
                           >
-                            <div className="mt-0.5 p-1 bg-indigo-50 text-indigo-600 rounded-2xl">
+                            <div className="mt-0.5 p-1 bg-indigo-50 text-indigo-600 rounded-sm">
                               <ChevronRight className="w-3 h-3 shrink-0" />
                             </div>
                             <span className="font-medium">{step}</span>
@@ -423,13 +423,13 @@ export default function ElectricalDiagnosticConsole() {
                         {result.recommended_actions.map((act, idx) => (
                           <div
                             key={idx}
-                            className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-white border border-gray-200 rounded-xl hover:border-indigo-300 hover:shadow-md transition-all gap-3"
+                            className="flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-white border border-gray-200 rounded-sm hover:border-indigo-300 hover:shadow-md transition-all gap-3"
                           >
                             <span className="font-semibold text-gray-800 text-sm">
                               {act.action}
                             </span>
                             <span
-                              className={`text-[10px] px-3 py-1.5 rounded-lg font-bold tracking-wider self-start sm:self-auto ${
+                              className={`text-[10px] px-3 py-1.5 rounded-sm font-bold tracking-wider self-start sm:self-auto ${
                                 act.urgency.toUpperCase() === "IMMEDIATE"
                                   ? "bg-red-50 text-red-700 border border-red-100"
                                   : act.urgency.toUpperCase() === "SCHEDULED"
@@ -447,11 +447,11 @@ export default function ElectricalDiagnosticConsole() {
                 </div>
 
                 {/* Plotly Components */}
-                <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 sm:p-8">
+                <div className="bg-white border border-gray-200 rounded-sm shadow-sm p-6 sm:p-8">
                   <ElectricalGraphs data={formData} />
                 </div>
 
-                <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-6 sm:p-8">
+                <div className="bg-white border border-gray-200 rounded-sm shadow-sm p-6 sm:p-8">
                   <AdvancedWaveformAnalysis data={formData} />
                 </div>
               </div>

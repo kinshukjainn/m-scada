@@ -4,9 +4,9 @@ export default function ConsoleComingSoonPage() {
   return (
     <div className="min-h-screen bg-[#f9fafb] flex flex-col items-center justify-center p-6 ">
       {/* Main Content Card */}
-      <div className="max-w-2xl w-full bg-white border border-gray-200 rounded-lg shadow-sm p-10 md:p-16 text-center">
+      <div className="max-w-2xl w-full bg-white border border-gray-200 rounded-sm shadow-sm p-10 md:p-16 text-center">
         {/* Icon Container (Terminal/Console Accent) */}
-        <div className="mx-auto w-16 h-16 bg-orange-50 border border-orange-100 rounded-full flex items-center justify-center mb-6">
+        <div className="mx-auto w-16 h-16 bg-orange-50 border border-orange-100 rounded-sm flex items-center justify-center mb-6">
           <svg
             className="w-8 h-8 text-black"
             fill="none"
@@ -121,7 +121,7 @@ export default function ConsoleComingSoonPage() {
 
       {/* System Status Indicator */}
       <div className="mt-12 text-sm text-gray-100 flex items-center gap-2">
-        <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
+        <span className="w-2.5 h-2.5 rounded-sm bg-green-500 animate-pulse"></span>
         Core APIs operational
       </div>
     </div>

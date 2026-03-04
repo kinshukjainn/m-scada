@@ -1,130 +1,49 @@
 "use client";
 
-import type React from "react";
 import { useState, useEffect } from "react";
-import { BookOpen, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MdOutlineWifiProtectedSetup, MdViewQuilt } from "react-icons/md";
-import { IoMdCodeWorking, IoMdInformationCircleOutline } from "react-icons/io";
-import { FaAws } from "react-icons/fa";
-import { SiAwslambda, SiFormspree, SiMeta } from "react-icons/si";
-import { VscJson } from "react-icons/vsc";
-import { TbApi } from "react-icons/tb";
-import { GiElectricalSocket } from "react-icons/gi";
-import { FaCodePullRequest } from "react-icons/fa6";
+import { Menu, X } from "lucide-react";
 
 // ───────────────────────────────────────────────
-// Types & Nav Data
+// Types & Nav Data (No Icons in Navigation)
 // ───────────────────────────────────────────────
 interface NavItem {
   title: string;
   href: string;
-  icon: React.ReactNode;
-}
-
-interface SidebarProps {
-  className?: string;
 }
 
 const navItems: NavItem[] = [
-  {
-    title: "Introduction",
-    href: "/docs/introduction",
-    icon: <BookOpen className="w-4 h-4" />,
-  },
-  {
-    title: "Project Info",
-    href: "/docs/project-info",
-    icon: <IoMdInformationCircleOutline className="w-4 h-4" />,
-  },
-  {
-    title: "Devlopment Setup",
-    href: "/docs/setup",
-    icon: <MdOutlineWifiProtectedSetup className="w-4 h-4" />,
-  },
-  {
-    title: "AWS Services used",
-    href: "/docs/aws-services",
-    icon: <FaAws className="w-4 h-4" />,
-  },
-  {
-    title: "Amazon Lambda Function",
-    href: "/docs/lambda-function",
-    icon: <SiAwslambda className="w-4 h-4" />,
-  },
-  {
-    title: "Amazon api Gateway",
-    href: "/docs/amazon-api-gateway",
-    icon: <TbApi className="w-4 h-4" />,
-  },
+  { title: "Introduction", href: "/docs/introduction" },
+  { title: "Project Info", href: "/docs/project-info" },
+  { title: "Development Setup", href: "/docs/setup" },
+  { title: "AWS Services used", href: "/docs/aws-services" },
+  { title: "Amazon Lambda Function", href: "/docs/lambda-function" },
+  { title: "Amazon API Gateway", href: "/docs/amazon-api-gateway" },
   {
     title: "Service Integrations",
     href: "/docs/lambda-integration-with-api-gateway",
-    icon: <TbApi className="w-4 h-4" />,
   },
-  {
-    title: "Open AI Model",
-    href: "/docs/open-ai-oss-model",
-    icon: <SiMeta className="w-4 h-4" />,
-  },
-  {
-    title: "Bedrock Model",
-    href: "/docs/about-model",
-    icon: <SiMeta className="w-4 h-4" />,
-  },
-  {
-    title: "Response and Request of model",
-    href: "/docs/rar",
-    icon: <VscJson className="w-4 h-4" />,
-  },
-  {
-    title: "Introduction to Model Parameters",
-    href: "/docs/params",
-    icon: <SiFormspree className="w-4 h-4" />,
-  },
-  {
-    title: "What is an API",
-    href: "/docs/api-intro",
-    icon: <TbApi className="w-4 h-4" />,
-  },
-  {
-    title: "Introduction to SCADA",
-    href: "/docs/intro-scada",
-    icon: <GiElectricalSocket className="w-4 h-4" />,
-  },
-  {
-    title: "Scada systems working",
-    href: "/docs/working-scada",
-    icon: <IoMdCodeWorking className="w-4 h-4" />,
-  },
-  {
-    title: "UI/UX Guidlines",
-    href: "/docs/uiux-guide",
-    icon: <MdViewQuilt className="w-4 h-4" />,
-  },
-  {
-    title: "Contribution Guidlines",
-    href: "/docs/contri",
-    icon: <FaCodePullRequest className="w-4 h-4" />,
-  },
+  { title: "Open AI Model", href: "/docs/open-ai-oss-model" },
+  { title: "Bedrock Model", href: "/docs/about-model" },
+  { title: "Response and Request of model", href: "/docs/rar" },
+  { title: "Introduction to Model Parameters", href: "/docs/params" },
+  { title: "What is an API", href: "/docs/api-intro" },
+  { title: "Introduction to SCADA", href: "/docs/intro-scada" },
+  { title: "Scada systems working", href: "/docs/working-scada" },
+  { title: "UI/UX Guidelines", href: "/docs/uiux-guide" },
+  { title: "Contribution Guidelines", href: "/docs/contri" },
 ];
 
 // ───────────────────────────────────────────────
-// Responsive Sidebar Component
+// Utilitarian Sidebar Component
 // ───────────────────────────────────────────────
-export function DocsSidebar({
-  className = "",
-}: SidebarProps): React.ReactElement {
+export function DocsSidebar({ className = "" }: { className?: string }) {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const [prevPathname, setPrevPathname] = useState(pathname);
 
-  // React-recommended way to reset state on route change
-  if (pathname !== prevPathname) {
-    setIsOpen(false);
-    setPrevPathname(pathname);
-  }
+  // Close sidebar on route change
+  useEffect(() => {}, [pathname]);
 
   // Close sidebar when escape key is pressed
   useEffect(() => {
@@ -135,136 +54,64 @@ export function DocsSidebar({
     return () => document.removeEventListener("keydown", handleEscape);
   }, []);
 
-  const mobileHeaderTitle =
-    pathname === "/docs"
-      ? "Documentation"
-      : navItems.find((item) => item.href === pathname)?.title ||
-        "Documentation";
-
   return (
     <>
-      {/* Scrollbar Fix embedded directly for this component */}
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-          .custom-dark-scrollbar::-webkit-scrollbar {
-            width: 4px;
-          }
-          .custom-dark-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-          }
-          .custom-dark-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-          }
-          .custom-dark-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.2);
-          }
-        `,
-        }}
-      />
-
       {/* ─── Mobile Top Header ─── */}
-      <div className="flex z-40 flex-shrink-0 items-center justify-between border-b border-white/5 bg-[#0a0a0a]/90 px-4 py-3 backdrop-blur-xl lg:hidden">
-        <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <BookOpen className="h-4 w-4 text-[#8cb4ff]" />
-          </div>
-          <span className="text-sm font-medium tracking-wide text-gray-200">
-            {mobileHeaderTitle}
-          </span>
-        </div>
+      <div className="flex items-center justify-between bg-[#202020] px-4 py-2 text-white lg:hidden border-b border-gray-800 z-40 relative">
+        <span className=" text-sm font-bold">FDS.ai Docs</span>
         <button
-          onClick={() => setIsOpen(true)}
-          className="cursor-pointer rounded-full border border-white/10 bg-white/5 p-2 text-gray-400 transition-all hover:bg-white/10 hover:text-white"
-          aria-label="Open documentation menu"
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-1 text-gray-300 hover:text-white transition-colors"
+          aria-label={isOpen ? "Close menu" : "Open menu"}
         >
-          <Menu className="h-5 w-5" />
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* ─── Mobile Backdrop Overlay ─── */}
+      {/* ─── Mobile Backdrop ─── */}
       {isOpen && (
         <div
-          className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm transition-opacity lg:hidden"
+          className="fixed inset-0 z-40 bg-[#202020]/60 lg:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
 
-      {/* ─── Sidebar (Strict Dark Theme) ─── */}
+      {/* ─── Sidebar ─── */}
       <aside
         className={`
-          absolute left-0 top-0 z-50 flex h-full w-64 flex-shrink-0 
-          flex-col border-r border-white/5 bg-[#0a0a0a]/95 backdrop-blur-xl
-          transition-transform duration-300 ease-in-out xl:w-[280px]
-          ${isOpen ? "translate-x-0 shadow-[20px_0_40px_-10px_rgba(0,0,0,0.8)]" : "-translate-x-full"}
-          lg:relative lg:translate-x-0 lg:shadow-none
+          fixed top-0 left-0 z-50 h-full w-64 bg-[#252525] border-r border-gray-800 overflow-y-auto px-4 py-6
+          transition-none lg:sticky lg:h-screen lg:translate-x-0
+          ${isOpen ? "translate-x-0" : "-translate-x-full"}
           ${className}
         `}
       >
-        {/* Sidebar Header */}
-        <div className="flex h-[60px] flex-shrink-0 items-center justify-between border-b border-white/5 bg-transparent px-5 py-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-              <BookOpen className="h-4 w-4 text-[#8cb4ff]" />
-            </div>
-            <h2 className="flex items-center gap-0.5 text-base font-medium tracking-tight text-gray-200">
-              FDS<span className="text-[#8cb4ff]">.ai</span>
-              <span className="animate-pulse font-mono text-[#8cb4ff]">
-                _
-              </span>{" "}
-              Docs
-            </h2>
-          </div>
-
-          <button
-            onClick={() => setIsOpen(false)}
-            className="cursor-pointer rounded-full p-1.5 text-gray-500 transition-all hover:bg-white/10 hover:text-white lg:hidden"
-          >
-            <X className="h-5 w-5" />
-          </button>
+        {/* Simple Header */}
+        <div className="mb-6 hidden lg:block">
+          <h2 className=" text-lg font-bold text-white border-b border-gray-100 pb-2">
+            <span className="text-red-500 font-mono">M-</span>{" "}
+            <span className="font-mono text-white ">Scada</span> Documentation
+          </h2>
         </div>
 
-        {/* Scrollable Navigation Menu with Custom Dark Scrollbar */}
-        <nav className="flex flex-1 flex-col gap-1 overflow-y-auto px-3 py-4 custom-dark-scrollbar">
+        {/* Plain HTML List Style Navigation */}
+        <ul className="flex flex-col gap-2  text-sm">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className={`
-                  group flex items-center gap-3 rounded-full px-3 py-2.5 text-sm transition-all duration-300
-                  ${
-                    isActive
-                      ? "bg-white/10 text-white shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)] ring-1 ring-white/5"
-                      : "text-gray-300 hover:bg-white/5 hover:text-gray-200"
-                  }
-                `}
-              >
-                <span
-                  className={`flex-shrink-0 transition-colors duration-300 ${
-                    isActive
-                      ? "text-[#8cb4ff]"
-                      : "text-gray-300 group-hover:text-gray-200"
-                  }`}
+              <li key={item.href} className="list-inside list-square">
+                <Link
+                  href={item.href}
+                  className={`
+                    hover:underline inline-block py-1
+                    ${isActive ? "text-blue-500 font-bold" : "text-white"}
+                  `}
                 >
-                  {item.icon}
-                </span>
-                <span
-                  className={`truncate ${isActive ? "font-medium" : "font-normal"}`}
-                >
-                  {item.title}
-                </span>
-
-                {isActive && (
-                  <div className="ml-auto h-1.5 w-1.5 rounded-full bg-[#8cb4ff] shadow-[0_0_8px_rgba(140,180,255,0.5)]" />
-                )}
-              </Link>
+                  {isActive ? `> ${item.title}` : item.title}
+                </Link>
+              </li>
             );
           })}
-        </nav>
+        </ul>
       </aside>
     </>
   );

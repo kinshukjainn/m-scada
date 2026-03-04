@@ -43,7 +43,7 @@ export default function APIIntroductionDocs() {
               back the data is the API.
             </p>
 
-            <div className="rounded-2xl p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-[#f38020] border border-[#333]">
+            <div className="rounded-sm p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-[#f38020] border border-[#333]">
               <h4 className="font-semibold text-white mb-3 text-lg">
                 The Restaurant Analogy
               </h4>
@@ -73,7 +73,7 @@ export default function APIIntroductionDocs() {
             </p>
 
             <h3 className="text-lg font-semibold text-white mb-4 mt-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-2xl bg-[#f38020]"></span>
+              <span className="w-2 h-2 rounded-sm bg-[#f38020]"></span>
               The Problem: Shared Databases are Dangerous
             </h3>
             <p className="text-gray-200 font-normal leading-relaxed mb-6 text-[16px]">
@@ -87,9 +87,9 @@ export default function APIIntroductionDocs() {
               This was disastrous for three reasons:
             </p>
 
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Security:
@@ -99,7 +99,7 @@ export default function APIIntroductionDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Fragility:
@@ -109,7 +109,7 @@ export default function APIIntroductionDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#f38020] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-semibold">
                     Language Barriers:
@@ -121,7 +121,7 @@ export default function APIIntroductionDocs() {
             </ul>
 
             <h3 className="text-lg font-semibold text-white mb-4 mt-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-2xl bg-[#f38020]"></span>
+              <span className="w-2 h-2 rounded-sm bg-[#f38020]"></span>
               The Solution: The &quot;Contract&quot;
             </h3>
             <p className="text-gray-200 font-normal leading-relaxed mb-4 text-[16px]">
@@ -165,7 +165,7 @@ export default function APIIntroductionDocs() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* The Request */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
                 <div className="bg-[#2d2d2d] px-4 py-3 text-[11px] text-[#f38020] uppercase tracking-widest font-mono border-b border-[#444] font-semibold">
                   Step 1: The Request (Client to API)
                 </div>
@@ -184,7 +184,7 @@ Authorization: Bearer <Your_Key>`}</code>
               </div>
 
               {/* The Response */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
                 <div className="bg-[#2d2d2d] px-4 py-3 text-[11px] text-[#8cb4ff] uppercase tracking-widest font-mono border-b border-[#444] font-semibold">
                   Step 2: The Response (API to Client)
                 </div>

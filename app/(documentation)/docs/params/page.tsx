@@ -32,11 +32,11 @@ export default function ParameterDeepDiveDocs() {
             <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
               At the most fundamental level, a parameter is simply a
               floating-point number (e.g.,{" "}
-              <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
+              <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
                 0.5431
               </code>{" "}
               or{" "}
-              <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-sm border border-[#444]">
+              <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-sm border border-[#444]">
                 -1.204
               </code>
               ). They are the internal configuration variables that an AI model
@@ -47,7 +47,7 @@ export default function ParameterDeepDiveDocs() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm hover:border-[#444] transition-colors">
                 <h4 className="font-semibold text-white mb-3 border-b border-[#333] pb-3 text-lg">
                   Weights (The Multipliers)
                 </h4>
@@ -61,7 +61,7 @@ export default function ParameterDeepDiveDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm hover:border-[#444] transition-colors">
                 <h4 className="font-semibold text-white mb-3 border-b border-[#333] pb-3 text-lg">
                   Biases (The Constants)
                 </h4>
@@ -76,7 +76,7 @@ export default function ParameterDeepDiveDocs() {
               </div>
             </div>
 
-            <div className="rounded-2xl p-6 sm:p-8 mt-8 bg-[#1b1b1b] border-l-4 border-l-amber-500 border border-[#333] shadow-sm">
+            <div className="rounded-sm p-6 sm:p-8 mt-8 bg-[#1b1b1b] border-l-4 border-l-amber-500 border border-[#333] shadow-sm">
               <p className="text-gray-300 font-normal text-[15px] m-0 leading-relaxed">
                 <strong className="text-white font-semibold">
                   Crucial Distinction:
@@ -108,7 +108,7 @@ export default function ParameterDeepDiveDocs() {
             <h3 className="text-lg font-semibold text-white mt-10 mb-4">
               The Transformer Hierarchy
             </h3>
-            <ul className="space-y-6 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
+            <ul className="space-y-6 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
@@ -171,10 +171,10 @@ export default function ParameterDeepDiveDocs() {
             <div className="space-y-8 mt-10 relative before:absolute before:inset-0 before:ml-[1.125rem] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-gradient-to-b before:from-transparent before:via-[#444] before:to-transparent">
               {/* Step A */}
               <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-9 h-9 rounded-2xl border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   A
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-2xl border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Initialization (The Blank Slate)
                   </h4>
@@ -189,10 +189,10 @@ export default function ParameterDeepDiveDocs() {
 
               {/* Step B */}
               <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-9 h-9 rounded-2xl border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   B
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-2xl border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Forward Pass & Loss Calculation
                   </h4>
@@ -211,10 +211,10 @@ export default function ParameterDeepDiveDocs() {
 
               {/* Step C */}
               <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-9 h-9 rounded-2xl border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   C
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-2xl border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Backpropagation (The Calculus)
                   </h4>
@@ -231,10 +231,10 @@ export default function ParameterDeepDiveDocs() {
 
               {/* Step D */}
               <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
-                <div className="flex items-center justify-center w-9 h-9 rounded-2xl border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   D
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-2xl border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Gradient Descent
                   </h4>
@@ -243,11 +243,11 @@ export default function ParameterDeepDiveDocs() {
                     optimization algorithm (like AdamW) microscopically nudges
                     those parameters in the opposite direction of the error. A
                     weight of{" "}
-                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-xs border border-[#444]">
+                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-xs border border-[#444]">
                       0.4501
                     </code>{" "}
                     might become{" "}
-                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-2xl font-mono text-xs border border-[#444]">
+                    <code className="bg-[#2d2d2d] text-[#8cb4ff] px-1.5 py-0.5 rounded-sm font-mono text-xs border border-[#444]">
                       0.4502
                     </code>
                     . This entire loop is repeated trillions of times across

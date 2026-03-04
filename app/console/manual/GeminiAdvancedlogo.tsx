@@ -137,7 +137,7 @@ export const GeminiFluidInner: React.FC<GeminiFluidInnerProps> = ({
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 400, damping: 15 }} // Real physics
-        className="relative rounded-full overflow-hidden flex items-center justify-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-100 bg-white cursor-pointer"
+        className="relative rounded-sm overflow-hidden flex items-center justify-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-100 bg-white cursor-pointer"
       >
         {/* INTERNAL FLUID CANVAS */}
         <div className="absolute inset-0 z-0 opacity-80 mix-blend-multiply">
@@ -152,10 +152,10 @@ export const GeminiFluidInner: React.FC<GeminiFluidInnerProps> = ({
         </div>
 
         {/* GLASS OVERLAY (Enhances the 3D sphere look) */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/60 via-transparent to-black/5 pointer-events-none z-10" />
+        <div className="absolute inset-0 rounded-sm bg-gradient-to-br from-white/60 via-transparent to-black/5 pointer-events-none z-10" />
 
         {/* INNER GLOW BORDER */}
-        <div className="absolute inset-0 rounded-full shadow-[inset_0_0_20px_rgba(255,255,255,0.8)] pointer-events-none z-10" />
+        <div className="absolute inset-0 rounded-sm shadow-[inset_0_0_20px_rgba(255,255,255,0.8)] pointer-events-none z-10" />
 
         {/* FOREGROUND ICON */}
         <motion.div

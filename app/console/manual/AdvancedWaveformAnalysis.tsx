@@ -101,7 +101,7 @@ export default function AdvancedWaveformAnalysis({
   return (
     <div className="space-y-6 mt-10 border-t border-gray-200 pt-8">
       <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 bg-blue-50 border border-blue-100 rounded-lg text-blue-600">
+        <div className="p-2 bg-blue-50 border border-blue-100 rounded-sm text-blue-600">
           <Cpu className="w-5 h-5" />
         </div>
         <div>
@@ -116,7 +116,7 @@ export default function AdvancedWaveformAnalysis({
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Oscilloscope View: 3-Phase Voltages */}
-        <div className="lg:col-span-8 border border-gray-200 rounded-xl bg-white shadow-sm overflow-hidden flex flex-col h-[400px]">
+        <div className="lg:col-span-8 border border-gray-200 rounded-sm bg-white shadow-sm overflow-hidden flex flex-col h-[400px]">
           <div className="px-4 py-3 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
             <Waves className="w-4 h-4 text-gray-500" />
             <h4 className="text-sm font-semibold text-gray-700">
@@ -213,7 +213,7 @@ export default function AdvancedWaveformAnalysis({
         {/* Right Column: Phasors & Power Triangle */}
         <div className="lg:col-span-4 flex flex-col gap-6">
           {/* Power Triangle */}
-          <div className="border border-gray-200 rounded-xl bg-white shadow-sm overflow-hidden flex flex-col h-[190px]">
+          <div className="border border-gray-200 rounded-sm bg-white shadow-sm overflow-hidden flex flex-col h-[190px]">
             <div className="px-4 py-2 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
               <Triangle className="w-4 h-4 text-gray-500" />
               <h4 className="text-sm font-semibold text-gray-700">
@@ -280,7 +280,7 @@ export default function AdvancedWaveformAnalysis({
           </div>
 
           {/* Sequence Components Radar */}
-          <div className="border border-gray-200 rounded-xl bg-white shadow-sm overflow-hidden flex flex-col h-[186px]">
+          <div className="border border-gray-200 rounded-sm bg-white shadow-sm overflow-hidden flex flex-col h-[186px]">
             <div className="px-4 py-2 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
               <Orbit className="w-4 h-4 text-gray-500" />
               <h4 className="text-sm font-semibold text-gray-700">

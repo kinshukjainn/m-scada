@@ -45,7 +45,7 @@ export default function ScadaIntroDocs() {
               remote, programmatic control.
             </p>
 
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 mt-10 mb-6 shadow-sm">
+            <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 mt-10 mb-6 shadow-sm">
               <h4 className="font-semibold text-white mb-3 text-lg">
                 The Scale of Operations
               </h4>
@@ -79,7 +79,7 @@ export default function ScadaIntroDocs() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-[#1b1b1b] border border-[#333] hover:border-[#444] transition-colors rounded-2xl p-6 sm:p-8">
+              <div className="bg-[#1b1b1b] border border-[#333] hover:border-[#444] transition-colors rounded-sm p-6 sm:p-8">
                 <h4 className="font-semibold text-[#8cb4ff] mb-3 text-lg">
                   The Legacy Silo Problem
                 </h4>
@@ -91,7 +91,7 @@ export default function ScadaIntroDocs() {
                   servers, inaccessible to modern analytics.
                 </p>
               </div>
-              <div className="bg-[#1b1b1b] border border-[#333] hover:border-[#444] transition-colors rounded-2xl p-6 sm:p-8">
+              <div className="bg-[#1b1b1b] border border-[#333] hover:border-[#444] transition-colors rounded-sm p-6 sm:p-8">
                 <h4 className="font-semibold text-[#8cb4ff] mb-3 text-lg">
                   Our Cloud Integration
                 </h4>
@@ -127,7 +127,7 @@ export default function ScadaIntroDocs() {
 
             <div className="space-y-10 mt-10">
               <div className="flex flex-col sm:flex-row gap-5">
-                <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center font-mono font-semibold text-md mt-0.5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center font-mono font-semibold text-md mt-0.5">
                   1
                 </div>
                 <div className="min-w-0">
@@ -144,7 +144,7 @@ export default function ScadaIntroDocs() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-5">
-                <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center font-mono font-semibold text-md mt-0.5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center font-mono font-semibold text-md mt-0.5">
                   2
                 </div>
                 <div className="min-w-0">
@@ -167,7 +167,7 @@ export default function ScadaIntroDocs() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-5">
-                <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center font-mono font-semibold text-md mt-0.5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center font-mono font-semibold text-md mt-0.5">
                   3
                 </div>
                 <div className="min-w-0">
@@ -184,7 +184,7 @@ export default function ScadaIntroDocs() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-5">
-                <div className="flex-shrink-0 w-10 h-10 rounded-2xl bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center font-mono font-semibold text-md mt-0.5">
+                <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center font-mono font-semibold text-md mt-0.5">
                   4
                 </div>
                 <div className="min-w-0">

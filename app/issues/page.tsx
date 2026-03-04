@@ -27,7 +27,6 @@ type Feedback = {
   feedback: string;
 };
 
-// Interface for Markdown component props to avoid 'any'
 interface MarkdownComponentProps {
   node?: unknown;
   inline?: boolean;
@@ -53,10 +52,9 @@ export default function FeedbacksList() {
 
   const fetchFeedbacks = async () => {
     setIsLoading(true);
-    setErrorMsg(null); // Reset error state on new fetch
+    setErrorMsg(null);
 
     try {
-      // Fetch from OUR API Route, completely bypassing ISP blocks on Supabase
       const response = await fetch("/api/fdb");
       const result = await response.json();
 
@@ -68,7 +66,6 @@ export default function FeedbacksList() {
 
       setFeedbacks(result || []);
     } catch (err: unknown) {
-      // Safely check if the error is a standard Error object with a message
       const message =
         err instanceof Error
           ? err.message
@@ -105,22 +102,18 @@ export default function FeedbacksList() {
   });
 
   return (
-    <div className="min-h-screen bg-[#1b1b1b] text-[#e0e0e0] selection:bg-[#4d85ff44]">
+    <div className="min-h-screen bg-[#0a0a0a] text-white/80  selection:bg-[#4a90e2]/30 selection:text-white">
       {/* Top Navigation Bar */}
-      <header className="sticky top-0 z-50 bg-[#1b1b1b]/95 backdrop-blur border-b border-[#3c3c3c] px-4 py-3">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <div className="bg-white p-2 rounded-full text-black">
-              <LayoutList size={20} />
-            </div>
-            <h1 className="text-xl font-bold tracking-tight text-white hidden sm:block">
-              Issues <span className="text-[#4d85ff]">/</span> Feedbacks
-            </h1>
+      <header className="sticky top-0 z-50 bg-[#0a0a0a] border-b border-white/10 px-4 py-4">
+        <div className="mx-auto flex max-w-[1400px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-3">
+            <LayoutList size={20} className="text-red-500" />
+            <h1 className="text-xl font-bold text-white">Issues / Feedbacks</h1>
           </div>
 
-          <div className="flex-1 max-w-xl relative">
+          <div className="relative w-full max-w-md">
             <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40"
               size={16}
             />
             <input
@@ -128,22 +121,20 @@ export default function FeedbacksList() {
               placeholder="Search feedbacks (e.g. bug, UI, name)..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-[#2b2b2b] border border-[#3c3c3c] rounded-full py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-[#4d85ff] focus:border-transparent transition-all placeholder:text-gray-500"
+              className="w-full rounded bg-[#111111] border border-white/10 py-2 pl-10 pr-4 text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-[#4a90e2]"
             />
           </div>
         </div>
       </header>
 
-      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row gap-8 px-4 py-8">
+      <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-4 py-8 lg:flex-row lg:gap-12">
         {/* Sidebar Filters */}
-        <aside className="w-full lg:w-64 shrink-0 space-y-6">
+        <aside className="w-full shrink-0 space-y-8 lg:w-48">
           <section>
-            <div className="p-1 bg-[#252525] mt-2 mb-2 rounded-full border-2 border-[#313131]">
-              <h3 className="text-md font-semibold ml-4 text-gray-100 flex items-center gap-2">
-                <Filter size={14} /> Filters
-              </h3>
-            </div>
-            <div className="space-y-1">
+            <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white">
+              <Filter size={16} /> Filters
+            </h3>
+            <div className="flex flex-col space-y-1">
               {(["all", "project", "blogs", "portfolio"] as const).map(
                 (cat) => (
                   <button
@@ -152,10 +143,10 @@ export default function FeedbacksList() {
                       setFilterCategory(cat);
                       setFilterProject("all");
                     }}
-                    className={`w-full text-left px-3 py-2 rounded-full text-sm transition-colors capitalize ${
+                    className={`text-left px-3 py-2 rounded text-sm capitalize transition-colors ${
                       filterCategory === cat
-                        ? "bg-[#4d85ff22] text-[#81a9ff] font-bold "
-                        : "text-gray-200 font-medium hover:bg-[#2b2b2b] "
+                        ? " text-[#4a90e2] underline font-bold"
+                        : "text-white/60 hover:underline hover:text-white"
                     }`}
                   >
                     {cat}
@@ -166,14 +157,14 @@ export default function FeedbacksList() {
           </section>
 
           {filterCategory === "project" && (
-            <section className="animate-in slide-in-from-top-2 duration-300">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 flex items-center gap-2">
+            <section>
+              <h3 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/50">
                 <Tag size={14} /> Sub-Projects
               </h3>
               <select
                 value={filterProject}
                 onChange={(e) => setFilterProject(e.target.value)}
-                className="w-full bg-[#2b2b2b] border border-[#3c3c3c] rounded text-sm p-2 outline-none focus:border-[#4d85ff]"
+                className="w-full rounded bg-[#111111] border border-white/10 p-2 text-sm text-white outline-none focus:border-[#4a90e2]"
               >
                 <option value="all">All Projects</option>
                 {projects.map((p) => (
@@ -188,77 +179,77 @@ export default function FeedbacksList() {
 
         {/* Main Content Area */}
         <main className="flex-1 min-w-0">
-          <div className="mb-6 flex items-center justify-between border-b border-[#3c3c3c] pb-4">
-            <h2 className="text-2xl font-bold text-white">
+          <div className="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
+            <h2 className="text-2xl font-bold text-white capitalize">
               {filterCategory === "all"
                 ? "All Activity"
                 : `${filterCategory} Feedbacks`}
             </h2>
             {!isLoading && !errorMsg && (
-              <span className="text-md font-mono bg-green-600 px-2 py-1 rounded-xl border border-[#3c3c3c]">
-                {filteredFeedbacks.length} items
+              <span className="rounded bg-[#111111] border border-white/10 px-2 py-1 text-xs font-bold text-white/70">
+                {filteredFeedbacks.length} Items
               </span>
             )}
           </div>
 
-          <div className="space-y-10">
-            {/* Display Error Message if fetch fails */}
+          <div className="space-y-6">
+            {/* Error State */}
             {errorMsg && (
-              <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-4 flex items-start gap-3 text-red-400">
-                <AlertCircle className="shrink-0 mt-0.5" size={18} />
+              <div className="flex items-start gap-3 rounded border border-red-500/30 bg-red-500/5 p-4 text-red-400">
+                <AlertCircle className="mt-0.5 shrink-0" size={18} />
                 <div>
                   <h3 className="font-bold text-red-500">
                     Failed to fetch data
                   </h3>
-                  <p className="text-sm mt-1">{errorMsg}</p>
-                  <p className="text-xs mt-2 opacity-80">
-                    Check your NEXT_PUBLIC environment variables and ensure Row
-                    Level Security (RLS) allows read access.
-                  </p>
+                  <p className="mt-1 text-sm">{errorMsg}</p>
                 </div>
               </div>
             )}
 
+            {/* Loading State */}
             {isLoading ? (
-              <div className="py-20 flex flex-col items-center gap-4 text-gray-500">
-                <Loader2 className="animate-spin" size={32} />
-                <p className="animate-pulse">Loading archive...</p>
+              <div className="flex flex-col items-center justify-center py-20 text-white/50">
+                <Loader2 className="mb-4 animate-spin" size={32} />
+                <p>Loading archive...</p>
               </div>
             ) : !errorMsg && filteredFeedbacks.length === 0 ? (
-              <div className="py-20 text-center border-2 border-dashed border-[#3c3c3c] rounded-xl">
-                <SearchX className="mx-auto text-gray-600 mb-4" size={48} />
-                <p className="text-gray-400">No matching entries found.</p>
+              /* Empty State */
+              <div className="flex flex-col items-center justify-center rounded border border-dashed border-white/10 py-20 text-white/50">
+                <SearchX className="mb-4" size={48} />
+                <p>No matching entries found.</p>
               </div>
             ) : (
+              /* Feedback List */
               !errorMsg &&
               filteredFeedbacks.map((fb) => (
-                <article key={fb.id} className="group relative">
-                  <div className="flex flex-col md:flex-row md:items-start gap-4">
-                    <div className="hidden md:block w-32 shrink-0 pt-1">
-                      <div className="text-sm font-mono text-green-500 flex items-center gap-2">
+                <article
+                  key={fb.id}
+                  className="border-b border-white/10 pb-8 pt-4"
+                >
+                  <div className="flex flex-col md:flex-row md:items-start gap-6">
+                    {/* Timestamp (Left Column) */}
+                    <div className="w-32 shrink-0 md:pt-1">
+                      <div className="flex items-center gap-2 text-xs text-white/50">
                         <Clock size={12} />
                         {new Date(fb.created_at).toLocaleDateString()}
                       </div>
                     </div>
 
-                    <div className="flex-1 pb-10 border-b border-[#3c3c3c]">
-                      <div className="flex flex-wrap items-center gap-3 mb-3">
-                        <span className="bg-blue-800 text-white text-sm uppercase font-medium px-2 py-0.5 rounded-full ">
+                    {/* Content (Right Column) */}
+                    <div className="flex-1">
+                      <div className="mb-4 flex flex-wrap items-center gap-2">
+                        <span className="rounded bg-[#111111] border border-white/10 px-2 py-0.5 text-xs font-bold uppercase text-[#4a90e2]">
                           {fb.category}
                         </span>
                         {fb.project_name && (
-                          <span className="text-xs text-orange-400/80 font-mono">
-                            :: {fb.project_name}
+                          <span className="text-xs text-white/50">
+                            → {fb.project_name}
                           </span>
                         )}
                       </div>
 
-                      <div
-                        className="prose prose-invert max-w-none 
-                        prose-p:text-[#c9d1d9] prose-p:leading-7 prose-p:mb-4
-                        prose-headings:text-white prose-headings:font-bold
-                        prose-a:text-[#58a6ff] hover:prose-a:underline"
-                      >
+                      {/* Clean Markdown Rendering */}
+                      <div className="prose prose-invert max-w-none prose-p:leading-relaxed prose-p:text-white/80 prose-headings:text-white prose-a:text-[#4a90e2] mb-6">
                         <ReactMarkdown
                           components={{
                             code({
@@ -267,15 +258,9 @@ export default function FeedbacksList() {
                               children,
                               ...props
                             }: MarkdownComponentProps) {
-                              const match = /language-(\w+)/.exec(
-                                className || "",
-                              );
                               return !inline ? (
-                                <div className="relative my-6 rounded-2xl overflow-hidden border border-[#30363d] bg-[#0d1117]">
-                                  <div className="flex items-center justify-between px-4 py-2 bg-[#161b22] border-b border-[#30363d] text-xs text-gray-400 font-mono">
-                                    <span>{match ? match[1] : "code"}</span>
-                                  </div>
-                                  <pre className="p-4 overflow-x-auto m-0">
+                                <div className="my-4 overflow-hidden rounded border border-white/10 bg-[#111111]">
+                                  <pre className="overflow-x-auto p-4 text-sm text-white/90">
                                     <code className={className} {...props}>
                                       {children}
                                     </code>
@@ -283,7 +268,7 @@ export default function FeedbacksList() {
                                 </div>
                               ) : (
                                 <code
-                                  className="bg-[#2b2b2b] text-[#e2e2e2] px-1.5 py-0.5 rounded text-sm font-mono border border-[#3c3c3c]"
+                                  className="rounded bg-[#111111] border border-white/10 px-1 py-0.5 text-sm text-[#4a90e2]"
                                   {...props}
                                 >
                                   {children}
@@ -296,19 +281,20 @@ export default function FeedbacksList() {
                         </ReactMarkdown>
                       </div>
 
-                      <footer className="mt-6 flex flex-wrap items-center gap-y-3 gap-x-6 text-sm">
-                        <div className="flex items-center gap-2 group-hover:text-white transition-colors">
-                          <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-[#4d85ff] to-[#81a9ff] flex items-center justify-center text-[10px] font-bold text-white shadow-lg">
+                      {/* User Info Footer */}
+                      <footer className="flex flex-wrap items-center gap-6 text-sm">
+                        <div className="flex items-center gap-2">
+                          <div className="flex h-6 w-6 items-center justify-center rounded bg-[#111111] border border-white/10 text-xs font-bold text-white">
                             {fb.name.charAt(0).toUpperCase()}
                           </div>
-                          <span className="font-medium text-gray-300">
+                          <span className="font-bold text-white">
                             {fb.name}
                           </span>
                         </div>
 
                         <a
                           href={`mailto:${fb.email}`}
-                          className="flex items-center gap-1.5 text-gray-500 hover:text-[#4d85ff] transition-colors"
+                          className="flex items-center gap-1.5 text-white/50 transition-colors hover:text-[#4a90e2]"
                         >
                           <Mail size={14} />
                           <span className="text-xs">{fb.email}</span>
@@ -316,19 +302,16 @@ export default function FeedbacksList() {
 
                         {fb.github_id && (
                           <a
-                            href={`https://github.com/${fb.github_id.replace(
-                              "@",
-                              "",
-                            )}`}
+                            href={`https://github.com/${fb.github_id.replace("@", "")}`}
                             target="_blank"
                             rel="noreferrer"
-                            className="flex items-center gap-1.5 text-gray-500 hover:text-[#4d85ff] transition-colors"
+                            className="flex items-center gap-1.5 text-white/50 transition-colors hover:text-[#4a90e2]"
                           >
                             <Github size={14} />
                             <span className="text-xs">
                               @{fb.github_id.replace("@", "")}
                             </span>
-                            <ExternalLink size={10} className="opacity-50" />
+                            <ExternalLink size={10} />
                           </a>
                         )}
                       </footer>

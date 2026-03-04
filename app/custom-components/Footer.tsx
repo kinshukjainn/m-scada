@@ -28,7 +28,7 @@ export default function Footer() {
               industrial infrastructure.
             </p>
             {/* System Status Indicator */}
-            <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-full bg-[#252525] border border-[#4444444]">
+            <div className="inline-flex items-center gap-2 px-2.5 py-1.5 rounded-sm bg-[#252525] border border-[#4444444]">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded h-2 w-2 bg-blue-500"></span>

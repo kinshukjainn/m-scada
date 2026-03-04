@@ -35,7 +35,7 @@ export default function AWSServicesDocs() {
             </p>
 
             <h3 className="text-lg font-medium text-white mb-4 mt-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-2xl bg-[#8cb4ff]"></span>
+              <span className="w-2 h-2 rounded-sm bg-[#8cb4ff]"></span>
               How It Works
             </h3>
             <p className="text-gray-200 font-light leading-relaxed mb-8 text-[16px]">
@@ -51,12 +51,12 @@ export default function AWSServicesDocs() {
             </p>
 
             <h3 className="text-lg font-medium text-white mb-4 mt-10 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-2xl bg-[#8cb4ff]"></span>
+              <span className="w-2 h-2 rounded-sm bg-[#8cb4ff]"></span>
               Why We Use It
             </h3>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm text-gray-200 font-light text-[15px] m-0">
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-light text-[15px] m-0">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-medium">
                     Zero Infrastructure Management:
@@ -66,7 +66,7 @@ export default function AWSServicesDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-medium">
                     Automatic Scaling:
@@ -77,7 +77,7 @@ export default function AWSServicesDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-medium">
                     Pay-as-you-go Pricing:
@@ -104,7 +104,7 @@ export default function AWSServicesDocs() {
             </p>
 
             <h3 className="text-lg font-medium text-white mb-4 mt-8 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-2xl bg-[#8cb4ff]"></span>
+              <span className="w-2 h-2 rounded-sm bg-[#8cb4ff]"></span>
               How It Works
             </h3>
             <p className="text-gray-200 font-light leading-relaxed mb-8 text-[16px]">
@@ -118,12 +118,12 @@ export default function AWSServicesDocs() {
             </p>
 
             <h3 className="text-lg font-medium text-white mb-4 mt-10 flex items-center gap-3">
-              <span className="w-2 h-2 rounded-2xl bg-[#8cb4ff]"></span>
+              <span className="w-2 h-2 rounded-sm bg-[#8cb4ff]"></span>
               Why We Use It
             </h3>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-2xl p-6 sm:p-8 shadow-sm text-gray-200 font-light text-[15px] m-0">
+            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-light text-[15px] m-0">
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-medium">
                     Model Agnostic:
@@ -135,7 +135,7 @@ export default function AWSServicesDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-medium">
                     Data Privacy & Security:
@@ -147,7 +147,7 @@ export default function AWSServicesDocs() {
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-2xl bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
+                <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
                   <strong className="text-white font-medium">
                     Native Orchestration:

@@ -3,259 +3,123 @@ import Link from "next/link";
 export default function Page() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-gray-300">
-      {/* Header */}
-      <div className="border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"></div>
-      </div>
+      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+        {/* Page Header */}
+        <div className="mb-12">
+          <h1 className="text-3xl font-bold text-white mb-2">
+            Select <span className="text-red-500">Console</span> Mode
+          </h1>
+          <p className="text-gray-400">
+            Choose how you want to interact with your data and workflows.
+          </p>
+        </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Manual Console */}
-          <div className="border border-white/10 bg-white/[0.02] rounded-3xl p-8 hover:shadow-2xl hover:bg-white/[0.04] transition-all">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-white mb-2">
+        <div className="grid gap-8 md:grid-cols-2 mb-16">
+          {/* Manual Console Card */}
+          <div className="flex flex-col ">
+            <div className="flex-grow">
+              <h2 className="text-xl font-bold text-white mb-2">
                 Manual Console
               </h2>
-              <p className="text-gray-400">
-                You have full control and flexibility
+              <p className="text-sm text-gray-400 mb-6">
+                Full control and flexibility. You dictate every aspect of data
+                collection, analysis, and metric tracking.
               </p>
-            </div>
 
-            <div className="mb-6">
-              <h3 className="text-lg font-medium text-white mb-3">
-                How it works
+              <h3 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">
+                Features
               </h3>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-start">
-                  <span className="mr-2 text-gray-500">•</span>
-                  <span>
-                    You control every aspect of data collection and analysis
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-gray-500">•</span>
-                  <span>
-                    Customize metrics, reports, and visualizations to your needs
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-gray-500">•</span>
-                  <span>
-                    Make informed decisions with complete transparency
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-gray-500">•</span>
-                  <span>Integrate with your existing tools and workflows</span>
-                </li>
+              <ul className="space-y-2 text-sm text-gray-400 mb-8 list-disc list-inside">
+                <li>Customize metrics and visualizations</li>
+                <li>Complete transparency in processes</li>
+                <li>Integrate existing tools/workflows</li>
+                <li>No external algorithm dependency</li>
               </ul>
-            </div>
-
-            <div className="mb-6">
-              <h3 className="text-lg font-medium text-white mb-3">
-                Key Benefits
-              </h3>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-400">✓</span>
-                  <span>Full customization and control</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-400">✓</span>
-                  <span>Transparency in all processes</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-400">✓</span>
-                  <span>Integration with your existing systems</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-400">✓</span>
-                  <span>No dependency on external algorithms</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mb-8 p-4 bg-white/5 border border-white/10 rounded-3xl">
-              <h4 className="font-medium text-white mb-2">
-                Full Customization
-              </h4>
-              <p className="text-sm text-gray-400">
-                Build your perfect Console with complete control over every
-                metric and visualization.
-              </p>
             </div>
 
             <Link
               href="/console/manual"
-              className="block w-full bg-white rounded-full text-black text-center py-2 px-4 font-medium hover:bg-gray-200 transition-colors"
+              className="w-full rounded bg-blue-400 py-1 w-max px-2 text-center text-md  font-semibold text-black  transition-colors"
             >
-              Manual Console
+              Go for manual
             </Link>
           </div>
 
-          {/* Automated Console */}
-          <div className="border border-white/10 bg-white/[0.02] rounded-3xl p-8 hover:shadow-2xl hover:bg-white/[0.04] transition-all">
-            <div className="mb-6">
-              <h2 className="text-2xl font-bold text-white mb-2">
-                Automated Console
-              </h2>
-              <p className="text-gray-400">Let the system handle everything</p>
-            </div>
-
-            <div className="mb-6">
-              <h3 className="text-lg font-medium text-white mb-3">
-                How it works
-              </h3>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-start">
-                  <span className="mr-2 text-gray-500">•</span>
-                  <span>
-                    Automatically collects and processes all data in real-time
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-gray-500">•</span>
-                  <span>
-                    Uses intelligent algorithms to identify patterns and
-                    anomalies
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-gray-500">•</span>
-                  <span>
-                    Generates insights and recommendations without human input
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-gray-500">•</span>
-                  <span>
-                    Continuously learns and adapts to your usage patterns
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mb-6">
-              <h3 className="text-lg font-medium text-white mb-3">
-                Key Benefits
-              </h3>
-              <ul className="space-y-2 text-gray-400">
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-400">✓</span>
-                  <span>No manual configuration required</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-400">✓</span>
-                  <span>Real-time data processing and updates</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-400">✓</span>
-                  <span>AI-powered insights and predictions</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-2 text-green-400">✓</span>
-                  <span>Saves time and reduces manual work</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="mb-8 p-4 bg-white/5 rounded-3xl border border-white/10">
-              <h4 className="font-medium text-white mb-2">Smart Analytics</h4>
-              <p className="text-sm text-gray-400">
-                Automatically tracks metrics and generates actionable insights
-                tailored to your business.
+          {/* Automated Console Card */}
+          <div className="flex flex-col ">
+            <div className="flex-grow">
+              <div className="flex items-center gap-3 mb-2">
+                <h2 className="text-xl font-bold text-white">
+                  Automated Console
+                </h2>
+                <span className="rounded bg-[#4a90e2] font-mono px-2 py-0.5 text-xs font-bold  text-black">
+                  Recommended
+                </span>
+              </div>
+              <p className="text-sm text-gray-400 mb-6">
+                Let the system handle it. Automatically collects data,
+                identifies patterns, and generates insights.
               </p>
+
+              <h3 className="text-sm font-semibold text-white mb-3 uppercase tracking-wider">
+                Features
+              </h3>
+              <ul className="space-y-2 text-sm text-gray-400 mb-8 list-disc list-inside">
+                <li>No manual configuration required</li>
+                <li>Real-time processing and updates</li>
+                <li>AI-powered predictions</li>
+                <li>Saves time and reduces manual work</li>
+              </ul>
             </div>
 
             <Link
               href="/console/direct"
-              className="block w-full bg-[#8cb4ff] hover:bg-[#a6c6ff] rounded-full text-black text-center py-2 px-4 font-medium transition-colors"
+              className="w-full rounded bg-green-500 py-1 w-max px-2 text-center text-md  font-semibold text-black  transition-colors"
             >
-              Automated Console
+              Go for auto
             </Link>
           </div>
         </div>
 
-        {/* Comparison Table */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold text-white mb-6 text-center">
+        {/* Minimal Comparison Table */}
+        <div>
+          <h2 className="text-lg font-bold text-white mb-4">
             Quick Comparison
           </h2>
-          <p className="text-gray-400 text-center mb-8">
-            See which approach works best for your needs
-          </p>
-
-          <div className="overflow-x-auto rounded-3xl border border-white/10 shadow-lg">
-            <table className="w-full border-collapse">
+          <div className="overflow-x-auto">
+            <table className="w-full text-left text-sm">
               <thead>
-                <tr className="bg-black">
-                  <th className="border-b border-white/10 px-6 py-4 text-left font-semibold text-blue-400">
-                    Feature
-                  </th>
-                  <th className="border-b border-l border-white/10 px-6 py-4 text-left font-semibold text-blue-400">
-                    Automated
-                  </th>
-                  <th className="border-b border-l border-white/10 px-6 py-4 text-left font-semibold text-blue-400">
-                    Manual
-                  </th>
+                <tr className="border-b border-gray-800 text-gray-500">
+                  <th className="py-3 font-normal">Feature</th>
+                  <th className="py-3 font-normal">Automated</th>
+                  <th className="py-3 font-normal">Manual</th>
                 </tr>
               </thead>
-              <tbody className="bg-white/[0.02]">
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="border-b border-white/10 px-6 py-4 font-medium text-white">
-                    Setup Time
-                  </td>
-                  <td className="border-b border-l border-white/10 px-6 py-4 text-gray-400">
-                    Minutes
-                  </td>
-                  <td className="border-b border-l border-white/10 px-6 py-4 text-gray-400">
-                    Hours
-                  </td>
+              <tbody className="text-gray-300">
+                <tr className="border-b border-gray-800/50">
+                  <td className="py-3">Setup Time</td>
+                  <td className="py-3">Minutes</td>
+                  <td className="py-3 text-gray-500">Hours</td>
                 </tr>
-                <tr className="bg-white/[0.01] hover:bg-white/5 transition-colors">
-                  <td className="border-b border-white/10 px-6 py-4 font-medium text-white">
-                    Customization
-                  </td>
-                  <td className="border-b border-l border-white/10 px-6 py-4 text-gray-400">
-                    Limited
-                  </td>
-                  <td className="border-b border-l border-white/10 px-6 py-4 text-gray-400">
-                    Unlimited
-                  </td>
+                <tr className="border-b border-gray-800/50">
+                  <td className="py-3">Customization</td>
+                  <td className="py-3 text-gray-500">Limited</td>
+                  <td className="py-3">Unlimited</td>
                 </tr>
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="border-b border-white/10 px-6 py-4 font-medium text-white">
-                    Maintenance
-                  </td>
-                  <td className="border-b border-l border-white/10 px-6 py-4 text-gray-400">
-                    Minimal
-                  </td>
-                  <td className="border-b border-l border-white/10 px-6 py-4 text-gray-400">
-                    High
-                  </td>
+                <tr className="border-b border-gray-800/50">
+                  <td className="py-3">Maintenance</td>
+                  <td className="py-3">Minimal</td>
+                  <td className="py-3 text-gray-500">High</td>
                 </tr>
-                <tr className="bg-white/[0.01] hover:bg-white/5 transition-colors">
-                  <td className="border-b border-white/10 px-6 py-4 font-medium text-white">
-                    AI Insights
-                  </td>
-                  <td className="border-b border-l border-white/10 px-6 py-4 text-green-400 font-bold">
-                    ✓
-                  </td>
-                  <td className="border-b border-l border-white/10 px-6 py-4 text-gray-400">
-                    Optional
-                  </td>
+                <tr className="border-b border-gray-800/50">
+                  <td className="py-3">AI Insights</td>
+                  <td className="py-3 text-[#4a90e2]">Included</td>
+                  <td className="py-3 text-gray-500">Optional</td>
                 </tr>
-                <tr className="hover:bg-white/5 transition-colors">
-                  <td className="px-6 py-4 font-medium text-white">
-                    Learning Curve
-                  </td>
-                  <td className="border-l border-white/10 px-6 py-4 text-gray-400">
-                    None
-                  </td>
-                  <td className="border-l border-white/10 px-6 py-4 text-gray-400">
-                    Moderate
-                  </td>
+                <tr>
+                  <td className="py-3">Learning Curve</td>
+                  <td className="py-3">None</td>
+                  <td className="py-3 text-gray-500">Moderate</td>
                 </tr>
               </tbody>
             </table>

@@ -9,6 +9,9 @@ import {
   Geist_Mono,
   Inter,
 } from "next/font/google";
+
+import localFont from "next/font/local";
+
 import "./globals.css";
 import Header from "./custom-components/Header";
 import Footer from "./custom-components/Footer";
@@ -16,6 +19,13 @@ import Footer from "./custom-components/Footer";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+export const lucideSans = localFont({
+  src: "../public/fonts/lucida-sans-unicode.woff2",
+  variable: "--font-lucide",
+  weight: "400",
+  display: "swap",
 });
 
 const roboto = Roboto({
@@ -82,7 +92,7 @@ export default function RootLayout({
     <html lang="en" data-google-analytics-opt-out="">
       <body
         // 👇 Add inter.variable to your class string
-        className={`${geistSans.variable} ${ptSans.variable} ${arimo.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${ptSans.variable} ${arimo.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${lucideSans.variable} ${inter.variable} antialiased`}
       >
         <Header />
         {children}

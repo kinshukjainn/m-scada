@@ -73,7 +73,7 @@ export default function AIIndustrialHome() {
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl bg-[#2d2d2d] border border-[#444] text-gray-200 text-[11px] font-mono uppercase tracking-widest mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-[#2d2d2d] border border-[#444] text-gray-200 text-[11px] font-mono uppercase tracking-widest mb-8 shadow-sm">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded bg-[#8cb4ff] opacity-75"></span>
                 <span className="relative inline-flex rounded h-2 w-2 bg-[#8cb4ff]"></span>
@@ -82,13 +82,18 @@ export default function AIIndustrialHome() {
             </div>
 
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.05]">
-              Predictive Intelligence <br className="hidden md:block" />
-              for Power Grids <span className="text-[#8cb4ff]">_</span>
+              A <span className="text-red-500 font-mono font-bold">better</span>{" "}
+              version of scada
+              <br className="hidden md:block" />
+              <span className="text-[#8cb4ff]">_</span>
             </h1>
             <p className="text-lg text-gray-200 max-w-2xl leading-relaxed mb-0 font-normal tracking-wide">
-              High-fidelity fault detection utilizing machine learning to secure
-              critical infrastructure across the industrial sector. Eliminate
-              unplanned downtime with millisecond precision.
+              Mscada is an open-source, intelligent monitoring layer for
+              industrial control systems. It augments traditional SCADA with
+              real-time telemetry processing, machine learning fault detection,
+              and millisecond event analysis delivering deeper observability,
+              faster anomaly detection, and predictive insights without
+              proprietary constraints.
             </p>
           </motion.div>
 
@@ -130,7 +135,7 @@ export default function AIIndustrialHome() {
                 alt="Console Dashboard Preview"
                 width={1920}
                 height={1080}
-                className="w-full h-auto block object-contain rounded-lg"
+                className="w-full h-auto block object-contain rounded-sm"
                 priority
               />
             </div>
@@ -141,7 +146,7 @@ export default function AIIndustrialHome() {
       {/* Metrics Section */}
       <section className="bg-[#121212] border-b border-[#2d2d2d]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[#333] border border-[#333] bg-[#1b1b1b] rounded-3xl overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[#333] border border-[#333] bg-[#1b1b1b] rounded-sm overflow-hidden">
             {[
               { label: "Operating Efficiency", val: "+34%" },
               { label: "Grid Availability", val: "99.99%" },
@@ -180,7 +185,7 @@ export default function AIIndustrialHome() {
                 alt="Framework Architecture"
                 width={1920}
                 height={1080}
-                className="w-full h-auto block object-contain rounded-lg"
+                className="w-full h-auto block object-contain rounded-sm"
                 priority
               />
             </div>
@@ -206,9 +211,9 @@ export default function AIIndustrialHome() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className="bg-[#1b1b1b] p-8 border border-[#333] rounded-3xl hover:border-[#8cb4ff] transition-all duration-300 group cursor-default shadow-sm"
+                className="bg-[#1b1b1b] p-8 border border-[#333] rounded-sm hover:border-[#8cb4ff] transition-all duration-300 group cursor-default shadow-sm"
               >
-                <div className="w-12 h-12 rounded-3xl bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center mb-6 group-hover:bg-[#8cb4ff] group-hover:text-[#121212] transition-colors">
+                <div className="w-12 h-12 rounded-sm bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center mb-6 group-hover:bg-[#8cb4ff] group-hover:text-[#121212] transition-colors">
                   {feature.icon}
                 </div>
                 <h3 className="text-lg font-normal text-white mb-3 tracking-tight">
@@ -240,7 +245,7 @@ export default function AIIndustrialHome() {
             </div>
           </div>
 
-          <div className="overflow-x-auto border border-[#333] rounded-2xl bg-[#121212] shadow-sm">
+          <div className="overflow-x-auto border border-[#333] rounded-sm bg-[#121212] shadow-sm">
             <table className="w-full text-left border-collapse whitespace-nowrap">
               <thead>
                 <tr className="bg-[#1b1b1b] border-b border-[#333] text-gray-200 text-[11px] font-mono uppercase tracking-widest">
@@ -283,9 +288,9 @@ export default function AIIndustrialHome() {
                     </td>
                     <td className="px-6 py-4">{row.load}</td>
                     <td className="px-6 py-4">
-                      <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-[#2d2d2d] border border-[#444] text-[11px] font-mono text-gray-200">
+                      <span className="inline-flex items-center gap-2 px-2.5 py-1 rounded-sm bg-[#2d2d2d] border border-[#444] text-[11px] font-mono text-gray-200">
                         <span
-                          className={`w-1.5 h-1.5 rounded-full ${row.riskColor}`}
+                          className={`w-1.5 h-1.5 rounded-sm ${row.riskColor}`}
                         />
                         {row.risk}
                       </span>
@@ -338,7 +343,7 @@ export default function AIIndustrialHome() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 items-start relative z-10">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-2xl border border-[#444] bg-[#1b1b1b] flex items-center justify-center text-[#8cb4ff] mt-1 shadow-sm">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-sm border border-[#444] bg-[#1b1b1b] flex items-center justify-center text-[#8cb4ff] mt-1 shadow-sm">
                       {item.icon}
                     </div>
                     <div>
@@ -358,9 +363,9 @@ export default function AIIndustrialHome() {
             </div>
 
             {/* Terminal Window */}
-            <div className="bg-[#121212] rounded-3xl border border-[#333] shadow-lg overflow-hidden flex flex-col h-[400px]">
+            <div className="bg-[#121212] rounded-sm border border-[#333] shadow-lg overflow-hidden flex flex-col h-[400px]">
               {/* Terminal Header */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-[#333] bg-black">
+              <div className="flex items-center justify-between px-4 py-3 border-b border-[#333] bg-[#202020]">
                 <div className="flex items-center gap-2">
                   <TerminalSquare size={16} className="text-gray-200" />
                   <span className="text-xs font-mono text-gray-200">
@@ -368,9 +373,9 @@ export default function AIIndustrialHome() {
                   </span>
                 </div>
                 <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-blue-500"></div>
+                  <div className="w-2.5 h-2.5 rounded-sm bg-green-500"></div>
+                  <div className="w-2.5 h-2.5 rounded-sm bg-yellow-500"></div>
+                  <div className="w-2.5 h-2.5 rounded-sm bg-blue-500"></div>
                 </div>
               </div>
 
