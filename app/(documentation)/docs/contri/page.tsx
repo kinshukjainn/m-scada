@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ContributingDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -36,7 +36,7 @@ export default function ContributingDocs() {
               upstream repository to avoid merge conflicts.
             </p>
 
-            <div className="mt-8 rounded-sm p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-amber-500 border border-[#333] shadow-sm">
+            <div className="mt-8 rounded-sm p-6 sm:p-8 bg-[#1e1e1e] border-l-4 border-l-amber-500 border border-[#333] shadow-sm">
               <h4 className="font-semibold text-white mb-3 text-lg">
                 Before you write code:
               </h4>
@@ -61,7 +61,7 @@ export default function ContributingDocs() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Code */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
                 <div className="text-[#8cb4ff] font-mono text-xs font-semibold mb-4 bg-[#8cb4ff]/10 inline-flex w-fit px-2.5 py-1 rounded-sm border border-[#8cb4ff]/20">
                   {"<Code />"}
                 </div>
@@ -76,7 +76,7 @@ export default function ContributingDocs() {
               </div>
 
               {/* Documentation */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
                 <div className="text-emerald-400 font-mono text-xs font-semibold mb-4 bg-emerald-400/10 inline-flex w-fit px-2.5 py-1 rounded-sm border border-emerald-400/20">
                   {"<Documentation />"}
                 </div>
@@ -90,7 +90,7 @@ export default function ContributingDocs() {
               </div>
 
               {/* Bug Reports */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
                 <div className="text-red-400 font-mono text-xs font-semibold mb-4 bg-red-400/10 inline-flex w-fit px-2.5 py-1 rounded-sm border border-red-400/20">
                   {"<Bug_Reports />"}
                 </div>
@@ -104,7 +104,7 @@ export default function ContributingDocs() {
               </div>
 
               {/* Feature Requests */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors shadow-sm flex flex-col">
                 <div className="text-purple-400 font-mono text-xs font-semibold mb-4 bg-purple-400/10 inline-flex w-fit px-2.5 py-1 rounded-sm border border-purple-400/20">
                   {"<Feature_Requests />"}
                 </div>
@@ -128,7 +128,7 @@ export default function ContributingDocs() {
               When reporting issues on GitHub, please provide as much detail as
               possible. A good issue report includes:
             </p>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-400 font-normal text-[15px]">
+            <ul className="space-y-4 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-400 font-normal text-[15px]">
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
@@ -250,7 +250,7 @@ export default function ContributingDocs() {
               To maintain code quality and consistency across the project,
               please adhere to these standards:
             </p>
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm">
+            <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm">
               <ul className="space-y-4 text-gray-400 font-normal text-[15px] m-0">
                 <li className="flex items-start gap-3">
                   <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>

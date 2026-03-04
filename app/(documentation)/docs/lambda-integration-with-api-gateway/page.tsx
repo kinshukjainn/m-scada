@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ServerlessAIArchitectureDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -26,7 +26,7 @@ export default function ServerlessAIArchitectureDocs() {
 
           {/* Architecture Image */}
           <section className="mb-16 min-w-0">
-            <div className="mb-6 rounded-sm overflow-hidden border border-[#333] bg-[#1b1b1b] p-2">
+            <div className="mb-6 rounded-sm overflow-hidden border border-[#333] bg-[#1e1e1e] p-2">
               <Image
                 src="/flowdiagram.png"
                 alt="AWS Serverless AI Architecture Diagram connecting Amplify, API Gateway, Lambda, and Bedrock"
@@ -62,7 +62,7 @@ export default function ServerlessAIArchitectureDocs() {
                 <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   1
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1e1e1e] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     AWS Amplify (Frontend)
                   </h4>
@@ -80,7 +80,7 @@ export default function ServerlessAIArchitectureDocs() {
                 <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   2
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1e1e1e] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Amazon API Gateway
                   </h4>
@@ -98,7 +98,7 @@ export default function ServerlessAIArchitectureDocs() {
                 <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   3
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1e1e1e] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     AWS Lambda (Compute)
                   </h4>
@@ -116,7 +116,7 @@ export default function ServerlessAIArchitectureDocs() {
                 <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   4
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1e1e1e] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Amazon Bedrock (AI/LLM)
                   </h4>
@@ -144,7 +144,7 @@ export default function ServerlessAIArchitectureDocs() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#1b1b1b] rounded-sm p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] rounded-sm p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                 <h3 className="text-lg font-semibold text-white mb-3">
                   Zero Infrastructure Management
                 </h3>
@@ -155,7 +155,7 @@ export default function ServerlessAIArchitectureDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-sm p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] rounded-sm p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                 <h3 className="text-lg font-semibold text-white mb-3">
                   Infinite & Instant Scalability
                 </h3>
@@ -166,7 +166,7 @@ export default function ServerlessAIArchitectureDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-sm p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] rounded-sm p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                 <h3 className="text-lg font-semibold text-white mb-3">
                   True Pay-As-You-Go
                 </h3>
@@ -177,7 +177,7 @@ export default function ServerlessAIArchitectureDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] rounded-sm p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] rounded-sm p-6 sm:p-8 border-t-4 border-t-[#8cb4ff] border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                 <h3 className="text-lg font-semibold text-white mb-3">
                   Incredible Modularity
                 </h3>

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function LambdaFunctionDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white">
+    <div className="min-h-screen bg-[#1e1e1e] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white">
       <main className="max-w-[1400px] mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-12 lg:gap-16">
         {/* Main Content Area */}
         <article className="max-w-none">
@@ -34,7 +34,7 @@ export default function LambdaFunctionDocs() {
               container image, and Lambda handles the rest.
             </p>
 
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm">
+            <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm">
               <h3 className="text-lg font-normal text-white mb-4 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-sm bg-[#8cb4ff]"></span>
                 Core Benefits
@@ -88,10 +88,10 @@ export default function LambdaFunctionDocs() {
               execute your functions.
             </p>
 
-            <div className="my-8 rounded-sm overflow-hidden border border-[#333] bg-[#1b1b1b] p-2"></div>
+            <div className="my-8 rounded-sm overflow-hidden border border-[#333] bg-[#1e1e1e] p-2"></div>
 
             <div className="space-y-6 mt-8">
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors">
                 <h4 className="font-normal text-white mb-3 text-lg">
                   A. The Execution Environment (Firecracker)
                 </h4>
@@ -107,7 +107,7 @@ export default function LambdaFunctionDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors">
                 <h4 className="font-normal text-white mb-3 text-lg">
                   B. The Lifecycle & Cold Starts
                 </h4>
@@ -127,7 +127,7 @@ export default function LambdaFunctionDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 hover:border-[#444] transition-colors">
                 <h4 className="font-normal text-white mb-3 text-lg">
                   C. Event-Driven Execution
                 </h4>
@@ -153,9 +153,9 @@ export default function LambdaFunctionDocs() {
               event is processed:
             </p>
 
-            <div className="overflow-x-auto rounded-sm border border-[#333] bg-[#121212] shadow-sm">
+            <div className="overflow-x-auto rounded-sm border border-[#333] bg-[#1e1e1e] shadow-sm">
               <table className="min-w-full text-left text-sm">
-                <thead className="bg-[#1b1b1b] border-b border-[#333] text-gray-200 text-[11px] font-mono uppercase tracking-widest">
+                <thead className="bg-[#1e1e1e] border-b border-[#333] text-gray-200 text-[11px] font-mono uppercase tracking-widest">
                   <tr>
                     <th className="px-6 py-4 font-normal">Invocation Type</th>
                     <th className="px-6 py-4 font-normal">How it works</th>
@@ -163,7 +163,7 @@ export default function LambdaFunctionDocs() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-[#2d2d2d] text-[14px] text-gray-300 font-normal">
-                  <tr className="hover:bg-[#1b1b1b] transition-colors">
+                  <tr className="hover:bg-[#1e1e1e] transition-colors">
                     <td className="px-6 py-4 font-normal text-white whitespace-nowrap">
                       Synchronous
                     </td>
@@ -177,7 +177,7 @@ export default function LambdaFunctionDocs() {
                       </code>
                     </td>
                   </tr>
-                  <tr className="hover:bg-[#1b1b1b] transition-colors">
+                  <tr className="hover:bg-[#1e1e1e] transition-colors">
                     <td className="px-6 py-4 font-normal text-white whitespace-nowrap">
                       Asynchronous
                     </td>
@@ -192,7 +192,7 @@ export default function LambdaFunctionDocs() {
                       </code>
                     </td>
                   </tr>
-                  <tr className="hover:bg-[#1b1b1b] transition-colors">
+                  <tr className="hover:bg-[#1e1e1e] transition-colors">
                     <td className="px-6 py-4 font-normal text-white whitespace-nowrap">
                       Event Source Mapping
                     </td>

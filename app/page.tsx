@@ -56,10 +56,10 @@ function ParticleGrid() {
 
 export default function AIIndustrialHome() {
   return (
-    <div className="min-h-screen bg-[#121212] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white">
+    <div className="min-h-screen bg-[#1e1e1e] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-whit">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 overflow-hidden border-b border-[#2d2d2d] bg-[#1b1b1b]">
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-50 mask-image:linear-gradient(to_bottom,black,transparent)">
+      <section className="relative pt-32 pb-24 overflow-hidden border-b border-[#2d2d2d] bg-[#1e1e1e]">
+        <div className="absolute inset-0 z-0 pointer-events-none  mask-image:linear-gradient(to_bottom,black,transparent)">
           <Canvas camera={{ position: [0, 0, 40], fov: 60 }}>
             <ParticleGrid />
           </Canvas>
@@ -117,7 +117,7 @@ export default function AIIndustrialHome() {
       </section>
 
       {/* Console Preview Section */}
-      <section className="py-16 bg-[#121212] border-b border-[#2d2d2d]">
+      <section className="py-16 bg-[#1e1e1e] border-b border-[#2d2d2d]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8 flex flex-col items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -144,9 +144,9 @@ export default function AIIndustrialHome() {
       </section>
 
       {/* Metrics Section */}
-      <section className="bg-[#121212] border-b border-[#2d2d2d]">
+      <section className="bg-[#1e1e1e] border-b border-[#2d2d2d]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[#333] border border-[#333] bg-[#1b1b1b] rounded-sm overflow-hidden">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-y md:divide-y-0 divide-[#333] border border-[#333] bg-[#1e1e1e] rounded-sm overflow-hidden">
             {[
               { label: "Operating Efficiency", val: "+34%" },
               { label: "Grid Availability", val: "99.99%" },
@@ -211,7 +211,7 @@ export default function AIIndustrialHome() {
             ].map((feature, i) => (
               <div
                 key={i}
-                className="bg-[#1b1b1b] p-8 border border-[#333] rounded-sm hover:border-[#8cb4ff] transition-all duration-300 group cursor-default shadow-sm"
+                className="bg-[#1e1e1e] p-8 border border-[#333] rounded-sm hover:border-[#8cb4ff] transition-all duration-300 group cursor-default shadow-sm"
               >
                 <div className="w-12 h-12 rounded-sm bg-[#2d2d2d] border border-[#444] text-[#8cb4ff] flex items-center justify-center mb-6 group-hover:bg-[#8cb4ff] group-hover:text-[#121212] transition-colors">
                   {feature.icon}
@@ -229,7 +229,7 @@ export default function AIIndustrialHome() {
       </section>
 
       {/* Technical Data Table */}
-      <section className="py-24 bg-[#1b1b1b] border-b border-[#2d2d2d]">
+      <section className="py-24 bg-[#1e1e1e] border-b border-[#2d2d2d]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
@@ -245,10 +245,10 @@ export default function AIIndustrialHome() {
             </div>
           </div>
 
-          <div className="overflow-x-auto border border-[#333] rounded-sm bg-[#121212] shadow-sm">
+          <div className="overflow-x-auto border border-[#333] rounded-sm bg-[#1e1e1e] shadow-sm">
             <table className="w-full text-left border-collapse whitespace-nowrap">
               <thead>
-                <tr className="bg-[#1b1b1b] border-b border-[#333] text-gray-200 text-[11px] font-mono uppercase tracking-widest">
+                <tr className="bg-[#1e1e1e] border-b border-[#333] text-gray-200 text-[11px] font-mono uppercase tracking-widest">
                   <th className="px-6 py-4">Anomaly Class</th>
                   <th className="px-6 py-4">Phase Load</th>
                   <th className="px-6 py-4">Risk Profile</th>
@@ -281,7 +281,7 @@ export default function AIIndustrialHome() {
                 ].map((row, i) => (
                   <tr
                     key={i}
-                    className="border-b border-[#2d2d2d] last:border-0 hover:bg-[#1b1b1b] transition-colors"
+                    className="border-b border-[#2d2d2d] last:border-0 hover:bg-[#1e1e1e] transition-colors"
                   >
                     <td className="px-6 py-4 font-mono font-normal text-white">
                       {row.type}
@@ -308,7 +308,7 @@ export default function AIIndustrialHome() {
       </section>
 
       {/* Methodology Section */}
-      <section className="py-24 bg-[#121212]">
+      <section className="py-24 bg-[#1e1e1e]">
         <div className="max-w-[1400px] mx-auto px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Steps */}
@@ -343,7 +343,7 @@ export default function AIIndustrialHome() {
                   },
                 ].map((item, i) => (
                   <div key={i} className="flex gap-6 items-start relative z-10">
-                    <div className="flex-shrink-0 w-8 h-8 rounded-sm border border-[#444] bg-[#1b1b1b] flex items-center justify-center text-[#8cb4ff] mt-1 shadow-sm">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-sm border border-[#444] bg-[#1e1e1e] flex items-center justify-center text-[#8cb4ff] mt-1 shadow-sm">
                       {item.icon}
                     </div>
                     <div>
@@ -363,7 +363,7 @@ export default function AIIndustrialHome() {
             </div>
 
             {/* Terminal Window */}
-            <div className="bg-[#121212] rounded-sm border border-[#333] shadow-lg overflow-hidden flex flex-col h-[400px]">
+            <div className="bg-[#1e1e1e] rounded-sm border border-[#333] shadow-lg overflow-hidden flex flex-col h-[400px]">
               {/* Terminal Header */}
               <div className="flex items-center justify-between px-4 py-3 border-b border-[#333] bg-[#202020]">
                 <div className="flex items-center gap-2">

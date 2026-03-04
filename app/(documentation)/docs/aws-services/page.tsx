@@ -4,7 +4,7 @@ import React from "react";
 
 export default function AWSServicesDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -54,7 +54,7 @@ export default function AWSServicesDocs() {
               <span className="w-2 h-2 rounded-sm bg-[#8cb4ff]"></span>
               Why We Use It
             </h3>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-light text-[15px] m-0">
+            <ul className="space-y-4 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-light text-[15px] m-0">
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
@@ -121,7 +121,7 @@ export default function AWSServicesDocs() {
               <span className="w-2 h-2 rounded-sm bg-[#8cb4ff]"></span>
               Why We Use It
             </h3>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-light text-[15px] m-0">
+            <ul className="space-y-4 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-light text-[15px] m-0">
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>

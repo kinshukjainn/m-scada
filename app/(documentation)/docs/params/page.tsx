@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ParameterDeepDiveDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -47,7 +47,7 @@ export default function ParameterDeepDiveDocs() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm hover:border-[#444] transition-colors">
                 <h4 className="font-semibold text-white mb-3 border-b border-[#333] pb-3 text-lg">
                   Weights (The Multipliers)
                 </h4>
@@ -61,7 +61,7 @@ export default function ParameterDeepDiveDocs() {
                 </p>
               </div>
 
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm hover:border-[#444] transition-colors">
                 <h4 className="font-semibold text-white mb-3 border-b border-[#333] pb-3 text-lg">
                   Biases (The Constants)
                 </h4>
@@ -76,7 +76,7 @@ export default function ParameterDeepDiveDocs() {
               </div>
             </div>
 
-            <div className="rounded-sm p-6 sm:p-8 mt-8 bg-[#1b1b1b] border-l-4 border-l-amber-500 border border-[#333] shadow-sm">
+            <div className="rounded-sm p-6 sm:p-8 mt-8 bg-[#1e1e1e] border-l-4 border-l-amber-500 border border-[#333] shadow-sm">
               <p className="text-gray-300 font-normal text-[15px] m-0 leading-relaxed">
                 <strong className="text-white font-semibold">
                   Crucial Distinction:
@@ -108,7 +108,7 @@ export default function ParameterDeepDiveDocs() {
             <h3 className="text-lg font-semibold text-white mt-10 mb-4">
               The Transformer Hierarchy
             </h3>
-            <ul className="space-y-6 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
+            <ul className="space-y-6 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
@@ -174,7 +174,7 @@ export default function ParameterDeepDiveDocs() {
                 <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   A
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1e1e1e] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Initialization (The Blank Slate)
                   </h4>
@@ -192,7 +192,7 @@ export default function ParameterDeepDiveDocs() {
                 <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   B
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1e1e1e] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Forward Pass & Loss Calculation
                   </h4>
@@ -214,7 +214,7 @@ export default function ParameterDeepDiveDocs() {
                 <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   C
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1e1e1e] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Backpropagation (The Calculus)
                   </h4>
@@ -234,7 +234,7 @@ export default function ParameterDeepDiveDocs() {
                 <div className="flex items-center justify-center w-9 h-9 rounded-sm border border-[#444] bg-[#2d2d2d] text-[#8cb4ff] font-mono font-semibold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
                   D
                 </div>
-                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1b1b1b] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
+                <div className="w-[calc(100%-3.5rem)] md:w-[calc(50%-2.5rem)] bg-[#1e1e1e] p-6 rounded-sm border border-[#333] shadow-sm hover:border-[#444] transition-colors">
                   <h4 className="font-semibold text-white mb-2 text-lg">
                     Gradient Descent
                   </h4>

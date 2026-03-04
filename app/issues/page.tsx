@@ -102,9 +102,9 @@ export default function FeedbacksList() {
   });
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white/80  selection:bg-[#4a90e2]/30 selection:text-white">
+    <div className="min-h-screen bg-[#1e1e1e] text-white/80  selection:bg-[#4a90e2]/30 selection:text-white">
       {/* Top Navigation Bar */}
-      <header className="sticky top-0 z-50 bg-[#0a0a0a] border-b border-white/10 px-4 py-4">
+      <header className="sticky top-0 z-50 bg-[#1e1e1e] border-b border-white/10 px-4 py-4">
         <div className="mx-auto flex max-w-[1400px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
             <LayoutList size={20} className="text-red-500" />

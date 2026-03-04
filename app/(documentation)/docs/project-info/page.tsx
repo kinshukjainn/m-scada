@@ -78,9 +78,9 @@ export default function FaultDetectionDocs() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#121212] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white pb-16">
+    <div className="min-h-screen bg-[#1e1e1e] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white pb-16">
       {/* ─── Header ─── */}
-      <header className="border-b border-[#333] bg-[#1b1b1b]/95 backdrop-blur z-50  top-0">
+      <header className="border-b border-[#333] bg-[#1e1e1e]/95 backdrop-blur z-50  top-0">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
           <div className="flex items-center gap-4">
             <div className="p-3 rounded-sm bg-[#2d2d2d] border border-[#444]">
@@ -165,7 +165,7 @@ export default function FaultDetectionDocs() {
           </ul>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-6 rounded-sm border border-[#333] bg-[#1b1b1b] flex flex-col gap-3 hover:border-[#444] transition-colors">
+            <div className="p-6 rounded-sm border border-[#333] bg-[#1e1e1e] flex flex-col gap-3 hover:border-[#444] transition-colors">
               <Zap className="w-6 h-6 text-amber-400" />
               <h4 className="font-normal text-white">Real-Time Monitoring</h4>
               <p className="text-sm text-gray-200 font-normal leading-relaxed">
@@ -173,7 +173,7 @@ export default function FaultDetectionDocs() {
                 for any deviations from normal operating conditions.
               </p>
             </div>
-            <div className="p-6 rounded-sm border border-[#333] bg-[#1b1b1b] flex flex-col gap-3 hover:border-[#444] transition-colors">
+            <div className="p-6 rounded-sm border border-[#333] bg-[#1e1e1e] flex flex-col gap-3 hover:border-[#444] transition-colors">
               <Shield className="w-6 h-6 text-[#8cb4ff]" />
               <h4 className="font-normal text-white">Preventive Maintenance</h4>
               <p className="text-sm text-gray-200 font-normal leading-relaxed">
@@ -251,7 +251,7 @@ export default function FaultDetectionDocs() {
                     {step.desc}
                   </p>
                   {step.example && (
-                    <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-3 text-sm text-gray-300 font-normal border-l-2 border-l-[#8cb4ff]">
+                    <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-3 text-sm text-gray-300 font-normal border-l-2 border-l-[#8cb4ff]">
                       <strong className="text-white font-normal">
                         Example:
                       </strong>{" "}
@@ -263,7 +263,7 @@ export default function FaultDetectionDocs() {
             ))}
           </div>
 
-          <div className="mt-8 p-8 border border-[#333] rounded-sm bg-[#1b1b1b]">
+          <div className="mt-8 p-8 border border-[#333] rounded-sm bg-[#1e1e1e]">
             <h3 className="font-normal text-white mb-5 text-lg border-b border-[#333] pb-3">
               Detection Techniques
             </h3>
@@ -307,7 +307,7 @@ export default function FaultDetectionDocs() {
           <h3 className="text-lg font-normal text-white mb-4 mt-8">
             Fault Summary Table
           </h3>
-          <div className="mb-12 overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1b1b1b]">
+          <div className="mb-12 overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1e1e1e]">
             <table className="w-full text-left text-sm whitespace-nowrap">
               <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                 <tr>
@@ -363,7 +363,7 @@ export default function FaultDetectionDocs() {
           <h3 className="text-lg font-normal text-white mb-4">
             Fault Severity Comparison
           </h3>
-          <div className="mb-10 overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1b1b1b]">
+          <div className="mb-10 overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1e1e1e]">
             <table className="w-full text-left text-sm whitespace-nowrap">
               <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                 <tr>
@@ -448,7 +448,7 @@ export default function FaultDetectionDocs() {
               return (
                 <div
                   key={index}
-                  className="p-6 border border-[#333] rounded-sm bg-[#1b1b1b] flex items-start gap-4 transition-colors hover:border-[#444]"
+                  className="p-6 border border-[#333] rounded-sm bg-[#1e1e1e] flex items-start gap-4 transition-colors hover:border-[#444]"
                 >
                   <div className="p-2.5 rounded-sm bg-[#2d2d2d] text-[#8cb4ff] border border-[#444]">
                     <Icon className="w-5 h-5" />
@@ -469,7 +469,7 @@ export default function FaultDetectionDocs() {
             })}
           </div>
 
-          <div className="p-8 bg-[#1b1b1b] border border-[#333] rounded-sm">
+          <div className="p-8 bg-[#1e1e1e] border border-[#333] rounded-sm">
             <h3 className="text-xs font-mono font-normal uppercase tracking-widest text-gray-200 mb-6">
               ROI Example (Medium Manufacturing Facility)
             </h3>
@@ -550,7 +550,7 @@ export default function FaultDetectionDocs() {
             ].map((app, index) => (
               <div
                 key={index}
-                className="p-6 border border-[#333] rounded-sm bg-[#1b1b1b]"
+                className="p-6 border border-[#333] rounded-sm bg-[#1e1e1e]"
               >
                 <h3 className="font-normal text-white text-lg mb-2">
                   {app.title}
@@ -639,7 +639,7 @@ export default function FaultDetectionDocs() {
                     {section.items.map((item, i) => (
                       <div
                         key={i}
-                        className="p-5 border border-[#333] rounded-sm bg-[#1b1b1b]"
+                        className="p-5 border border-[#333] rounded-sm bg-[#1e1e1e]"
                       >
                         <h4 className="font-normal text-white mb-1.5">
                           {item.title}
@@ -655,7 +655,7 @@ export default function FaultDetectionDocs() {
             ))}
           </div>
 
-          <div className="mt-16 rounded-sm p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-amber-500 border border-[#333]">
+          <div className="mt-16 rounded-sm p-6 sm:p-8 bg-[#1e1e1e] border-l-4 border-l-amber-500 border border-[#333]">
             <h3 className="font-normal text-white mb-5 flex items-center gap-3 text-lg">
               <AlertCircle className="w-5 h-5 text-amber-500" />
               Common Challenges
@@ -697,7 +697,7 @@ export default function FaultDetectionDocs() {
       </main>
 
       {/* ─── Footer ─── */}
-      <footer className="border-t border-[#333] mt-16 bg-[#1b1b1b]">
+      <footer className="border-t border-[#333] mt-16 bg-[#1e1e1e]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-sm font-normal text-gray-200">
           <p className="font-normal text-gray-200 mb-2">
             AI-Powered Fault Detection Systems Documentation

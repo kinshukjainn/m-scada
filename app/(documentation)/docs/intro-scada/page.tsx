@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ScadaIntroDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -45,7 +45,7 @@ export default function ScadaIntroDocs() {
               remote, programmatic control.
             </p>
 
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 mt-10 mb-6 shadow-sm">
+            <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 mt-10 mb-6 shadow-sm">
               <h4 className="font-semibold text-white mb-3 text-lg">
                 The Scale of Operations
               </h4>
@@ -79,7 +79,7 @@ export default function ScadaIntroDocs() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-[#1b1b1b] border border-[#333] hover:border-[#444] transition-colors rounded-sm p-6 sm:p-8">
+              <div className="bg-[#1e1e1e] border border-[#333] hover:border-[#444] transition-colors rounded-sm p-6 sm:p-8">
                 <h4 className="font-semibold text-[#8cb4ff] mb-3 text-lg">
                   The Legacy Silo Problem
                 </h4>
@@ -91,7 +91,7 @@ export default function ScadaIntroDocs() {
                   servers, inaccessible to modern analytics.
                 </p>
               </div>
-              <div className="bg-[#1b1b1b] border border-[#333] hover:border-[#444] transition-colors rounded-sm p-6 sm:p-8">
+              <div className="bg-[#1e1e1e] border border-[#333] hover:border-[#444] transition-colors rounded-sm p-6 sm:p-8">
                 <h4 className="font-semibold text-[#8cb4ff] mb-3 text-lg">
                   Our Cloud Integration
                 </h4>

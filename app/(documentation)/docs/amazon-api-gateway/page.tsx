@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ApiGatewayDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white">
+    <div className="min-h-screen bg-[#1e1e1e] text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white">
       <main className="max-w-[1400px] mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-12 lg:gap-16">
         {/* Main Content Area */}
         <article className="max-w-none">
@@ -40,7 +40,7 @@ export default function ApiGatewayDocs() {
               the exact same infrastructure problems:
             </p>
 
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm mb-6 text-gray-200 font-normal text-[15px]">
+            <ul className="space-y-4 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm mb-6 text-gray-200 font-normal text-[15px]">
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-sm bg-[#8cb4ff] mt-2 flex-shrink-0"></div>
                 <span>
@@ -105,7 +105,7 @@ export default function ApiGatewayDocs() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
               {/* Feature 1 */}
-              <div className="bg-[#1b1b1b] rounded-sm p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
+              <div className="bg-[#1e1e1e] rounded-sm p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
                     A
@@ -124,7 +124,7 @@ export default function ApiGatewayDocs() {
               </div>
 
               {/* Feature 2 */}
-              <div className="bg-[#1b1b1b] rounded-sm p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
+              <div className="bg-[#1e1e1e] rounded-sm p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
                     B
@@ -145,7 +145,7 @@ export default function ApiGatewayDocs() {
               </div>
 
               {/* Feature 3 */}
-              <div className="bg-[#1b1b1b] rounded-sm p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
+              <div className="bg-[#1e1e1e] rounded-sm p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
                     C
@@ -163,7 +163,7 @@ export default function ApiGatewayDocs() {
               </div>
 
               {/* Feature 4 */}
-              <div className="bg-[#1b1b1b] rounded-sm p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
+              <div className="bg-[#1e1e1e] rounded-sm p-6 border border-[#333] hover:border-[#444] transition-colors shadow-sm">
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-8 h-8 rounded-sm bg-[#2d2d2d] flex items-center justify-center text-[#8cb4ff] font-mono border border-[#444]">
                     D
@@ -193,7 +193,7 @@ export default function ApiGatewayDocs() {
               your costs and performance.
             </p>
 
-            <div className="overflow-x-auto rounded-sm border border-[#333] bg-[#1b1b1b] shadow-sm">
+            <div className="overflow-x-auto rounded-sm border border-[#333] bg-[#1e1e1e] shadow-sm">
               <table className="min-w-full text-left text-sm">
                 <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                   <tr>

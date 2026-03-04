@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-gray-300">
+    <div className="min-h-screen bg-[#1e1e1e] text-gray-300">
       <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
         {/* Page Header */}
         <div className="mb-12">

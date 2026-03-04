@@ -4,7 +4,7 @@ import React from "react";
 
 export default function DevCycleDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0]  selection:bg-[#8cb4ff]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -34,7 +34,7 @@ export default function DevCycleDocs() {
               have Node.js (v20+) installed before proceeding.
             </p>
 
-            <div className="bg-[#1b1b1b] rounded-sm overflow-hidden border border-[#333] shadow-sm mb-6">
+            <div className="bg-[#1e1e1e] rounded-sm overflow-hidden border border-[#333] shadow-sm mb-6">
               <div className="bg-[#2d2d2d] px-4 py-2.5 text-xs text-gray-200 font-mono border-b border-[#444] flex items-center gap-2">
                 <div className="flex gap-1.5 mr-2">
                   <div className="w-2.5 h-2.5 rounded-sm bg-[#444]"></div>
@@ -66,7 +66,7 @@ export default function DevCycleDocs() {
               </pre>
             </div>
 
-            <div className="rounded-sm p-5 bg-[#1b1b1b] border-l-4 border-l-[#8cb4ff] border border-[#333]">
+            <div className="rounded-sm p-5 bg-[#1e1e1e] border-l-4 border-l-[#8cb4ff] border border-[#333]">
               <p className="text-gray-300 text-sm font-normal leading-relaxed m-0">
                 <strong className="text-white font-semibold">Note:</strong> The
                 development server will start on{" "}
@@ -85,7 +85,7 @@ export default function DevCycleDocs() {
             </h2>
             <p className="text-gray-200 font-normal leading-relaxed mb-8 text-[16px]">
               The{" "}
-              <code className="bg-[#1b1b1b] text-[#8cb4ff] border border-[#333] px-1.5 py-0.5 font-mono rounded-sm text-sm">
+              <code className="bg-[#1e1e1e] text-[#8cb4ff] border border-[#333] px-1.5 py-0.5 font-mono rounded-sm text-sm">
                 package.json
               </code>{" "}
               relies on carefully selected libraries to handle everything from
@@ -102,11 +102,11 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     next (16.1.6)
                   </strong>{" "}
                   &{" "}
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     react (19.2.3)
                   </strong>
                   : The foundation of the app. Next.js 16 handles file-system
@@ -117,7 +117,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     babel-plugin-react-compiler (1.0.0)
                   </strong>
                   : The new experimental React Compiler. This automatically
@@ -129,7 +129,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     typescript (^5)
                   </strong>
                   : Provides static type checking to catch bugs at compile-time
@@ -147,7 +147,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     three (^0.182.0)
                   </strong>
                   : The industry-standard underlying WebGL library used to
@@ -157,7 +157,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     @react-three/fiber (^9.5.0)
                   </strong>
                   : A powerful React renderer for Three.js. It allows you to
@@ -168,7 +168,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     @react-three/drei (^10.7.7)
                   </strong>
                   : A heavily utilized ecosystem of useful helpers,
@@ -187,7 +187,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     framer-motion (^12.34.0)
                   </strong>
                   : Used for declarative, physics-based UI animations, page
@@ -197,7 +197,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     @lottiefiles/dotlottie-react (^0.17.15)
                   </strong>
                   : Allows the application to render highly efficient, scalable
@@ -218,7 +218,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     tailwindcss (^4)
                   </strong>
                   : The newest version of the utility-first CSS framework. V4
@@ -229,7 +229,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     lucide-react & react-icons
                   </strong>
                   : Two comprehensive icon libraries ensuring crisp, scalable
@@ -239,7 +239,7 @@ export default function DevCycleDocs() {
               <li className="flex items-start gap-3">
                 <span className="text-[#8cb4ff] mt-0.5 opacity-70">▹</span>
                 <span>
-                  <strong className="text-white font-mono font-semibold text-sm bg-[#1b1b1b] border border-[#333] px-1.5 py-0.5 rounded-sm">
+                  <strong className="text-white font-mono font-semibold text-sm bg-[#1e1e1e] border border-[#333] px-1.5 py-0.5 rounded-sm">
                     axios (^1.13.4)
                   </strong>
                   : A robust, promise-based HTTP client used for fetching
@@ -254,7 +254,7 @@ export default function DevCycleDocs() {
             <h2 className="text-2xl font-semibold text-white mb-6 border-b border-[#333] pb-2">
               3. Available Scripts
             </h2>
-            <div className="overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1b1b1b]">
+            <div className="overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1e1e1e]">
               <table className="min-w-full text-left text-sm whitespace-nowrap">
                 <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                   <tr>
@@ -291,7 +291,7 @@ export default function DevCycleDocs() {
                     </td>
                     <td className="px-5 py-4 leading-relaxed whitespace-normal">
                       Starts the Node.js production server using the compiled{" "}
-                      <code className="bg-[#121212] px-1.5 py-0.5 rounded-sm border border-[#333]">
+                      <code className="bg-[#1e1e1e] px-1.5 py-0.5 rounded-sm border border-[#333]">
                         .next
                       </code>{" "}
                       directory.

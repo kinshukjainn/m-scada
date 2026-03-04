@@ -4,7 +4,7 @@ import React from "react";
 
 export default function OpenAIDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0]  selection:bg-[#10a37f]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0]  selection:bg-[#10a37f]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -48,7 +48,7 @@ export default function OpenAIDocs() {
               <span className="w-2 h-2 rounded-sm bg-[#10a37f]"></span>
               Key Architectural Features
             </h3>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
+            <ul className="space-y-4 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-sm bg-[#10a37f] mt-2 flex-shrink-0"></div>
                 <span>
@@ -100,7 +100,7 @@ export default function OpenAIDocs() {
               profiles on AWS.
             </p>
 
-            <div className="mt-10 overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1b1b1b] mb-8">
+            <div className="mt-10 overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1e1e1e] mb-8">
               <table className="w-full text-left text-sm whitespace-nowrap">
                 <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                   <tr>
@@ -152,7 +152,7 @@ export default function OpenAIDocs() {
             </div>
 
             {/* Parameter Clarification Callout Box */}
-            <div className="rounded-sm p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-[#10a37f] border border-[#333]">
+            <div className="rounded-sm p-6 sm:p-8 bg-[#1e1e1e] border-l-4 border-l-[#10a37f] border border-[#333]">
               <h4 className="font-semibold text-white mb-3 flex items-center gap-3 text-lg">
                 <svg
                   className="w-5 h-5 text-[#10a37f]"

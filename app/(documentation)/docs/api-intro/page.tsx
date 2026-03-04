@@ -4,7 +4,7 @@ import React from "react";
 
 export default function APIIntroductionDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0] selection:bg-[#f38020]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0] selection:bg-[#f38020]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -43,7 +43,7 @@ export default function APIIntroductionDocs() {
               back the data is the API.
             </p>
 
-            <div className="rounded-sm p-6 sm:p-8 bg-[#1b1b1b] border-l-4 border-l-[#f38020] border border-[#333]">
+            <div className="rounded-sm p-6 sm:p-8 bg-[#1e1e1e] border-l-4 border-l-[#f38020] border border-[#333]">
               <h4 className="font-semibold text-white mb-3 text-lg">
                 The Restaurant Analogy
               </h4>
@@ -87,7 +87,7 @@ export default function APIIntroductionDocs() {
               This was disastrous for three reasons:
             </p>
 
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
+            <ul className="space-y-4 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
                 <span>
@@ -165,7 +165,7 @@ export default function APIIntroductionDocs() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               {/* The Request */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
                 <div className="bg-[#2d2d2d] px-4 py-3 text-[11px] text-[#f38020] uppercase tracking-widest font-mono border-b border-[#444] font-semibold">
                   Step 1: The Request (Client to API)
                 </div>
@@ -184,7 +184,7 @@ Authorization: Bearer <Your_Key>`}</code>
               </div>
 
               {/* The Response */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm overflow-hidden shadow-sm w-full min-w-0 flex flex-col">
                 <div className="bg-[#2d2d2d] px-4 py-3 text-[11px] text-[#8cb4ff] uppercase tracking-widest font-mono border-b border-[#444] font-semibold">
                   Step 2: The Response (API to Client)
                 </div>

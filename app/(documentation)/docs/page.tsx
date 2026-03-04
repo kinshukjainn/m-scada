@@ -15,7 +15,7 @@ import Link from "next/link";
 export default function DocsLandingPage() {
   return (
     /* Added full-screen dark wrapper to guarantee the theme doesn't break */
-    <div className="min-h-screen bg-[#121212] flex justify-center selection:bg-[#8cb4ff]/30 selection:text-white">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center selection:bg-[#8cb4ff]/30 selection:text-white">
       <article className="max-w-[1000px] w-full px-6 py-16  text-[#e0e0e0]">
         {/* ─── Page Header ─── */}
         <header className="mb-12 block">
@@ -41,7 +41,7 @@ export default function DocsLandingPage() {
             {/* Card 1 */}
             <Link
               href="/docs/project-info"
-              className="group p-6 rounded-sm border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
+              className="group p-6 rounded-sm border border-[#333] bg-[#1e1e1e] hover:border-[#8cb4ff] transition-all flex flex-col"
             >
               <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
                 <Activity className="w-5 h-5" />
@@ -60,7 +60,7 @@ export default function DocsLandingPage() {
             {/* Card 2 */}
             <Link
               href="/docs/rar"
-              className="group p-6 rounded-sm border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
+              className="group p-6 rounded-sm border border-[#333] bg-[#1e1e1e] hover:border-[#8cb4ff] transition-all flex flex-col"
             >
               <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
                 <Code2 className="w-5 h-5" />
@@ -78,7 +78,7 @@ export default function DocsLandingPage() {
             {/* Card 3 */}
             <Link
               href="/docs/about-model"
-              className="group p-6 rounded-sm border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
+              className="group p-6 rounded-sm border border-[#333] bg-[#1e1e1e] hover:border-[#8cb4ff] transition-all flex flex-col"
             >
               <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
                 <Cpu className="w-5 h-5" />
@@ -96,7 +96,7 @@ export default function DocsLandingPage() {
             {/* Card 4 */}
             <Link
               href="/docs/aws-services"
-              className="group p-6 rounded-sm border border-[#333] bg-[#1b1b1b] hover:border-[#8cb4ff] transition-all flex flex-col"
+              className="group p-6 rounded-sm border border-[#333] bg-[#1e1e1e] hover:border-[#8cb4ff] transition-all flex flex-col"
             >
               <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-5 text-gray-200 group-hover:text-[#8cb4ff] group-hover:border-[#8cb4ff]/50 transition-colors">
                 <CloudCog className="w-5 h-5" />
@@ -120,7 +120,7 @@ export default function DocsLandingPage() {
           <h2 className="text-2xl font-normal text-white mb-6">
             Architecture & Tech Stack
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1b1b1b] border border-[#333] rounded-sm shadow-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1e1e1e] border border-[#333] rounded-sm shadow-sm">
             {/* Stack Column 1 */}
             <div>
               <h3 className="text-xs font-mono font-normal uppercase tracking-widest text-gray-100 mb-5 flex items-center gap-2">
@@ -202,7 +202,7 @@ export default function DocsLandingPage() {
         <hr className="my-10 border-[#333]" />
 
         {/* ─── Footer / Next Steps ─── */}
-        <section className="bg-[#1b1b1b] rounded-sm p-8 border border-[#333] shadow-sm">
+        <section className="bg-[#1e1e1e] rounded-sm p-8 border border-[#333] shadow-sm">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <div>
               <h2 className="text-xl font-normal text-white mb-3">

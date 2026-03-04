@@ -4,7 +4,7 @@ import React from "react";
 
 export default function ScadaVsModernAppDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0] selection:bg-[#818cf8]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0] selection:bg-[#818cf8]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -35,7 +35,7 @@ export default function ScadaVsModernAppDocs() {
               to control equipment and conditions.
             </p>
 
-            <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm mt-6">
+            <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm mt-6">
               <h3 className="text-lg font-semibold text-white mb-4 flex items-center gap-3">
                 <span className="w-2 h-2 rounded-sm bg-[#818cf8]"></span>
                 The 4 Core Components of SCADA:
@@ -106,7 +106,7 @@ export default function ScadaVsModernAppDocs() {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="bg-[#1b1b1b] border-l-4 border-l-[#818cf8] border border-[#333] rounded-sm p-6 sm:p-8">
+              <div className="bg-[#1e1e1e] border-l-4 border-l-[#818cf8] border border-[#333] rounded-sm p-6 sm:p-8">
                 <h4 className="font-semibold text-white mb-3 text-lg">
                   Threshold Alarming
                 </h4>
@@ -117,7 +117,7 @@ export default function ScadaVsModernAppDocs() {
                   immediate visual and auditory alarm on the HMI.
                 </p>
               </div>
-              <div className="bg-[#1b1b1b] border-l-4 border-l-[#818cf8] border border-[#333] rounded-sm p-6 sm:p-8">
+              <div className="bg-[#1e1e1e] border-l-4 border-l-[#818cf8] border border-[#333] rounded-sm p-6 sm:p-8">
                 <h4 className="font-semibold text-white mb-3 text-lg">
                   State Mismatches
                 </h4>
@@ -142,7 +142,7 @@ export default function ScadaVsModernAppDocs() {
               fundamental software architecture was designed decades before the
               cloud existed.
             </p>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
+            <ul className="space-y-4 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0">
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-sm bg-[#818cf8] mt-2 flex-shrink-0"></div>
                 <span>
@@ -204,7 +204,7 @@ export default function ScadaVsModernAppDocs() {
               differences in system design are staggering.
             </p>
 
-            <div className="mt-8 overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1b1b1b] mb-3">
+            <div className="mt-8 overflow-x-auto border border-[#333] rounded-sm shadow-sm bg-[#1e1e1e] mb-3">
               <table className="w-full text-left text-sm whitespace-nowrap">
                 <thead className="bg-[#2d2d2d] text-gray-300 font-mono text-[11px] uppercase tracking-widest">
                   <tr>

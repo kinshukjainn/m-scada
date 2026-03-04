@@ -14,7 +14,7 @@ import Link from "next/link";
 export default function IntroductionPage() {
   return (
     /* Full-screen dark wrapper to guarantee the theme applies properly */
-    <div className="min-h-screen bg-[#121212] flex justify-center selection:bg-[#8cb4ff]/30 selection:text-white">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center selection:bg-[#8cb4ff]/30 selection:text-white">
       <article className="max-w-[1000px] w-full px-6 py-16  text-[#e0e0e0]">
         {/* ─── Page Header ─── */}
         <header className="mb-12 block">
@@ -34,7 +34,7 @@ export default function IntroductionPage() {
         {/* ─── Core Concepts Grid ─── */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
           {/* Card 1 */}
-          <div className="p-8 rounded-sm border border-[#333] bg-[#1b1b1b] shadow-sm hover:border-blue-500 transition-colors">
+          <div className="p-8 rounded-sm border border-[#333] bg-[#1e1e1e] shadow-sm hover:border-blue-500 transition-colors">
             <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-6 text-[#8cb4ff]">
               <Activity className="w-5 h-5" />
             </div>
@@ -51,7 +51,7 @@ export default function IntroductionPage() {
           </div>
 
           {/* Card 2 */}
-          <div className="p-8 rounded-sm border border-[#333] bg-[#1b1b1b] shadow-sm hover:border-blue-500 transition-colors">
+          <div className="p-8 rounded-sm border border-[#333] bg-[#1e1e1e] shadow-sm hover:border-blue-500 transition-colors">
             <div className="w-10 h-10 rounded-sm bg-[#2d2d2d] border border-[#444] flex items-center justify-center mb-6 text-[#8cb4ff]">
               <BrainCircuit className="w-5 h-5" />
             </div>
@@ -89,7 +89,7 @@ export default function IntroductionPage() {
           <h2 className="text-2xl font-semibold text-white mb-6">
             Architecture & Tech Stack
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1b1b1b] border border-[#333] rounded-sm shadow-sm">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-8 bg-[#1e1e1e] border border-[#333] rounded-sm shadow-sm">
             {/* Stack Column 1 */}
             <div>
               <h3 className="text-xs font-mono font-normal uppercase tracking-widest text-gray-100 mb-5 flex items-center gap-2">
@@ -190,7 +190,7 @@ export default function IntroductionPage() {
         <hr className="my-10 border-[#333]" />
 
         {/* ─── Footer / Next Steps ─── */}
-        <section className="bg-[#1b1b1b] rounded-sm p-8 border border-[#333] shadow-sm">
+        <section className="bg-[#1e1e1e] rounded-sm p-8 border border-[#333] shadow-sm">
           <h2 className="text-xl font-medium text-white mb-3">
             Getting Started & Contributions
           </h2>

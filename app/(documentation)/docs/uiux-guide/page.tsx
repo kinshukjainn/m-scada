@@ -4,7 +4,7 @@ import React from "react";
 
 export default function GlobalUIUXDocs() {
   return (
-    <div className="min-h-screen bg-[#121212] flex justify-center text-[#e0e0e0] selection:bg-[#f38020]/30 selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#1e1e1e] flex justify-center text-[#e0e0e0] selection:bg-[#f38020]/30 selection:text-white overflow-x-hidden">
       {/* Main Grid Layout */}
       <main className="max-w-[1400px] w-full mx-auto px-6 py-12 lg:py-16 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_250px] gap-12 lg:gap-16 min-w-0">
         {/* Main Content Area */}
@@ -39,7 +39,7 @@ export default function GlobalUIUXDocs() {
               .
             </p>
 
-            <div className="bg-[#1b1b1b] border-l-4 border-l-[#f38020] border border-[#333] rounded-sm p-6 sm:p-8">
+            <div className="bg-[#1e1e1e] border-l-4 border-l-[#f38020] border border-[#333] rounded-sm p-6 sm:p-8">
               <h4 className="font-semibold text-white mb-3 text-lg">
                 Familiarity over Novelty
               </h4>
@@ -80,7 +80,7 @@ export default function GlobalUIUXDocs() {
               rather than structural borders or decorations. In our data tables
               and metric cards, you will notice:
             </p>
-            <ul className="space-y-4 bg-[#1b1b1b] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
+            <ul className="space-y-4 bg-[#1e1e1e] border border-[#333] rounded-sm p-6 sm:p-8 shadow-sm text-gray-200 font-normal text-[15px] m-0 mb-8">
               <li className="flex items-start gap-3">
                 <div className="w-1.5 h-1.5 rounded-sm bg-[#f38020] mt-2 flex-shrink-0"></div>
                 <span>Absence of heavy vertical borders in tables.</span>
@@ -146,7 +146,7 @@ export default function GlobalUIUXDocs() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {/* Primary Action */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
                 <div className="w-8 h-8 rounded bg-[#f38020] flex-shrink-0 mt-1"></div>
                 <div>
                   <h4 className="font-semibold text-white text-[15px] mb-1.5">
@@ -160,7 +160,7 @@ export default function GlobalUIUXDocs() {
               </div>
 
               {/* Success State */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
                 <div className="w-8 h-8 rounded bg-green-500/90 flex-shrink-0 mt-1"></div>
                 <div>
                   <h4 className="font-semibold text-white text-[15px] mb-1.5">
@@ -174,7 +174,7 @@ export default function GlobalUIUXDocs() {
               </div>
 
               {/* Warning State */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
                 <div className="w-8 h-8 rounded bg-yellow-500/90 flex-shrink-0 mt-1"></div>
                 <div>
                   <h4 className="font-semibold text-white text-[15px] mb-1.5">
@@ -188,7 +188,7 @@ export default function GlobalUIUXDocs() {
               </div>
 
               {/* Destructive State */}
-              <div className="bg-[#1b1b1b] border border-[#333] rounded-sm p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
+              <div className="bg-[#1e1e1e] border border-[#333] rounded-sm p-6 flex items-start gap-4 shadow-sm hover:border-[#444] transition-colors">
                 <div className="w-8 h-8 rounded bg-red-600/90 flex-shrink-0 mt-1"></div>
                 <div>
                   <h4 className="font-semibold text-white text-[15px] mb-1.5">
