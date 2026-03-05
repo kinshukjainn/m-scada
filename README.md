@@ -1,4 +1,4 @@
-# FDS.AI ( Fault Detection System With AI)
+# M-scada ( Fault Detection System With AI)
 
 Fault detection is an automated process that monitors systems and applications to identify abnormalities, errors, or potential failures before they impact your operations. Our system uses advanced algorithms to analyze data patterns and trigger alerts when issues are detected.
 
@@ -16,16 +16,18 @@ In the Indian industrial landscape, where manufacturing, power generation, and i
 
 1. Nextjs `(Turbopack/ v.16/ App router )`
 2. Tailwindcss `(v.4)`
-3. Lucide React
-4. react icons
-5. Framer Motion
+3. Lucide React `(For icons)`
+4. react icons `(For icons)`
+5. Framer Motion `(Motion and animation library)`
 6. Nodejs `(v.22)`
 7. AWS `(Cloud Deployment) / For AI Model`
 8. AWS Amplify `(For Serverless Deployment )`
 9. AWS Bedrock `(For LLM's)`
-10. AWS Lambda `(For Serveless Fucntion)`
-11. AWS Route53 ( `For Domain`)
-12. Amazon CloudWatch `(For monitoring logs and history)`
+10. API Gateway `(Handles api calling)`
+11. Open AI OSS Model 120B params `(Open source Model)`
+12. AWS Lambda `(For Serveless Fucntion)`
+13. AWS Route53 ( `For Domain`)
+14. Amazon CloudWatch `(For monitoring logs and history)`
 
 ### Contributions Guildline
 
