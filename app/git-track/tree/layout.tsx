@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Lambda Functional URL ||FDS ",
-  description: "What is Lambda functional url",
+  title: "Project Logs || FDS",
+  description: "Live track of project log -- feature push",
 };
 
 export default function BlogLayout({
@@ -10,5 +10,5 @@ export default function BlogLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <section className={` antialiased`}>{children}</section>;
+  return <>{children}</>;
 }

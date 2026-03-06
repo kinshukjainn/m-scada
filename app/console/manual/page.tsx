@@ -303,7 +303,7 @@ export default function ElectricalDiagnosticConsole() {
             )}
 
             {!result && !loading && !error && (
-              <div className="h-full min-h-[500px] border-2 border-3 border-blue-200 shadow-lg shadow-blue-500 rounded-4xl flex flex-col items-center justify-center text-gray-900 p-4 text-center bg-white">
+              <div className="h-full min-h-[500px] border-2 border  border-gray-700 rounded-md  flex flex-col items-center justify-center text-gray-900 p-3 text-center bg-white">
                 <div
                   style={{
                     position: "relative",

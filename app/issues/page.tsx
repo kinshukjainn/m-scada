@@ -2,19 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import {
-  Filter,
-  Github,
-  Clock,
-  LayoutList,
-  Mail,
-  SearchX,
-  Loader2,
-  Search,
-  ExternalLink,
-  Tag,
-  AlertCircle,
-} from "lucide-react";
 
 type Feedback = {
   id: number;
@@ -34,17 +21,52 @@ interface MarkdownComponentProps {
   children?: React.ReactNode;
 }
 
+const PROJECTS = ["FDS.AI", "Password Generator ( zeroleaks)"];
+
+// ============================================================================
+// Utility Functions
+// ============================================================================
+
+const timeAgo = (dateString: string) => {
+  const date = new Date(dateString);
+  const now = new Date();
+  const seconds = Math.round((now.getTime() - date.getTime()) / 1000);
+  const minutes = Math.round(seconds / 60);
+  const hours = Math.round(minutes / 60);
+  const days = Math.round(hours / 24);
+
+  if (seconds < 60) return "just now";
+  if (minutes < 60) return `${minutes} mins ago`;
+  if (hours < 24) return `${hours} hours ago`;
+  if (days < 30) return `${days} days ago`;
+
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(date);
+};
+
+const getIssueTitle = (markdownText: string) => {
+  // Strip basic markdown syntax to get a clean title preview
+  const raw = markdownText.replace(/[#*`>\-_]/g, "").trim();
+  const firstLine = raw.split("\n")[0];
+  return firstLine.length > 80 ? firstLine.slice(0, 80) + "..." : firstLine;
+};
+
+// ============================================================================
+// Main Component
+// ============================================================================
+
 export default function FeedbacksList() {
   const [feedbacks, setFeedbacks] = useState<Feedback[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [filterCategory, setFilterCategory] = useState<
-    "all" | "blogs" | "project" | "portfolio"
-  >("all");
-  const [filterProject, setFilterProject] = useState<string>("all");
 
-  const projects = ["FDS.AI", "Password Generator ( zeroleaks)"];
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filterProject, setFilterProject] = useState<string>("all");
+  const [showFilters, setShowFilters] = useState(false);
+  const [expandedId, setExpandedId] = useState<number | null>(null);
 
   useEffect(() => {
     fetchFeedbacks();
@@ -53,203 +75,259 @@ export default function FeedbacksList() {
   const fetchFeedbacks = async () => {
     setIsLoading(true);
     setErrorMsg(null);
-
     try {
       const response = await fetch("/api/fdb");
       const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          result.error || "Failed to fetch data from the server.",
-        );
-      }
-
-      setFeedbacks(result || []);
+      if (!response.ok) throw new Error(result.error || "Failed to fetch.");
+      setFeedbacks(
+        (result || []).filter((f: Feedback) => f.category === "project"),
+      );
     } catch (err: unknown) {
       const message =
-        err instanceof Error
-          ? err.message
-          : typeof err === "string"
-            ? err
-            : "Unknown error occurred.";
-
-      console.error("Catch Block Error:", message);
+        err instanceof Error ? err.message : "Unknown error occurred.";
       setErrorMsg(message);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const filteredFeedbacks = feedbacks.filter((fb) => {
-    if (filterCategory !== "all" && fb.category !== filterCategory)
+  const filtered = feedbacks.filter((fb) => {
+    if (filterProject !== "all" && fb.project_name !== filterProject)
       return false;
-    if (
-      filterCategory === "project" &&
-      filterProject !== "all" &&
-      fb.project_name !== filterProject
-    )
-      return false;
-    if (searchQuery.trim() !== "") {
-      const lowerQuery = searchQuery.toLowerCase();
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
       return (
-        fb.name.toLowerCase().includes(lowerQuery) ||
-        fb.email.toLowerCase().includes(lowerQuery) ||
-        (fb.github_id && fb.github_id.toLowerCase().includes(lowerQuery)) ||
-        fb.feedback.toLowerCase().includes(lowerQuery)
+        fb.name.toLowerCase().includes(q) ||
+        fb.email.toLowerCase().includes(q) ||
+        (fb.github_id?.toLowerCase().includes(q) ?? false) ||
+        fb.feedback.toLowerCase().includes(q)
       );
     }
     return true;
   });
 
-  return (
-    <div className="min-h-screen bg-[#1e1e1e] text-white/80  selection:bg-[#4a90e2]/30 selection:text-white">
-      {/* Top Navigation Bar */}
-      <header className="sticky top-0 z-50 bg-[#1e1e1e] border-b border-white/10 px-4 py-4">
-        <div className="mx-auto flex max-w-[1400px] flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex items-center gap-3">
-            <LayoutList size={20} className="text-red-500" />
-            <h1 className="text-xl font-bold text-white">Issues / Feedbacks</h1>
-          </div>
+  const lastChangeDate =
+    feedbacks.length > 0
+      ? new Date(feedbacks[0].created_at).toUTCString()
+      : "N/A";
 
-          <div className="relative w-full max-w-md">
-            <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-white/40"
-              size={16}
-            />
-            <input
-              type="text"
-              placeholder="Search feedbacks (e.g. bug, UI, name)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full rounded bg-[#111111] border border-white/10 py-2 pl-10 pr-4 text-sm text-white placeholder:text-white/40 outline-none transition-colors focus:border-[#4a90e2]"
-            />
+  return (
+    <div className="min-h-screen bg-white text-black  text-[14px] sm:text-[15px] p-2 sm:p-4 selection:bg-[#cceeff]">
+      <div className="max-w-7xl mx-auto">
+        {/* ── TOP HEADER (Breadcrumbs) ── */}
+        <div className="mb-1">
+          <h1 className="text-[20px] sm:text-[24px] font-bold m-0 p-0">
+            <a href="#" className="text-[#0000ee] hover:underline no-underline">
+              projects
+            </a>{" "}
+            /{" "}
+            <a href="#" className="text-[#0000ee] hover:underline no-underline">
+              issues.git
+            </a>{" "}
+            / logs
+          </h1>
+        </div>
+
+        {/* ── META INFO TABLE ── */}
+        <div className="bg-[#f4f4f4] border-t border-b border-[#cccccc] py-3 px-2 sm:px-4 mb-4">
+          <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-y-1 sm:gap-x-4 text-[13px] sm:text-[14px]">
+            <div className="text-[#555555] font-bold">description</div>
+            <div>Project Issue Tracker & Feedback Archive</div>
+
+            <div className="text-[#555555] font-bold">latest report</div>
+            <div>
+              {lastChangeDate} ({feedbacks.length} total issues)
+            </div>
+
+            <div className="text-[#555555] font-bold">rules</div>
+            <div>Avoid duplicate reports. Include reproduction steps.</div>
+
+            {/* Classic-style Filters Toggle */}
+            <div className="text-[#555555] mt-2 sm:mt-0 font-bold">filters</div>
+            <div className="mt-2 sm:mt-0">
+              <button
+                onClick={() => setShowFilters(!showFilters)}
+                className="text-[#0000ee] hover:underline bg-transparent font-semibold  border-none p-0 cursor-pointer"
+              >
+                {showFilters
+                  ? "hide search & filters"
+                  : "show search & filters"}
+              </button>
+            </div>
           </div>
         </div>
-      </header>
 
-      <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-4 py-8 lg:flex-row lg:gap-12">
-        {/* Sidebar Filters */}
-        <aside className="w-full shrink-0 space-y-8 lg:w-48">
-          <section>
-            <h3 className="mb-4 flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-white">
-              <Filter size={16} /> Filters
-            </h3>
-            <div className="flex flex-col space-y-1">
-              {(["all", "project", "blogs", "portfolio"] as const).map(
-                (cat) => (
-                  <button
-                    key={cat}
-                    onClick={() => {
-                      setFilterCategory(cat);
-                      setFilterProject("all");
-                    }}
-                    className={`text-left px-3 py-2 rounded text-sm capitalize transition-colors ${
-                      filterCategory === cat
-                        ? " text-[#4a90e2] underline font-bold"
-                        : "text-white/60 hover:underline hover:text-white"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ),
-              )}
-            </div>
-          </section>
-
-          {filterCategory === "project" && (
-            <section>
-              <h3 className="mb-4 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-white/50">
-                <Tag size={14} /> Sub-Projects
-              </h3>
-              <select
-                value={filterProject}
-                onChange={(e) => setFilterProject(e.target.value)}
-                className="w-full rounded bg-[#111111] border border-white/10 p-2 text-sm text-white outline-none focus:border-[#4a90e2]"
-              >
-                <option value="all">All Projects</option>
-                {projects.map((p) => (
-                  <option key={p} value={p}>
-                    {p}
-                  </option>
-                ))}
-              </select>
-            </section>
-          )}
-        </aside>
-
-        {/* Main Content Area */}
-        <main className="flex-1 min-w-0">
-          <div className="mb-8 flex items-end justify-between border-b border-white/10 pb-4">
-            <h2 className="text-2xl font-bold text-white capitalize">
-              {filterCategory === "all"
-                ? "All Activity"
-                : `${filterCategory} Feedbacks`}
-            </h2>
-            {!isLoading && !errorMsg && (
-              <span className="rounded bg-[#111111] border border-white/10 px-2 py-1 text-xs font-bold text-white/70">
-                {filteredFeedbacks.length} Items
-              </span>
-            )}
-          </div>
-
-          <div className="space-y-6">
-            {/* Error State */}
-            {errorMsg && (
-              <div className="flex items-start gap-3 rounded border border-red-500/30 bg-red-500/5 p-4 text-red-400">
-                <AlertCircle className="mt-0.5 shrink-0" size={18} />
-                <div>
-                  <h3 className="font-bold text-red-500">
-                    Failed to fetch data
-                  </h3>
-                  <p className="mt-1 text-sm">{errorMsg}</p>
-                </div>
-              </div>
-            )}
-
-            {/* Loading State */}
-            {isLoading ? (
-              <div className="flex flex-col items-center justify-center py-20 text-white/50">
-                <Loader2 className="mb-4 animate-spin" size={32} />
-                <p>Loading archive...</p>
-              </div>
-            ) : !errorMsg && filteredFeedbacks.length === 0 ? (
-              /* Empty State */
-              <div className="flex flex-col items-center justify-center rounded border border-dashed border-white/10 py-20 text-white/50">
-                <SearchX className="mb-4" size={48} />
-                <p>No matching entries found.</p>
-              </div>
-            ) : (
-              /* Feedback List */
-              !errorMsg &&
-              filteredFeedbacks.map((fb) => (
-                <article
-                  key={fb.id}
-                  className="border-b border-white/10 pb-8 pt-4"
+        {/* ── FILTERS BLOCK ── */}
+        {showFilters && (
+          <div className="bg-[#ffffee] border border-[#ddddcc] p-3 mb-4 text-[13px]">
+            <div className="flex flex-wrap gap-4 items-end">
+              <label className="flex flex-col gap-1">
+                <span className="font-bold">Search:</span>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Keywords, email, etc..."
+                  className="border-2 rounded  border-gray-700  px-1 py-0.5 w-48"
+                />
+              </label>
+              <label className="flex flex-col gap-1">
+                <span className="font-bold">Project Target:</span>
+                <select
+                  value={filterProject}
+                  onChange={(e) => setFilterProject(e.target.value)}
+                  className="border border-[#999] px-1 py-0.5"
                 >
-                  <div className="flex flex-col md:flex-row md:items-start gap-6">
-                    {/* Timestamp (Left Column) */}
-                    <div className="w-32 shrink-0 md:pt-1">
-                      <div className="flex items-center gap-2 text-xs text-white/50">
-                        <Clock size={12} />
-                        {new Date(fb.created_at).toLocaleDateString()}
-                      </div>
+                  <option value="all">all projects</option>
+                  {PROJECTS.map((p) => (
+                    <option key={p} value={p}>
+                      {p}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setFilterProject("all");
+                }}
+                className="bg-[#e0e0e0] rounded border border-[#999] px-2 py-0.5 hover:bg-[#ccc] cursor-pointer"
+              >
+                clear
+              </button>
+              <button
+                onClick={fetchFeedbacks}
+                className="bg-[#e0e0e0] border border-[#999] px-2 py-0.5 hover:bg-[#ccc] rounded  cursor-pointer ml-auto"
+              >
+                refresh archive
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* ── SECTION HEADER ── */}
+        <div className="bg-[#e8e8e8] border-t border-b border-[#cccccc] py-1.5 px-2 font-bold mb-2 flex justify-between">
+          <span className="text-lg">Issues log</span>
+          <span className="font-normal text-[13px] text-[#555]">
+            showing {filtered.length} matching
+          </span>
+        </div>
+
+        {/* ── ERROR & LOADING STATES ── */}
+        {isLoading && (
+          <div className="p-4 text-[#555] ">
+            Loading... till then enjoy coffee..
+          </div>
+        )}
+
+        {errorMsg && (
+          <div className="p-4 text-[#cc0000] font-bold bg-[#ffdddd] border border-[#cc0000] mb-4">
+            Error: {errorMsg}
+            <button
+              onClick={fetchFeedbacks}
+              className="ml-4 underline text-[#0000ee] bg-transparent border-none cursor-pointer"
+            >
+              Retry
+            </button>
+          </div>
+        )}
+
+        {!isLoading && !errorMsg && filtered.length === 0 && (
+          <div className="p-4 text-[#555]  border border-[#eee]">
+            wooow.. so perfect app..no fixes found .. come again later
+          </div>
+        )}
+
+        {/* ── LIST ── */}
+        {!isLoading && !errorMsg && filtered.length > 0 && (
+          <div className="w-full flex flex-col border-b border-[#eee]">
+            {filtered.map((fb, index) => {
+              const isOpen = expandedId === fb.id;
+              const title = getIssueTitle(fb.feedback);
+              const rowClass = index % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]";
+
+              return (
+                <div key={fb.id} className="flex flex-col">
+                  {/* Row */}
+                  <div
+                    onClick={() => setExpandedId(isOpen ? null : fb.id)}
+                    className={`${rowClass} flex flex-col md:flex-row md:items-center py-2 px-2 hover:bg-[#eef3f8] transition-colors gap-1 md:gap-4 cursor-pointer`}
+                  >
+                    {/* Time & Reporter (Stacked on mobile, row on desktop) */}
+                    <div className="flex flex-row md:flex-row gap-2 md:gap-4 shrink-0 text-gray-700  text-[13px] md:w-[220px]">
+                      <span className="w-[85px] shrink-0">
+                        {timeAgo(fb.created_at)}
+                      </span>
+                      <a
+                        href={`mailto:${fb.name}`}
+                        className="truncate text-blue-800 underline  w-[148px]"
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        {fb.email}
+                      </a>
                     </div>
 
-                    {/* Content (Right Column) */}
-                    <div className="flex-1">
-                      <div className="mb-4 flex flex-wrap items-center gap-2">
-                        <span className="rounded bg-[#111111] border border-white/10 px-2 py-0.5 text-xs font-bold uppercase text-[#4a90e2]">
-                          {fb.category}
+                    {/* Issue Title & Tag */}
+                    <div className="flex-1 min-w-0 font-bold text-black flex items-center flex-wrap gap-2 text-[14px]">
+                      <span className="break-words">{title}</span>
+                      {fb.project_name && (
+                        <span className="bg-[#ccffcc] border border-[#000000] text-black text-[12px] font-medium px-2 py-1 leading-tight whitespace-nowrap">
+                          {fb.project_name}
                         </span>
-                        {fb.project_name && (
-                          <span className="text-xs text-white/50">
-                            → {fb.project_name}
+                      )}
+                    </div>
+
+                    {/* Expand Link */}
+                    <div className="shrink-0 text-[12px] md:text-[13px] text-[#0000ee] bg-yellow-200 border border-black  w-max px-2  font-semibold  mt-1 md:mt-0 md:text-right">
+                      {isOpen ? "Hide" : "Read"}
+                    </div>
+                  </div>
+
+                  {/* Expanded Content Area */}
+                  {isOpen && (
+                    <div className="border-l-[4px] border-[#0000ee] bg-[#fdfdfd] border-y border-y-[#eee] p-4 ml-2 my-2 text-[13px]">
+                      <div className="mb-4 pb-2 border-b border-[#eee] text-[#555] flex flex-wrap gap-4">
+                        <span>
+                          <strong>Issue id:</strong> #{fb.id}
+                        </span>
+                        <span>
+                          <strong>Reporter:</strong>{" "}
+                          <a className="text-blue-800 font-semibold hover:underline">
+                            {fb.name}
+                          </a>
+                        </span>
+                        {fb.github_id && (
+                          <span>
+                            <strong>GitHub:</strong>{" "}
+                            <a
+                              href={`https://github.com/${fb.github_id.replace("@", "")}`}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="text-[#0000ee] hover:underline"
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              @{fb.github_id.replace("@", "")}
+                            </a>
                           </span>
                         )}
                       </div>
 
-                      {/* Clean Markdown Rendering */}
-                      <div className="prose prose-invert max-w-none prose-p:leading-relaxed prose-p:text-white/80 prose-headings:text-white prose-a:text-[#4a90e2] mb-6">
+                      <div
+                        className="
+                        text-black leading-normal break-words
+                        [&_p]:mb-3 [&_p:last-child]:mb-0
+                        [&_h1]:text-[16px] [&_h1]:font-bold [&_h1]:mb-3 [&_h1]:mt-4 [&_h1]:border-b [&_h1]:border-[#eee] [&_h1]:pb-1
+                        [&_h2]:text-[15px] [&_h2]:font-bold [&_h2]:mb-2 [&_h2]:mt-3
+                        [&_h3]:text-[14px] [&_h3]:font-bold [&_h3]:mb-1 [&_h3]:mt-2
+                        [&_a]:text-[#0000ee] [&_a:hover]:underline [&_a]:break-all
+                        [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-3 [&_li]:mb-1
+                        [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:mb-3
+                        [&_blockquote]:border-l-[3px] [&_blockquote]:border-[#ccc] [&_blockquote]:pl-3 [&_blockquote]:text-[#555] [&_blockquote]: [&_blockquote]:my-3
+                        [&_code]:bg-[#f4f4f4] [&_code]:border [&_code]:border-[#ddd] [&_code]:px-1 [&_code]:py-0.5 [&_code]:text-[12px] [&_code]:font-mono
+                        [&_pre]:bg-[#f4f4f4] [&_pre]:border [&_pre]:border-[#ccc] [&_pre]:p-3 [&_pre]:overflow-x-auto [&_pre]:my-4
+                        [&_pre_code]:bg-transparent [&_pre_code]:border-0 [&_pre_code]:p-0 [&_pre_code]:text-[13px]
+                      "
+                      >
                         <ReactMarkdown
                           components={{
                             code({
@@ -259,18 +337,13 @@ export default function FeedbacksList() {
                               ...props
                             }: MarkdownComponentProps) {
                               return !inline ? (
-                                <div className="my-4 overflow-hidden rounded border border-white/10 bg-[#111111]">
-                                  <pre className="overflow-x-auto p-4 text-sm text-white/90">
-                                    <code className={className} {...props}>
-                                      {children}
-                                    </code>
-                                  </pre>
-                                </div>
+                                <pre>
+                                  <code className={className} {...props}>
+                                    {children}
+                                  </code>
+                                </pre>
                               ) : (
-                                <code
-                                  className="rounded bg-[#111111] border border-white/10 px-1 py-0.5 text-sm text-[#4a90e2]"
-                                  {...props}
-                                >
+                                <code className={className} {...props}>
                                   {children}
                                 </code>
                               );
@@ -280,48 +353,20 @@ export default function FeedbacksList() {
                           {fb.feedback}
                         </ReactMarkdown>
                       </div>
-
-                      {/* User Info Footer */}
-                      <footer className="flex flex-wrap items-center gap-6 text-sm">
-                        <div className="flex items-center gap-2">
-                          <div className="flex h-6 w-6 items-center justify-center rounded bg-[#111111] border border-white/10 text-xs font-bold text-white">
-                            {fb.name.charAt(0).toUpperCase()}
-                          </div>
-                          <span className="font-bold text-white">
-                            {fb.name}
-                          </span>
-                        </div>
-
-                        <a
-                          href={`mailto:${fb.email}`}
-                          className="flex items-center gap-1.5 text-white/50 transition-colors hover:text-[#4a90e2]"
-                        >
-                          <Mail size={14} />
-                          <span className="text-xs">{fb.email}</span>
-                        </a>
-
-                        {fb.github_id && (
-                          <a
-                            href={`https://github.com/${fb.github_id.replace("@", "")}`}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="flex items-center gap-1.5 text-white/50 transition-colors hover:text-[#4a90e2]"
-                          >
-                            <Github size={14} />
-                            <span className="text-xs">
-                              @{fb.github_id.replace("@", "")}
-                            </span>
-                            <ExternalLink size={10} />
-                          </a>
-                        )}
-                      </footer>
                     </div>
-                  </div>
-                </article>
-              ))
-            )}
+                  )}
+                </div>
+              );
+            })}
           </div>
-        </main>
+        )}
+
+        {/* Pagination Indicator */}
+        {!isLoading && !errorMsg && filtered.length > 0 && (
+          <div className="mt-2 px-2 text-[#0000ee] text-[13px] font-bold cursor-pointer hover:underline">
+            ...
+          </div>
+        )}
       </div>
     </div>
   );

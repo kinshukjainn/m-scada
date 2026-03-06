@@ -24,94 +24,118 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#1e1e1e] text-gray-300  selection:bg-[#4a90e2]/30 selection:text-white">
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="mb-12 border-b border-gray-800 pb-8">
-          <div className="mb-3 flex items-center gap-2 text-sm text-gray-400">
-            <TerminalSquare size={16} className="text-[#4a90e2]" />
-            <span>System Overview / About</span>
-          </div>
-          <h1 className="text-3xl font-bold text-white">Project Genesis_</h1>
-        </div>
+    <div className="min-h-screen bg-[#1e1e1e] text-[#cccccc]  selection:bg-[#5cb85c]/30 selection:text-white pb-12">
+      {/* ── TOP HEADER ── */}
+      <header className="bg-[#181818] border-b border-[#111111] py-5 px-6 md:px-12 shadow-md flex items-center gap-3">
+        <TerminalSquare size={24} className="text-[#5cb85c]" />
+        <h1 className="text-2xl md:text-3xl font-bold text-white tracking-wide">
+          Project Genesis
+        </h1>
+      </header>
 
-        {/* Project Info Section */}
-        <section className="mb-16 grid gap-12 lg:grid-cols-5">
-          {/* Left Column: Description */}
-          <div className="lg:col-span-3">
-            <div className="mb-4 inline-flex items-center gap-2 font-bold rounded-full  px-3 py-1 text-lg text-yellow-200 border border-gray-800">
-              <ShieldAlert size={16} className="text-[#4a90e2]" />
-              Core Mission
-            </div>
-            <h2 className="mb-4 text-2xl font-bold text-white">
-              {projectInfo.title}
+      {/* ── MAIN WRAPPER ── */}
+      <div className="max-w-[1400px] mx-auto p-4 md:p-8">
+        <div className="bg-[#262626] border border-[#111111] p-5 md:p-8 flex flex-col gap-8 shadow-lg rounded-sm">
+          {/* ── PROJECT OVERVIEW ── */}
+          <section>
+            <h2 className="text-lg md:text-xl font-bold text-white mb-4 flex items-center gap-2">
+              <ShieldAlert size={20} className="mt-0.5" /> Core Mission
             </h2>
-            <p className="text-base leading-relaxed text-gray-400">
-              {projectInfo.description}
+
+            <p className="text-[13px] md:text-[14px] leading-relaxed mb-6">
+              <span className="font-bold text-white">{projectInfo.title}</span>{" "}
+              is{" "}
+              {projectInfo.description.replace(
+                "An advanced technology platform",
+                "an advanced technology platform",
+              )}
+              For additional technical guidelines and integration details, refer
+              to the{" "}
+              <span className="text-[#5cb85c] cursor-pointer hover:underline">
+                Project Documentation
+              </span>
+              .
             </p>
-          </div>
 
-          {/* Right Column: Highlights */}
-          <div className="rounded-lg border border-gray-800 bg-[#111] p-6 lg:col-span-2">
-            <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white">
-              Key Capabilities
-            </h3>
-            <ul className="space-y-4">
-              {projectInfo.highlights.map((highlight, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <CheckCircle2
-                    className="mt-0.5 h-5 w-5 shrink-0 text-[#4a90e2]"
-                    strokeWidth={2}
-                  />
-                  <span className="text-sm text-gray-400">{highlight}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section>
-          <div className="mb-8 flex items-end justify-between border-b border-gray-800 pb-4">
-            <div>
-              <h2 className="text-2xl font-bold text-white mb-1">Core Team_</h2>
-              <p className="text-sm text-gray-400">
-                The engineering team driving the infrastructure.
-              </p>
+            {/* Highlights Documentation Notice Box */}
+            <div className="bg-[#2f2f2f] border-l-4 border-[#5cb85c] border-y border-r border-y-[#111] border-r-[#111] p-4 md:p-5">
+              <div className="text-[17px] font-bold text-white mb-3 tracking-wide">
+                Key Capabilities & Directives:
+              </div>
+              <ul className="space-y-2">
+                {projectInfo.highlights.map((highlight, index) => (
+                  <li
+                    key={index}
+                    className="flex items-start gap-2.5 text-[15px] text-[#e0e0e0]"
+                  >
+                    <CheckCircle2
+                      className="mt-[2px] h-4 w-4 shrink-0 text-[#5cb85c]"
+                      strokeWidth={2.5}
+                    />
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="hidden items-center gap-2 text-sm text-gray-400 sm:flex">
-              <Users size={16} className="text-[#4a90e2]" />
-              <span>Active Members: {teamMembers.length}</span>
+          </section>
+
+          {/* ── CORE TEAM (Styled like Mailing Lists) ── */}
+          <section className="mt-4">
+            <div className="flex items-center justify-between mb-4">
+              <h2 className="text-lg md:text-xl font-bold text-white flex items-center gap-2">
+                <Users size={20} className="mt-0.5" /> Core Team
+              </h2>
+              <div className="text-[12px] text-[#888]">
+                Active Members:{" "}
+                <span className="text-white font-bold">
+                  {teamMembers.length}
+                </span>
+              </div>
             </div>
-          </div>
 
-          {/* Minimal Team Grid */}
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {teamMembers.map((member, index) => {
-              const initials = member.name
-                .split(" ")
-                .map((n) => n[0])
-                .join("");
+            <p className="text-[13px] md:text-[14px] leading-relaxed mb-4">
+              The engineering and research team driving the infrastructure.
+              Direct technical inquiries to the Technical Lead. Make sure you
+              are subscribed to the project repository to receive comments and
+              reviews on your patches.
+            </p>
 
-              return (
+            {/* Team List Table-like Structure */}
+            <div className="border border-[#111111] rounded-sm overflow-hidden bg-[#2b2b2b]">
+              {teamMembers.map((member, index) => (
                 <div
                   key={index}
-                  className="flex flex-col  p-2 text-left transition-colors "
+                  className="border-b border-[#111111] last:border-b-0 p-3 md:p-4 hover:bg-[#333333] transition-colors"
                 >
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-[#141414] text-lg font-bold text-white">
-                    {initials}
-                  </div>
-                  <div>
-                    <h3 className="text-base font-semibold text-white">
-                      {member.name}
-                    </h3>
-                    <p className="text-xs text-[#4a90e2]">{member.role}</p>
+                  <h3 className="font-bold text-white text-[14px] md:text-[15px] mb-1">
+                    {member.name}
+                  </h3>
+                  <p className="text-[14px] md:text-[14px] text-[#5cb85c]">
+                    {member.role === "Team Leader"
+                      ? "Responsible for overall project orchestration, roadmaps, and stakeholder communication."
+                      : member.role === "Research/Documentation"
+                        ? "For discussions involving algorithms, theoretical research, and updating the Developer Documentation."
+                        : member.role === "Presentations/Report"
+                          ? "Handles project demonstrations, reporting pipelines, and metric aggregation."
+                          : "For general technical questions, API guidelines, architecture, and code review."}
+                  </p>
+
+                  {/* Subtle Role Tag */}
+                  <div className="mt-2 text-[#888] text-[13px] font-mono">
+                    role:{" "}
+                    <span className="text-[#ccc] font-semibold">
+                      {member.role.replace("/", "_")}
+                    </span>
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        </section>
+              ))}
+            </div>
+
+            <div className="mt-4 text-[12px] text-[#5cb85c] cursor-pointer hover:underline">
+              View full contributor network
+            </div>
+          </section>
+        </div>
       </div>
     </div>
   );

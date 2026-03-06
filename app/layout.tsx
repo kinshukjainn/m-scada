@@ -14,7 +14,6 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import Header from "./custom-components/Header";
-import Footer from "./custom-components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -96,7 +95,6 @@ export default function RootLayout({
       >
         <Header />
         {children}
-        <Footer />
       </body>
     </html>
   );

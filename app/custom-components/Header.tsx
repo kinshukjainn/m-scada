@@ -8,7 +8,6 @@ import {
   Terminal,
   MessageSquare,
   Github,
-  NotebookPen,
   Boxes,
   Menu,
   X,
@@ -18,7 +17,6 @@ import { IoBugSharp } from "react-icons/io5";
 // Array of navigation items to keep the JSX clean and DRY
 const NAV_LINKS = [
   { path: "/about-info", icon: Info, label: "About" },
-  { path: "/docs", icon: NotebookPen, label: "Docs" },
   { path: "/git-track", icon: Boxes, label: "Logs" },
   { path: "/console", icon: Terminal, label: "Console" },
   { path: "/issues", icon: IoBugSharp, label: "Issues" },
