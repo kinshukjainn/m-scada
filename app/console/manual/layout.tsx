@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Manual Console ||  FDS",
-  description: "Manual Console of FDS",
+  title: "Manual Console ||  M-Scada",
+  description: "Manual Console of M-Scada",
 };
 
 export default function BlogLayout({

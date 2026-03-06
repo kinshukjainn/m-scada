@@ -322,7 +322,7 @@ export default function ElectricalDiagnosticConsole() {
                   />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">
-                  Awaiting Telemetry
+                  Awaiting response from the AI diagnostic engine...
                 </h3>
                 <p className="text-sm max-w-sm">
                   Enter the system parameters in the console and run the

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Project Logs || FDS",
+  title: "Tree Struc of Project || M-Scada",
   description: "Live track of project log -- feature push",
 };
 
