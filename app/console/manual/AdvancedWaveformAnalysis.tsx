@@ -2,9 +2,8 @@
 
 import React, { useMemo } from "react";
 import dynamic from "next/dynamic";
-import { Waves, Triangle, Orbit, Cpu } from "lucide-react";
+import { Waves, Activity } from "lucide-react";
 
-// Dynamically import Plotly for Next.js SSR compatibility
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
 interface FormData {
@@ -28,313 +27,302 @@ interface AdvancedWaveformAnalysisProps {
 export default function AdvancedWaveformAnalysis({
   data,
 }: AdvancedWaveformAnalysisProps) {
-  const { waveforms, powerTriangle, pfData } = useMemo(() => {
-    // 1. Core System Parameters
-    const frequency = 50; // Standard 50Hz system
+  // 🚀 HIGH-PERFORMANCE CALCULATION ENGINE
+  const analysis = useMemo(() => {
+    const frequency = 50;
     const omega = 2 * Math.PI * frequency;
-    const samples = 200;
-    const timeDelta = 0.04 / samples; // 40ms = exactly 2 cycles at 50Hz
+    const samples = 300;
+    const timeDelta = 0.04 / samples; // 2 cycles at 50Hz
 
-    // Power Factor & Phase Angle Calculation
+    // Pre-calculate scalars to avoid doing it inside the loop
+    const SQRT2 = Math.SQRT2;
+    const shiftB = -(2 * Math.PI) / 3;
+    const shiftC = (2 * Math.PI) / 3;
+
     const apparentPower = Math.sqrt(
-      Math.pow(data.activePower, 2) + Math.pow(data.reactivePower, 2),
+      data.activePower ** 2 + data.reactivePower ** 2,
     );
     const pf = apparentPower === 0 ? 1 : data.activePower / apparentPower;
-    // Angle in radians (lagging assumed for standard inductive loads)
     const pfAngleRad = Math.acos(Math.min(1, Math.max(-1, pf)));
 
-    // Generate Time Vector
-    const t = Array.from({ length: samples }, (_, i) => i * timeDelta);
+    // Memory pre-allocation using Typed Arrays for maximum speed
+    const t = new Float32Array(samples);
+    const vA = new Float32Array(samples);
+    const vB = new Float32Array(samples);
+    const vC = new Float32Array(samples);
+    const iA = new Float32Array(samples);
+    const iB = new Float32Array(samples);
+    const iC = new Float32Array(samples);
+    const pTotal = new Float32Array(samples); // Instantaneous Power
 
-    // 2. Sinusoidal Waveform Generation (Time Domain)
-    // V_peak = V_rms * sqrt(2). Standard 120-degree (2*PI/3) phase shifts.
-    const SQRT2 = Math.SQRT2;
-    const PhaseShiftB = -(2 * Math.PI) / 3;
-    const PhaseShiftC = (2 * Math.PI) / 3;
+    // Single-pass O(N) loop for all calculations
+    for (let i = 0; i < samples; i++) {
+      const time = i * timeDelta;
+      const wt = omega * time;
 
-    const vA = t.map((time) => data.voltageA * SQRT2 * Math.sin(omega * time));
-    const vB = t.map(
-      (time) => data.voltageB * SQRT2 * Math.sin(omega * time + PhaseShiftB),
-    );
-    const vC = t.map(
-      (time) => data.voltageC * SQRT2 * Math.sin(omega * time + PhaseShiftC),
-    );
+      t[i] = time;
 
-    // Current waveforms lag by the Power Factor angle
-    const iA = t.map(
-      (time) => data.currentA * SQRT2 * Math.sin(omega * time - pfAngleRad),
-    );
-    const iB = t.map(
-      (time) =>
-        data.currentB *
-        SQRT2 *
-        Math.sin(omega * time + PhaseShiftB - pfAngleRad),
-    );
-    const iC = t.map(
-      (time) =>
-        data.currentC *
-        SQRT2 *
-        Math.sin(omega * time + PhaseShiftC - pfAngleRad),
-    );
+      // Voltages
+      vA[i] = data.voltageA * SQRT2 * Math.sin(wt);
+      vB[i] = data.voltageB * SQRT2 * Math.sin(wt + shiftB);
+      vC[i] = data.voltageC * SQRT2 * Math.sin(wt + shiftC);
+
+      // Currents
+      iA[i] = data.currentA * SQRT2 * Math.sin(wt - pfAngleRad);
+      iB[i] = data.currentB * SQRT2 * Math.sin(wt + shiftB - pfAngleRad);
+      iC[i] = data.currentC * SQRT2 * Math.sin(wt + shiftC - pfAngleRad);
+
+      // Instantaneous Power P(t) = vA*iA + vB*iB + vC*iC
+      pTotal[i] = vA[i] * iA[i] + vB[i] * iB[i] + vC[i] * iC[i];
+    }
+
+    const avgV = (data.voltageA + data.voltageB + data.voltageC) / 3 || 1;
+    const avgI = (data.currentA + data.currentB + data.currentC) / 3 || 1;
+
+    // Calculate max deviations for the Health Radar
+    const maxVDev =
+      Math.max(
+        Math.abs((data.voltageA - avgV) / avgV),
+        Math.abs((data.voltageB - avgV) / avgV),
+        Math.abs((data.voltageC - avgV) / avgV),
+      ) * 100;
+
+    const maxIDev =
+      Math.max(
+        Math.abs((data.currentA - avgI) / avgI),
+        Math.abs((data.currentB - avgI) / avgI),
+        Math.abs((data.currentC - avgI) / avgI),
+      ) * 100;
+
+    const seqTotal = data.seqPositive + data.seqNegative + data.seqZero || 1;
 
     return {
-      pfData: { pf, apparentPower, angleDeg: (pfAngleRad * 180) / Math.PI },
-      waveforms: { t, vA, vB, vC, iA, iB, iC },
-      powerTriangle: {
-        P: data.activePower,
-        Q: data.reactivePower,
-        S: apparentPower,
+      // Convert typed arrays to standard arrays for Plotly compatibility
+      waveforms: {
+        t: Array.from(t),
+        vA: Array.from(vA),
+        vB: Array.from(vB),
+        vC: Array.from(vC),
+        iA: Array.from(iA),
+        iB: Array.from(iB),
+        iC: Array.from(iC),
+        pTotal: Array.from(pTotal),
       },
+      power: { P: data.activePower, pf },
+      healthMetrics: {
+        pfScore: pf * 100, // 100% is ideal
+        vBalance: Math.max(0, 100 - maxVDev),
+        iBalance: Math.max(0, 100 - maxIDev),
+        posSequence: (data.seqPositive / seqTotal) * 100,
+        negSequence: (data.seqNegative / seqTotal) * 100,
+      },
+      imbalance: {
+        vDev: [
+          ((data.voltageA - avgV) / avgV) * 100,
+          ((data.voltageB - avgV) / avgV) * 100,
+          ((data.voltageC - avgV) / avgV) * 100,
+        ],
+      },
+      sequences: [data.seqPositive, data.seqNegative, data.seqZero],
     };
   }, [data]);
 
-  // Shared Plotly Layout Settings for a crisp, white professional theme
+  const colors = {
+    vA: "#ef4444",
+    vB: "#eab308",
+    vC: "#2563eb",
+    iA: "#f87171",
+    iB: "#facc15",
+    iC: "#60a5fa",
+    power: "#10b981",
+    radarArea: "rgba(99, 102, 241, 0.2)",
+    radarLine: "#6366f1",
+  };
+
   const layoutBase = {
     paper_bgcolor: "transparent",
     plot_bgcolor: "transparent",
-    font: { family: "Inter, sans-serif", color: "#374151", size: 11 },
-    margin: { t: 50, b: 40, l: 50, r: 30 },
-    showlegend: true,
-    autosize: true,
+    font: {
+      family: "JetBrains Mono, Inter, monospace",
+      color: "#64748b",
+      size: 10,
+    },
+    margin: { t: 30, b: 30, l: 40, r: 40 },
   };
 
   return (
-    <div className="space-y-6 mt-10 border-t border-gray-200 pt-8">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="p-2 bg-blue-50 border border-blue-100 rounded-sm text-blue-600">
-          <Cpu className="w-5 h-5" />
+    <div className="w-full space-y-6 bg-slate-50 p-6 rounded-xl border border-slate-200 shadow-inner">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-200 pb-6">
+        <div className="flex items-center gap-4">
+          <div className="p-3 bg-slate-900 rounded-lg text-white shadow-md">
+            <Activity className="w-6 h-6" />
+          </div>
+          <div>
+            <h2 className="text-2xl font-bold text-slate-900 tracking-tight">
+              M-SCADA Diagnostics Engine
+            </h2>
+            <p className="text-slate-500 font-medium">
+              Real-time Fault Detection & Quality Analysis
+            </p>
+          </div>
         </div>
-        <div>
-          <h3 className="text-xl font-bold text-gray-900 tracking-tight">
-            Advanced Engineering Analysis
-          </h3>
-          <p className="text-sm text-gray-500">
-            Time-domain waveform reconstruction and phasor visualizations
-          </p>
+        <div className="flex gap-4">
+          <div className="px-4 py-2 bg-white border border-slate-200 rounded-lg shadow-sm">
+            <span className="text-xs text-slate-400 block uppercase font-bold">
+              System PF
+            </span>
+            <span
+              className={`text-lg font-mono font-bold ${analysis.power.pf < 0.85 ? "text-red-500" : "text-emerald-600"}`}
+            >
+              {analysis.power.pf.toFixed(3)}
+            </span>
+          </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        {/* Oscilloscope View: 3-Phase Voltages */}
-        <div className="lg:col-span-8 border border-gray-200 rounded-sm bg-white shadow-sm overflow-hidden flex flex-col h-[400px]">
-          <div className="px-4 py-3 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
-            <Waves className="w-4 h-4 text-gray-500" />
-            <h4 className="text-sm font-semibold text-gray-700">
-              Reconstructed Time-Domain Waveforms (Oscilloscope)
-            </h4>
+        {/* 1. Oscilloscope - Main Waveforms */}
+        <div className="lg:col-span-8 bg-white border border-slate-200 rounded-xl shadow-sm h-[400px] flex flex-col">
+          <div className="px-5 py-3 border-b border-slate-100 bg-slate-50/50 flex items-center gap-2">
+            <Waves className="w-4 h-4 text-slate-500" />
+            <span className="text-sm font-bold text-slate-700 uppercase tracking-wider">
+              High-Speed Transient Capture (V & I)
+            </span>
           </div>
-          <div className="flex-1 p-2">
+          <div className="flex-1 min-h-0">
             <Plot
               data={[
                 {
-                  x: waveforms.t,
-                  y: waveforms.vA,
-                  type: "scatter",
-                  mode: "lines",
+                  x: analysis.waveforms.t,
+                  y: analysis.waveforms.vA,
                   name: "Va",
-                  line: { color: "#ef4444", width: 2 },
-                }, // Red
-                {
-                  x: waveforms.t,
-                  y: waveforms.vB,
+                  line: { color: colors.vA, width: 2 },
                   type: "scatter",
-                  mode: "lines",
+                },
+                {
+                  x: analysis.waveforms.t,
+                  y: analysis.waveforms.vB,
                   name: "Vb",
-                  line: { color: "#eab308", width: 2 },
-                }, // Yellow
-                {
-                  x: waveforms.t,
-                  y: waveforms.vC,
+                  line: { color: colors.vB, width: 2 },
                   type: "scatter",
-                  mode: "lines",
+                },
+                {
+                  x: analysis.waveforms.t,
+                  y: analysis.waveforms.vC,
                   name: "Vc",
-                  line: { color: "#3b82f6", width: 2 },
-                }, // Blue
-                // Currents scaled down slightly for visual overlay (dotted)
-                {
-                  x: waveforms.t,
-                  y: waveforms.iA,
+                  line: { color: colors.vC, width: 2 },
                   type: "scatter",
-                  mode: "lines",
-                  name: "Ia",
-                  line: { color: "#fca5a5", width: 2, dash: "dot" },
-                  yaxis: "y2",
-                },
-                {
-                  x: waveforms.t,
-                  y: waveforms.iB,
-                  type: "scatter",
-                  mode: "lines",
-                  name: "Ib",
-                  line: { color: "#fde047", width: 2, dash: "dot" },
-                  yaxis: "y2",
-                },
-                {
-                  x: waveforms.t,
-                  y: waveforms.iC,
-                  type: "scatter",
-                  mode: "lines",
-                  name: "Ic",
-                  line: { color: "#93c5fd", width: 2, dash: "dot" },
-                  yaxis: "y2",
                 },
               ]}
               layout={{
                 ...layoutBase,
-                legend: {
-                  orientation: "h",
-                  x: 0.5,
-                  xanchor: "center",
-                  y: -0.15,
-                },
-                xaxis: {
-                  title: { text: "Time (seconds)" },
-                  gridcolor: "#f3f4f6",
-                  zerolinecolor: "#d1d5db",
-                },
-                yaxis: {
-                  title: { text: "Voltage (V)" },
-                  gridcolor: "#f3f4f6",
-                  zerolinecolor: "#d1d5db",
-                },
-                yaxis2: {
-                  title: { text: "Current (A)" },
-                  overlaying: "y",
-                  side: "right",
-                  showgrid: false,
-                },
+                autosize: true,
+                showlegend: true,
+                legend: { orientation: "h", y: -0.15 },
+                xaxis: { gridcolor: "#f1f5f9", title: { text: "Time (s)" } },
+                yaxis: { gridcolor: "#f1f5f9", title: { text: "Voltage (V)" } },
               }}
-              useResizeHandler={true}
+              useResizeHandler
               style={{ width: "100%", height: "100%" }}
             />
           </div>
         </div>
 
-        {/* Right Column: Phasors & Power Triangle */}
-        <div className="lg:col-span-4 flex flex-col gap-6">
-          {/* Power Triangle */}
-          <div className="border border-gray-200 rounded-sm bg-white shadow-sm overflow-hidden flex flex-col h-[190px]">
-            <div className="px-4 py-2 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
-              <Triangle className="w-4 h-4 text-gray-500" />
-              <h4 className="text-sm font-semibold text-gray-700">
-                Power Triangle
-              </h4>
-            </div>
-            <div className="flex-1 px-2 relative">
-              <Plot
-                data={[
-                  // Active Power (Horizontal)
-                  {
-                    x: [0, powerTriangle.P],
-                    y: [0, 0],
-                    type: "scatter",
-                    mode: "text+lines",
-                    name: "Active (kW)",
-                    text: ["", `${powerTriangle.P} kW`],
-                    textposition: "bottom center",
-                    line: { color: "#10b981", width: 3 },
-                  },
-                  // Reactive Power (Vertical)
-                  {
-                    x: [powerTriangle.P, powerTriangle.P],
-                    y: [0, powerTriangle.Q],
-                    type: "scatter",
-                    mode: "text+lines",
-                    name: "Reactive (kVAR)",
-                    text: ["", `${powerTriangle.Q} kVAR`],
-                    textposition: "middle right",
-                    line: { color: "#f59e0b", width: 3 },
-                  },
-                  // Apparent Power (Hypotenuse)
-                  {
-                    x: [0, powerTriangle.P],
-                    y: [0, powerTriangle.Q],
-                    type: "scatter",
-                    mode: "text+lines",
-                    name: "Apparent (kVA)",
-                    text: ["", `${powerTriangle.S.toFixed(1)} kVA`],
-                    textposition: "top left",
-                    line: { color: "#3b82f6", width: 3, dash: "dash" },
-                  },
-                ]}
-                layout={{
-                  ...layoutBase,
-                  margin: { t: 20, b: 20, l: 30, r: 40 },
-                  showlegend: false,
-                  xaxis: { visible: false },
-                  yaxis: { visible: false },
-                  annotations: [
-                    {
-                      x: powerTriangle.P / 4,
-                      y: powerTriangle.Q / 6,
-                      text: `θ = ${pfData.angleDeg.toFixed(1)}°`,
-                      showarrow: false,
-                      font: { color: "#6b7280", size: 12 },
-                    },
-                  ],
-                }}
-                useResizeHandler={true}
-                style={{ width: "100%", height: "100%" }}
-              />
-            </div>
+        {/* 2. Power Quality Health Radar (Replaces Power Triangle) */}
+        <div className="lg:col-span-4 bg-white border border-slate-200 rounded-xl shadow-sm h-[400px] flex flex-col">
+          <div className="px-5 py-3 border-b border-slate-100 bg-slate-50/50">
+            <span className="text-sm font-bold text-slate-700 uppercase tracking-wider">
+              System Health Profile
+            </span>
           </div>
+          <Plot
+            data={[
+              {
+                type: "scatterpolar",
+                r: [
+                  analysis.healthMetrics.pfScore,
+                  analysis.healthMetrics.vBalance,
+                  analysis.healthMetrics.iBalance,
+                  analysis.healthMetrics.posSequence,
+                  100 - analysis.healthMetrics.negSequence, // Inverted so 100% is good
+                  analysis.healthMetrics.pfScore, // Close the loop
+                ],
+                theta: [
+                  "Power Factor",
+                  "V-Balance",
+                  "I-Balance",
+                  "Pos Sequence",
+                  "Neg Seq (Low=Good)",
+                  "Power Factor",
+                ],
+                fill: "toself",
+                fillcolor: colors.radarArea,
+                line: { color: colors.radarLine, width: 2 },
+              },
+            ]}
+            layout={{
+              ...layoutBase,
+              polar: { radialaxis: { visible: true, range: [0, 100] } },
+              showlegend: false,
+            }}
+            useResizeHandler
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
 
-          {/* Sequence Components Radar */}
-          <div className="border border-gray-200 rounded-sm bg-white shadow-sm overflow-hidden flex flex-col h-[186px]">
-            <div className="px-4 py-2 border-b border-gray-100 bg-gray-50 flex items-center gap-2">
-              <Orbit className="w-4 h-4 text-gray-500" />
-              <h4 className="text-sm font-semibold text-gray-700">
-                Sequence Asymmetry (Radar)
-              </h4>
-            </div>
-            <div className="flex-1 pb-2">
-              <Plot
-                data={[
-                  {
-                    type: "scatterpolar",
-                    r: [
-                      data.seqPositive,
-                      data.seqNegative,
-                      data.seqZero,
-                      data.seqPositive,
-                    ], // Close the loop
-                    theta: [
-                      "Positive (I1)",
-                      "Negative (I2)",
-                      "Zero (I0)",
-                      "Positive (I1)",
-                    ],
-                    fill: "toself",
-                    name: "Sequence Currents",
-                    line: { color: "#8b5cf6" },
-                    fillcolor: "rgba(139, 92, 246, 0.2)",
-                  },
-                ]}
-                layout={{
-                  ...layoutBase,
-                  margin: { t: 30, b: 20, l: 40, r: 40 },
-                  showlegend: false,
-                  polar: {
-                    radialaxis: {
-                      visible: true,
-                      range: [
-                        0,
-                        Math.max(
-                          data.seqPositive,
-                          data.seqNegative,
-                          data.seqZero,
-                        ) * 1.2,
-                      ],
-                      gridcolor: "#e5e7eb",
-                    },
-                    angularaxis: { gridcolor: "#e5e7eb" },
-                  },
-                }}
-                useResizeHandler={true}
-                style={{ width: "100%", height: "100%" }}
-              />
-            </div>
+        {/* 3. Instantaneous Power (Replaces Phasors) */}
+        <div className="lg:col-span-8 bg-white border border-slate-200 rounded-xl shadow-sm h-[300px] flex flex-col">
+          <div className="px-5 py-3 border-b border-slate-100 bg-slate-50/50">
+            <span className="text-sm font-bold text-slate-700 uppercase tracking-wider">
+              Total Instantaneous Power P(t)
+            </span>
+            <span className="text-xs text-slate-500 block">
+              Ripples indicate unbalance or fault conditions.
+            </span>
           </div>
+          <Plot
+            data={[
+              {
+                x: analysis.waveforms.t,
+                y: analysis.waveforms.pTotal,
+                fill: "tozeroy",
+                type: "scatter",
+                line: { color: colors.power, width: 2 },
+              },
+            ]}
+            layout={{
+              ...layoutBase,
+              xaxis: { gridcolor: "#f1f5f9", title: { text: "Time (s)" } },
+              yaxis: { gridcolor: "#f1f5f9", title: { text: "Power (W)" } },
+            }}
+            useResizeHandler
+            style={{ width: "100%", height: "100%" }}
+          />
+        </div>
+
+        {/* 4. Deviation Analysis */}
+        <div className="lg:col-span-4 bg-white border border-slate-200 rounded-xl shadow-sm h-[300px] flex flex-col">
+          <div className="px-5 py-3 border-b border-slate-100 bg-slate-50/50">
+            <span className="text-sm font-bold text-slate-700 uppercase tracking-wider">
+              Voltage Deviation (%)
+            </span>
+          </div>
+          <Plot
+            data={[
+              {
+                x: ["Phase A", "Phase B", "Phase C"],
+                y: analysis.imbalance.vDev,
+                type: "bar",
+                marker: { color: [colors.vA, colors.vB, colors.vC] },
+              },
+            ]}
+            layout={{
+              ...layoutBase,
+              yaxis: { title: { text: "Deviation %" } },
+            }}
+            useResizeHandler
+            style={{ width: "100%", height: "100%" }}
+          />
         </div>
       </div>
     </div>
