@@ -323,7 +323,7 @@ export default function FeedbacksList() {
                         [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:mb-3 [&_li]:mb-1
                         [&_ol]:list-decimal [&_ol]:pl-5 [&_ol]:mb-3
                         [&_blockquote]:border-l-[3px] [&_blockquote]:border-[#ccc] [&_blockquote]:pl-3 [&_blockquote]:text-[#555] [&_blockquote]: [&_blockquote]:my-3
-                        [&_code]:bg-[#f4f4f4] [&_code]:border [&_code]:border-[#ddd] [&_code]:px-1 [&_code]:py-0.5 [&_code]:text-[12px] [&_code]:font-mono
+                        [&_code]:bg-[#f4f4f4] [&_code]:border [&_code]:border-[#ddd] [&_code]:px-1 [&_code]:py-0.5 [&_code]:text-[12px] [&_code]:
                         [&_pre]:bg-[#f4f4f4] [&_pre]:border [&_pre]:border-[#ccc] [&_pre]:p-3 [&_pre]:overflow-x-auto [&_pre]:my-4
                         [&_pre_code]:bg-transparent [&_pre_code]:border-0 [&_pre_code]:p-0 [&_pre_code]:text-[13px]
                       "

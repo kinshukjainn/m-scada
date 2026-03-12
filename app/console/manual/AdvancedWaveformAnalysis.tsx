@@ -172,7 +172,7 @@ export default function AdvancedWaveformAnalysis({
               System PF
             </span>
             <span
-              className={`text-lg font-mono font-bold ${analysis.power.pf < 0.85 ? "text-red-500" : "text-emerald-600"}`}
+              className={`text-lg  font-bold ${analysis.power.pf < 0.85 ? "text-red-500" : "text-emerald-600"}`}
             >
               {analysis.power.pf.toFixed(3)}
             </span>

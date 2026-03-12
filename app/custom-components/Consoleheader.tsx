@@ -12,12 +12,12 @@ export default function Consoleheader() {
   const isDirect = pathname === "/console/direct";
 
   return (
-    <header className="w-full border-b border-gray-800 bg-[#252525] px-4 py-3  text-sm text-white sm:px-6 md:px-8">
+    <header className="w-full bg-white px-4 py-3  text-sm text-white sm:px-6 md:px-8">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         {/* Left side - Text-based Breadcrumbs */}
         <div className="flex items-center gap-2">
           {isConsoleHome && (
-            <h1 className="font-bold tracking-tight text-white">
+            <h1 className="font-bold tracking-tight text-2xl text-black">
               Principal Console
             </h1>
           )}
@@ -26,14 +26,14 @@ export default function Consoleheader() {
             <div className="flex items-center gap-2">
               <Link
                 href="/console"
-                className="text-[#4a90e2] hover:text-white hover:underline"
+                className="text-black text-lg  hover:underline"
               >
                 Console
               </Link>
 
-              <span className="text-gray-500">/</span>
+              <span className="text-gray-900">/</span>
 
-              <h1 className="font-bold text-white">
+              <h1 className="font-bold  text-xl text-red-500">
                 {isManual && "Manual Console"}
                 {isDirect && "Direct Console"}
               </h1>

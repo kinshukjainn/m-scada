@@ -88,8 +88,8 @@ export function DocsSidebar({ className = "" }: { className?: string }) {
         {/* Simple Header */}
         <div className="mb-6 hidden lg:block">
           <h2 className=" text-lg font-bold text-white border-b border-gray-100 pb-2">
-            <span className="text-red-500 font-mono">M-</span>{" "}
-            <span className="font-mono text-white ">Scada</span> Documentation
+            <span className="text-red-500 ">M-</span>{" "}
+            <span className=" text-white ">Scada</span> Documentation
           </h2>
         </div>
 

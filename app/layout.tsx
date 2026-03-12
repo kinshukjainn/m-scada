@@ -4,6 +4,7 @@ import {
   PT_Sans,
   Roboto,
   Arimo,
+  Roboto_Slab,
   DM_Mono,
   Work_Sans,
   Geist_Mono,
@@ -25,6 +26,13 @@ export const lucideSans = localFont({
   variable: "--font-lucide",
   weight: "400",
   display: "swap",
+});
+
+export const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-roboto-slab", // optional for CSS variable usage
 });
 
 const roboto = Roboto({
@@ -91,7 +99,7 @@ export default function RootLayout({
     <html lang="en" data-google-analytics-opt-out="">
       <body
         // 👇 Add inter.variable to your class string
-        className={`${geistSans.variable} ${ptSans.variable} ${arimo.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${lucideSans.variable} ${inter.variable} antialiased`}
+        className={`${geistSans.variable} ${robotoSlab.variable} ${ptSans.variable} ${arimo.variable} ${dmMono.variable}  ${roboto.variable} ${workSans.variable} ${geistMono.variable} ${lucideSans.variable} ${inter.variable} antialiased`}
       >
         <Header />
         {children}

@@ -27,6 +27,7 @@ const config: Config = {
         arimo: ["var(--font-arimo)", "sans-serif"],
         ptSans: ["var(--font-pt-sans)", "sans-serif"],
         lucide: ["var(--font-lucide)", "sans-serif"],
+        robotoSerif: ["var(--font-roboto-slab)", "sans-serif"],
       },
     },
   },
