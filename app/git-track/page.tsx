@@ -211,12 +211,12 @@ export default function ChangelogTracker() {
         {/* ── TOP HEADER (Breadcrumbs & Links) ── */}
         <div className="mb-1">
           <h1 className="text-[20px] sm:text-[24px] font-bold m-0 p-0">
-            <a href="#" className="text-[#0000ee] hover:underline no-underline">
-              Git
+            <a href="#" className="text-black hover:underline no-underline">
+              Github
             </a>{" "}
             /{" "}
-            <a href="#" className="text-[#0000ee] hover:underline no-underline">
-              {GITHUB_CONFIG.repository}.git
+            <a href="#" className="text-black hover:underline no-underline">
+              {GITHUB_CONFIG.repository}
             </a>{" "}
             / summary
           </h1>
@@ -226,14 +226,14 @@ export default function ChangelogTracker() {
           summary |{" "}
           <Link
             href="/git-track/tree"
-            className="text-white font-semibold px-2 py-0 bg-blue-800 border-black border  hover:underline no-underline"
+            className="text-white font-semibold px-2 py-1 rounded-xs bg-red-600  hover:underline no-underline"
           >
-            tree {"->"}{" "}
+            View repo tree {"->"}{" "}
           </Link>
         </div>
 
         {/* ── META INFO TABLE ── */}
-        <div className="bg-[#f4f4f4] border-t border-b border-[#cccccc] py-3 px-2 sm:px-4 mb-4">
+        <div className=" py-3 px-2 sm:px-4 mb-4">
           <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-y-1 sm:gap-x-4 text-[13px] sm:text-[14px]">
             <div className="text-[#555555]">description</div>
             <div>{GITHUB_CONFIG.repository} git repo</div>
@@ -271,12 +271,13 @@ export default function ChangelogTracker() {
 
         {/* ── FILTERS BLOCK ── */}
         {showFilters && (
-          <div className="bg-[#ffffee] border border-[#ddddcc] p-3 mb-4 text-[13px]">
+          <div className=" p-3 mb-4 text-[13px]">
             <div className="flex flex-wrap gap-4 items-end">
               <label className="flex flex-col gap-1">
                 <span>Search:</span>
                 <input
                   type="text"
+                  placeholder="search commits by aurthor , date , day , time"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="border border-[#999] px-1 py-0.5 w-48"
@@ -317,7 +318,7 @@ export default function ChangelogTracker() {
                   setAuthorFilter("all");
                   setTypeFilter("all");
                 }}
-                className="bg-[#e0e0e0] border border-[#999] px-2 py-0.5 hover:bg-[#ccc] cursor-pointer"
+                className="bg-[#e0e0e0] border-2 border-black px-2 py-0.5 rounded-xs font-semibold  hover:bg-[#ccc] cursor-pointer"
               >
                 clear
               </button>
@@ -327,7 +328,7 @@ export default function ChangelogTracker() {
 
         {/* ── SECTION HEADER ── */}
         <div className="bg-[#e8e8e8] border-t border-b border-[#cccccc] py-1.5 px-2 font-bold mb-2">
-          shortlog
+          Commits
         </div>
 
         {/* ── ERROR & LOADING STATES ── */}
@@ -373,17 +374,18 @@ export default function ChangelogTracker() {
                     <span className="w-[85px] shrink-0">
                       {timeAgo(commit.commit.author.date)}
                     </span>
-                    <span className="truncate w-[120px]">
+                    <span className="truncate w-[120px] text-red-600 font-semibold">
+                      {"@"}
                       {commit.commit.author.name}
                     </span>
                   </div>
 
                   {/* Message & Tag */}
-                  <div className="flex-1 min-w-0 font-bold text-black flex items-center flex-wrap gap-2 text-[14px]">
+                  <div className="flex-1 min-w-0 font-bold text-black flex font-mono items-center flex-wrap gap-2 text-[14px]">
                     <span className="break-words">{title}</span>
                     {/* Fake branch tag exactly like the image */}
                     {index === 0 && (
-                      <span className="bg-[#ccffcc] border border-[#00cc00] text-black text-[11px] font-normal px-1 py-0 leading-tight">
+                      <span className="bg-[#ccffcc] border border-[#00cc00] text-black text-[11px] font-normal px-1 py-0 rounded leading-tight">
                         master
                       </span>
                     )}

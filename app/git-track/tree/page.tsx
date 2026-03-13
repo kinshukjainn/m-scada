@@ -214,21 +214,21 @@ export default function RepositoryViewer() {
         <div className="mb-1">
           <h1 className="text-[20px] sm:text-[24px] font-bold m-0 p-0 flex flex-wrap items-center gap-1.5 leading-tight">
             <Link href="/git-track">
-              <span className="text-[#0000ee] hover:underline cursor-pointer">
+              <span className="text-black hover:underline cursor-pointer">
                 tree
               </span>{" "}
             </Link>
             /{" "}
-            <span className="text-[#0000ee] hover:underline cursor-pointer">
-              {GITHUB_CONFIG.repository}.git
+            <span className="text-black hover:underline cursor-pointer">
+              {GITHUB_CONFIG.repository}
             </span>
           </h1>
         </div>
 
         <div className="text-[13px] sm:text-[14px] mb-3">
           <Link href="/git-track">
-            <span className="font-bold text-white px-2 py-0 bg-blue-500 border border-black">
-              Back
+            <span className="font-bold text-white px-2 py-1 bg-red-600 rounded-xs">
+              Back to commits page
             </span>
           </Link>
         </div>
@@ -245,7 +245,7 @@ export default function RepositoryViewer() {
             <div className="flex flex-wrap items-center gap-1 ">
               <span
                 onClick={() => jumpToPath("")}
-                className="text-[#0000ee] hover:underline cursor-pointer"
+                className="text-black hover:underline cursor-pointer"
               >
                 [{GITHUB_CONFIG.repository}]
               </span>
@@ -263,7 +263,7 @@ export default function RepositoryViewer() {
                       className={
                         isCurrentFile
                           ? "text-black font-bold"
-                          : "text-[#0000ee] hover:underline cursor-pointer"
+                          : "text-black hover:underline cursor-pointer"
                       }
                     >
                       {part}
@@ -308,12 +308,9 @@ export default function RepositoryViewer() {
                     className="bg-white flex items-center py-1.5 px-2 hover:bg-[#eef3f8] transition-colors gap-2 cursor-pointer border-b border-[#f4f4f4]"
                   >
                     <div className="w-5 flex justify-center">
-                      <Folder
-                        size={14}
-                        className="text-[#0000ee] fill-blue-100"
-                      />
+                      <Folder size={14} className="text-black fill-blue-100" />
                     </div>
-                    <div className="text-[#0000ee] hover:underline  text-[13px] font-bold select-none">
+                    <div className="text-black hover:underline  text-[13px] font-bold select-none">
                       ..
                     </div>
                   </div>
@@ -328,7 +325,7 @@ export default function RepositoryViewer() {
                         icon: (
                           <Folder
                             size={14}
-                            className="text-[#0000ee] fill-blue-100 shrink-0"
+                            className="text-black  fill-blue-100 shrink-0"
                           />
                         ),
                       }
@@ -347,7 +344,7 @@ export default function RepositoryViewer() {
                           {icon}
                         </div>
                         <span
-                          className={`truncate  text-[13px] ${isFolder ? "text-[#0000ee] hover:underline font-bold" : "text-[#333] font-semibold hover:underline"}`}
+                          className={`truncate  text-[13px] ${isFolder ? "text-black hover:underline font-bold" : "text-[#333] font-semibold hover:underline"}`}
                         >
                           {itemName}
                           {isFolder && "/"}

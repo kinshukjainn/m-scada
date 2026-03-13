@@ -78,8 +78,9 @@ export default function AboutPage() {
                 className="border border-gray-300 p-4 rounded hover:bg-gray-50 transition-colors"
               >
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                <p className="text-sm font-semibold text-gray-600 uppercase tracking-wide mb-2">
-                  Role: {member.role}
+                <p className="text-sm font-semibold text-gray-600  tracking-wide mb-2">
+                  <span className="font-bold text-black">Role:</span>{" "}
+                  {member.role}
                 </p>
                 <p className="text-base text-gray-800">
                   {member.role === "Team Leader/Designer/Presentation"
@@ -92,15 +93,6 @@ export default function AboutPage() {
                 </p>
               </div>
             ))}
-          </div>
-
-          <div className="mt-6">
-            <a
-              href="#"
-              className="text-blue-600 underline hover:text-blue-800 text-base"
-            >
-              View full contributor network
-            </a>
           </div>
         </section>
       </div>

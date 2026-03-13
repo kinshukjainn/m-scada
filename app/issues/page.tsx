@@ -129,7 +129,7 @@ export default function FeedbacksList() {
         </div>
 
         {/* ── META INFO TABLE ── */}
-        <div className="bg-[#f4f4f4] border-t border-b border-[#cccccc] py-3 px-2 sm:px-4 mb-4">
+        <div className=" py-3 px-2 sm:px-4 mb-4">
           <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-y-1 sm:gap-x-4 text-[13px] sm:text-[14px]">
             <div className="text-[#555555] font-bold">description</div>
             <div>Project Issue Tracker & Feedback Archive</div>
@@ -159,7 +159,7 @@ export default function FeedbacksList() {
 
         {/* ── FILTERS BLOCK ── */}
         {showFilters && (
-          <div className="bg-[#ffffee] border border-[#ddddcc] p-3 mb-4 text-[13px]">
+          <div className=" p-3 mb-4 text-[13px]">
             <div className="flex flex-wrap gap-4 items-end">
               <label className="flex flex-col gap-1">
                 <span className="font-bold">Search:</span>
@@ -206,8 +206,8 @@ export default function FeedbacksList() {
         )}
 
         {/* ── SECTION HEADER ── */}
-        <div className="bg-[#e8e8e8] border-t border-b border-[#cccccc] py-1.5 px-2 font-bold mb-2 flex justify-between">
-          <span className="text-lg">Issues log</span>
+        <div className=" py-1.5 px-2 font-bold mb-2 flex justify-between">
+          <span className="text-xl ">Issues log</span>
           <span className="font-normal text-[13px] text-[#555]">
             showing {filtered.length} matching
           </span>
