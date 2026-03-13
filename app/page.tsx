@@ -57,7 +57,7 @@ export default function AIIndustrialHome() {
                   </motion.span>
                 </AnimatePresence>
               </div>
-              ``
+
               <span>version of SCADA</span>
             </h1>
             <p className="text-lg text-gray-900 max-w-xl leading-relaxed">
