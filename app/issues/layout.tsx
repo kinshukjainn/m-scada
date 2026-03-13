@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Issues || FDS",
+  title: "Issues || Mscada",
   description: "Issues and bugs in fds.ai project ",
 };
 

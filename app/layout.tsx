@@ -86,7 +86,7 @@ export const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FDS AI | Home ",
+  title: "MScada | Home ",
   description: "An app used for detecting fault using AI ",
 };
 

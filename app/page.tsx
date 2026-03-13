@@ -42,7 +42,6 @@ export default function AIIndustrialHome() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black mb-6 leading-[1.1] inline-flex flex-wrap items-center gap-x-3">
               <span>A</span>
-
               {/* mode="popLayout" removes the old word from the document flow as the new one enters, preventing UI breakage */}
               <div className="relative flex items-center justify-center overflow-hidden">
                 <AnimatePresence mode="popLayout">
@@ -58,7 +57,7 @@ export default function AIIndustrialHome() {
                   </motion.span>
                 </AnimatePresence>
               </div>
-
+              ``
               <span>version of SCADA</span>
             </h1>
             <p className="text-lg text-gray-900 max-w-xl leading-relaxed">
