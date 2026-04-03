@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Consoleheader from "../custom-components/Consoleheader";
-
 export const metadata: Metadata = {
   title: "Console - M-Scada",
   description:

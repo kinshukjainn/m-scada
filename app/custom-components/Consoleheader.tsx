@@ -17,7 +17,7 @@ export default function Consoleheader() {
         {/* Left side - Text-based Breadcrumbs */}
         <div className="flex items-center gap-2">
           {isConsoleHome && (
-            <h1 className="font-bold tracking-tight text-2xl text-black">
+            <h1 className="font-semibold tracking-tight text-2xl text-black">
               Principal Console
             </h1>
           )}
@@ -31,11 +31,11 @@ export default function Consoleheader() {
                 Console
               </Link>
 
-              <span className="text-gray-900">/</span>
+              <span className="text-gray-500 text-2xl">|</span>
 
-              <h1 className="font-bold  text-xl text-red-500">
+              <h1 className="font-semibold  text-xl text-black">
                 {isManual && "Manual Console"}
-                {isDirect && "Direct Console"}
+                {isDirect && "Automated Console"}
               </h1>
             </div>
           )}

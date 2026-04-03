@@ -10,7 +10,7 @@ export default function SelectConsolePage() {
         {/* ── HEADER ── */}
         <header className="mb-10 border-b border-gray-300 pb-4">
           <h1 className="text-3xl sm:text-4xl font-bold mb-2">
-            Select <span className="text-red-600">Console</span> Mode
+            Select <span className="text-blue-600">Console</span> Mode
           </h1>
           <p className="text-lg text-gray-700">
             Choose how you want to interact with your data and workflows.
@@ -20,7 +20,7 @@ export default function SelectConsolePage() {
         {/* ── CONSOLE OPTIONS ── */}
         <div className="grid gap-6 md:gap-8 md:grid-cols-2 mb-12">
           {/* Manual Console Card */}
-          <div className="flex flex-col border border-gray-300 rounded p-6 bg-gray-50">
+          <div className="flex flex-col border border-gray-300 rounded-3xl p-6 bg-gray-50">
             <div className="flex-grow">
               <h2 className="text-2xl font-bold mb-2">Manual Console</h2>
               <p className="text-base text-gray-700 mb-6">
@@ -41,18 +41,18 @@ export default function SelectConsolePage() {
 
             <Link
               href="/console/manual"
-              className="block w-full w-max text-center bg-green-600 text-white font-bold py-1 px-2 rounded hover:bg-green-700 transition-colors"
+              className="block w-full w-max text-center bg-blue-800 text-white font-semibold py-3 px-4 rounded-full hover:bg-blue-700 transition-colors"
             >
-              Go for manual
+              Manual Setup
             </Link>
           </div>
 
           {/* Automated Console Card */}
-          <div className="flex flex-col border border-gray-300 rounded p-6 bg-gray-50">
+          <div className="flex flex-col border border-gray-300 rounded-3xl p-6 bg-gray-50">
             <div className="flex-grow">
               <div className="flex items-center gap-3 mb-2">
                 <h2 className="text-2xl font-bold">Automated Console</h2>
-                <span className="bg-green-100 text-green-800 px-2 py-1 text-xs font-bold rounded uppercase tracking-wide">
+                <span className="bg-yellow-500 text-black border-black border-2  px-2 py-1 text-sm font-semibold rounded-full  tracking-wide">
                   Recommended
                 </span>
               </div>
@@ -74,9 +74,9 @@ export default function SelectConsolePage() {
 
             <Link
               href="/console/direct"
-              className="block w-full w-max text-center bg-green-600 text-white font-bold py-1 px-2 rounded hover:bg-green-700 transition-colors"
+              className="block w-full w-max text-center bg-blue-800 text-white font-semibold py-3 px-4 rounded-full hover:bg-blue-700 transition-colors"
             >
-              Go for auto
+              Automated Setup
             </Link>
           </div>
         </div>
@@ -84,9 +84,9 @@ export default function SelectConsolePage() {
         {/* ── COMPARISON TABLE ── */}
         <section>
           <h2 className="text-2xl font-bold mb-6">Quick Comparison</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse border border-gray-300">
-              <thead className="bg-gray-100">
+          <div className="overflow-x-auto rounded-3xl">
+            <table className="w-full text-left border-collapse border rounded-3xl  border-gray-300">
+              <thead className="bg-gray-100 rounded-t-3xl">
                 <tr>
                   <th className="p-3 border border-gray-300 font-bold">
                     Feature

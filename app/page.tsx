@@ -25,14 +25,14 @@ export default function AIIndustrialHome() {
   }, [words.length]);
 
   return (
-    <div className="min-h-screen bg-white text-black selection:bg-blue-500 selection:text-black ">
+    <div className="min-h-screen bg-white text-black selection:bg-red-300 selection:text-black ">
       {/* ── HERO SECTION ── */}
       <section className="relative pt-24 pb-20">
         <div className="max-w-[1200px] mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Column: Text Content */}
           <div>
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-sm bg-red-600 border border-gray-400 text-white font-semibold text-[11px]  tracking-widest mb-6 ">
+            <div className="inline-flex items-center gap-2 px-3 py-3 rounded-full bg-gray-800  text-white font-semibold text-[15px]  tracking-widest mb-6 ">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded h-2 w-2 bg-white"></span>
@@ -42,16 +42,18 @@ export default function AIIndustrialHome() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-black mb-6 leading-[1.1] inline-flex flex-wrap items-center gap-x-3">
               <span>A</span>
-              {/* mode="popLayout" removes the old word from the document flow as the new one enters, preventing UI breakage */}
-              <div className="relative flex items-center justify-center overflow-hidden">
+
+              {/* Removed overflow-hidden so the blur doesn't get clipped */}
+              <div className="relative flex items-center justify-center">
                 <AnimatePresence mode="popLayout">
                   <motion.span
                     key={words[index]}
-                    initial={{ y: 30, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -30, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="text-red-500 inline-block whitespace-nowrap"
+                    // The "Magic" Morph: scale up slightly from a blur, fade out into a blur
+                    initial={{ opacity: 0, filter: "blur(12px)", scale: 0.9 }}
+                    animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+                    exit={{ opacity: 0, filter: "blur(12px)", scale: 1.1 }}
+                    transition={{ duration: 0.8, ease: "easeInOut" }}
+                    className="text-gray-700 inline-block whitespace-nowrap"
                   >
                     {words[index]}
                   </motion.span>
@@ -62,11 +64,11 @@ export default function AIIndustrialHome() {
             </h1>
             <p className="text-lg text-gray-900 max-w-xl leading-relaxed">
               MScada is a next-generation, also knows as{" "}
-              <span className="text-red-600 font-bold px-2 bg-gray-200 border border-gray-800 rounded-sm">
+              <span className="text-gray-800 font-bold px-2 bg-gray-200 border border-gray-800 rounded-full">
                 Modern Scada
               </span>{" "}
               , an{" "}
-              <span className="font-bold text-red-500 border-b-3 border-red-600">
+              <span className="font-bold text-gray-800 border-b-3 border-gray-600">
                 open source
               </span>{" "}
               monitoring layer that elevates traditional SCADA systems with
@@ -95,9 +97,9 @@ export default function AIIndustrialHome() {
       </section>
 
       {/* ── METRICS SECTION ── */}
-      <section className="bg-red-200/80 border border-red-800  mr-2 ml-2 rounded-xl ">
+      <section className="bg-gray-200/80 border border-gray-800  mr-2 ml-2 rounded-xl ">
         <div className="max-w-[1100px] mx-auto px-6 lg:px-8 py-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x-3 divide-red-600">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0 md:divide-x-3 divide-blue-600">
             {[
               { label: "Operating Efficiency", val: "+34%" },
               { label: "Grid Availability", val: "99.99%" },
@@ -105,10 +107,10 @@ export default function AIIndustrialHome() {
               { label: "False Positives", val: "0.02%" },
             ].map((stat, i) => (
               <div key={i} className="md:pl-8 first:pl-0 flex flex-col gap-1">
-                <span className="text-3xl font-bold text-red-800 tracking-tight">
+                <span className="text-3xl font-bold text-blue-800 tracking-tight">
                   {stat.val}
                 </span>
-                <span className="text-[14px] font-bold  text-gray-900  tracking-widest">
+                <span className="text-[14px] font-bold   text-blue-700  tracking-widest">
                   {stat.label}
                 </span>
               </div>

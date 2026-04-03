@@ -27,7 +27,7 @@ export default function AboutPage() {
       <div className="max-w-3xl mx-auto">
         {/* ── HEADER ── */}
         <header className="mb-8 border-b border-gray-300 pb-4">
-          <h1 className="text-3xl text-[#b03931] sm:text-4xl font-bold">
+          <h1 className="text-3xl text-gray-800 sm:text-4xl font-bold">
             Project Genesis
           </h1>
         </header>
@@ -44,7 +44,7 @@ export default function AboutPage() {
             )}{" "}
           </p>
 
-          <div className="bg-gray-50 border border-gray-200 p-4 sm:p-6 rounded">
+          <div className="bg-gray-50 border border-gray-200 p-4 sm:p-6 rounded-3xl">
             <h3 className="text-lg font-bold mb-3">
               Key Capabilities & Directives:
             </h3>
@@ -75,13 +75,14 @@ export default function AboutPage() {
             {teamMembers.map((member, index) => (
               <div
                 key={index}
-                className="border border-gray-300 p-4 rounded hover:bg-gray-50 transition-colors"
+                className="border border-gray-300 p-4 rounded-4xl hover:bg-gray-50 transition-colors"
               >
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                 <p className="text-sm font-semibold text-gray-600  tracking-wide mb-2">
                   <span className="font-bold text-black">Role:</span>{" "}
                   {member.role}
                 </p>
+                <div></div>
                 <p className="text-base text-gray-800">
                   {member.role === "Team Leader/Designer/Presentation"
                     ? "Responsible for overall cordination between us and presentation design"

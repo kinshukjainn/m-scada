@@ -222,11 +222,11 @@ export default function ChangelogTracker() {
           </h1>
         </div>
 
-        <div className="text-[13px] sm:text-[14px] mb-3">
+        <div className="text-[15px] sm:text-[14px] mb-3">
           summary |{" "}
           <Link
             href="/git-track/tree"
-            className="text-white font-semibold px-2 py-1 rounded-xs bg-red-600  hover:underline no-underline"
+            className="text-white font-semibold px-2 py-1 rounded-md bg-green-600  hover:underline no-underline"
           >
             View repo tree {"->"}{" "}
           </Link>
@@ -235,13 +235,13 @@ export default function ChangelogTracker() {
         {/* ── META INFO TABLE ── */}
         <div className=" py-3 px-2 sm:px-4 mb-4">
           <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-y-1 sm:gap-x-4 text-[13px] sm:text-[14px]">
-            <div className="text-[#555555]">description</div>
+            <div className="text-black font-semibold">Description</div>
             <div>{GITHUB_CONFIG.repository} git repo</div>
 
-            <div className="text-[#555555]">last change</div>
+            <div className="text-black font-semibold  ">Last change</div>
             <div>{lastChangeDate}</div>
 
-            <div className="text-[#555555]">URL</div>
+            <div className="text-black font-semibold">URL</div>
             <div>
               <a
                 href={`https://github.com/${GITHUB_CONFIG.username}/${GITHUB_CONFIG.repository}`}
@@ -253,17 +253,15 @@ export default function ChangelogTracker() {
             </div>
 
             {/* Classic-style Filters Toggle */}
-            <div className="text-[#555555] mt-2 sm:mt-0">filters</div>
+            <div className="text-black font-semibold  ">filters</div>
             <div className="mt-2 sm:mt-0">
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="text-[#0000ee] hover:underline bg-transparent border-none p-0 cursor-pointer"
+                className="text-blue-700 underline font-bold italic  hover:text-blue-600 cursor-pointer"
               >
-                [
                 {showFilters
                   ? "hide search & filters"
                   : "show search & filters"}
-                ]
               </button>
             </div>
           </div>
@@ -274,21 +272,21 @@ export default function ChangelogTracker() {
           <div className=" p-3 mb-4 text-[13px]">
             <div className="flex flex-wrap gap-4 items-end">
               <label className="flex flex-col gap-1">
-                <span>Search:</span>
+                <span className="text-black font-semibold">Search:</span>
                 <input
                   type="text"
                   placeholder="search commits by aurthor , date , day , time"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="border border-[#999] px-1 py-0.5 w-48"
+                  className="bg-gray-100 border-b-2 border-black  px-3 py-2 w-48"
                 />
               </label>
               <label className="flex flex-col gap-1">
-                <span>Author:</span>
+                <span className="text-black font-semibold">Author:</span>
                 <select
                   value={authorFilter}
                   onChange={(e) => setAuthorFilter(e.target.value)}
-                  className="border border-[#999] px-1 py-0.5"
+                  className="bg-gray-100 border-b-2 border-black  px-3 py-2"
                 >
                   <option value="all">all</option>
                   {uniqueAuthors.map((a) => (
@@ -299,11 +297,11 @@ export default function ChangelogTracker() {
                 </select>
               </label>
               <label className="flex flex-col gap-1">
-                <span>Type:</span>
+                <span className="text-black font-semibold">Type:</span>
                 <select
                   value={typeFilter}
                   onChange={(e) => setTypeFilter(e.target.value)}
-                  className="border border-[#999] px-1 py-0.5"
+                  className="bg-gray-100 border-b-2 border-black  px-3 py-2"
                 >
                   {COMMIT_TYPES.map((t) => (
                     <option key={t.id} value={t.id}>
@@ -318,7 +316,7 @@ export default function ChangelogTracker() {
                   setAuthorFilter("all");
                   setTypeFilter("all");
                 }}
-                className="bg-[#e0e0e0] border-2 border-black px-2 py-0.5 rounded-xs font-semibold  hover:bg-[#ccc] cursor-pointer"
+                className="bg-blue-800 text-white px-3 py-2 rounded-xl font-semibold   cursor-pointer"
               >
                 clear
               </button>
@@ -327,9 +325,7 @@ export default function ChangelogTracker() {
         )}
 
         {/* ── SECTION HEADER ── */}
-        <div className="bg-[#e8e8e8] border-t border-b border-[#cccccc] py-1.5 px-2 font-bold mb-2">
-          Commits
-        </div>
+        <div className="py-1.5 px-2 text-3xl font-bold mb-2">Commits List</div>
 
         {/* ── ERROR & LOADING STATES ── */}
         {loading && (
@@ -381,7 +377,7 @@ export default function ChangelogTracker() {
                   </div>
 
                   {/* Message & Tag */}
-                  <div className="flex-1 min-w-0 font-bold text-black flex font-mono items-center flex-wrap gap-2 text-[14px]">
+                  <div className="flex-1 min-w-0 font-bold text-black flex  items-center flex-wrap gap-2 text-[14px]">
                     <span className="break-words">{title}</span>
                     {/* Fake branch tag exactly like the image */}
                     {index === 0 && (

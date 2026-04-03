@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { RiGeminiFill } from "react-icons/ri";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 import {
@@ -281,7 +282,7 @@ export default function ElectricalDiagnosticConsole() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-indigo-400  text-black font-semibold py-1 px-2 rounded transition-all w-max  flex items-center cursor-pointer justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed mt-2"
+                className="w-full bg-red-600  text-white font-semibold py-2 px-3 rounded-3xl transition-all   flex items-center cursor-pointer justify-center gap-3 disabled:opacity-70 disabled:cursor-not-allowed mt-2"
               >
                 {loading ? (
                   <Loader2 className="w-5 h-5 animate-spin" />
@@ -333,16 +334,88 @@ export default function ElectricalDiagnosticConsole() {
             )}
 
             {loading && (
-              <div className="h-full min-h-[500px] border border-gray-100 rounded-sm flex flex-col items-center justify-center text-gray-500 space-y-5 shadow-sm bg-white">
-                <RiGeminiFill className="w-10 h-10 animate-spin text-indigo-500" />
-                <div className="text-center">
-                  <p className="text-base font-semibold text-gray-900">
-                    Tokenizing parameters...feeding into model
-                  </p>
-                  <p className="text-sm text-blue-800 mt-1 animate-pulse">
-                    Encrypting tokens and hashing graphs...
-                  </p>
-                </div>
+              <div className="relative h-full min-h-[500px] flex flex-col items-center justify-center bg-gray-50/50 rounded-2xl border border-gray-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] overflow-hidden">
+                {/* Subtle background ambient glow */}
+                <motion.div
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.2, 0.4, 0.2],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
+                  className="absolute w-72 h-72 bg-blue-400 rounded-full blur-[80px] -z-10 pointer-events-none"
+                />
+
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  className="flex flex-col items-center space-y-6 z-10"
+                >
+                  {/* Icon wrapper with a soft pulse ring */}
+                  <div className="relative flex items-center justify-center p-4 bg-white rounded-full shadow-sm border border-gray-100">
+                    <motion.div
+                      animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.1, 0.5] }}
+                      transition={{
+                        duration: 2.5,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="absolute inset-0 bg-blue-100 rounded-full"
+                    />
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    >
+                      {/* Using a Google-like Blue (blue-600) */}
+                      <RiGeminiFill className="w-10 h-10 text-blue-600 relative z-10" />
+                    </motion.div>
+                  </div>
+
+                  {/* Text Content */}
+                  <div className="text-center space-y-2 flex flex-col items-center">
+                    <motion.h3
+                      animate={{ opacity: [0.85, 1, 0.85] }}
+                      transition={{
+                        duration: 2,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                      className="text-lg font-medium text-gray-800 tracking-tight"
+                    >
+                      Tokenizing parameters
+                    </motion.h3>
+
+                    <div className="flex items-center space-x-1">
+                      <p className="text-sm font-medium text-blue-600/80">
+                        Encrypting tokens and hashing graphs
+                      </p>
+                      {/* Animated ellipses for extra polish */}
+                      <div className="flex space-x-[2px] mt-[2px]">
+                        {[0, 1, 2].map((i) => (
+                          <motion.div
+                            key={i}
+                            animate={{ opacity: [0.2, 1, 0.2] }}
+                            transition={{
+                              duration: 1.5,
+                              repeat: Infinity,
+                              delay: i * 0.2,
+                              ease: "easeInOut",
+                            }}
+                            className="w-1 h-1 bg-blue-600/80 rounded-full"
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
             )}
 

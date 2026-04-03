@@ -21,6 +21,18 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+export const segoeUI = localFont({
+  src: [
+    {
+      path: "../public/fonts/segoeui.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-segoe-ui", // optional CSS variable
+  display: "swap", // recommended
+});
+
 export const lucideSans = localFont({
   src: "../public/fonts/lucida-sans-unicode.woff2",
   variable: "--font-lucide",
