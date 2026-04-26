@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useMemo } from "react";
 import Link from "next/link";
+
 // ============================================================================
 // Types
 // ============================================================================
@@ -206,58 +207,64 @@ export default function ChangelogTracker() {
       : "N/A";
 
   return (
-    <div className="min-h-screen bg-white text-black  text-[14px] sm:text-[15px] p-2 sm:p-4 selection:bg-[#cceeff]">
+    <div className="min-h-screen bg-white text-gray-900 text-[14px] sm:text-[15px] p-4 md:p-6 lg:p-8 selection:bg-blue-100">
       <div className="max-w-7xl mx-auto">
         {/* ── TOP HEADER (Breadcrumbs & Links) ── */}
-        <div className="mb-1">
-          <h1 className="text-[20px] sm:text-[24px] font-bold m-0 p-0">
-            <a href="#" className="text-black hover:underline no-underline">
+        <div className="mb-2">
+          <h1 className="text-[20px] sm:text-[24px] font-bold m-0 p-0 text-gray-900 break-words">
+            <Link href="#" className="hover:underline text-gray-900">
               Github
-            </a>{" "}
-            /{" "}
-            <a href="#" className="text-black hover:underline no-underline">
+            </Link>{" "}
+            <span className="text-gray-400 mx-1">/</span>{" "}
+            <Link href="#" className="hover:underline text-gray-900">
               {GITHUB_CONFIG.repository}
-            </a>{" "}
-            / summary
+            </Link>{" "}
+            <span className="text-gray-400 mx-1">/</span> summary
           </h1>
         </div>
 
-        <div className="text-[15px] sm:text-[14px] mb-3">
-          summary |{" "}
+        <div className="flex flex-wrap items-center gap-2 text-[14px] sm:text-[15px] mb-6">
+          <span className="text-gray-600">summary |</span>
           <Link
             href="/git-track/tree"
-            className="text-white font-semibold px-2 py-1 rounded-md bg-green-600  hover:underline no-underline"
+            className="inline-flex items-center text-white font-semibold px-3 py-1.5 rounded-md bg-green-600 hover:bg-green-700 transition-colors no-underline"
           >
-            View repo tree {"->"}{" "}
+            View repo tree &rarr;
           </Link>
         </div>
 
         {/* ── META INFO TABLE ── */}
-        <div className=" py-3 px-2 sm:px-4 mb-4">
-          <div className="grid grid-cols-1 sm:grid-cols-[120px_1fr] gap-y-1 sm:gap-x-4 text-[13px] sm:text-[14px]">
-            <div className="text-black font-semibold">Description</div>
-            <div>{GITHUB_CONFIG.repository} git repo</div>
+        <div className="bg-gray-50 border border-gray-200 rounded-lg py-4 px-4 sm:px-6 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-[140px_1fr] gap-y-3 sm:gap-x-4 text-[14px]">
+            <div className="text-gray-900 font-semibold">Description</div>
+            <div className="text-gray-700">
+              {GITHUB_CONFIG.repository} git repo
+            </div>
 
-            <div className="text-black font-semibold  ">Last change</div>
-            <div>{lastChangeDate}</div>
+            <div className="text-gray-900 font-semibold">Last change</div>
+            <div className="text-gray-700">{lastChangeDate}</div>
 
-            <div className="text-black font-semibold">URL</div>
+            <div className="text-gray-900 font-semibold">URL</div>
             <div>
               <a
                 href={`https://github.com/${GITHUB_CONFIG.username}/${GITHUB_CONFIG.repository}`}
-                className="text-black hover:underline break-all"
+                className="text-blue-600 hover:text-blue-800 hover:underline break-all"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 https://github.com/{GITHUB_CONFIG.username}/
                 {GITHUB_CONFIG.repository}.git
               </a>
             </div>
 
-            {/* Classic-style Filters Toggle */}
-            <div className="text-black font-semibold  ">filters</div>
-            <div className="mt-2 sm:mt-0">
+            <div className="text-gray-900 font-semibold mt-2 sm:mt-0">
+              Filters
+            </div>
+            <div className="mt-1 sm:mt-0">
               <button
+                type="button"
                 onClick={() => setShowFilters(!showFilters)}
-                className="text-blue-700 underline font-bold italic  hover:text-blue-600 cursor-pointer"
+                className="text-blue-700 hover:text-blue-800 underline font-semibold italic transition-colors"
               >
                 {showFilters
                   ? "hide search & filters"
@@ -269,24 +276,29 @@ export default function ChangelogTracker() {
 
         {/* ── FILTERS BLOCK ── */}
         {showFilters && (
-          <div className=" p-3 mb-4 text-[13px]">
-            <div className="flex flex-wrap gap-4 items-end">
-              <label className="flex flex-col gap-1">
-                <span className="text-black font-semibold">Search:</span>
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 sm:p-5 mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+              <label className="flex flex-col gap-1.5">
+                <span className="text-gray-900 font-semibold text-sm">
+                  Search:
+                </span>
                 <input
                   type="text"
-                  placeholder="search commits by aurthor , date , day , time"
+                  placeholder="author, date, time, msg"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-gray-100 border-b-2 border-black  px-3 py-2 w-48"
+                  className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
                 />
               </label>
-              <label className="flex flex-col gap-1">
-                <span className="text-black font-semibold">Author:</span>
+
+              <label className="flex flex-col gap-1.5">
+                <span className="text-gray-900 font-semibold text-sm">
+                  Author:
+                </span>
                 <select
                   value={authorFilter}
                   onChange={(e) => setAuthorFilter(e.target.value)}
-                  className="bg-gray-100 border-b-2 border-black  px-3 py-2"
+                  className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
                 >
                   <option value="all">all</option>
                   {uniqueAuthors.map((a) => (
@@ -296,12 +308,15 @@ export default function ChangelogTracker() {
                   ))}
                 </select>
               </label>
-              <label className="flex flex-col gap-1">
-                <span className="text-black font-semibold">Type:</span>
+
+              <label className="flex flex-col gap-1.5">
+                <span className="text-gray-900 font-semibold text-sm">
+                  Type:
+                </span>
                 <select
                   value={typeFilter}
                   onChange={(e) => setTypeFilter(e.target.value)}
-                  className="bg-gray-100 border-b-2 border-black  px-3 py-2"
+                  className="w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-shadow"
                 >
                   {COMMIT_TYPES.map((t) => (
                     <option key={t.id} value={t.id}>
@@ -310,36 +325,40 @@ export default function ChangelogTracker() {
                   ))}
                 </select>
               </label>
+
               <button
+                type="button"
                 onClick={() => {
                   setSearchQuery("");
                   setAuthorFilter("all");
                   setTypeFilter("all");
                 }}
-                className="bg-blue-800 text-white px-3 py-2 rounded-xl font-semibold   cursor-pointer"
+                className="w-full sm:w-auto bg-blue-800 hover:bg-blue-900 text-white px-6 py-2 rounded-md font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-800"
               >
-                clear
+                Clear
               </button>
             </div>
           </div>
         )}
 
         {/* ── SECTION HEADER ── */}
-        <div className="py-1.5 px-2 text-3xl font-bold mb-2">Commits List</div>
+        <div className="py-2 text-2xl sm:text-3xl font-bold mb-4 text-gray-900 border-b-2 border-gray-100">
+          Commits List
+        </div>
 
         {/* ── ERROR & LOADING STATES ── */}
         {loading && (
-          <div className="p-4 text-[#555] ">
+          <div className="p-4 sm:p-6 text-gray-600 bg-gray-50 border border-gray-200 rounded-lg animate-pulse">
             Fetching repository history (page {fetchingProgress})...
           </div>
         )}
 
         {error && (
-          <div className="p-4 text-[#cc0000] font-bold bg-[#ffdddd] border border-[#cc0000] mb-4">
-            Error: {error}
+          <div className="p-4 sm:p-6 text-red-700 font-semibold bg-red-50 border border-red-200 rounded-lg mb-6 flex flex-wrap items-center gap-4 justify-between">
+            <span>Error: {error}</span>
             <button
               onClick={fetchCommits}
-              className="ml-4 underline text-[#0000ee] bg-transparent border-none cursor-pointer"
+              className="text-red-700 underline hover:text-red-800 transition-colors font-bold"
             >
               Retry
             </button>
@@ -347,71 +366,69 @@ export default function ChangelogTracker() {
         )}
 
         {!loading && !error && displayCommits.length === 0 && (
-          <div className="p-4 text-[#555] ">
+          <div className="p-6 text-gray-500 bg-gray-50 border border-gray-200 rounded-lg text-center">
             No commits found matching the current criteria.
           </div>
         )}
 
         {/* ── LIST ── */}
         {!loading && !error && displayCommits.length > 0 && (
-          <div className="w-full flex flex-col border-b border-[#eee]">
+          <div className="w-full flex flex-col border border-gray-200 rounded-lg overflow-hidden">
             {displayCommits.map((commit, index) => {
               const title = getCommitTitle(commit.commit.message);
-              // Classic alternating row colors
-              const rowClass = index % 2 === 0 ? "bg-white" : "bg-[#f8f8f8]";
+              // Classic alternating row colors matched to original intent but cleaner
+              const rowClass = index % 2 === 0 ? "bg-white" : "bg-gray-50";
 
               return (
                 <div
                   key={commit.sha}
-                  className={`${rowClass} flex flex-col md:flex-row md:items-center py-2 px-2 hover:bg-[#eef3f8] transition-colors gap-1 md:gap-4`}
+                  className={`${rowClass} flex flex-col lg:flex-row lg:items-center py-3 sm:py-4 px-4 sm:px-6 hover:bg-blue-50/50 transition-colors border-b last:border-b-0 border-gray-200 gap-3 lg:gap-6`}
                 >
-                  {/* Time & Author (Stacked on mobile, row on desktop) */}
-                  <div className="flex flex-row md:flex-row gap-2 md:gap-4 shrink-0 text-[#444]  text-[13px] md:w-[220px]">
-                    <span className="w-[85px] shrink-0">
+                  {/* Time & Author */}
+                  <div className="flex flex-row items-center gap-3 lg:w-[280px] shrink-0">
+                    <span className="text-gray-500 text-[13px] w-[90px] shrink-0">
                       {timeAgo(commit.commit.author.date)}
                     </span>
-                    <span className="truncate w-[120px] text-red-600 font-semibold">
-                      {"@"}
-                      {commit.commit.author.name}
+                    <span className="truncate text-red-600 font-semibold text-[14px]">
+                      @{commit.commit.author.name}
                     </span>
                   </div>
 
                   {/* Message & Tag */}
-                  <div className="flex-1 min-w-0 font-bold text-black flex  items-center flex-wrap gap-2 text-[14px]">
+                  <div className="flex-1 min-w-0 font-bold text-gray-900 flex flex-wrap items-center gap-2 text-[14px] sm:text-[15px]">
                     <span className="break-words">{title}</span>
-                    {/* Fake branch tag exactly like the image */}
                     {index === 0 && (
-                      <span className="bg-[#ccffcc] border border-[#00cc00] text-black text-[11px] font-normal px-1 py-0 rounded leading-tight">
+                      <span className="bg-green-100 border border-green-500 text-green-800 text-[11px] font-medium px-2 py-0.5 rounded-md leading-tight shrink-0">
                         master
                       </span>
                     )}
                   </div>
 
                   {/* Links */}
-                  <div className="shrink-0 text-[12px] md:text-[13px] text-[#0000ee] mt-1 md:mt-0 md:text-right">
+                  <div className="flex flex-wrap items-center gap-2 lg:justify-end shrink-0 text-[13px] text-blue-600 mt-1 lg:mt-0 font-medium">
                     <a
                       href={commit.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:underline no-underline"
+                      className="hover:text-blue-800 hover:underline transition-colors"
                     >
                       commit
-                    </a>{" "}
-                    |{" "}
+                    </a>
+                    <span className="text-gray-300">|</span>
                     <a
                       href={commit.html_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:underline no-underline"
+                      className="hover:text-blue-800 hover:underline transition-colors"
                     >
                       commitdiff
-                    </a>{" "}
-                    |{" "}
+                    </a>
+                    <span className="text-gray-300">|</span>
                     <a
-                      href={commit.html_url}
+                      href={commit.html_url.replace("/commit/", "/tree/")}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:underline no-underline"
+                      className="hover:text-blue-800 hover:underline transition-colors"
                     >
                       tree
                     </a>
@@ -424,8 +441,10 @@ export default function ChangelogTracker() {
 
         {/* Pagination Indicator */}
         {!loading && !error && displayCommits.length > 0 && (
-          <div className="mt-2 px-2 text-[#0000ee] text-[13px] font-bold cursor-pointer hover:underline">
-            ...
+          <div className="mt-4 px-2 text-center">
+            <button className="text-blue-600 hover:text-blue-800 text-[14px] font-semibold hover:underline transition-colors focus:outline-none">
+              Load more...
+            </button>
           </div>
         )}
       </div>

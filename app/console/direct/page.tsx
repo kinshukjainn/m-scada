@@ -376,11 +376,11 @@ export default function ElectricalDiagnosticConsole() {
       <div className="max-w-[1400px] mx-auto space-y-6 lg:space-y-8">
         {/* ---- Header ---- */}
         <div className="p-6 rounded-sm flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <div className="bg-gray-200 border border-[#252525] p-2 rounded-sm">
+          <div className=" p-2">
             <h1 className="text-xl sm:text-xl font-bold tracking-tight text-gray-900">
               Disclaimer :
             </h1>
-            <p className="text-sm text-gray-800 mt-1 font-medium">
+            <p className="text-md text-black mt-1 font-medium">
               This analysis is generated using machine learning models trained
               on a combination of proprietary and publicly available data
               sources. While efforts have been made to ensure reliability, the
@@ -393,16 +393,16 @@ export default function ElectricalDiagnosticConsole() {
 
         {/* ---- SCADA Status Bar ---- */}
         <div
-          className={`flex flex-wrap items-center justify-between gap-4 px-5 py-3 rounded-4xl border
-          ${isLive ? "bg-blue-500" : "bg-green-500 "}`}
+          className={`flex flex-wrap items-center justify-between gap-4 px-5 py-3 w-max rounded-4xl 
+          ${isLive ? "bg-white" : "white "}`}
         >
           <div className="flex items-center gap-3">
             <span
               className={`inline-block w-2.5 h-2.5 rounded-full transition-opacity duration-300
               ${
                 isLive
-                  ? `bg-white ${blinkOn ? "opacity-100" : "opacity-20"}`
-                  : "bg-white opacity-100"
+                  ? `bg-blue-500 ${blinkOn ? "opacity-100" : "opacity-20"}`
+                  : "bg-green-700 opacity-100"
               }`}
             />
             <Radio
@@ -412,25 +412,20 @@ export default function ElectricalDiagnosticConsole() {
               className={`text-sm font-bold ${isLive ? "text-black" : "text-black"}`}
             >
               {isLive
-                ? `LIVE — Gaussian noise model · σ scaled to CT class ${formData.ctAccuracyClass} · Tick #${tickCount}`
-                : "SNAPSHOT — Simulation paused · Ready for AI Analysis"}
+                ? `Live ${formData.ctAccuracyClass} · Tick #${tickCount}`
+                : "Simulation paused"}
             </span>
           </div>
 
           <div className="flex items-center gap-3">
-            {!isLive && (
-              <span className="text-xs text-black font-semibold bg-blue-200 px-3 py-1 rounded-full">
-                ✓ Values locked — you may edit manually
-              </span>
-            )}
             <button
               type="button"
               onClick={() => setIsLive((v) => !v)}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full cursor-pointer text-sm font-bold border transition-all
+              className={`flex items-center gap-2 px-4 py-2 rounded-full cursor-pointer text-md font-semibold  transition-all
                 ${
                   isLive
-                    ? "bg-white border-red-300 text-red-600 hover:bg-red-50"
-                    : "bg-white border-emerald-300 text-emerald-600 hover:bg-emerald-50"
+                    ? "bg-blue-800  border-blue-900 text-white hover:bg-blue-900"
+                    : "bg-green-600 border-green-700 text-white hover:bg-green-700"
                 }`}
             >
               {isLive ? (
@@ -517,11 +512,11 @@ export default function ElectricalDiagnosticConsole() {
               </div>
 
               {/* ── Advanced System Parameters (collapsible) ── */}
-              <div className="border-t border-gray-200 pt-4">
+              <div className=" p-2 bg-gray-200 rounded-md pt-4">
                 <button
                   type="button"
                   onClick={() => setShowAdvanced((v) => !v)}
-                  className="w-full flex items-center justify-between text-xs font-bold uppercase text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                  className="w-full flex items-center justify-between text-xs font-bold uppercase text-black0 transition-colors cursor-pointer"
                 >
                   <span className="flex items-center gap-2">
                     <Settings2 className="w-3.5 h-3.5" /> System Configuration
@@ -534,8 +529,8 @@ export default function ElectricalDiagnosticConsole() {
                 </button>
 
                 {showAdvanced && (
-                  <div className="mt-3 space-y-3 p-3 bg-slate-50 rounded-sm border border-slate-200">
-                    <p className="text-[10px] text-gray-500 leading-snug">
+                  <div className="mt-3 space-y-3 p-3 rounded-xl ">
+                    <p className="text-[15px] font-medium text-gray-900 leading-snug">
                       These parameters control fault classification thresholds
                       (IEEE C37.113 / IEC 60255), DC offset decay, and
                       measurement noise scaling.
@@ -558,11 +553,11 @@ export default function ElectricalDiagnosticConsole() {
                   type="submit"
                   disabled={loading || isLive}
                   title={isLive ? "Stop simulation first to run analysis" : ""}
-                  className={`w-full text-white font-semibold py-2 px-3 rounded-3xl transition-all flex items-center cursor-pointer justify-center gap-3
+                  className={`w-max text-white font-semibold py-2 px-6 rounded-md transition-all flex items-center cursor-pointer justify-center gap-3
                     ${
                       isLive
                         ? "bg-gray-400 cursor-not-allowed opacity-60"
-                        : "bg-red-600 hover:bg-red-700 disabled:opacity-70 disabled:cursor-not-allowed"
+                        : "bg-blue-800 hover:bg-blue-700 disabled:opacity-70 disabled:cursor-not-allowed"
                     }`}
                 >
                   {loading ? (
@@ -570,13 +565,11 @@ export default function ElectricalDiagnosticConsole() {
                   ) : (
                     <RiGeminiFill className="w-5 h-5" />
                   )}
-                  {loading
-                    ? "Computing ... Please wait"
-                    : "Generate AI Analysis"}
+                  {loading ? "Computing ... Please wait" : "Generate"}
                 </button>
 
                 {isLive && (
-                  <p className="text-[11px] text-center text-amber-600 font-semibold">
+                  <p className="text-[14px] text-center text-black font-semibold">
                     ⚠ Stop simulation to enable AI analysis
                   </p>
                 )}
@@ -594,7 +587,7 @@ export default function ElectricalDiagnosticConsole() {
             )}
 
             {!result && !loading && !error && (
-              <div className="h-full min-h-[500px] border-2 border border-gray-700 rounded-md flex flex-col items-center justify-center text-gray-900 p-3 text-center bg-white">
+              <div className="h-full min-h-[500px]  rounded-md flex flex-col items-center justify-center text-gray-900 p-3 text-center">
                 <div
                   style={{
                     position: "relative",

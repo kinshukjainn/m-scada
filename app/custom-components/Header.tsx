@@ -27,19 +27,20 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gray-300 text-gray-900">
+    <header className="sticky top-0 z-50 w-full bg-white border-b border-gray-200 shadow-sm font-sans">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-14 items-center justify-between">
+        <div className="flex h-12 sm:h-14 items-center justify-between">
           {/* Logo */}
           <Link
             href="/"
-            className="flex shrink-0 items-center gap-1  text-lg font-bold text-black"
+            className="flex shrink-0 items-center gap-1 text-[16px] sm:text-lg font-semibold text-gray-900 hover:text-[#0078D4] transition-colors"
+            onClick={() => setIsMobileMenuOpen(false)}
           >
-            M-<span className="text-black">Scada</span>_
+            M-<span className="text-gray-900">Scada</span>_
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:items-center md:gap-6">
+          {/* Desktop Navigation (Azure Top-Nav Style) */}
+          <nav className="hidden md:flex md:items-center h-full ml-8">
             {NAV_LINKS.map((link) => {
               const Icon = link.icon;
               const isActive = pathname === link.path;
@@ -47,10 +48,10 @@ export default function Header() {
                 <Link
                   key={link.path}
                   href={link.path}
-                  className={`flex items-center gap-2 text-md font-medium transition-colors ${
+                  className={`flex items-center gap-1.5 h-full px-4 text-[13px] font-semibold transition-colors border-b-2 ${
                     isActive
-                      ? "text-black  border-b-3 border-black py-1  "
-                      : "text-gray-900 hover:border-b-3 border-gray-900 p-1"
+                      ? "border-[#0078D4] text-[#0078D4] bg-[#f3f9fd]"
+                      : "border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -60,13 +61,15 @@ export default function Header() {
             })}
           </nav>
 
+          <div className="flex-1" />
+
           {/* Desktop Right Actions (External Links) */}
-          <div className="hidden md:flex md:items-center md:gap-4">
+          <div className="hidden md:flex md:items-center md:gap-3">
             <a
               href="https://github.com/kinshukjainn/fds-college"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-md text-white rounded-full transition-colors bg-black font-bold  px-3 py-1.5"
+              className="flex items-center gap-2 text-[13px] font-semibold text-gray-700 bg-white border border-gray-300 hover:bg-gray-50 px-4 py-1.5 rounded-sm transition-colors"
             >
               <Github className="h-4 w-4" />
               <span>GitHub</span>
@@ -75,7 +78,7 @@ export default function Header() {
               href="https://fdb.cloudkinshuk.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-md font-semibold text-gray-100 bg-blue-800 px-3 py-1.5 rounded-full transition-colors "
+              className="flex items-center gap-2 text-[13px] font-semibold text-white bg-[#0078D4] border border-transparent hover:bg-[#005a9e] px-4 py-1.5 rounded-sm transition-colors"
             >
               <MessageSquare className="h-4 w-4" />
               <span>Feedback</span>
@@ -85,66 +88,71 @@ export default function Header() {
           {/* Mobile Menu Toggle Button */}
           <button
             type="button"
-            className="flex items-center justify-center p-2 cursor-pointer text-gray-900 hover:text-black md:hidden"
+            className="flex items-center justify-center p-2 text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-sm md:hidden transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" aria-hidden="true" />
+              <X className="h-5 w-5" aria-hidden="true" />
             ) : (
-              <Menu className="h-6 w-6" aria-hidden="true" />
+              <Menu className="h-5 w-5" aria-hidden="true" />
             )}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      {isMobileMenuOpen && (
-        <div className="border-none bg-gray-300 md:hidden">
-          <div className="flex flex-col space-y-2.5 px-6 py-1">
-            {NAV_LINKS.map((link) => {
-              const Icon = link.icon;
-              const isActive = pathname === link.path;
-              return (
-                <Link
-                  key={link.path}
-                  href={link.path}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`flex items-center gap-2  px-2 py-1 text-sm font-medium transition-colors ${
-                    isActive
-                      ? " border-l-4 border-black text-black"
-                      : "text-gray-900  hover:border-l-4 border-black text-black hover:text-black"
-                  }`}
-                >
-                  <Icon className="h-5 w-5" />
-                  {link.label}
-                </Link>
-              );
-            })}
+      {/* Mobile Navigation Menu (Azure Sidebar/Dropdown Style) */}
+      <div
+        className={`md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-b border-gray-200 transition-all duration-200 ease-in-out overflow-hidden ${
+          isMobileMenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="flex flex-col py-2">
+          {NAV_LINKS.map((link) => {
+            const Icon = link.icon;
+            const isActive = pathname === link.path;
+            return (
+              <Link
+                key={link.path}
+                href={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`flex items-center gap-3 px-6 py-3 text-[14px] font-semibold transition-colors border-l-2 ${
+                  isActive
+                    ? "border-[#0078D4] text-[#0078D4] bg-[#f3f9fd]"
+                    : "border-transparent text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                }`}
+              >
+                <Icon className="h-[18px] w-[18px]" />
+                {link.label}
+              </Link>
+            );
+          })}
 
-            <div className="my-2 p-3 " />
+          <div className="w-full h-px bg-gray-100 my-2" />
 
+          {/* Mobile External Links */}
+          <div className="flex flex-col px-4 pb-4 pt-2 gap-2">
             <a
-              href="https://github.com/kinshukjainn/fds-college"
+              href="https://github.com/kinshukjainn/mscada"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-black rounded-full px-2 py-2 text-md font-medium text-gray-100 transition-colors  "
+              className="flex items-center justify-center gap-2 w-full bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-sm px-4 py-2.5 text-[14px] font-semibold transition-colors"
             >
-              <Github className="h-5 w-5" />
+              <Github className="h-4 w-4" />
               GitHub
             </a>
             <a
-              href="https://fdb.cloudkinshuk.in"
+              href="https://clkfeedbacks.cloudkinshuk.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-blue-700 rounded-full px-2 py-2 text-md font-medium text-gray-100 transition-colors  "
+              className="flex items-center justify-center gap-2 w-full bg-[#0078D4] hover:bg-[#005a9e] text-white rounded-sm px-4 py-2.5 text-[14px] font-semibold transition-colors"
             >
-              <MessageSquare className="h-5 w-5" />
+              <MessageSquare className="h-4 w-4" />
               Feedback
             </a>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

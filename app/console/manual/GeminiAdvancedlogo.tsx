@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { RiGeminiFill } from "react-icons/ri";
 
 // ==========================================
-// 1. WEBGL SHADER FOR INTERNAL FLUID
+// 1. WEBGL SHADER FOR AZURE-STYLE FLUID/GRADIENT
 // ==========================================
 const fragmentShader = `
   uniform float uTime;
@@ -36,25 +36,25 @@ const fragmentShader = `
   void main() {
     vec2 uv = vUv;
     
-    // Create fluid distortion based on time (scaled down for smaller container)
+    // Slower, smoother distortion for a professional "data flow" feel
     vec2 distortedUv = uv;
-    distortedUv.x += noise(uv * 4.0 + uTime * 0.3) * 0.15;
-    distortedUv.y += noise(uv * 4.0 - uTime * 0.2) * 0.15;
+    distortedUv.x += noise(uv * 3.0 + uTime * 0.1) * 0.08;
+    distortedUv.y += noise(uv * 3.0 - uTime * 0.12) * 0.08;
 
-    // Generate fluid wave patterns
-    float wave1 = noise(distortedUv * 5.0 + uTime * 0.4);
-    float wave2 = noise(distortedUv * 6.0 - uTime * 0.3);
+    // Generate smooth gradient wave patterns
+    float wave1 = noise(distortedUv * 4.0 + uTime * 0.2);
+    float wave2 = noise(distortedUv * 4.5 - uTime * 0.15);
     
-    // Mix colors based on fluid waves
+    // Mix Azure brand colors
     vec3 fluidColor = mix(uColor1, uColor2, wave1 + 0.5);
     fluidColor = mix(fluidColor, uColor3, wave2 + 0.5);
 
-    // Add a soft radial fade so the center is vibrant but the edges are softer
+    // Subtle radial fade 
     float distToCenter = distance(uv, vec2(0.5));
-    float vignette = smoothstep(0.6, 0.1, distToCenter);
+    float vignette = smoothstep(0.7, 0.0, distToCenter);
 
-    // Output final color (0.8 opacity keeps it pastel and lets the white background bleed through)
-    gl_FragColor = vec4(fluidColor, vignette * 0.85);
+    // Opacity adjusted for a clean, non-overpowering light theme aesthetic
+    gl_FragColor = vec4(fluidColor, vignette * 0.90);
   }
 `;
 
@@ -110,38 +110,39 @@ const FluidMesh = ({
 // ==========================================
 // 3. MAIN EXPORTABLE COMPONENT
 // ==========================================
-interface GeminiFluidInnerProps {
+interface AzureFluidInnerProps {
   className?: string;
   size?: number;
   fluidColors?: { c1: string; c2: string; c3: string };
   iconColor?: string;
 }
 
-export const GeminiFluidInner: React.FC<GeminiFluidInnerProps> = ({
+export const AzureFluidInner: React.FC<AzureFluidInnerProps> = ({
   className = "",
-  size = 120, // Size of the core circle
+  size = 120, // Default tile size
   fluidColors = {
-    c1: "#86abe5", // Google Blue
-    c2: "#5f22a5", // Deep Purple
-    c3: "#616981", // Soft Coral
+    c1: "#0078D4", // Primary Azure Blue
+    c2: "#50E6FF", // Bright Azure Cyan (for highlights)
+    c3: "#005A9E", // Darker Azure Blue (for depth)
   },
-  iconColor = "#fefefe", // Blue icon
+  iconColor = "#FFFFFF", // Crisp white to contrast the blue
 }) => {
   return (
     <div
-      className={`relative flex items-center justify-center p-10 bg-white ${className}`}
+      className={`relative flex items-center justify-center p-10 bg-[#FAFAFA] ${className}`}
     >
-      {/* THE CORE BUTTON */}
+      {/* THE CORE BUTTON / TILE */}
       <motion.div
         style={{ width: size, height: size }}
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        transition={{ type: "spring", stiffness: 400, damping: 15 }} // Real physics
-        className="relative rounded-sm overflow-hidden flex items-center justify-center shadow-[0_10px_40px_-10px_rgba(0,0,0,0.15)] border border-gray-100 bg-white cursor-pointer"
+        whileHover={{ scale: 1.02, y: -2 }}
+        whileTap={{ scale: 0.98, y: 0 }}
+        // Fluent Design prefers snappy, low-damping transitions over bouncy springs
+        transition={{ type: "spring", stiffness: 600, damping: 30 }}
+        className="relative overflow-hidden flex items-center justify-center bg-white cursor-pointer"
+        // Azure specific styling: very subtle rounding (2px-4px) and sharp, clean drop shadow
       >
         {/* INTERNAL FLUID CANVAS */}
-        <div className="absolute inset-0 z-0 opacity-80 mix-blend-multiply">
-          {/* dpr={[1, 2]} ensures the shader is crisp on high-res retina screens */}
+        <div className="absolute inset-0 z-0 opacity-90">
           <Canvas
             camera={{ position: [0, 0, 1] }}
             gl={{ alpha: true, antialias: true }}
@@ -151,28 +152,29 @@ export const GeminiFluidInner: React.FC<GeminiFluidInnerProps> = ({
           </Canvas>
         </div>
 
-        {/* GLASS OVERLAY (Enhances the 3D sphere look) */}
-        <div className="absolute inset-0 rounded-sm bg-gradient-to-br from-white/60 via-transparent to-black/5 pointer-events-none z-10" />
+        {/* ACRYLIC/GLASS OVERLAY (Microsoft Fluent style) */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent pointer-events-none z-10" />
 
-        {/* INNER GLOW BORDER */}
-        <div className="absolute inset-0 rounded-sm shadow-[inset_0_0_20px_rgba(255,255,255,0.8)] pointer-events-none z-10" />
+        {/* INNER BORDER FOR CRISPNESS */}
+        <div
+          className="absolute inset-0 border border-black/5 pointer-events-none z-10"
+          style={{ borderRadius: "2px" }}
+        />
 
         {/* FOREGROUND ICON */}
         <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 3, -3, 0], // Very subtle floating
-          }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="relative z-20 drop-shadow-md"
+          // Removed the infinite wobble/rotation to maintain a professional, corporate feel.
+          // Added a very subtle slow pulse instead.
+          animate={{ scale: [1, 1.03, 1] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="relative z-20 drop-shadow-sm"
           style={{ color: iconColor }}
         >
-          {/* Sizing the icon relative to the container */}
-          <RiGeminiFill size={size * 0.4} />
+          <RiGeminiFill size={size * 0.45} />
         </motion.div>
       </motion.div>
     </div>
   );
 };
 
-export default GeminiFluidInner;
+export default AzureFluidInner;
